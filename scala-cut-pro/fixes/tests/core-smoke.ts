@@ -39,7 +39,7 @@ async function main() {
   fs.writeFileSync(
     titlePng,
     Buffer.from(
-      'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAusB9Wl8cXcAAAAASUVORK5CYII=',
+      'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAFklEQVR4nGP4TyFgGDVg1IBRA4aLAQBdePwur/3haQAAAABJRU5ErkJggg==',
       'base64',
     ),
   );
