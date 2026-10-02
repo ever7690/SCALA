@@ -70,7 +70,7 @@ jobs:
           data=json.loads(p.read_text())
           data['description']='SCALA CUT PRO - editor profesional de video'
           data['homepage']='https://github.com/ever7690/SCALA'
-          data['author']={'name':'SCALA'}
+          data['author']={'name':'SCALA','email':'soporte@scala.local'}
           p.write_text(json.dumps(data,indent=2,ensure_ascii=False)+'\n')
 
           # Disable upstream auto-updater. Builds remain fully local and do not
@@ -273,7 +273,7 @@ jobs:
           data=json.loads(Path('apps/desktop/package.json').read_text())
           data['description']='SCALA CUT PRO - editor profesional de video'
           data['homepage']='https://github.com/ever7690/SCALA'
-          data['author']={'name':'SCALA'}
+          data['author']={'name':'SCALA','email':'soporte@scala.local'}
           Path('apps/desktop/package.json').write_text(json.dumps(data,indent=2)+'\n')
           PY
 
