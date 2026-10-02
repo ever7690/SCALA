@@ -1,0 +1,117 @@
+name: SCALA CUT PRO Linux Build + Real Smoke Test
+on:
+  workflow_dispatch:
+  push:
+    branches: [scala-cut-capcut-pro]
+    paths:
+      - 'scala-cut-pro/**'
+      - '.github/workflows/scala-cut-capcut-pro.yml'
+
+jobs:
+  build-test-package:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - name: Checkout SCALA overlay
+        uses: actions/checkout@v4
+
+      - name: Materialize SCALA CUT PRO source overlay
+        run: |
+          mkdir -p scala-cut-pro
+          cat scala-cut-pro/bundle.part* | base64 -d > /tmp/scala-cut-pro.tar.gz
+          tar -xzf /tmp/scala-cut-pro.tar.gz -C scala-cut-pro
+          test -f scala-cut-pro/overlay/src/App.tsx
+
+      - name: Install Linux GUI runtime for Electron smoke test
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y xvfb libgtk-3-0 libnss3 libasound2t64 libxss1 libgbm1
+
+      - name: Clone verified MIT editor base
+        run: |
+          git clone --depth 1 https://github.com/ruelhcepeda/rhces-video-editor.git app
+          echo "UPSTREAM_SHA=$(git -C app rev-parse HEAD)" >> "$GITHUB_ENV"
+
+      - name: Apply SCALA CUT PRO overlay
+        run: |
+          cp -R scala-cut-pro/overlay/. app/
+          cp scala-cut-pro/tests/core-smoke.ts app/core-smoke.ts
+          node scala-cut-pro/apply-customization.mjs app
+
+      - name: Install dependencies
+        working-directory: app
+        run: npm ci
+
+      - name: TypeScript verification
+        working-directory: app
+        run: npm run lint
+
+      - name: Build renderer and Electron
+        working-directory: app
+        run: npm run build
+
+      - name: Real media import + thumbnail + MP4 export smoke test
+        working-directory: app
+        run: |
+          npx esbuild core-smoke.ts --bundle --platform=node --target=node20 --format=cjs --outfile=core-smoke.cjs --external:ffmpeg-static --external:ffprobe-static
+          node core-smoke.cjs | tee core-smoke.log
+          grep -q 'IMPORT_PROBE=PASS' core-smoke.log
+          grep -q 'THUMBNAIL=PASS' core-smoke.log
+          grep -q 'MP4_EXPORT=PASS' core-smoke.log
+
+      - name: Package unpacked Linux application
+        working-directory: app
+        run: npx electron-builder --linux dir --x64
+
+      - name: GUI launch smoke test under Xvfb
+        working-directory: app
+        run: |
+          BIN="release/linux-unpacked/scala-cut-pro"
+          test -x "$BIN"
+          set +e
+          timeout 12s xvfb-run -a "$BIN" --no-sandbox > gui-smoke.log 2>&1
+          rc=$?
+          set -e
+          cat gui-smoke.log
+          if [ "$rc" -ne 0 ] && [ "$rc" -ne 124 ]; then exit "$rc"; fi
+          if grep -E '\[renderer (ERROR|GONE|FAIL)\]' gui-smoke.log; then exit 1; fi
+          echo 'GUI_LAUNCH=PASS'
+
+      - name: Build portable AppImage
+        working-directory: app
+        run: npx electron-builder --linux AppImage --x64
+
+      - name: Verify artifact
+        working-directory: app
+        run: |
+          ls -lh release/
+          APP=$(find release -maxdepth 1 -name 'SCALA-CUT-PRO-2.0.0-*.AppImage' -type f | head -n1)
+          test -n "$APP"
+          test -s "$APP"
+          sha256sum "$APP" | tee release/SCALA-CUT-PRO-2.0.0.sha256
+          echo "APPIMAGE=$APP" >> "$GITHUB_ENV"
+          echo 'PACKAGE=PASS'
+
+      - name: Build report
+        run: |
+          cat > BUILD-REPORT.txt <<REPORT
+          SCALA CUT PRO 2.0.0
+          Upstream MIT base commit: $UPSTREAM_SHA
+          TypeScript: PASS
+          Media probe/import core: PASS
+          Thumbnail generation: PASS
+          MP4 export with video+audio+text: PASS
+          Electron GUI launch under Xvfb: PASS
+          AppImage package: PASS
+          REPORT
+
+      - name: Upload portable SCALA CUT PRO
+        uses: actions/upload-artifact@v4
+        with:
+          name: SCALA-CUT-PRO-2.0.0-Linux-x64
+          path: |
+            app/release/SCALA-CUT-PRO-2.0.0-*.AppImage
+            app/release/SCALA-CUT-PRO-2.0.0.sha256
+            BUILD-REPORT.txt
+          if-no-files-found: error
+          compression-level: 0
