@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "description": "SCALA CUT PRO - editor de video de escritorio",
   "main": "main.cjs",
-  "author": "SCALA",
+  "author": {
+    "name": "SCALA",
+    "email": "software@scala.local"
+  },
   "license": "MIT",
   "scripts": {
     "start": "electron .",
@@ -35,9 +38,15 @@
       "package.json"
     ],
     "linux": {
-      "target": ["AppImage", "deb"],
+      "target": [
+        "AppImage",
+        "deb"
+      ],
       "category": "AudioVideo",
-      "artifactName": "SCALA-CUT-PRO-${version}-${arch}.${ext}"
+      "artifactName": "SCALA-CUT-PRO-${version}-${arch}.${ext}",
+      "maintainer": "SCALA <software@scala.local>",
+      "desktopName": "SCALA CUT PRO",
+      "synopsis": "Editor de video SCALA CUT PRO"
     }
   }
 }
