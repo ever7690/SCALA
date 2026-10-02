@@ -19,7 +19,17 @@ jobs:
       - name: Unit and real render tests
         run: npm test
       - name: GUI smoke test
-        run: xvfb-run -a npm run smoke
+        env:
+          SCALA_SMOKE_SCREENSHOT: smoke.png
+        run: |
+          xvfb-run -a npm run smoke
+          test -s smoke.png
+      - name: Upload GUI screenshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: SCALA-CUT-GUI-SMOKE
+          path: smoke.png
+          if-no-files-found: error
       - name: Package Linux
         run: npm run dist
       - name: Verify artifacts
@@ -29,6 +39,36 @@ jobs:
           test -n "$(find dist -maxdepth 1 -type f -name '*.AppImage' -print -quit)"
           test -n "$(find dist -maxdepth 1 -type f -name '*.deb' -print -quit)"
           sha256sum dist/*.AppImage dist/*.deb > dist/SHA256SUMS.txt
+          mkdir -p dist/chunks
+          split -b 50M -d -a 2 dist/SCALA-CUT-PRO-0.1.0-amd64.deb dist/chunks/deb.part.
+          test -s dist/chunks/deb.part.00
+          test -s dist/chunks/deb.part.01
+          test -s dist/chunks/deb.part.02
+          test -s dist/chunks/deb.part.03
+      - name: Upload DEB part 00
+        uses: actions/upload-artifact@v4
+        with:
+          name: SCALA-CUT-DEB-PART-00
+          path: dist/chunks/deb.part.00
+          compression-level: 0
+      - name: Upload DEB part 01
+        uses: actions/upload-artifact@v4
+        with:
+          name: SCALA-CUT-DEB-PART-01
+          path: dist/chunks/deb.part.01
+          compression-level: 0
+      - name: Upload DEB part 02
+        uses: actions/upload-artifact@v4
+        with:
+          name: SCALA-CUT-DEB-PART-02
+          path: dist/chunks/deb.part.02
+          compression-level: 0
+      - name: Upload DEB part 03
+        uses: actions/upload-artifact@v4
+        with:
+          name: SCALA-CUT-DEB-PART-03
+          path: dist/chunks/deb.part.03
+          compression-level: 0
       - name: Upload installer artifacts
         uses: actions/upload-artifact@v4
         with:
