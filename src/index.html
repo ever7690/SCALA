@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' file: data: blob:; style-src 'self' 'unsafe-inline'; img-src 'self' file: data: blob:; media-src 'self' file: data: blob:; script-src 'self';">
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>SCALA CUT PRO</title>
+<link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+<div id="app">
+  <header class="topbar">
+    <div class="brand"><span class="logo">S</span><div><b>SCALA CUT</b><small>PRO</small></div></div>
+    <div class="top-actions">
+      <button id="openProject">Abrir proyecto</button>
+      <button id="saveProject">Guardar</button>
+      <button id="undoBtn" title="Ctrl+Z">↶</button>
+      <button id="redoBtn" title="Ctrl+Y">↷</button>
+      <select id="aspect"><option>16:9</option><option>9:16</option><option>1:1</option><option>4:5</option></select>
+      <select id="quality"><option>720p</option><option selected>1080p</option><option>4K</option><option>8K</option></select>
+      <button id="exportBtn" class="primary">Exportar</button>
+    </div>
+  </header>
+
+  <main class="workspace">
+    <aside class="leftbar">
+      <button class="nav active" data-tab="media">🎞<span>Medios</span></button>
+      <button class="nav" data-tab="text">T<span>Texto</span></button>
+      <button class="nav" data-tab="filters">◐<span>Filtros</span></button>
+      <button class="nav" data-tab="audio">♫<span>Audio</span></button>
+    </aside>
+
+    <section class="asset-panel">
+      <div id="mediaTab" class="tabpage active">
+        <div class="panel-head"><h3>Medios</h3><button id="importBtn" class="primary">+ Importar</button></div>
+        <div id="dropZone" class="dropzone">Arrastre aquí videos, audios o imágenes<br><small>o pulse Importar</small></div>
+        <div id="mediaGrid" class="media-grid"></div>
+      </div>
+      <div id="textTab" class="tabpage">
+        <h3>Texto</h3>
+        <button id="addText" class="wide primary">+ Agregar texto</button>
+        <p class="hint">Edite el contenido, tamaño, color y posición desde Propiedades.</p>
+      </div>
+      <div id="filtersTab" class="tabpage">
+        <h3>Filtros</h3>
+        <button class="filterPreset wide" data-b="0" data-c="1" data-s="1">Original</button>
+        <button class="filterPreset wide" data-b=".06" data-c="1.08" data-s="1.18">Vivo</button>
+        <button class="filterPreset wide" data-b="-.03" data-c="1.12" data-s=".72">Cine</button>
+        <button class="filterPreset wide" data-b=".08" data-c=".95" data-s=".78">Suave</button>
+        <button class="filterPreset wide" data-b="0" data-c="1.18" data-s="0">B/N</button>
+      </div>
+      <div id="audioTab" class="tabpage">
+        <h3>Audio</h3>
+        <button id="importAudio" class="wide primary">+ Importar audio</button>
+        <p class="hint">MP3, WAV, M4A, AAC, FLAC y OGG.</p>
+      </div>
+    </section>
+
+    <section class="center">
+      <div class="preview-wrap">
+        <div id="previewStage" class="preview-stage ratio-16-9">
+          <video id="previewVideo" playsinline></video>
+          <img id="previewImage" alt="" />
+          <div id="textOverlay"></div>
+          <div id="emptyPreview">Importe medios y añádalos a la línea de tiempo</div>
+        </div>
+        <div class="transport">
+          <button id="prevFrame">◀</button>
+          <button id="playBtn">▶</button>
+          <button id="nextFrame">▶|</button>
+          <span id="timeLabel">00:00.00 / 00:00.00</span>
+          <input id="scrubber" type="range" min="0" max="1000" value="0">
+        </div>
+      </div>
+    </section>
+
+    <aside class="properties">
+      <h3>Propiedades</h3>
+      <div id="noSelection" class="hint">Seleccione un clip.</div>
+      <div id="clipProps" hidden>
+        <label>Nombre<input id="propName"></label>
+        <label id="speedRow">Velocidad <span id="speedVal">1.00x</span><input id="propSpeed" type="range" min=".5" max="2" step=".05" value="1"></label>
+        <label id="volumeRow">Volumen <span id="volumeVal">100%</span><input id="propVolume" type="range" min="0" max="2" step=".05" value="1"></label>
+        <div id="visualProps">
+          <label>Brillo<input id="propBrightness" type="range" min="-.5" max=".5" step=".01" value="0"></label>
+          <label>Contraste<input id="propContrast" type="range" min=".5" max="1.8" step=".01" value="1"></label>
+          <label>Saturación<input id="propSaturation" type="range" min="0" max="2" step=".01" value="1"></label>
+        </div>
+        <div id="textProps" hidden>
+          <label>Texto<textarea id="propText"></textarea></label>
+          <label>Tamaño<input id="propFontSize" type="range" min="16" max="160" step="1" value="48"></label>
+          <label>Color<input id="propColor" type="color" value="#ffffff"></label>
+          <label>Posición X<input id="propX" type="range" min="0" max="100" step="1" value="50"></label>
+          <label>Posición Y<input id="propY" type="range" min="0" max="100" step="1" value="85"></label>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <section class="timeline-shell">
+    <div class="timeline-toolbar">
+      <button id="splitBtn">✂ Dividir</button>
+      <button id="deleteBtn">⌫ Eliminar</button>
+      <button id="zoomOut">−</button><span id="zoomLabel">60 px/s</span><button id="zoomIn">+</button>
+      <span class="spacer"></span><span id="status">Listo</span>
+    </div>
+    <div class="timeline-wrap">
+      <div class="track-labels">
+        <div>V1</div><div>TXT</div><div>A1</div>
+      </div>
+      <div id="timeline" class="timeline">
+        <div id="ruler" class="ruler"></div>
+        <div class="lane" data-lane="visual"></div>
+        <div class="lane" data-lane="text"></div>
+        <div class="lane" data-lane="audio"></div>
+        <div id="playhead" class="playhead"></div>
+      </div>
+    </div>
+  </section>
+</div>
+<div id="exportModal" class="modal" hidden>
+  <div class="modal-card"><h3>Exportando MP4</h3><progress id="exportProgress" max="1" value="0"></progress><div id="exportPct">0%</div></div>
+</div>
+<script src="./app.js"></script>
+</body>
+</html>
