@@ -50,6 +50,11 @@ jobs:
           s=p.read_text().replace('aria-label="OpenReel"', 'aria-label="SCALA CUT PRO"')
           p.write_text(s)
 
+          # Keep the upstream UI test aligned with the intentional SCALA branding.
+          p=root/'apps/web/src/desktop/DesktopApp.test.tsx'
+          if p.exists():
+              p.write_text(p.read_text().replace('"OpenReel"', '"SCALA CUT PRO"'))
+
           # Package identity. Internal @openreel workspace names are intentionally
           # preserved so the tested architecture is not broken.
           p=root/'apps/desktop/electron-builder.yml'
@@ -65,7 +70,7 @@ jobs:
           data=json.loads(p.read_text())
           data['description']='SCALA CUT PRO - editor profesional de video'
           data['homepage']='https://github.com/ever7690/SCALA'
-          data['author']={'name':'SCALA'}
+          data['author']={'name':'SCALA','email':'soporte@scala.local'}
           p.write_text(json.dumps(data,indent=2,ensure_ascii=False)+'\n')
 
           # Disable upstream auto-updater. Builds remain fully local and do not
@@ -268,7 +273,7 @@ jobs:
           data=json.loads(Path('apps/desktop/package.json').read_text())
           data['description']='SCALA CUT PRO - editor profesional de video'
           data['homepage']='https://github.com/ever7690/SCALA'
-          data['author']={'name':'SCALA'}
+          data['author']={'name':'SCALA','email':'soporte@scala.local'}
           Path('apps/desktop/package.json').write_text(json.dumps(data,indent=2)+'\n')
           PY
 
