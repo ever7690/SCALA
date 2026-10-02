@@ -36,6 +36,8 @@ jobs:
         run: |
           cp -R scala-cut-pro/overlay/. app/
           cp scala-cut-pro/tests/core-smoke.ts app/core-smoke.ts
+          sed -i "s#../electron/ffmpeg#./electron/ffmpeg#" app/core-smoke.ts
+          sed -i "s#../shared/ipc#./shared/ipc#" app/core-smoke.ts
           node scala-cut-pro/apply-customization.mjs app
 
       - name: Install dependencies
