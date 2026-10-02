@@ -20,7 +20,9 @@ const api = {
   onExportProgress: (cb: (p: ExportProgress) => void) => {
     const listener = (_: unknown, p: ExportProgress) => cb(p);
     ipcRenderer.on('export:progress', listener);
-    return () => ipcRenderer.removeListener('export:progress', listener);
+    return () => {
+      ipcRenderer.removeListener('export:progress', listener);
+    };
   },
   exists: (p: string): Promise<boolean> => ipcRenderer.invoke('fs:exists', p),
   revealInFolder: (p: string): Promise<void> =>
