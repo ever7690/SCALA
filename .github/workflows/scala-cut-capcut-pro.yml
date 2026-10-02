@@ -42,6 +42,7 @@ jobs:
           cp scala-cut-pro/fixes/src/components/ExportDialog.tsx app/src/components/ExportDialog.tsx
           cat scala-cut-pro/fixes/extra.css >> app/src/index.css
           cp scala-cut-pro/fixes/tests/core-smoke.ts app/core-smoke.ts
+          node scala-cut-pro/fixes/patch-ffmpeg.mjs app/electron/ffmpeg.ts
           node scala-cut-pro/apply-customization.mjs app
 
       - name: Install dependencies
