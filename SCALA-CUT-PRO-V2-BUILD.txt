@@ -1,0 +1,2 @@
+SCALA CUT PRO V2
+Build de validacion automatizada.
