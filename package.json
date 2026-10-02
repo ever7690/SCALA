@@ -12,7 +12,7 @@
     "start": "electron .",
     "smoke": "electron . --smoke-test --no-sandbox",
     "test": "node test/model.test.cjs && node test/render-test.cjs",
-    "dist": "electron-builder --linux AppImage deb"
+    "dist": "electron-builder --linux AppImage deb --publish never"
   },
   "devDependencies": {
     "electron": "^35.7.5",
