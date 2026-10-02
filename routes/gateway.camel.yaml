@@ -1,0 +1,95 @@
+- route:
+    id: scala-health
+    from:
+      uri: "netty-http:http://0.0.0.0:8080/health"
+      parameters: { httpMethodRestrict: "GET" }
+      steps:
+        - setHeader: { name: Content-Type, expression: { constant: { expression: "application/json" } } }
+        - setBody: { expression: { constant: { expression: '{"status":"Healthy","service":"SCALA Automation Pro","version":"3"}' } } }
+
+- route:
+    id: scala-ai-submit
+    from:
+      uri: "netty-http:http://0.0.0.0:8080/api/ai"
+      parameters: { httpMethodRestrict: "POST" }
+      steps:
+        - setHeader: { name: scalaJobType, expression: { constant: { expression: "ai.generate" } } }
+        - to: { uri: "direct:submit-job" }
+
+- route:
+    id: scala-http-submit
+    from:
+      uri: "netty-http:http://0.0.0.0:8080/api/http"
+      parameters: { httpMethodRestrict: "POST" }
+      steps:
+        - setHeader: { name: scalaJobType, expression: { constant: { expression: "http.request" } } }
+        - to: { uri: "direct:submit-job" }
+
+- route:
+    id: scala-n8n-submit
+    from:
+      uri: "netty-http:http://0.0.0.0:8080/api/n8n"
+      parameters: { httpMethodRestrict: "POST" }
+      steps:
+        - setHeader: { name: scalaJobType, expression: { constant: { expression: "n8n.webhook" } } }
+        - to: { uri: "direct:submit-job" }
+
+- route:
+    id: scala-workflow-submit
+    from:
+      uri: "netty-http:http://0.0.0.0:8080/api/workflow"
+      parameters: { httpMethodRestrict: "POST" }
+      steps:
+        - setHeader: { name: scalaJobType, expression: { constant: { expression: "workflow.run" } } }
+        - to: { uri: "direct:submit-job" }
+
+- route:
+    id: scala-remote-submit
+    from:
+      uri: "netty-http:http://0.0.0.0:8080/api/remote"
+      parameters: { httpMethodRestrict: "POST" }
+      steps:
+        - setHeader: { name: scalaJobType, expression: { constant: { expression: "remote.command" } } }
+        - to: { uri: "direct:submit-job" }
+
+- route:
+    id: scala-wait-submit
+    from:
+      uri: "netty-http:http://0.0.0.0:8080/api/wait"
+      parameters: { httpMethodRestrict: "POST" }
+      steps:
+        - setHeader: { name: scalaJobType, expression: { constant: { expression: "wait" } } }
+        - to: { uri: "direct:submit-job" }
+
+- route:
+    id: scala-data-write-submit
+    from:
+      uri: "netty-http:http://0.0.0.0:8080/api/data-write"
+      parameters: { httpMethodRestrict: "POST" }
+      steps:
+        - setHeader: { name: scalaJobType, expression: { constant: { expression: "data.write" } } }
+        - to: { uri: "direct:submit-job" }
+
+- route:
+    id: scala-submit-job
+    from:
+      uri: "direct:submit-job"
+      steps:
+        - convertBodyTo: { type: java.lang.String }
+        - setHeader: { name: scalaJobId, expression: { simple: { expression: "${uuid}" } } }
+        - setHeader: { name: JMSCorrelationID, expression: { simple: { expression: "${header.scalaJobId}" } } }
+        - setHeader: { name: scalaSubmittedAt, expression: { simple: { expression: "${date:now:yyyy-MM-dd-T-HH:mm:ss.SSSXXX}" } } }
+        - setProperty: { name: scalaOriginalBody, expression: { simple: { expression: "${body}" } } }
+        - toD: { uri: "file:/data/requests?fileName=${header.scalaJobId}.json&fileExist=Override" }
+        - removeHeaders: { pattern: "CamelHttp*" }
+        - setHeader: { name: Content-Type, expression: { constant: { expression: "application/json" } } }
+        - setBody: { expression: { simple: { expression: '{"jobId":"${header.scalaJobId}","type":"${header.scalaJobType}","status":"QUEUED","submittedAt":"${header.scalaSubmittedAt}"}' } } }
+        - toD: { uri: "file:/data/jobs?fileName=${header.scalaJobId}.json&fileExist=Override" }
+        - setBody: { expression: { simple: { expression: "${exchangeProperty.scalaOriginalBody}" } } }
+        - to:
+            uri: "amqp:queue:scala.jobs"
+            pattern: InOnly
+            parameters: { deliveryPersistent: true }
+        - setHeader: { name: CamelHttpResponseCode, expression: { constant: { resultType: int, expression: "202" } } }
+        - setHeader: { name: Content-Type, expression: { constant: { expression: "application/json" } } }
+        - setBody: { expression: { simple: { expression: '{"accepted":true,"jobId":"${header.scalaJobId}","type":"${header.scalaJobType}","status":"QUEUED"}' } } }
