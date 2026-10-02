@@ -1,0 +1,41 @@
+name: Build SCALA CUT PRO Native
+on:
+  push:
+    branches: [scala-cut-native]
+  workflow_dispatch:
+jobs:
+  build-test-package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Install system test dependencies
+        run: sudo apt-get update && sudo apt-get install -y xvfb libgtk-3-0 libnss3 libasound2t64
+      - name: Install
+        run: npm install
+      - name: Unit and real render tests
+        run: npm test
+      - name: GUI smoke test
+        run: xvfb-run -a npm run smoke
+      - name: Package Linux
+        run: npm run dist
+      - name: Verify artifacts
+        run: |
+          set -e
+          ls -lh dist/
+          test -n "$(find dist -maxdepth 1 -type f -name '*.AppImage' -print -quit)"
+          test -n "$(find dist -maxdepth 1 -type f -name '*.deb' -print -quit)"
+          sha256sum dist/*.AppImage dist/*.deb > dist/SHA256SUMS.txt
+      - name: Upload installer artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: SCALA-CUT-PRO-NATIVE-LINUX
+          path: |
+            dist/*.AppImage
+            dist/*.deb
+            dist/SHA256SUMS.txt
+          if-no-files-found: error
