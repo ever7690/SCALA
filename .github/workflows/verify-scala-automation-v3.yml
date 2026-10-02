@@ -16,7 +16,7 @@ jobs:
       - name: Checkout validation payload
         uses: actions/checkout@v4
 
-      - name: Reconstruct exact V3 package
+      - name: Reconstruct V3 package and apply runtime fix
         shell: bash
         run: |
           set -euo pipefail
@@ -24,10 +24,11 @@ jobs:
               ci/v3/part01.b64 ci/v3/part02.b64 ci/v3/part03.b64 \
               ci/v3/part04.b64 ci/v3/part05.b64 ci/v3/part06.b64 ci/v3/part07.b64 \
               > /tmp/scala-v3.b64
-          base64 -d /tmp/scala-v3.b64 > /tmp/SCALA-AUTOMATION-PRO-V3.zip
-          echo "f92235869e61e193ca5d26d2a6816585747474ed927023666ce1f7ceebdd42e5  /tmp/SCALA-AUTOMATION-PRO-V3.zip" | sha256sum -c -
-          unzip -q /tmp/SCALA-AUTOMATION-PRO-V3.zip -d /tmp/scala-v3
+          base64 -d /tmp/scala-v3.b64 > /tmp/SCALA-AUTOMATION-PRO-V3-base.zip
+          echo "f92235869e61e193ca5d26d2a6816585747474ed927023666ce1f7ceebdd42e5  /tmp/SCALA-AUTOMATION-PRO-V3-base.zip" | sha256sum -c -
+          unzip -q /tmp/SCALA-AUTOMATION-PRO-V3-base.zip -d /tmp/scala-v3
           test -f /tmp/scala-v3/SCALA-AUTOMATION-PRO-V3/docker-compose.yml
+          cp ci/v3/overrides/application.properties /tmp/scala-v3/SCALA-AUTOMATION-PRO-V3/routes/application.properties
 
       - name: Static and unit validation
         shell: bash
@@ -104,6 +105,21 @@ jobs:
           ./VERIFICAR.sh | tee /tmp/scala-v3-verification.txt
           grep -Fxq 'SCALA_AUTOMATION_PRO=VERIFICADO' /tmp/scala-v3-verification.txt
 
+      - name: Package exact verified V3
+        if: success()
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -f /tmp/scala-v3/SCALA-AUTOMATION-PRO-V3/.env
+          rm -f /tmp/scala-v3/SCALA-AUTOMATION-PRO-V3/config/secrets.json
+          rm -f /tmp/scala-v3/SCALA-AUTOMATION-PRO-V3/config/workflows.json
+          rm -f /tmp/scala-v3/SCALA-AUTOMATION-PRO-V3/config/hooks.json
+          rm -f /tmp/scala-v3/SCALA-AUTOMATION-PRO-V3/config/schedules.json
+          find /tmp/scala-v3/SCALA-AUTOMATION-PRO-V3/data -type f ! -name '.gitkeep' -delete || true
+          cd /tmp/scala-v3
+          zip -qr /tmp/SCALA-AUTOMATION-PRO-V3-VERIFICADO.zip SCALA-AUTOMATION-PRO-V3
+          sha256sum /tmp/SCALA-AUTOMATION-PRO-V3-VERIFICADO.zip > /tmp/SCALA-AUTOMATION-PRO-V3-VERIFICADO.zip.sha256
+
       - name: Collect diagnostics
         if: always()
         shell: bash
@@ -137,4 +153,15 @@ jobs:
             /tmp/scala-v3-verification.txt
             /tmp/scala-v3-diagnostics.txt
           if-no-files-found: ignore
+          retention-days: 30
+
+      - name: Upload verified package
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: SCALA-AUTOMATION-PRO-V3-VERIFICADO
+          path: |
+            /tmp/SCALA-AUTOMATION-PRO-V3-VERIFICADO.zip
+            /tmp/SCALA-AUTOMATION-PRO-V3-VERIFICADO.zip.sha256
+          if-no-files-found: error
           retention-days: 30
