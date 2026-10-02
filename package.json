@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start": "electron .",
-    "smoke": "electron . --smoke-test",
+    "smoke": "electron . --smoke-test --no-sandbox",
     "test": "node test/model.test.cjs && node test/render-test.cjs",
     "dist": "electron-builder --linux AppImage deb"
   },
