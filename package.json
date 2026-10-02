@@ -45,7 +45,6 @@
       "category": "AudioVideo",
       "artifactName": "SCALA-CUT-PRO-${version}-${arch}.${ext}",
       "maintainer": "SCALA <software@scala.local>",
-      "desktopName": "SCALA CUT PRO",
       "synopsis": "Editor de video SCALA CUT PRO"
     }
   }
