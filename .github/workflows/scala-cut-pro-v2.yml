@@ -50,6 +50,11 @@ jobs:
           s=p.read_text().replace('aria-label="OpenReel"', 'aria-label="SCALA CUT PRO"')
           p.write_text(s)
 
+          # Keep the upstream UI test aligned with the intentional SCALA branding.
+          p=root/'apps/web/src/desktop/DesktopApp.test.tsx'
+          if p.exists():
+              p.write_text(p.read_text().replace('"OpenReel"', '"SCALA CUT PRO"'))
+
           # Package identity. Internal @openreel workspace names are intentionally
           # preserved so the tested architecture is not broken.
           p=root/'apps/desktop/electron-builder.yml'
