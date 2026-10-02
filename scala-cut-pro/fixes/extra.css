@@ -1,0 +1,15 @@
+
+.field {
+  width: 100%;
+  background: #151922;
+  border: 1px solid #2a3240;
+  border-radius: 0.6rem;
+  padding: 0.55rem 0.7rem;
+  color: #e5e7eb;
+  font-size: 0.875rem;
+  outline: none;
+}
+.field:focus {
+  border-color: #22d3ee;
+  box-shadow: 0 0 0 2px rgba(34,211,238,.12);
+}
