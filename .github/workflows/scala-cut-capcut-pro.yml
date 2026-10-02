@@ -69,7 +69,7 @@ jobs:
 
       - name: Package unpacked Linux application
         working-directory: app
-        run: npx electron-builder --linux dir --x64
+        run: npx electron-builder --linux dir --x64 --publish never
 
       - name: GUI launch smoke test under Xvfb
         working-directory: app
@@ -87,7 +87,7 @@ jobs:
 
       - name: Build portable AppImage
         working-directory: app
-        run: npx electron-builder --linux AppImage --x64
+        run: npx electron-builder --linux AppImage --x64 --publish never
 
       - name: Verify artifact
         working-directory: app
