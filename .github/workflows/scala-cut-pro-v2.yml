@@ -1,0 +1,311 @@
+name: Build SCALA CUT PRO V2
+
+on:
+  push:
+    branches: [scala-cut-pro-v2]
+
+permissions:
+  contents: read
+
+jobs:
+  build-web:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout SCALA control repo
+        uses: actions/checkout@v4
+
+      - name: Clone verified editor base
+        run: |
+          git clone https://github.com/Augani/openreel-video.git upstream
+          cd upstream
+          git checkout 2dac9a6bbfcf5c4d9883a839f981732ea6519d92
+          echo "UPSTREAM_COMMIT=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+
+      - name: Apply SCALA identity and privacy-safe defaults
+        shell: bash
+        run: |
+          cd upstream
+          python3 - <<'PY'
+          from pathlib import Path
+          import json, struct, zlib, math
+
+          root=Path('.')
+
+          # Browser identity
+          p=root/'apps/web/index.html'
+          s=p.read_text()
+          s=s.replace('<title>OpenReel Video - Professional Video Editor</title>',
+                      '<title>SCALA CUT PRO - Editor de Video</title>')
+          s=s.replace('Professional browser-based video, audio, and photo editing application',
+                      'SCALA CUT PRO - editor profesional de video, audio e imagenes')
+          p.write_text(s)
+
+          # Visible desktop branding
+          p=root/'apps/web/src/desktop/shell/DesktopTitleBar.tsx'
+          s=p.read_text().replace('>OpenReel</span>', '>SCALA CUT PRO</span>')
+          p.write_text(s)
+
+          p=root/'apps/web/src/desktop/brand/OpenReelMark.tsx'
+          s=p.read_text().replace('aria-label="OpenReel"', 'aria-label="SCALA CUT PRO"')
+          p.write_text(s)
+
+          # Package identity. Internal @openreel workspace names are intentionally
+          # preserved so the tested architecture is not broken.
+          p=root/'apps/desktop/electron-builder.yml'
+          s=p.read_text()
+          s=s.replace('appId: video.openreel.desktop', 'appId: pro.scalacut.desktop')
+          s=s.replace('productName: OpenReel', 'productName: SCALA CUT PRO')
+          s=s.replace('artifactName: ${productName}-${version}-${arch}.${ext}',
+                      'artifactName: SCALA-CUT-PRO-${version}-${arch}.${ext}')
+          s=s.replace('url: https://dl.openreel.video', 'url: https://updates.invalid/scala-cut-pro')
+          p.write_text(s)
+
+          p=root/'apps/desktop/package.json'
+          data=json.loads(p.read_text())
+          data['description']='SCALA CUT PRO - editor profesional de video'
+          data['homepage']='https://github.com/ever7690/SCALA'
+          data['author']={'name':'SCALA'}
+          p.write_text(json.dumps(data,indent=2,ensure_ascii=False)+'\n')
+
+          # Disable upstream auto-updater. Builds remain fully local and do not
+          # contact the upstream update feed.
+          p=root/'apps/desktop/src/main/index.ts'
+          s=p.read_text()
+          s=s.replace('import { initAutoUpdater } from "./updater";\n','')
+          s=s.replace('  initAutoUpdater();\n','')
+          p.write_text(s)
+
+          # SCALA favicon/logo: original geometric mark, no third-party trademark.
+          svg='''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+          <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#7c3aed"/><stop offset="1" stop-color="#06b6d4"/></linearGradient></defs>
+          <rect width="128" height="128" rx="28" fill="#0b0b12"/>
+          <path d="M31 38c8-12 20-18 36-18 13 0 25 4 34 13l-12 14c-6-6-13-9-22-9-8 0-14 2-18 7-3 4-1 8 5 10l24 7c17 5 24 15 21 29-3 16-17 27-39 27-17 0-31-6-42-18l13-15c8 9 18 14 30 14 10 0 17-3 20-8 2-5 0-8-7-10l-25-7C31 69 24 55 31 38z" fill="url(#g)"/>
+          <path d="M82 49l25 15-25 15z" fill="#fff" opacity=".92"/>
+          </svg>'''
+          (root/'apps/web/public/favicon.svg').write_text(svg)
+
+          # Tiny dependency-free PNG writer for Electron icon.
+          W=H=512
+          raw=bytearray()
+          for y in range(H):
+              raw.append(0)
+              for x in range(W):
+                  # rounded-ish dark tile + diagonal cyan/purple glow
+                  dx=min(x,W-1-x); dy=min(y,H-1-y)
+                  inside=(dx>42 and dy>42) or ((dx-42)**2+(dy-42)**2<42**2)
+                  if not inside:
+                      r=g=b=0; a=0
+                  else:
+                      t=(x+y)/(W+H-2)
+                      glow=max(0,1-math.hypot(x-270,y-250)/320)
+                      r=int(12 + (124*(1-t)+6*t)*glow)
+                      g=int(12 + (58*(1-t)+182*t)*glow)
+                      b=int(20 + (237*(1-t)+212*t)*glow)
+                      a=255
+                  raw += bytes((r,g,b,a))
+          def chunk(tag,data):
+              return struct.pack('>I',len(data))+tag+data+struct.pack('>I',zlib.crc32(tag+data)&0xffffffff)
+          png=b'\x89PNG\r\n\x1a\n'+chunk(b'IHDR',struct.pack('>IIBBBBB',W,H,8,6,0,0,0))+chunk(b'IDAT',zlib.compress(bytes(raw),9))+chunk(b'IEND',b'')
+          (root/'apps/desktop/build/icon.png').write_bytes(png)
+
+          # User-facing build note
+          (root/'SCALA-CUT-PRO.txt').write_text(
+              'SCALA CUT PRO V2\n'
+              'Base tecnica: OpenReel Video (MIT), commit 2dac9a6bbfcf5c4d9883a839f981732ea6519d92.\n'
+              'Identidad visual y distribucion: SCALA.\n'
+              'Incluye timeline multipista, importacion de video/audio/imagenes, texto, subtitulos, efectos, transiciones, audio, keyframes y exportacion.\n'
+          )
+          PY
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11.7.0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+          cache-dependency-path: upstream/pnpm-lock.yaml
+
+      - name: Install dependencies
+        working-directory: upstream
+        run: pnpm install --frozen-lockfile
+
+      - name: Verify core media engine
+        working-directory: upstream
+        run: pnpm --filter @openreel/core test:run
+
+      - name: Verify editor UI and timeline
+        working-directory: upstream
+        run: pnpm --filter @openreel/web test:run
+
+      - name: Typecheck editor
+        working-directory: upstream
+        run: pnpm --filter @openreel/web typecheck
+
+      - name: Build production editor
+        working-directory: upstream
+        run: pnpm build
+
+      - name: Create no-install local launcher
+        working-directory: upstream
+        shell: bash
+        run: |
+          mkdir -p SCALA-CUT-PRO-WEB
+          cp -a apps/web/dist/. SCALA-CUT-PRO-WEB/
+          cp LICENSE SCALA-CUT-PRO-WEB/LICENSE-UPSTREAM-MIT.txt
+          cp SCALA-CUT-PRO.txt SCALA-CUT-PRO-WEB/LEEME.txt
+
+          cat > SCALA-CUT-PRO-WEB/INICIAR_SCALA_CUT_PRO.py <<'PY'
+          #!/usr/bin/env python3
+          from http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler
+          import os, webbrowser, threading
+          from pathlib import Path
+
+          ROOT=Path(__file__).resolve().parent
+          os.chdir(ROOT)
+
+          class H(SimpleHTTPRequestHandler):
+              def end_headers(self):
+                  self.send_header("Cross-Origin-Opener-Policy","same-origin")
+                  self.send_header("Cross-Origin-Embedder-Policy","require-corp")
+                  self.send_header("Cross-Origin-Resource-Policy","cross-origin")
+                  self.send_header("Cache-Control","no-cache")
+                  super().end_headers()
+              def log_message(self, fmt, *args):
+                  pass
+
+          server=ThreadingHTTPServer(("127.0.0.1",8765),H)
+          url="http://127.0.0.1:8765"
+          print("SCALA CUT PRO ONLINE:",url)
+          threading.Timer(1.0,lambda:webbrowser.open(url)).start()
+          try:
+              server.serve_forever()
+          except KeyboardInterrupt:
+              pass
+          PY
+          chmod +x SCALA-CUT-PRO-WEB/INICIAR_SCALA_CUT_PRO.py
+          cat > SCALA-CUT-PRO-WEB/INICIAR_SCALA_CUT_PRO.sh <<'SH'
+          #!/usr/bin/env bash
+          set -e
+          cd "$(dirname "$0")"
+          exec python3 ./INICIAR_SCALA_CUT_PRO.py
+          SH
+          chmod +x SCALA-CUT-PRO-WEB/INICIAR_SCALA_CUT_PRO.sh
+          tar -czf SCALA-CUT-PRO-V2-WEB-LINUX.tar.gz SCALA-CUT-PRO-WEB
+
+      - name: Smoke test production bundle
+        working-directory: upstream
+        shell: bash
+        run: |
+          cd SCALA-CUT-PRO-WEB
+          python3 ./INICIAR_SCALA_CUT_PRO.py > /tmp/scala-cut.log 2>&1 &
+          PID=$!
+          trap 'kill $PID || true' EXIT
+          for i in {1..30}; do
+            if curl -fsS http://127.0.0.1:8765/ >/tmp/home.html; then break; fi
+            sleep 1
+          done
+          grep -q "root" /tmp/home.html
+          curl -fsSI http://127.0.0.1:8765/ | grep -qi "Cross-Origin-Opener-Policy: same-origin"
+          echo "SCALA_CUT_PRO_WEB_SMOKE=PASS"
+
+      - name: Write verification report
+        working-directory: upstream
+        run: |
+          {
+            echo "SCALA CUT PRO V2 - VALIDACION"
+            echo "UPSTREAM_COMMIT=$UPSTREAM_COMMIT"
+            echo "CORE_TESTS=PASS"
+            echo "EDITOR_TESTS=PASS"
+            echo "TYPECHECK=PASS"
+            echo "PRODUCTION_BUILD=PASS"
+            echo "LOCAL_SERVER_SMOKE=PASS"
+          } > SCALA-CUT-PRO-VERIFICACION.txt
+
+      - name: Upload no-install editor
+        uses: actions/upload-artifact@v4
+        with:
+          name: SCALA-CUT-PRO-V2-WEB-LINUX
+          path: |
+            upstream/SCALA-CUT-PRO-V2-WEB-LINUX.tar.gz
+            upstream/SCALA-CUT-PRO-VERIFICACION.txt
+          retention-days: 30
+
+  build-linux-desktop:
+    needs: build-web
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Clone and brand source
+        run: |
+          git clone https://github.com/Augani/openreel-video.git upstream
+          cd upstream
+          git checkout 2dac9a6bbfcf5c4d9883a839f981732ea6519d92
+          python3 - <<'PY'
+          from pathlib import Path
+          import json
+          p=Path('apps/web/index.html')
+          s=p.read_text().replace('<title>OpenReel Video - Professional Video Editor</title>','<title>SCALA CUT PRO - Editor de Video</title>')
+          p.write_text(s)
+          p=Path('apps/web/src/desktop/shell/DesktopTitleBar.tsx')
+          p.write_text(p.read_text().replace('>OpenReel</span>','>SCALA CUT PRO</span>'))
+          p=Path('apps/web/src/desktop/brand/OpenReelMark.tsx')
+          p.write_text(p.read_text().replace('aria-label="OpenReel"','aria-label="SCALA CUT PRO"'))
+          p=Path('apps/desktop/electron-builder.yml')
+          s=p.read_text().replace('appId: video.openreel.desktop','appId: pro.scalacut.desktop').replace('productName: OpenReel','productName: SCALA CUT PRO').replace('artifactName: ${productName}-${version}-${arch}.${ext}','artifactName: SCALA-CUT-PRO-${version}-${arch}.${ext}').replace('url: https://dl.openreel.video','url: https://updates.invalid/scala-cut-pro')
+          p.write_text(s)
+          p=Path('apps/desktop/src/main/index.ts')
+          s=p.read_text().replace('import { initAutoUpdater } from "./updater";\n','').replace('  initAutoUpdater();\n','')
+          p.write_text(s)
+          data=json.loads(Path('apps/desktop/package.json').read_text())
+          data['description']='SCALA CUT PRO - editor profesional de video'
+          data['homepage']='https://github.com/ever7690/SCALA'
+          data['author']={'name':'SCALA'}
+          Path('apps/desktop/package.json').write_text(json.dumps(data,indent=2)+'\n')
+          PY
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.7.0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+          cache-dependency-path: upstream/pnpm-lock.yaml
+
+      - name: Install Linux packaging dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libfuse2 rpm
+
+      - name: Install project dependencies
+        working-directory: upstream
+        run: pnpm install --frozen-lockfile
+
+      - name: Verify desktop process
+        working-directory: upstream
+        run: |
+          pnpm --filter @openreel/desktop test:run
+          pnpm --filter @openreel/desktop typecheck
+
+      - name: Build Linux AppImage and deb
+        working-directory: upstream/apps/desktop
+        env:
+          CSC_IDENTITY_AUTO_DISCOVERY: "false"
+        run: pnpm dist --linux --x64 --publish never
+
+      - name: Upload Linux desktop packages
+        uses: actions/upload-artifact@v4
+        with:
+          name: SCALA-CUT-PRO-V2-DESKTOP-LINUX
+          path: upstream/apps/desktop/release/*
+          retention-days: 30
