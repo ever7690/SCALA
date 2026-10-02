@@ -1,0 +1,43 @@
+{
+  "name": "scala-cut-pro",
+  "version": "0.1.0",
+  "description": "SCALA CUT PRO - editor de video de escritorio",
+  "main": "main.cjs",
+  "author": "SCALA",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "smoke": "electron . --smoke-test",
+    "test": "node test/model.test.cjs && node test/render-test.cjs",
+    "dist": "electron-builder --linux AppImage deb"
+  },
+  "devDependencies": {
+    "electron": "^35.7.5",
+    "electron-builder": "^26.0.12"
+  },
+  "dependencies": {
+    "ffmpeg-static": "^5.2.0",
+    "ffprobe-static": "^3.1.0"
+  },
+  "build": {
+    "appId": "com.scala.cutpro",
+    "productName": "SCALA CUT PRO",
+    "asar": true,
+    "asarUnpack": [
+      "node_modules/ffmpeg-static/**",
+      "node_modules/ffprobe-static/**"
+    ],
+    "files": [
+      "main.cjs",
+      "preload.cjs",
+      "lib/**/*",
+      "src/**/*",
+      "package.json"
+    ],
+    "linux": {
+      "target": ["AppImage", "deb"],
+      "category": "AudioVideo",
+      "artifactName": "SCALA-CUT-PRO-${version}-${arch}.${ext}"
+    }
+  }
+}
