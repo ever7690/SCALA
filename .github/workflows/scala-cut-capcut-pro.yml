@@ -32,12 +32,16 @@ jobs:
           git clone --depth 1 https://github.com/ruelhcepeda/rhces-video-editor.git app
           echo "UPSTREAM_SHA=$(git -C app rev-parse HEAD)" >> "$GITHUB_ENV"
 
-      - name: Apply SCALA CUT PRO overlay
+      - name: Apply SCALA CUT PRO overlay and export fixes
         run: |
           cp -R scala-cut-pro/overlay/. app/
-          cp scala-cut-pro/tests/core-smoke.ts app/core-smoke.ts
-          sed -i "s#../electron/ffmpeg#./electron/ffmpeg#" app/core-smoke.ts
-          sed -i "s#../shared/ipc#./shared/ipc#" app/core-smoke.ts
+          cp scala-cut-pro/fixes/shared/ipc.ts app/shared/ipc.ts
+          cp scala-cut-pro/fixes/electron/preload.ts app/electron/preload.ts
+          cp scala-cut-pro/fixes/electron/main.ts app/electron/main.ts
+          cp scala-cut-pro/fixes/electron/filtergraph.ts app/electron/filtergraph.ts
+          cp scala-cut-pro/fixes/src/components/ExportDialog.tsx app/src/components/ExportDialog.tsx
+          cat scala-cut-pro/fixes/extra.css >> app/src/index.css
+          cp scala-cut-pro/fixes/tests/core-smoke.ts app/core-smoke.ts
           node scala-cut-pro/apply-customization.mjs app
 
       - name: Install dependencies
@@ -52,13 +56,14 @@ jobs:
         working-directory: app
         run: npm run build
 
-      - name: Real media import + thumbnail + MP4 export smoke test
+      - name: Real media import + thumbnail + styled-text MP4 export smoke test
         working-directory: app
         run: |
           npx esbuild core-smoke.ts --bundle --platform=node --target=node20 --format=cjs --outfile=core-smoke.cjs --external:ffmpeg-static --external:ffprobe-static
           node core-smoke.cjs | tee core-smoke.log
           grep -q 'IMPORT_PROBE=PASS' core-smoke.log
           grep -q 'THUMBNAIL=PASS' core-smoke.log
+          grep -q 'TEXT_RASTER_PIPELINE=PASS' core-smoke.log
           grep -q 'MP4_EXPORT=PASS' core-smoke.log
 
       - name: Package unpacked Linux application
@@ -102,6 +107,7 @@ jobs:
           TypeScript: PASS
           Media probe/import core: PASS
           Thumbnail generation: PASS
+          Portable styled-text raster pipeline: PASS
           MP4 export with video+audio+text: PASS
           Electron GUI launch under Xvfb: PASS
           AppImage package: PASS
