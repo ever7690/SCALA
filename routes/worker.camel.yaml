@@ -1,0 +1,116 @@
+- errorHandler:
+    deadLetterChannel:
+      deadLetterUri: "direct:scala-failed"
+      useOriginalMessage: true
+      redeliveryPolicy:
+        maximumRedeliveries: 5
+        redeliveryDelay: "2000"
+        useExponentialBackOff: true
+        backOffMultiplier: 2.0
+        maximumRedeliveryDelay: "30000"
+
+- route:
+    id: scala-action-worker
+    from:
+      uri: "amqp:queue:scala.jobs"
+      parameters:
+        concurrentConsumers: 5
+        maxConcurrentConsumers: 10
+        transacted: true
+      steps:
+        - convertBodyTo:
+            type: java.lang.String
+        - setProperty:
+            name: scalaOriginalBody
+            expression:
+              simple:
+                expression: "${body}"
+        - setBody:
+            expression:
+              simple:
+                expression: '{"jobId":"${header.scalaJobId}","type":"${header.scalaJobType}","status":"RUNNING","submittedAt":"${header.scalaSubmittedAt}","startedAt":"${date:now:yyyy-MM-dd-T-HH:mm:ss.SSSXXX}"}'
+        - toD:
+            uri: "file:/data/jobs?fileName=${header.scalaJobId}.json&fileExist=Override"
+        - setBody:
+            expression:
+              simple:
+                expression: '{"jobId":"${header.scalaJobId}","type":"${header.scalaJobType}","payload":${exchangeProperty.scalaOriginalBody}}'
+        - removeHeaders:
+            pattern: "CamelHttp*"
+        - setHeader:
+            name: CamelHttpMethod
+            expression:
+              constant:
+                expression: "POST"
+        - setHeader:
+            name: Content-Type
+            expression:
+              constant:
+                expression: "application/json"
+        - to:
+            uri: "http://action-engine:8082/execute"
+            parameters:
+              throwExceptionOnFailure: true
+              connectTimeout: 5000
+              responseTimeout: 180000
+        - convertBodyTo:
+            type: java.lang.String
+        - setProperty:
+            name: scalaResultBody
+            expression:
+              simple:
+                expression: "${body}"
+        - setHeader:
+            name: scalaCompletedAt
+            expression:
+              simple:
+                expression: "${date:now:yyyy-MM-dd-T-HH:mm:ss.SSSXXX}"
+        - toD:
+            uri: "file:/data/results?fileName=${header.scalaJobId}.json&fileExist=Override"
+        - setBody:
+            expression:
+              simple:
+                expression: '{"jobId":"${header.scalaJobId}","type":"${header.scalaJobType}","status":"COMPLETED","submittedAt":"${header.scalaSubmittedAt}","completedAt":"${header.scalaCompletedAt}"}'
+        - toD:
+            uri: "file:/data/jobs?fileName=${header.scalaJobId}.json&fileExist=Override"
+        - setBody:
+            expression:
+              simple:
+                expression: "${exchangeProperty.scalaResultBody}"
+        - log:
+            message: "SCALA job ${header.scalaJobId} COMPLETED"
+
+- route:
+    id: scala-failed-handler
+    from:
+      uri: "direct:scala-failed"
+      steps:
+        - setProperty:
+            name: scalaFailedOriginalBody
+            expression:
+              simple:
+                expression: "${body}"
+        - setBody:
+            expression:
+              simple:
+                expression: "${exchangeProperty.CamelExceptionCaught}"
+        - toD:
+            uri: "file:/data/failed?fileName=${header.scalaJobId}.txt&fileExist=Override"
+        - setBody:
+            expression:
+              simple:
+                expression: '{"jobId":"${header.scalaJobId}","type":"${header.scalaJobType}","status":"FAILED","submittedAt":"${header.scalaSubmittedAt}","failedAt":"${date:now:yyyy-MM-dd-T-HH:mm:ss.SSSXXX}"}'
+        - toD:
+            uri: "file:/data/jobs?fileName=${header.scalaJobId}.json&fileExist=Override"
+        - setBody:
+            expression:
+              simple:
+                expression: "${exchangeProperty.scalaFailedOriginalBody}"
+        - to:
+            uri: "amqp:queue:scala.failed"
+            pattern: InOnly
+            parameters:
+              deliveryPersistent: true
+        - log:
+            message: "SCALA job ${header.scalaJobId} FAILED after redelivery policy"
+            loggingLevel: ERROR
