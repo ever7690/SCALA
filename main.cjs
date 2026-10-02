@@ -9,6 +9,7 @@ function unpacked(p) { return p ? p.replace("app.asar", "app.asar.unpacked") : p
 const ffprobePath = unpacked(require("ffprobe-static").path);
 let mainWindow;
 const smoke = process.argv.includes("--smoke-test");
+if (smoke) app.disableHardwareAcceleration();
 
 function createWindow() {
   mainWindow = new BrowserWindow({
