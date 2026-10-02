@@ -106,7 +106,19 @@ ipcMain.handle("project:load", async () => {
   return JSON.parse(fs.readFileSync(r.filePaths[0],"utf8"));
 });
 
-ipcMain.on("renderer:ready", () => {
-  if (smoke) setTimeout(() => app.exit(0), 300);
+ipcMain.on("renderer:ready", async () => {
+  if (!smoke) return;
+  try {
+    const target = process.env.SCALA_SMOKE_SCREENSHOT;
+    if (target && mainWindow) {
+      await new Promise(r => setTimeout(r, 800));
+      const image = await mainWindow.webContents.capturePage();
+      fs.writeFileSync(path.resolve(process.cwd(), target), image.toPNG());
+    }
+    setTimeout(() => app.exit(0), 200);
+  } catch (e) {
+    console.error("SMOKE_SCREENSHOT_ERROR", e);
+    app.exit(3);
+  }
 });
 if (smoke) setTimeout(() => app.exit(2), 15000);
