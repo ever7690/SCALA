@@ -1,0 +1,103 @@
+name: ASHER CALA OS Builder Cloud Test
+
+on:
+  push:
+    paths:
+      - 'tools/SCALA_CREAR_ASHER_CALA_OS_v1.3_FINAL.sh'
+      - '.github/workflows/asher-cala-os-builder-test.yml'
+  workflow_dispatch:
+
+jobs:
+  validate-builder:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install test tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq wimtools xorriso shellcheck
+
+      - name: Bash syntax
+        run: |
+          bash -n tools/SCALA_CREAR_ASHER_CALA_OS_v1.3_FINAL.sh
+          shellcheck -e SC2016,SC2034,SC2155,SC2317 tools/SCALA_CREAR_ASHER_CALA_OS_v1.3_FINAL.sh
+
+      - name: Test readonly solid ESD conversion update and repack
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          T="$RUNNER_TEMP/asher-test"
+          mkdir -p "$T/root/Windows/Setup/Scripts" "$T/root/Users/Default" "$T/payload/SCALA"
+          printf 'Windows test payload\n' > "$T/root/Windows/System32-test.txt"
+          dd if=/dev/zero of="$T/root/large.bin" bs=1M count=8 status=none
+
+          wimlib-imagex capture "$T/root" "$T/base.wim" "Windows Test" --compress=LZX --check
+          wimlib-imagex export "$T/base.wim" all "$T/base.esd" --compress=LZMS:100 --solid --check
+          wimlib-imagex verify "$T/base.esd"
+
+          chmod 444 "$T/base.esd"
+          wimlib-imagex export "$T/base.esd" all "$T/work.wim" --compress=LZX --check
+          chmod u+rw "$T/work.wim"
+
+          printf 'SCALA cloud test\n' > "$T/payload/SCALA/DEDICATORIA.txt"
+          printf '@echo off\r\nexit /b 0\r\n' > "$T/SetupComplete.cmd"
+          cat > "$T/update.txt" <<EOF
+          add "$T/payload/SCALA" /SCALA
+          add "$T/SetupComplete.cmd" /Windows/Setup/Scripts/SetupComplete.cmd
+          EOF
+
+          wimlib-imagex update "$T/work.wim" 1 --check < "$T/update.txt"
+          wimlib-imagex verify "$T/work.wim"
+          wimlib-imagex dir "$T/work.wim" 1 --path=/SCALA/DEDICATORIA.txt
+          wimlib-imagex dir "$T/work.wim" 1 --path=/Windows/Setup/Scripts/SetupComplete.cmd
+
+          wimlib-imagex export "$T/work.wim" all "$T/final.esd" --compress=LZMS:100 --solid --check
+          wimlib-imagex verify "$T/final.esd"
+          wimlib-imagex dir "$T/final.esd" 1 --path=/SCALA/DEDICATORIA.txt
+          wimlib-imagex dir "$T/final.esd" 1 --path=/Windows/Setup/Scripts/SetupComplete.cmd
+
+      - name: Test padded ESD remains valid
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          T="$RUNNER_TEMP/asher-test"
+          ACTUAL="$(stat -c '%s' "$T/final.esd")"
+          TARGET=$((ACTUAL + 1048576))
+          cp "$T/final.esd" "$T/final-padded.esd"
+          truncate -s "$TARGET" "$T/final-padded.esd"
+          test "$(stat -c '%s' "$T/final-padded.esd")" -eq "$TARGET"
+          wimlib-imagex verify "$T/final-padded.esd"
+          wimlib-imagex dir "$T/final-padded.esd" 1 --path=/SCALA/DEDICATORIA.txt
+
+      - name: Test in-place extent replacement preserves everything else
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          T="$RUNNER_TEMP/asher-test"
+          PAYLOAD="$T/final-padded.esd"
+          PSIZE="$(stat -c '%s' "$PAYLOAD")"
+          OFFSET=1048576
+          TOTAL=$((OFFSET + PSIZE + 1048576))
+
+          truncate -s "$TOTAL" "$T/source.iso"
+          printf 'SCALA-PREFIX' | dd of="$T/source.iso" bs=1 seek=123 conv=notrunc status=none
+          printf 'SCALA-SUFFIX' | dd of="$T/source.iso" bs=1 seek=$((OFFSET + PSIZE + 123)) conv=notrunc status=none
+          cp "$T/source.iso" "$T/output.iso"
+
+          dd if="$PAYLOAD" of="$T/output.iso" bs=16M seek="$OFFSET" oflag=seek_bytes conv=notrunc status=none
+
+          cmp -n "$OFFSET" "$T/source.iso" "$T/output.iso"
+          END=$((OFFSET + PSIZE))
+          cmp -i "$END:$END" "$T/source.iso" "$T/output.iso"
+
+          dd if="$T/output.iso" of="$T/reextracted.esd" bs=16M skip="$OFFSET" count="$PSIZE" iflag=skip_bytes,count_bytes status=none
+          cmp "$PAYLOAD" "$T/reextracted.esd"
+          wimlib-imagex verify "$T/reextracted.esd"
+
+      - name: Result
+        run: |
+          echo "ASHER CALA OS BUILDER CLOUD TEST: PASS"
