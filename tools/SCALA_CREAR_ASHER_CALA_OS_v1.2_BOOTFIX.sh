@@ -19,6 +19,9 @@ fail() {
 
 cleanup_on_fail() {
   rc=$?
+  if command -v mountpoint >/dev/null 2>&1 && mountpoint -q "$WORK/udf-mount" 2>/dev/null; then
+    sudo umount "$WORK/udf-mount" 2>/dev/null || true
+  fi
   if [ "$rc" -ne 0 ]; then
     echo
     echo "Proceso detenido. La ISO final NO se marca como valida."
@@ -315,11 +318,14 @@ sync
 START=$((LBA * 2048))
 END=$((START + ISO_ESD_SIZE))
 cmp -n "$START" "$SRC" "$OUT.tmp" >/dev/null || fail "Se alteraron bytes antes de install.esd."
-cmp -i "$END:$END" "$SRC" "$OUT.tmp" >/dev/null || fail "Se alteraron bytes despues de install.esd."
+cmp -i "$END:$END" "$SRC" "$OUT.tmp" >/dev/null || fail "Se alteraron bytes despues de la imagen Windows."
 echo "ESTRUCTURA EXTERNA: IDENTICA"
 
+# Ya estan escritos dentro de la ISO. Liberamos espacio antes de la validacion final.
+rm -f "$PADDED" "$ESD"
+
 echo
-echo "[11/12] Validando BIOS/UEFI/El Torito y ESD final..."
+echo "[11/12] Validando BIOS/UEFI/El Torito, ISO9660 y UDF..."
 xorriso -indev "$SRC" -report_el_torito plain 2>/dev/null | sed '/^xorriso/d;/^Drive current/d;/^Media current/d;/^Media status/d;/^Media summary/d' > "$ELT_SRC"
 xorriso -indev "$OUT.tmp" -report_el_torito plain 2>/dev/null | sed '/^xorriso/d;/^Drive current/d;/^Media current/d;/^Media status/d;/^Media summary/d' > "$ELT_OUT"
 cmp "$ELT_SRC" "$ELT_OUT" >/dev/null || fail "La configuracion El Torito no coincide con la original."
@@ -333,6 +339,23 @@ for i in $(seq 1 "$IMAGE_COUNT"); do
   wimlib-imagex dir "$CHECK_ESD" "$i" --path=/SCALA/DEDICATORIA.txt >/dev/null
   wimlib-imagex dir "$CHECK_ESD" "$i" --path=/Windows/Setup/Scripts/SetupComplete.cmd >/dev/null
 done
+
+# Verificacion REAL de la vista UDF, que es critica para Windows/Ventoy.
+UDF_MNT="$WORK/udf-mount"
+mkdir -p "$UDF_MNT"
+sudo mount -t udf -o loop,ro "$OUT.tmp" "$UDF_MNT" 2>/dev/null || fail "La ISO final no pudo montarse como UDF."
+
+UDF_INSTALL="$(find "$UDF_MNT" -maxdepth 3 -type f \( -iname 'install.esd' -o -iname 'install.wim' \) -print | grep -i '/sources/' | head -n1 || true)"
+[ -n "$UDF_INSTALL" ] || fail "UDF no expone install.esd/install.wim en SOURCES."
+
+wimlib-imagex verify "$UDF_INSTALL" >/dev/null
+for i in $(seq 1 "$IMAGE_COUNT"); do
+  wimlib-imagex dir "$UDF_INSTALL" "$i" --path=/SCALA/DEDICATORIA.txt >/dev/null
+  wimlib-imagex dir "$UDF_INSTALL" "$i" --path=/Windows/Setup/Scripts/SetupComplete.cmd >/dev/null
+done
+
+sudo umount "$UDF_MNT"
+echo "UDF WINDOWS: OK"
 
 mv "$OUT.tmp" "$OUT"
 
@@ -353,8 +376,10 @@ echo "VALIDACIONES:"
 echo " - MiniOS fuente SHA: OK"
 echo " - UDF/ISO metadata: NO RECONSTRUIDA"
 echo " - BIOS/UEFI/El Torito: IDENTICOS A LA ORIGINAL"
-echo " - Solo install.esd fue sustituido en su MISMO LBA"
-echo " - install.esd: WIM VERIFY OK"
+echo " - ISO9660 fuera de la imagen Windows: IDENTICO"
+echo " - UDF: MONTADO Y VERIFICADO"
+echo " - Imagen Windows sustituida en su MISMO LBA"
+echo " - WIM/ESD: VERIFY OK"
 echo " - SCALA presente en todas las imagenes Windows"
 echo " - SetupComplete presente en todas las imagenes"
 echo "============================================================"
