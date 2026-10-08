@@ -1,0 +1,105 @@
+ASHER CALA OS – HANDOFF PARA CHATGPT WORK
+
+OBJETIVO
+Crear ASHER CALA OS – SCALA Gaming a partir de la ISO funcional:
+MiniOS11 X-24H2 v26.06 x64.iso
+
+PRIORIDAD ABSOLUTA
+Conservar intacto el arranque funcional de MiniOS:
+- BIOS / UEFI
+- El Torito
+- BCD
+- boot.wim
+- bootmgr / bootmgr.efi
+- UDF / ISO9660 fuera de install.esd
+
+NO reconstruir la estructura de arranque.
+NO entregar una ISO hasta que pase validaciones.
+NO quitar la personalización ASHER.
+
+PERSONALIZACIÓN REQUERIDA
+- 5 imágenes ASHER: se conservan sí o sí.
+- Reemplazar wallpapers originales de Windows/MiniOS por las imágenes ASHER, no duplicarlas.
+- Modo oscuro.
+- Game Mode ON.
+- Game DVR OFF.
+- Perfil ligero para equipos de pocos recursos.
+- Alto rendimiento / ajustes gaming conservadores.
+- SCALA Gaming Center.
+- Dedicatoria exacta:
+  “Este sistema operativo va dedicado a mi hijo Asher Cala, con mucho cariño de su padre Ever Nelson Calamontes, a su hijo Asher Cala Quilla.”
+- Mantener audio, red, Bluetooth, Store, Gaming Services, drivers y componentes necesarios para estabilidad.
+
+ARCHIVOS FUENTE
+Buscar primero en Library:
+- ISO_ORIGINAL_SHA256.txt
+- ASHERIMAGENES.tar.gz
+- partes MiniOS11_X_24H2_v26.06_x64.iso.part-000 ... part-008
+
+DATOS VERIFICADOS DE LA ISO ORIGINAL
+SHA-256 ISO original:
+798325928641854d3214e3d565eeb29088288334f66b51d83f907ab0561f6eb1
+
+Tamaño ISO original:
+3,959,740,416 bytes
+
+install.esd:
+- LBA: 303091
+- tamaño: 3,201,322,926 bytes
+- SHA-256:
+  77668ca0242b42056c9458482da61c01469cb8528c14744e20888f476b3c8a69
+
+boot.wim SHA-256:
+2af7f724c3e0ede4b0c8936ce2882c9fdfe9f8dcd9996c6609c919f1b2c4b1e0
+
+HISTORIAL
+v1.1:
+- falló físicamente en Ventoy
+- error: \Windows\system32\boot\winload.exe
+- error code: 0xc000000d
+- causa: se alteró/reconstruyó estructura ISO/UDF
+- ese método queda descartado
+
+v1.2:
+- falló por detección de install.esd y por ESD/WIM de solo lectura
+
+v1.3:
+- método corregido: ESD sólido -> WIM escribible -> integrar SCALA -> ESD LZMS sólido -> reemplazo exacto in-place
+- pruebas de ese método en GitHub Actions: PASS
+
+ÚLTIMO FALLO REAL
+ESD personalizado:
+3,207,553,036 bytes
+
+Límite original:
+3,201,322,926 bytes
+
+Exceso:
+6,230,110 bytes
+
+Este último fallo NO es de arranque; es solo tamaño.
+
+DECISIÓN FINAL
+- NO quitar las 5 imágenes ASHER
+- NO duplicarlas encima de los wallpapers originales
+- reemplazar wallpapers originales por las imágenes ASHER para recuperar espacio
+- si aún faltan unos MB, optimizar el peso de las imágenes ASHER sin eliminarlas
+- no tocar BIOS/UEFI/El Torito/BCD/boot.wim
+
+METODOLOGÍA
+BASE FUNCIONAL -> PRUEBA -> ESTABILIZACIÓN -> PERSONALIZACIÓN -> OPTIMIZACIÓN -> COMPILACIÓN -> PRUEBA FINAL -> ENTREGA
+
+ENTREGA ESPERADA
+- ISO final ASHER CALA OS
+- tamaño final
+- SHA-256 final
+- ESD verificado
+- SCALA presente
+- SetupComplete presente
+- BIOS/UEFI/El Torito iguales a la base
+- bytes fuera de install.esd sin cambios
+- prueba de arranque/instalación en VM si el entorno Work lo permite
+- no llamar “final” a nada antes de pasar pruebas
+
+INSTRUCCIÓN
+Continuar desde aquí sin hacer repetir al usuario toda la historia y sin pedirle que vuelva a subir archivos si ya están disponibles en Library.
