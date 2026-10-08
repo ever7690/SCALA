@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'tools/SCALA_CREAR_ASHER_CALA_OS_v1.3_FINAL.sh'
+      - 'tools/SCALA_RECUPERAR_ASHER_v1.3_FIT.sh'
       - '.github/workflows/asher-cala-os-builder-test.yml'
   workflow_dispatch:
 
@@ -59,6 +60,22 @@ jobs:
           wimlib-imagex verify "$T/final.esd"
           wimlib-imagex dir "$T/final.esd" 1 --path=/SCALA/DEDICATORIA.txt
           wimlib-imagex dir "$T/final.esd" 1 --path=/Windows/Setup/Scripts/SetupComplete.cmd
+
+      - name: Test recovery delete of ASHER images
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          T="$RUNNER_TEMP/asher-test"
+          mkdir -p "$T/imgpayload/ASHERIMAGENES"
+          dd if=/dev/zero of="$T/imgpayload/ASHERIMAGENES/one.bin" bs=1M count=2 status=none
+          cat > "$T/addimg.txt" <<EOF
+          add "$T/imgpayload/ASHERIMAGENES" /SCALA/ASHERIMAGENES
+          EOF
+          wimlib-imagex update "$T/work.wim" 1 --check < "$T/addimg.txt"
+          printf '%s\n' 'delete --recursive --force /SCALA/ASHERIMAGENES' | wimlib-imagex update "$T/work.wim" 1 --check
+          ! wimlib-imagex dir "$T/work.wim" 1 --path=/SCALA/ASHERIMAGENES >/dev/null 2>&1
+          wimlib-imagex dir "$T/work.wim" 1 --path=/SCALA/DEDICATORIA.txt >/dev/null
+          wimlib-imagex verify "$T/work.wim"
 
       - name: Test padded ESD remains valid
         shell: bash
