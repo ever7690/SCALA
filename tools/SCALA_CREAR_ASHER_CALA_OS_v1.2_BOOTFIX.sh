@@ -6,7 +6,7 @@ OUT="$HOME/Descargas/ASHER_CALA_OS_SCALA_GAMING_v1.2_FINAL_BOOTFIX_x64.iso"
 IMGDIR="$HOME/Escritorio/ASHERIMAGENES"
 WORK="$HOME/.cache/scala-asher-v12-bootfix"
 ORIGINAL_SHA="798325928641854d3214e3d565eeb29088288334f66b51d83f907ab0561f6eb1"
-ISO_ESD="/sources/install.esd"
+ISO_INSTALL=""
 
 fail() {
   echo
@@ -50,8 +50,8 @@ echo "ESPACIO: OK"
 
 echo
 echo "[3/12] Instalando/verificando herramientas..."
-sudo apt-get update
-sudo apt-get install -y xorriso wimtools coreutils
+sudo apt-get update -qq
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq xorriso wimtools coreutils
 command -v xorriso >/dev/null || fail "xorriso no disponible."
 command -v wimlib-imagex >/dev/null || fail "wimlib-imagex no disponible."
 
@@ -66,25 +66,35 @@ ELT_SRC="$WORK/eltorito.src.txt"
 ELT_OUT="$WORK/eltorito.out.txt"
 
 echo
-echo "[4/12] Localizando install.esd sin alterar la ISO..."
-REPORT="$(xorriso -indev "$SRC" -find "$ISO_ESD" -exec report_lba -- 2>/dev/null || true)"
-LINE="$(printf '%s\n' "$REPORT" | grep "File data lba:" | grep "'$ISO_ESD'" | head -n1 || true)"
-[ -n "$LINE" ] || fail "No pude localizar $ISO_ESD en la ISO original."
+echo "[4/12] Localizando imagen de Windows sin alterar la ISO..."
+REPORT="$(xorriso -indev "$SRC" -find / -type f -exec report_lba -- 2>/dev/null || true)"
 
+# Descubrimiento robusto: mayusculas/minusculas y ESD/WIM.
+LINE="$(printf '%s\n' "$REPORT" | grep -Ei "File data lba:.*'/[^']*sources/install\.(esd|wim)(;[0-9]+)?'" | head -n1 || true)"
+
+if [ -z "$LINE" ]; then
+  echo "Rutas candidatas encontradas:"
+  printf '%s\n' "$REPORT" | grep -Ei "File data lba:.*(install\.(esd|wim)|/sources/)" | tail -n 30 || true
+  fail "No pude localizar install.esd/install.wim dentro de la ISO original."
+fi
+
+ISO_INSTALL="$(printf '%s\n' "$LINE" | sed -n "s/.*'\(.*\)'.*/\1/p")"
 LBA="$(printf '%s\n' "$LINE" | awk -F',' '{gsub(/[[:space:]]/,"",$2); print $2}')"
 ISO_ESD_SIZE="$(printf '%s\n' "$LINE" | awk -F',' '{gsub(/[[:space:]]/,"",$4); print $4}')"
 
 [[ "$LBA" =~ ^[0-9]+$ ]] || fail "LBA invalido: $LBA"
-[[ "$ISO_ESD_SIZE" =~ ^[0-9]+$ ]] || fail "Tamano ESD invalido: $ISO_ESD_SIZE"
+[[ "$ISO_ESD_SIZE" =~ ^[0-9]+$ ]] || fail "Tamano de imagen invalido: $ISO_ESD_SIZE"
+[ -n "$ISO_INSTALL" ] || fail "Ruta interna invalida."
 
-echo "install.esd LBA   : $LBA"
-echo "install.esd bytes : $ISO_ESD_SIZE"
+echo "Imagen Windows : $ISO_INSTALL"
+echo "LBA            : $LBA"
+echo "Bytes          : $ISO_ESD_SIZE"
 
-xorriso -osirrox on -indev "$SRC" -extract "$ISO_ESD" "$ESD" >/dev/null 2>&1
-[ -f "$ESD" ] || fail "No se pudo extraer install.esd."
+xorriso -osirrox on -indev "$SRC" -extract "$ISO_INSTALL" "$ESD" >/dev/null 2>&1
+[ -f "$ESD" ] || fail "No se pudo extraer $ISO_INSTALL."
 EXTRACTED_SIZE="$(stat -c '%s' "$ESD")"
 [ "$EXTRACTED_SIZE" -eq "$ISO_ESD_SIZE" ] || fail "Tamano extraido no coincide con el registrado en la ISO."
-echo "EXTRACCION ESD: OK"
+echo "EXTRACCION WINDOWS: OK"
 
 echo
 echo "[5/12] Verificando install.esd original..."
@@ -254,14 +264,31 @@ for i in $(seq 1 "$IMAGE_COUNT"); do
 done
 
 echo
-echo "[8/12] Recomprimiendo ESD en modo Microsoft-compatible..."
-wimlib-imagex optimize "$ESD" --solid --solid-compress=LZMS:80 --solid-chunk-size=64M --threads=1 --check
+echo "[8/12] Recomprimiendo imagen Windows sin cambiar su tipo logico..."
+case "${ISO_INSTALL,,}" in
+  *.esd|*.esd\;*)
+    wimlib-imagex optimize "$ESD" --solid --solid-compress=LZMS:80 --solid-chunk-size=64M --threads=1 --check
+    ;;
+  *.wim|*.wim\;*)
+    wimlib-imagex optimize "$ESD" --recompress --compress=LZX:80 --threads=1 --check
+    ;;
+  *)
+    fail "Formato de imagen Windows no reconocido: $ISO_INSTALL"
+    ;;
+esac
 wimlib-imagex verify "$ESD"
 
 NEW_SIZE="$(stat -c '%s' "$ESD")"
 if [ "$NEW_SIZE" -gt "$ISO_ESD_SIZE" ]; then
-  echo "ESD aun mayor que el espacio original. Reintentando compresion maxima..."
-  wimlib-imagex optimize "$ESD" --solid --solid-compress=LZMS:100 --solid-chunk-size=64M --threads=1 --check
+  echo "La imagen aun supera el espacio original. Reintentando compresion maxima..."
+  case "${ISO_INSTALL,,}" in
+    *.esd|*.esd\;*)
+      wimlib-imagex optimize "$ESD" --solid --solid-compress=LZMS:100 --solid-chunk-size=64M --threads=1 --check
+      ;;
+    *.wim|*.wim\;*)
+      wimlib-imagex optimize "$ESD" --recompress --compress=LZX:100 --threads=1 --check
+      ;;
+  esac
   wimlib-imagex verify "$ESD"
   NEW_SIZE="$(stat -c '%s' "$ESD")"
 fi
@@ -297,7 +324,7 @@ xorriso -indev "$SRC" -report_el_torito plain 2>/dev/null | sed '/^xorriso/d;/^D
 xorriso -indev "$OUT.tmp" -report_el_torito plain 2>/dev/null | sed '/^xorriso/d;/^Drive current/d;/^Media current/d;/^Media status/d;/^Media summary/d' > "$ELT_OUT"
 cmp "$ELT_SRC" "$ELT_OUT" >/dev/null || fail "La configuracion El Torito no coincide con la original."
 
-xorriso -osirrox on -indev "$OUT.tmp" -extract "$ISO_ESD" "$CHECK_ESD" >/dev/null 2>&1
+xorriso -osirrox on -indev "$OUT.tmp" -extract "$ISO_INSTALL" "$CHECK_ESD" >/dev/null 2>&1
 [ -f "$CHECK_ESD" ] || fail "No se pudo extraer install.esd de la ISO final."
 [ "$(stat -c '%s' "$CHECK_ESD")" -eq "$ISO_ESD_SIZE" ] || fail "Tamano install.esd final incorrecto."
 wimlib-imagex verify "$CHECK_ESD"
