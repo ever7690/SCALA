@@ -109,6 +109,11 @@ xorriso -osirrox on -indev "$SRC" -extract "$ISO_INSTALL" "$ESD" >/dev/null 2>&1
 [ -f "$ESD" ] || fail "No se pudo extraer $ISO_INSTALL."
 EXTRACTED_SIZE="$(stat -c '%s' "$ESD")"
 [ "$EXTRACTED_SIZE" -eq "$ISO_ESD_SIZE" ] || fail "Tamano extraido no coincide con el registrado en la ISO."
+
+# Las ISO suelen extraer archivos con permisos de solo lectura.
+chmod u+rw "$ESD" 2>/dev/null || true
+[ -w "$ESD" ] || fail "La imagen Windows extraida sigue sin permiso de escritura."
+
 echo "EXTRACCION WINDOWS: OK"
 
 echo
@@ -273,10 +278,61 @@ EOF
 
 echo
 echo "[7/12] Integrando SCALA dentro de TODAS las imagenes Windows..."
-for i in $(seq 1 "$IMAGE_COUNT"); do
-  echo "  -> Imagen $i/$IMAGE_COUNT"
-  wimlib-imagex update "$ESD" "$i" --check < "$UPDATE_CMDS"
-done
+
+# Si el contenedor WIM/ESD trae bandera interna de solo lectura, lo reexportamos
+# una sola vez a un archivo nuevo totalmente escribible.
+TEST_COPY="$WORK/test-write.esd"
+rm -f "$TEST_COPY"
+if ! wimlib-imagex update "$ESD" 1 --check < "$UPDATE_CMDS"; then
+  echo "La imagen original esta marcada como solo lectura. Creando copia WIM/ESD escribible..."
+  WRITABLE="$WORK/install-writable.esd"
+  rm -f "$WRITABLE"
+
+  if [ "$IMAGE_COUNT" -eq 1 ]; then
+    case "${ISO_INSTALL,,}" in
+      *.esd|*.esd\;*)
+        wimlib-imagex export "$ESD" 1 "$WRITABLE" --compress=LZMS --solid --check
+        ;;
+      *.wim|*.wim\;*)
+        wimlib-imagex export "$ESD" 1 "$WRITABLE" --compress=LZX --check
+        ;;
+    esac
+  else
+    for i in $(seq 1 "$IMAGE_COUNT"); do
+      if [ "$i" -eq 1 ]; then
+        case "${ISO_INSTALL,,}" in
+          *.esd|*.esd\;*)
+            wimlib-imagex export "$ESD" "$i" "$WRITABLE" --compress=LZMS --solid --check
+            ;;
+          *.wim|*.wim\;*)
+            wimlib-imagex export "$ESD" "$i" "$WRITABLE" --compress=LZX --check
+            ;;
+        esac
+      else
+        wimlib-imagex export "$ESD" "$i" "$WRITABLE" --check
+      fi
+    done
+  fi
+
+  mv "$WRITABLE" "$ESD"
+  chmod u+rw "$ESD"
+  wimlib-imagex verify "$ESD"
+
+  # La prueba anterior no se aplico; ahora integramos desde cero.
+  for i in $(seq 1 "$IMAGE_COUNT"); do
+    echo "  -> Imagen $i/$IMAGE_COUNT"
+    wimlib-imagex update "$ESD" "$i" --check < "$UPDATE_CMDS"
+  done
+else
+  echo "  -> Imagen 1/$IMAGE_COUNT"
+  # La imagen 1 ya fue modificada por la prueba exitosa.
+  if [ "$IMAGE_COUNT" -gt 1 ]; then
+    for i in $(seq 2 "$IMAGE_COUNT"); do
+      echo "  -> Imagen $i/$IMAGE_COUNT"
+      wimlib-imagex update "$ESD" "$i" --check < "$UPDATE_CMDS"
+    done
+  fi
+fi
 
 echo
 echo "[8/12] Recomprimiendo imagen Windows sin cambiar su tipo logico..."
