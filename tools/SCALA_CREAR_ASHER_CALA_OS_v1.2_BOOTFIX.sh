@@ -52,11 +52,23 @@ NEED_KB=$((12 * 1024 * 1024))
 echo "ESPACIO: OK"
 
 echo
-echo "[3/12] Instalando/verificando herramientas..."
-sudo apt-get update -qq
-sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq xorriso wimtools coreutils
-command -v xorriso >/dev/null || fail "xorriso no disponible."
-command -v wimlib-imagex >/dev/null || fail "wimlib-imagex no disponible."
+echo "[3/12] Verificando herramientas..."
+MISSING=()
+command -v xorriso >/dev/null 2>&1 || MISSING+=(xorriso)
+command -v wimlib-imagex >/dev/null 2>&1 || MISSING+=(wimtools)
+command -v sha256sum >/dev/null 2>&1 || MISSING+=(coreutils)
+
+if [ "${#MISSING[@]}" -gt 0 ]; then
+  echo "Faltan herramientas: ${MISSING[*]}"
+  echo "Intentando instalarlas sin tocar repositorios ajenos..."
+  sudo apt-get update     -o Dir::Etc::sourcelist="sources.list"     -o Dir::Etc::sourceparts="-"     -o APT::Get::List-Cleanup="0"
+  sudo DEBIAN_FRONTEND=noninteractive apt-get install -y "${MISSING[@]}"
+fi
+
+command -v xorriso >/dev/null 2>&1 || fail "xorriso no disponible."
+command -v wimlib-imagex >/dev/null 2>&1 || fail "wimlib-imagex no disponible."
+command -v sha256sum >/dev/null 2>&1 || fail "sha256sum no disponible."
+echo "HERRAMIENTAS: OK"
 
 rm -rf "$WORK"
 mkdir -p "$WORK/payload/SCALA" "$WORK/payload/SetupScripts"
