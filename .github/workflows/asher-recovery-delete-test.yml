@@ -23,7 +23,7 @@ jobs:
           dd if=/dev/zero of="$T/root/Windows/Web/Wallpaper/Windows/default.jpg" bs=1M count=12 status=none
           dd if=/dev/zero of="$T/root/SCALA/ASHERIMAGENES/asher.jpg" bs=1M count=1 status=none
           wimlib-imagex capture "$T/root" "$T/work.wim" "test" --compress=LZX --check
-          wimlib-imagex update "$T/work.wim" 1 --command="delete --force /Windows/Web/Wallpaper"
+          wimlib-imagex update "$T/work.wim" 1 --command="delete --force --recursive /Windows/Web/Wallpaper"
           wimlib-imagex verify "$T/work.wim"
           if wimlib-imagex dir "$T/work.wim" 1 --path=/Windows/Web/Wallpaper >/dev/null 2>&1; then
             echo "Wallpaper path still exists"
