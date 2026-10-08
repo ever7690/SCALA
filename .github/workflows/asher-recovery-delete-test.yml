@@ -1,0 +1,35 @@
+name: ASHER Recovery Delete Test
+
+on:
+  push:
+    paths:
+      - '.github/workflows/asher-recovery-delete-test.yml'
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq wimtools
+      - name: Verify safe wallpaper deletion command
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          T="$RUNNER_TEMP/t"
+          mkdir -p "$T/root/Windows/Web/Wallpaper/Windows" "$T/root/SCALA/ASHERIMAGENES"
+          dd if=/dev/zero of="$T/root/Windows/Web/Wallpaper/Windows/default.jpg" bs=1M count=12 status=none
+          dd if=/dev/zero of="$T/root/SCALA/ASHERIMAGENES/asher.jpg" bs=1M count=1 status=none
+          wimlib-imagex capture "$T/root" "$T/work.wim" "test" --compress=LZX --check
+          wimlib-imagex update "$T/work.wim" 1 --command="delete --force /Windows/Web/Wallpaper"
+          wimlib-imagex verify "$T/work.wim"
+          if wimlib-imagex dir "$T/work.wim" 1 --path=/Windows/Web/Wallpaper >/dev/null 2>&1; then
+            echo "Wallpaper path still exists"
+            exit 1
+          fi
+          wimlib-imagex dir "$T/work.wim" 1 --path=/SCALA/ASHERIMAGENES/asher.jpg >/dev/null
+          wimlib-imagex export "$T/work.wim" all "$T/final.esd" --compress=LZMS:100 --solid --check
+          wimlib-imagex verify "$T/final.esd"
+          echo "RECOVERY DELETE TEST: PASS"
