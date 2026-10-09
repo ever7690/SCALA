@@ -7,11 +7,12 @@ export class GameAudio {
   private context: AudioContext | null = null;
   private buffers = new Map<string, AudioBuffer>();
   private loading: Promise<void> | null = null;
+  private letterVoices = new Map<AudioBufferSourceNode, GainNode>();
   private music = new Audio('/audio/scala-amanecer.ogg');
   private active = false;
   private settings: AudioSettings = { sound: true, music: true };
   private files: Record<string, string> = {
-    click: 'click_003.wav', select: 'pluck_001.wav', correct: 'confirmation_001.wav',
+    click: 'click_003.wav', select: 'scala-campanilla.wav', correct: 'confirmation_001.wav',
     bonus: 'glass_002.wav', wrong: 'error_008.wav', complete: 'confirmation_002.wav', shuffle: 'back_001.wav',
   };
 
@@ -27,6 +28,7 @@ export class GameAudio {
 
   configure(settings: AudioSettings): void {
     this.settings = settings;
+    if (!settings.sound) for (const [source, gain] of this.letterVoices) this.fadeLetter(source, gain);
     this.syncMusic();
   }
 
@@ -57,8 +59,20 @@ export class GameAudio {
     const source = this.context.createBufferSource();
     const gain = this.context.createGain();
     source.buffer = buffer;
-    source.playbackRate.value = name === 'select' ? 1 + step * 0.06 : 1;
-    gain.gain.value = name === 'wrong' ? 0.25 : name === 'select' ? 0.3 : 0.55;
+    source.playbackRate.value = name === 'select' ? 1 + Math.min(Math.max(step, 0), 7) * 0.04 : 1;
+    gain.gain.value = name === 'wrong' ? 0.25 : name === 'select' ? 0.24 : 0.55;
+    if (name === 'select') {
+      if (this.letterVoices.size >= 3) {
+        const oldest = this.letterVoices.entries().next().value;
+        if (oldest) this.fadeLetter(oldest[0], oldest[1]);
+      }
+      this.letterVoices.set(source, gain);
+    }
+    source.onended = (): void => {
+      this.letterVoices.delete(source);
+      source.disconnect();
+      gain.disconnect();
+    };
     source.connect(gain).connect(this.context.destination);
     source.start();
   }
@@ -66,6 +80,15 @@ export class GameAudio {
   pause(): void {
     this.music.pause();
     this.active = false;
+    for (const [source, gain] of this.letterVoices) this.fadeLetter(source, gain);
+  }
+
+  private fadeLetter(source: AudioBufferSourceNode, gain: GainNode): void {
+    if (!this.context) return;
+    const now = this.context.currentTime;
+    gain.gain.setTargetAtTime(0, now, 0.008);
+    source.stop(now + 0.04);
+    this.letterVoices.delete(source);
   }
 
   private syncMusic(): void {

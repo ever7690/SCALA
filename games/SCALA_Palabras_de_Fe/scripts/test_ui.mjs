@@ -53,6 +53,33 @@ async function dragWord(page, word, avoidCrossing = false) {
 
 try {
   const context = await browser.newContext({ viewport: { width: 360, height: 800 }, deviceScaleFactor: 2 });
+  await context.addInitScript(() => {
+    window.scalaPlayedAudio = [];
+    window.scalaDecodedAudio = 0;
+    const decode = AudioContext.prototype.decodeAudioData;
+    AudioContext.prototype.decodeAudioData = function (...args) {
+      return decode.apply(this, args).then(buffer => {
+        window.scalaDecodedAudio++;
+        return buffer;
+      });
+    };
+    const createSource = AudioContext.prototype.createBufferSource;
+    AudioContext.prototype.createBufferSource = function () {
+      const source = createSource.call(this);
+      const connect = source.connect.bind(source);
+      const start = source.start.bind(source);
+      let gain = 0;
+      source.connect = function (...args) {
+        if (args[0]?.gain) gain = args[0].gain.value;
+        return connect(...args);
+      };
+      source.start = function (...args) {
+        window.scalaPlayedAudio.push({ duration: source.buffer?.duration, rate: source.playbackRate.value, gain });
+        return start(...args);
+      };
+      return source;
+    };
+  });
   const page = await context.newPage();
   const externalRequests = [];
   page.on('request', request => { if (!request.url().startsWith(base) && !request.url().startsWith('data:')) externalRequests.push(request.url()); });
@@ -65,8 +92,18 @@ try {
   await page.screenshot({ path: 'entregables/portada.png', fullPage: true });
   await page.locator('[data-action="play"]').click();
   await page.locator('#modal [data-action="close"]').last().click();
+  await page.waitForFunction(() => window.scalaDecodedAudio === 7);
   assert.equal(await page.locator('.hidden-letter').count(), 10);
   await dragWord(page, 'amor');
+  const letterAudio = await page.evaluate(() => window.scalaPlayedAudio.filter(item => Math.abs(item.duration - 0.56) < 0.001));
+  assert.equal(letterAudio.length, 4);
+  assert(letterAudio.every(item => Math.abs(item.gain - 0.24) < 0.001));
+  await page.locator('[data-action="shuffle"]').click();
+  const shuffleAudio = await page.evaluate(() => window.scalaPlayedAudio.at(-1));
+  assert(Math.abs(shuffleAudio.duration - 0.06820861678004535) < 0.001);
+  assert(Math.abs(shuffleAudio.gain - 0.55) < 0.001);
+  assert.equal(shuffleAudio.rate, 1);
+  results.push('Campanilla en las cuatro letras del gesto; sonido de mezclar conservado');
   assert((await saveState(page)).game.levels['1'].solved.includes('amor'));
   assert.equal((await saveState(page)).coins, 155);
   await typeWord(page, 'amor');
@@ -99,6 +136,12 @@ try {
   await page.locator('.game-header [data-action="settings"]').click();
   await page.locator('[data-action="sound"]').click();
   assert.equal((await saveState(page)).sound, false);
+  await page.locator('#modal [data-action="close"]').click();
+  const mutedAudioCount = await page.evaluate(() => window.scalaPlayedAudio.length);
+  await page.locator('.letter').first().click();
+  assert.equal(await page.evaluate(() => window.scalaPlayedAudio.length), mutedAudioCount);
+  await page.locator('#clear-word').click();
+  await page.locator('.game-header [data-action="settings"]').click();
   await page.locator('[data-action="music"]').click();
   assert.equal((await saveState(page)).music, false);
   assert.equal(await page.locator('[data-action="music"]').evaluate(button => button === document.activeElement), true);
@@ -130,6 +173,15 @@ try {
   assert.equal(await page.evaluate(() => document.fonts.check('16px "SCALA Sans"') && document.fonts.check('16px "SCALA Serif"')), true);
   assert.equal((await saveState(page)).game.currentIndexInGroup, 1);
   assert.equal(await page.locator('.letter').count(), dataset.levels[1].letterWheel.length);
+  await page.waitForFunction(() => window.scalaDecodedAudio === 7);
+  await page.locator('.game-header [data-action="settings"]').click();
+  await page.locator('[data-action="sound"]').click();
+  await page.locator('#modal [data-action="close"]').click();
+  await page.locator('.letter').first().click();
+  const offlineAudio = await page.evaluate(() => window.scalaPlayedAudio.at(-1));
+  assert(Math.abs(offlineAudio.duration - 0.56) < 0.001);
+  assert(Math.abs(offlineAudio.gain - 0.24) < 0.001);
+  results.push('Campanilla disponible sin conexión y selección de letras silenciosa con Sonidos desactivado');
   results.push('Recarga y juego sin conexión con progreso conservado');
   assert.deepEqual(externalRequests, []);
   results.push('Tipografías sin conexión, privacidad accesible, foco conservado y ninguna petición a servidores externos');

@@ -3,6 +3,7 @@ import fs from 'node:fs';
 fs.mkdirSync('entregables/documentacion', { recursive: true });
 for (const [source, target] of [
   ['docs/PUBLICAR_Y_VENDER.md', 'entregables/LEEME_VENTA.md'],
+  ['docs/FASE_FINAL_VENTA.md', 'entregables/FASE_FINAL_VENTA.md'],
   ['docs/textos-tienda.json', 'entregables/textos-tienda.json'],
   ['public/privacidad.html', 'entregables/privacidad.html'],
   ['NOTICE.md', 'entregables/documentacion/PROCEDENCIA_Y_LICENCIAS.md'],
