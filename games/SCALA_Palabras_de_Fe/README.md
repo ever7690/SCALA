@@ -36,6 +36,8 @@ adb install -r entregables/SCALA_Palabras_de_Fe_1.0.0_pruebas.apk
 
 La app requiere Android 7.0 o posterior y se muestra en vertical. Identificadores: `com.scala.palabrasdefe` en release y `com.scala.palabrasdefe.debug` en pruebas. Los dos guardan el progreso por separado.
 
+En Android 8.0 y posteriores, el icono usa capas adaptables: el fondo azul cubre toda la forma del launcher, incluido el círculo del Realme, y el logo permanece centrado. La corrección se incorpora al recompilar e instalar el APK actualizado.
+
 ## Desarrollo y verificación
 
 ```bash
