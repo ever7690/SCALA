@@ -1,0 +1,25 @@
+name: ASHER CALA OS v2 - Real private ISO cloud build
+on:
+  push:
+    paths:
+      - '.github/workflows/asher-v2-cloud-build.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  personalized-iso:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 95
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile full ISO and verify SHA, EFI, ESD and all five ASHER pictures
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: bash tools/SCALA_ASHER_V2_CLOUD_BUILD.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ASHER-CALA-OS-v2-PRIVATE
+          path: output/ASHER_CALA_OS_SCALA_GAMING_v2_PRIVATE.7z
+          compression-level: 0
+          retention-days: 1
+          if-no-files-found: error
