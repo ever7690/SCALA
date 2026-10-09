@@ -1,0 +1,34 @@
+{
+  "project": "SCALA Palabras de Fe",
+  "tool": "imagegen",
+  "mode": "built-in",
+  "purpose": "Fondos originales para la portada y el juego, preparados para integrar en la próxima APK.",
+  "generatedAt": "2026-10-09",
+  "palette": [
+    "#061525",
+    "#081829",
+    "#173c50",
+    "#35546b",
+    "#efc66e"
+  ],
+  "files": [
+    {
+      "path": "public/backgrounds/scala-portada-v1.png",
+      "usage": "Portada",
+      "width": 841,
+      "height": 1870,
+      "sha256": "c7b4564fceb6491142ed0e989be2135c9a0fa7146c48c180c25e7aee005ec570",
+      "prompt": "Use case: stylized-concept. Create an ORIGINAL premium illustrated landscape background asset for SCALA Palabras de Fe, a Spanish Christian word puzzle Android game. This is only background artwork, never an app screenshot or UI mockup. Style: refined cinematic matte painting with elegant soft atmospheric depth and naturally luminous edges; polished understated premium mobile game art, crisp when viewed on a phone, no grain, no jagged shapes. Fixed palette: deepest midnight navy #061525 and #081829, muted blue teal #173c50 and #35546b, restrained champagne gold #efc66e. No purple, pink or bright green. Portrait 9:20 composition, ideally 1080x2400 or comparable high resolution. Dark quiet negative space is essential. No text, no letters, no numbers, no logo, no watermark, no crosses, no book, no characters, no buildings, no interface, no frames, no buttons, no artificial lens flare. Full bleed, opaque background. Asset type: home screen background. Scene: a peaceful layered mountain valley at first dawn, deep blue distant ridges and delicate low mist, a beautifully restrained warm gold sunrise glow between the hills in the lower third. Top 70% of the image is a very dark spacious blue night-to-dawn sky with only a few tiny subtle stars and smooth tonal gradients. Keep the ENTIRE center column, especially x=20%..80% and y=0%..75%, visually calm and dark, for the real SCALA logo and existing gold and cream text placed by the app. Landscape detail remains in the lower 25% and edges; a gentle gold reflection and softly illuminated ridge edges provide artistry without distracting from controls. The sun should be a soft hint, not a large circle. No foreground objects. The overall image must feel serene, sophisticated and spiritual through light and landscape, while staying distinctly navy blue."
+    },
+    {
+      "path": "public/backgrounds/scala-juego-v1.png",
+      "usage": "Juego",
+      "width": 841,
+      "height": 1870,
+      "sha256": "7a4544324b2699f7ce5c6933b3c8e837d6af301eaf8b620522a84c34dc40ed43",
+      "prompt": "Use case: stylized-concept. Create an ORIGINAL premium illustrated landscape background asset for SCALA Palabras de Fe, a Spanish Christian word puzzle Android game. This is only background artwork, never an app screenshot or UI mockup. Style: refined cinematic matte painting with elegant soft atmospheric depth and naturally luminous edges; polished understated premium mobile game art, crisp when viewed on a phone, no grain, no jagged shapes. Fixed palette: deepest midnight navy #061525 and #081829, muted blue teal #173c50 and #35546b, restrained champagne gold #efc66e. No purple, pink or bright green. Portrait 9:20 composition, ideally 1080x2400 or comparable high resolution. Dark quiet negative space is essential. No text, no letters, no numbers, no logo, no watermark, no crosses, no book, no characters, no buildings, no interface, no frames, no buttons, no artificial lens flare. Full bleed, opaque background. Asset type: gameplay background, companion to the same SCALA landscape art direction. Scene: a very serene distant blue mountain valley with just a faint champagne gold dawn glow close to the bottom edge. Use an even darker, quieter treatment than a hero illustration. Approximately the top 80% and the whole central 65% width are nearly uniform smooth deep navy blue with a subtly luminous blue atmospheric gradient; no stars or bright points behind the crossword and letter wheel. Very soft distant mountain contours appear only at the lower 18% and outermost edges, low contrast and slightly hazy; delicate dawn light toward the bottom, never behind center text. Clean negative space and excellent readability take priority over detail. No large sun, no prominent object, no visual focal point in the center. This must be a beautiful finished painting, not a flat solid-color placeholder."
+    }
+  ],
+  "processing": "Copias completas de los PNG generados, sin modificar, recortar ni reescalar. La app adapta su encuadre con object-fit: cover.",
+  "integration": "La portada y el juego usan su propio fondo; el logotipo, las letras y los controles se dibujan por separado."
+}

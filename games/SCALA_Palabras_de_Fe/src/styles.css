@@ -28,14 +28,11 @@ button svg { width: 22px; height: 22px; flex-shrink: 0; }
 [hidden] { display: none !important; }
 h1, h2, blockquote { font-family: 'SCALA Serif', Georgia, serif; }
 p, h1, h2, blockquote { margin: 0; }
-.scenery { position: fixed; z-index: -1; inset: 0; overflow: hidden; pointer-events: none; background: linear-gradient(180deg, #061525, #102b43 53%, #426474 80%, #ab8d58); }
-.sky-glow { position: absolute; inset: 20% -25% -30%; background: radial-gradient(ellipse at 50% 64%, rgb(230 176 93 / 29%), transparent 54%); }
-.sun { position: absolute; left: calc(50% - 160px); bottom: 9%; width: 320px; height: 320px; border-radius: 50%; background: radial-gradient(circle, rgb(250 220 147 / 40%), rgb(250 220 147 / 2%) 70%); }
-.ridge { position: absolute; width: 170%; left: -35%; bottom: -12%; height: 43%; fill: currentColor; }
-.ridge-far { color: #3a5664; opacity: 0.72; bottom: -5%; }
-.ridge-mid { color: #173c50; transform: scaleX(-1); height: 36%; bottom: -9%; }
-.ridge-near { color: #092535; height: 29%; }
-.stars { position: absolute; inset: 0; opacity: 0.5; background-image: radial-gradient(1px 1px at 16% 17%, #ead3a2 60%, transparent), radial-gradient(1px 1px at 72% 9%, #ead3a2 60%, transparent), radial-gradient(1.2px 1.2px at 85% 28%, #ead3a2 60%, transparent), radial-gradient(1px 1px at 38% 5%, #ead3a2 60%, transparent); }
+.scenery { position: fixed; z-index: -1; inset: 0; overflow: hidden; pointer-events: none; background: #081829; }
+.scenery-layer { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center bottom; opacity: 0; transition: opacity 0.3s ease; }
+.scenery[data-scene="home"] .scenery-home, .scenery[data-scene="play"] .scenery-play { opacity: 1; }
+.scenery::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgb(6 21 37 / 12%), rgb(6 21 37 / 6%) 55%, rgb(6 21 37 / 48%) 76%, rgb(6 21 37 / 42%) 100%); }
+.scenery[data-scene="play"]::after { background: linear-gradient(180deg, rgb(6 21 37 / 8%), rgb(6 21 37 / 3%) 65%, rgb(6 21 37 / 30%)); }
 .app-frame { width: min(100%, 460px); margin: 0 auto; min-height: 100dvh; padding: max(10px, env(safe-area-inset-top)) 22px max(12px, env(safe-area-inset-bottom)); }
 .home-screen { display: flex; flex-direction: column; min-height: calc(100dvh - 30px); }
 .home-top { display: flex; align-items: center; justify-content: space-between; min-height: 38px; }

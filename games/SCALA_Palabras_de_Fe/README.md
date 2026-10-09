@@ -10,6 +10,8 @@ La versión 1.1.2 cambia únicamente el efecto de seleccionar letras por una cam
 
 ## Compilar en OBRERO 1
 
+La rama `scala/bible-word-puzzle-fondos` prepara dos fondos originales para la siguiente revisión: amanecer entre montañas en la portada y un valle azul más sereno durante el juego. Los PNG completos de 841 × 1870 píxeles se incluyen sin reescalar, conservan la paleta azul y dorada y se almacenan sin conexión. Sus prompts y huellas están en [fondos-scala.json](docs/fondos-scala.json). Esta rama de arte conserva la versión base 1.1.2 mientras se prepara la siguiente entrega.
+
 Requisitos: Node.js 22 o superior, JDK 21 y Android SDK con plataforma y Build-Tools 36.0.0. El wrapper descarga Gradle 9.3.1 y verifica su SHA-256; no se necesita Gradle global.
 
 ```bash

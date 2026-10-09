@@ -131,7 +131,7 @@ function toast(message: string, positive = false): void {
 
 function mount(): void {
   el('#app').innerHTML = `
-    <div class="scenery" aria-hidden="true"><div class="sky-glow"></div><div class="sun"></div><svg class="ridge ridge-far" viewBox="0 0 1000 400" preserveAspectRatio="none"><path d="M0 180Q85 110 170 170T320 145Q410 55 490 160T650 120Q755 40 835 145T1000 120V400H0Z"/></svg><svg class="ridge ridge-mid" viewBox="0 0 1000 400" preserveAspectRatio="none"><path d="M0 200Q80 155 165 205T340 185Q450 85 545 210T740 165Q870 105 1000 205V400H0Z"/></svg><svg class="ridge ridge-near" viewBox="0 0 1000 400" preserveAspectRatio="none"><path d="M0 220Q155 165 290 225T575 235Q730 160 870 220T1000 215V400H0Z"/></svg><div class="stars"></div></div>
+    <div class="scenery" data-scene="home" aria-hidden="true"><img class="scenery-layer scenery-home" src="/backgrounds/scala-portada-v1.png" alt="" width="841" height="1870" decoding="async" fetchpriority="high"/><img class="scenery-layer scenery-play" src="/backgrounds/scala-juego-v1.png" alt="" width="841" height="1870" decoding="async" fetchpriority="low"/></div>
     <main class="app-frame"><section id="home-screen" class="home-screen"></section><section id="play-screen" class="play-screen" hidden></section></main>
     <div id="toast" class="toast" role="status" aria-live="polite"></div>
     <dialog id="modal" aria-label="Ventana del juego"><div id="modal-content"></div></dialog>`;
@@ -191,6 +191,7 @@ function mount(): void {
 }
 
 function renderHome(): void {
+  el<HTMLElement>('.scenery').dataset.scene = 'home';
   const number = current().number;
   const reward = dailyReward(save, localDate());
   const verse = verses[0];
@@ -236,6 +237,7 @@ function goHome(): void {
 }
 
 function renderPlay(): void {
+  el<HTMLElement>('.scenery').dataset.scene = 'play';
   const level = current();
   const chapter = chapters[level.groupIndex ?? 0];
   selected = [];
