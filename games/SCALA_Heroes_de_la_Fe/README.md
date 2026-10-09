@@ -23,16 +23,16 @@ cd SCALA-heroes/games/SCALA_Heroes_de_la_Fe
 export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
 export PATH="$JAVA_HOME/bin:$PATH"
 bash scripts/build_android.sh
-adb -d install -r entregables/SCALA_Heroes_de_la_Fe_1.1.0_pruebas.apk
+adb -d install -r entregables/SCALA_Heroes_de_la_Fe_1.1.1_pruebas.apk
 ```
 
-La APK de pruebas usa `com.scala.heroesdefe.debug`. La comercial usa `com.scala.heroesdefe`, versión 1.1.0 / código 2. Héroes de Fe aparece bajo el ícono del teléfono. Palabras de Fe es una aplicación independiente y permanece instalada.
+La APK de pruebas usa `com.scala.heroesdefe.debug`. La comercial usa `com.scala.heroesdefe`, versión 1.1.1 / código 3. Héroes de Fe aparece bajo el ícono del teléfono. Palabras de Fe es una aplicación independiente y permanece instalada.
 
 Para la versión comercial se reutiliza la clave privada SCALA del propietario, con alias `scala-palabrasdefe`. Nunca se guarda la clave ni su contraseña en GitHub.
 
 ```bash
 bash scripts/sign_android.sh /ruta/scala-palabras-de-fe.p12 /ruta/scala-password.txt
-adb -d install -r entregables/SCALA_Heroes_de_la_Fe_1.1.0_comercial.apk
+adb -d install -r entregables/SCALA_Heroes_de_la_Fe_1.1.1_comercial.apk
 ```
 
 Los entregables incluyen APK firmada para instalar, AAB firmado para subir a Google Play, sumas SHA-256, informes de pruebas, auditoría de dependencias y materiales de tienda. La compilación en GitHub Actions usa JDK 21 y produce las versiones nativas. La publicación en una tienda la realiza el propietario desde su cuenta.
@@ -57,8 +57,8 @@ Los 12 retratos y el ícono son imágenes originales hechas con el generador int
 
 Consulta `NOTICE.md`, `licenses/` y `docs/PRIVACIDAD.md` para procedencia y licencias. Las ilustraciones son interpretaciones artísticas, no reconstrucciones históricas.
 
-## Renovación 1.1.0
+## Renovación 1.1.1
 
-Interfaz blanca y marfil, detalles oliva y dorados, dos fondos bíblicos exclusivos y nuevo ícono Héroes de Fe sin laurel. Bienvenida blanca y limpia con el logo original ampliado y la firma negra Scala desarrollo cristiano. Música original Luz del Camino y 34 efectos cálidos propios que distinguen navegación, lectura, monedas, ajustes, ayudas y resultados. Los 29 íconos Phosphor Duotone se integran sin dependencias de red. El saldo abre Mis monedas con sus recompensas y ayudas. Conserva la identidad Android y la clave de guardado de 1.0.0.
+Interfaz blanca y marfil, detalles oliva y dorados, dos fondos bíblicos exclusivos y nuevo ícono Héroes de Fe sin laurel. Una sola bienvenida en blanco cálido, con el logo original ampliado y la firma negra Scala desarrollo cristiano pequeña al pie. El inicio usa un único logo transparente en el encabezado; el título queda directamente debajo. Huellas para Tu camino y bordes dorados finos en retratos y controles. Música original Luz del Camino y 34 efectos cálidos propios que distinguen navegación, lectura, monedas, ajustes, ayudas y resultados. Los 30 íconos Phosphor de silueta sólida se integran sin dependencias de red. El saldo abre Mis monedas con sus recompensas y ayudas. Conserva la identidad Android y la clave de guardado de 1.0.0.
 
 Para reproducir la preparación del nuevo arte: `node scripts/prepare_brand.mjs`. Para regenerar los íconos desde sus SVG originales: `node scripts/prepare_icons.mjs`. Para regenerar los efectos: `uv run python scripts/generate_sounds.py`. La música generada y su procedencia están en artwork/audio y docs/musica-original.json. Las licencias y hashes de los íconos están en licenses/PHOSPHOR-MIT.txt y docs/iconos-profesionales.json.

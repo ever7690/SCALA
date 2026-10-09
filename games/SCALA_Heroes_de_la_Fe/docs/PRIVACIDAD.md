@@ -1,6 +1,6 @@
 # Privacidad — SCALA Héroes de la Fe
 
-Versión 1.1.0 · 9 de octubre de 2026
+Versión 1.1.1 · 9 de octubre de 2026
 
 La aplicación Android funciona sin conexión. No crea cuentas, no usa analítica, no muestra publicidad y no envía datos a servidores. No tiene permiso de acceso a Internet.
 

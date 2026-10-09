@@ -1,6 +1,6 @@
 {
   "name": "scala-heroes-de-la-fe",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Trivia bíblica SCALA con héroes, preguntas documentadas, desafíos y juego sin conexión",
   "type": "module",
   "scripts": {

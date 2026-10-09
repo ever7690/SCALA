@@ -1,2 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android"><item android:drawable="@color/scala_launch_background"/><item android:width="264dp" android:height="211dp" android:gravity="center"><bitmap android:src="@drawable/scala_logo" android:gravity="fill" android:filter="true"/></item></layer-list>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <gradient android:type="radial" android:centerX="0.5" android:centerY="0.42" android:gradientRadius="520dp" android:startColor="#FFFEFB" android:centerColor="@color/scala_launch_background" android:endColor="#F4EEDF" />
+</shape>
