@@ -246,7 +246,7 @@ function renderBoard(): void {
   board.style.setProperty('--cols', String(level.cols));
   board.style.setProperty('--rows', String(level.rows));
   board.style.setProperty('--cell-size', `min(38px, calc((min(100vw, 460px) - 52px - ${(level.cols - 1) * 3}px) / ${level.cols}), calc((var(--available-board-height, var(--board-height)) - ${(level.rows - 1) * 3}px) / ${level.rows}))`);
-  const occupied = new Map(grid.cells.filter(cell => cell.letter !== null).map(cell => [`${cell.row}:${cell.col}`, cell]));
+  const occupied = new Map(grid.cells.map(cell => [`${cell.row}:${cell.col}`, cell]));
   let cells = '';
   for (let row = 0; row < level.rows; row++) {
     for (let col = 0; col < level.cols; col++) {
