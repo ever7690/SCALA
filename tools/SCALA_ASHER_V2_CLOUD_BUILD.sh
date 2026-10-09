@@ -9,10 +9,10 @@ df -h /
 # Generate an ephemeral, runner-only RSA private key.
 openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:2048 -out "$RUNNER_TEMP/asher-private.pem" >/dev/null 2>&1
 mkdir -p cloud
-openssl rsa -in "$RUNNER_TEMP/asher-private.pem" -noout -modulus | sed 's/^Modulus=//' > cloud/ASHER_V2_BRIDGE_MODULUS_CHUNKED.txt
+openssl rsa -in "$RUNNER_TEMP/asher-private.pem" -noout -modulus | sed 's/^Modulus=//' > cloud/ASHER_V2_BRIDGE_MODULUS_V3.txt
 git config user.email "actions@users.noreply.github.com"
 git config user.name "SCALA Cloud Builder"
-git add cloud/ASHER_V2_BRIDGE_MODULUS_CHUNKED.txt
+git add cloud/ASHER_V2_BRIDGE_MODULUS_V3.txt
 git commit -m "Publish ephemeral ASHER RSA public key"
 git push origin HEAD:main
 echo 'PUBLIC_RSA_KEY_READY'
@@ -46,7 +46,7 @@ echo "VERIFIED_ALTERNATE_MINIOS_BASE"
 # An unreferenced Git blob is accessible only with its unpredictable SHA.
 # The SHA and artifact-password reach the runner via RSA ciphertext,
 # published without any plaintext image names or personal photo content.
-API="https://api.github.com/repos/$GITHUB_REPOSITORY/contents/cloud/ASHER_V2_BRIDGE_SEALED_REF_CHUNKED.hex"
+API="https://api.github.com/repos/$GITHUB_REPOSITORY/contents/cloud/ASHER_V2_BRIDGE_SEALED_REF_V3.hex"
 found=0
 for n in $(seq 1 150); do
   if curl -fsSL --max-time 12 -H "Authorization: Bearer $GH_TOKEN" \
@@ -90,17 +90,23 @@ test "$(sha256sum "$RUNNER_TEMP/ASHERIMAGENES.tar.gz" | awk '{print $1}')" = 150
 echo 'FIVE_USER_IMAGES_SHA_VERIFIED'
 
 # Find ESD extent in this alternative source without changing any ISO boot metadata.
-xorriso -indev "$SRC" -find /sources/install.esd -exec report_lba -- 2>&1 | tee "$RUNNER_TEMP/lba.log"
+xorriso -indev "$SRC" -find / -type f -exec report_lba -- 2>&1 | tee "$RUNNER_TEMP/lba.log"
 python3 - <<'PY'
 from pathlib import Path
 import re,os
 p=Path(os.environ['RUNNER_TEMP'])
 txt=(p/'lba.log').read_text()
-match=re.search(r'File data lba:\s*\d+\s*,\s*(\d+)\s*,\s*(\d+)',txt)
-if not match: raise SystemExit('Cannot locate install.esd LBA')
+matches=[line for line in txt.splitlines() if 'File data lba:' in line and 'install.esd' in line.lower()]
+if not matches: raise SystemExit('Cannot locate install.esd: check ISO directory structure')
+line=matches[0]
+match=re.search(r'File data lba:\s*\d+\s*,\s*(\d+)\s*,\s*(\d+)',line)
+path=re.search(r"'([^']*install\.esd)'",line,re.I)
+if not match or not path: raise SystemExit('Cannot parse install.esd extent: '+line)
 (p/'lba.txt').write_text(match.group(1))
+(p/'esd-path.txt').write_text(path.group(1))
+print('Located ESD:',path.group(1),'LBA',match.group(1))
 PY
-xorriso -osirrox on -indev "$SRC" -extract /sources/install.esd "$RUNNER_TEMP/install.esd" >/dev/null
+xorriso -osirrox on -indev "$SRC" -extract "$(cat "$RUNNER_TEMP/esd-path.txt")" "$RUNNER_TEMP/install.esd" >/dev/null
 wimlib-imagex verify "$RUNNER_TEMP/install.esd" >/dev/null
 
 # Validate that extracted ESD is precisely the ISO extent. Adapt builder constants
