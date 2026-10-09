@@ -268,10 +268,23 @@ def build_scala_payload(work, wallpaper_dir):
     echo 0. Salir
     choice /c 12340 /n /m "Opcion: "
     if errorlevel 5 exit /b 0
-    if errorlevel 4 notepad "C:\SCALA\DEDICATORIA.txt"
-    if errorlevel 3 powershell.exe -NoProfile -ExecutionPolicy Bypass -File "C:\SCALA\DIAGNOSTICO.ps1"
-    if errorlevel 2 taskmgr.exe
-    if errorlevel 1 powershell.exe -NoProfile -ExecutionPolicy Bypass -File "C:\SCALA\USER_SCALA.ps1"
+    if errorlevel 4 goto dedication
+    if errorlevel 3 goto diagnostic
+    if errorlevel 2 goto taskmgr
+    if errorlevel 1 goto profile
+    goto menu
+    :dedication
+    notepad "C:\SCALA\DEDICATORIA.txt"
+    goto done
+    :diagnostic
+    powershell.exe -NoProfile -ExecutionPolicy Bypass -File "C:\SCALA\DIAGNOSTICO.ps1"
+    goto done
+    :taskmgr
+    taskmgr.exe
+    goto done
+    :profile
+    powershell.exe -NoProfile -ExecutionPolicy Bypass -File "C:\SCALA\USER_SCALA.ps1"
+    :done
     pause
     goto menu
     """)
