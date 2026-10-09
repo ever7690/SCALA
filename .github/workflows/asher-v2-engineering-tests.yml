@@ -1,0 +1,124 @@
+name: ASHER CALA OS v2 - Offline engineering tests
+
+on:
+  push:
+    paths:
+      - 'tools/SCALA_ASHER_CALA_OS_V2_BUILDER.py'
+      - '.github/workflows/asher-v2-engineering-tests.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  synthetic-tests:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install offline engineering tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq wimtools xorriso python3-pil
+          /usr/bin/python3 -c 'from PIL import Image; print("Pillow ready")'
+
+      - name: Python syntax
+        run: /usr/bin/python3 -m py_compile tools/SCALA_ASHER_CALA_OS_V2_BUILDER.py
+
+      - name: Test five images, preserved setup and WIM/ESD replacement
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          /usr/bin/python3 - <<'PY'
+          import importlib.util
+          import io
+          import os
+          from pathlib import Path
+          import shutil
+          import subprocess
+          import tarfile
+          import tempfile
+          from PIL import Image
+
+          spec=importlib.util.spec_from_file_location('asher', 'tools/SCALA_ASHER_CALA_OS_V2_BUILDER.py')
+          m=importlib.util.module_from_spec(spec)
+          spec.loader.exec_module(m)
+          base=Path(tempfile.mkdtemp(prefix='asher-v2-test-'))
+          work=base/'work'
+          work.mkdir()
+          images=base/'ASHERIMAGENES.tar.gz'
+          with tarfile.open(images,'w:gz') as tar:
+              for n in range(1,6):
+                  b=io.BytesIO()
+                  Image.new('RGB',(2000,1200),color=(n*30,70,110)).save(b,'PNG')
+                  data=b.getvalue()
+                  info=tarfile.TarInfo(f'photos/ASHER-{n}.png')
+                  info.size=len(data)
+                  tar.addfile(info,io.BytesIO(data))
+          wallpapers=m.build_assets(work, images)
+          scala,wrapper=m.build_scala_payload(work,wallpapers)
+          assert len(list(wallpapers.glob('asher*.jpg')))==5
+          assert 'SCALA Gaming Center' in (scala/'GAMING_CENTER.cmd').read_text()
+          assert 'AutoGameModeEnabled' in (scala/'USER_SCALA.ps1').read_text()
+          assert 'SetupComplete_MINIOS.cmd' in wrapper.read_text()
+          assert 'Ever Nelson Calamontes' in (scala/'DEDICATORIA.txt').read_text()
+
+          root=base/'root'
+          oldwall=root/'Windows/Web/Wallpaper/Windows'
+          oldwall.mkdir(parents=True)
+          (oldwall/'img0.jpg').write_bytes(b'old-stock-wallpaper')
+          oldsetup=root/'Windows/Setup/Scripts'
+          oldsetup.mkdir(parents=True)
+          (oldsetup/'SetupComplete.cmd').write_bytes(b'@echo off\r\necho MINIOS_ORIGINAL\r\nexit /b 0\r\n')
+          subprocess.run(['wimlib-imagex','capture',str(root),str(base/'original.wim'),'test','--compress=LZX','--check'],check=True)
+          subprocess.run(['wimlib-imagex','verify',str(base/'original.wim')],check=True)
+          subprocess.run(['wimlib-imagex','export',str(base/'original.wim'),'all',str(base/'original.esd'),'--compress=LZMS:100','--solid','--check'],check=True)
+          subprocess.run(['wimlib-imagex','verify',str(base/'original.esd')],check=True)
+          subprocess.run(['wimlib-imagex','export',str(base/'original.esd'),'all',str(base/'work.wim'),'--compress=LZX','--check'],check=True)
+          subprocess.run(['wimlib-imagex','extract',str(base/'original.esd'),'1','/Windows/Setup/Scripts/SetupComplete.cmd',f'--dest-dir={base/"extracted"}'],check=True)
+          original=base/'extracted/Windows/Setup/Scripts/SetupComplete.cmd'
+          assert b'MINIOS_ORIGINAL' in original.read_bytes()
+          saved=work/'payload/SetupComplete_MINIOS.cmd'
+          shutil.copy2(original,saved)
+          commands='\n'.join([
+              'delete --recursive --force /Windows/Web/Wallpaper',
+              f'add "{wallpapers}" /Windows/Web/Wallpaper/ASHER',
+              f'add "{wallpapers/"asher01.jpg"}" /Windows/Web/Wallpaper/Windows/img0.jpg',
+              f'add "{scala}" /SCALA',
+              f'add "{saved}" /Windows/Setup/Scripts/SetupComplete_MINIOS.cmd',
+              'delete --force /Windows/Setup/Scripts/SetupComplete.cmd',
+              f'add "{wrapper}" /Windows/Setup/Scripts/SetupComplete.cmd',
+          ])+'\n'
+          subprocess.run(['wimlib-imagex','update',str(base/'work.wim'),'1','--check'],input=commands,text=True,check=True)
+          subprocess.run(['wimlib-imagex','verify',str(base/'work.wim')],check=True)
+          for n in range(1,6):
+              assert m.wim_dir(base/'work.wim',f'/Windows/Web/Wallpaper/ASHER/asher{n:02d}.jpg')
+          assert m.wim_dir(base/'work.wim','/Windows/Web/Wallpaper/Windows/img0.jpg')
+          assert m.wim_dir(base/'work.wim','/Windows/Setup/Scripts/SetupComplete_MINIOS.cmd')
+          assert m.wim_dir(base/'work.wim','/Windows/Setup/Scripts/SetupComplete.cmd')
+          assert m.wim_dir(base/'work.wim','/SCALA/SYSTEM_SCALA.ps1')
+          assert m.wim_dir(base/'work.wim','/SCALA/USER_SCALA.ps1')
+          subprocess.run(['wimlib-imagex','export',str(base/'work.wim'),'all',str(base/'edited.esd'),'--compress=LZMS:100','--solid','--check'],check=True)
+          subprocess.run(['wimlib-imagex','verify',str(base/'edited.esd')],check=True)
+          subprocess.run(['wimlib-imagex','extract',str(base/'edited.esd'),'1','/Windows/Setup/Scripts/SetupComplete_MINIOS.cmd',f'--dest-dir={base/"check"}'],check=True)
+          assert b'MINIOS_ORIGINAL' in (base/'check/Windows/Setup/Scripts/SetupComplete_MINIOS.cmd').read_bytes()
+
+          # Explicitly test byte-for-byte invariance outside the replaced extent.
+          m.INSTALL_OFFSET=1_000_000
+          m.INSTALL_SIZE=150_000
+          originaliso=base/'synthetic.iso'
+          originaliso.write_bytes(os.urandom(2_000_000))
+          edited=base/'candidate.iso'
+          edited.write_bytes(originaliso.read_bytes())
+          payload=base/'payload.bin'
+          payload.write_bytes(os.urandom(121_000))
+          with edited.open('r+b') as out, payload.open('rb') as src:
+              out.seek(m.INSTALL_OFFSET)
+              shutil.copyfileobj(src,out)
+              out.write(bytes(m.INSTALL_SIZE-payload.stat().st_size))
+          m.compare_outside_extent(originaliso, edited)
+          m.compare_extent_prefix(payload,edited,m.INSTALL_OFFSET)
+          m.compare_padding_zero(edited,m.INSTALL_OFFSET+payload.stat().st_size,m.INSTALL_SIZE-payload.stat().st_size)
+          print('PASS: 5 images, original SetupComplete, WIM-ESD re-export, unchanged outside extent')
+          PY
