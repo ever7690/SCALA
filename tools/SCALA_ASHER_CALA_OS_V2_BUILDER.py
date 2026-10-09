@@ -196,7 +196,7 @@ def build_scala_payload(work, wallpaper_dir):
     exit 0
     """)
     write_utf8(scala / "USER_SCALA.ps1", r"""
-    $ErrorActionPreference = 'SilentlyContinue'
+    $ErrorActionPreference = 'Continue'
     function Set-Dword($Path, $Name, $Value) {
       New-Item $Path -Force | Out-Null
       New-ItemProperty -Path $Path -Name $Name -Value $Value -PropertyType DWord -Force | Out-Null
