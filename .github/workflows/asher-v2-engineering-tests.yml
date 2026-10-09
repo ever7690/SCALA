@@ -77,7 +77,7 @@ jobs:
           subprocess.run(['wimlib-imagex','verify',str(base/'original.esd')],check=True)
           subprocess.run(['wimlib-imagex','export',str(base/'original.esd'),'all',str(base/'work.wim'),'--compress=LZX','--check'],check=True)
           subprocess.run(['wimlib-imagex','extract',str(base/'original.esd'),'1','/Windows/Setup/Scripts/SetupComplete.cmd',f'--dest-dir={base/"extracted"}'],check=True)
-          original=base/'extracted/Windows/Setup/Scripts/SetupComplete.cmd'
+          original=next((base/'extracted').rglob('SetupComplete.cmd'))
           assert b'MINIOS_ORIGINAL' in original.read_bytes()
           saved=work/'payload/SetupComplete_MINIOS.cmd'
           shutil.copy2(original,saved)
@@ -102,7 +102,7 @@ jobs:
           subprocess.run(['wimlib-imagex','export',str(base/'work.wim'),'all',str(base/'edited.esd'),'--compress=LZMS:100','--solid','--check'],check=True)
           subprocess.run(['wimlib-imagex','verify',str(base/'edited.esd')],check=True)
           subprocess.run(['wimlib-imagex','extract',str(base/'edited.esd'),'1','/Windows/Setup/Scripts/SetupComplete_MINIOS.cmd',f'--dest-dir={base/"check"}'],check=True)
-          assert b'MINIOS_ORIGINAL' in (base/'check/Windows/Setup/Scripts/SetupComplete_MINIOS.cmd').read_bytes()
+          assert b'MINIOS_ORIGINAL' in next((base/'check').rglob('SetupComplete_MINIOS.cmd')).read_bytes()
 
           # Explicitly test byte-for-byte invariance outside the replaced extent.
           m.INSTALL_OFFSET=1_000_000
