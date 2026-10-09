@@ -12,8 +12,8 @@ export class GameAudio {
   private active = false;
   private settings: AudioSettings = { sound: true, music: true };
   private files: Record<string, string> = {
-    click: 'click_003.wav', select: 'scala-campanilla.wav', correct: 'confirmation_001.wav',
-    bonus: 'glass_002.wav', wrong: 'error_008.wav', complete: 'confirmation_002.wav', shuffle: 'back_001.wav',
+    click: 'scala-toque.wav', select: 'scala-campanilla.wav', correct: 'confirmation_001.wav',
+    bonus: 'glass_002.wav', wrong: 'error_008.wav', complete: 'confirmation_002.wav', shuffle: 'scala-mezcla.wav',
   };
 
   constructor() {
@@ -60,7 +60,7 @@ export class GameAudio {
     const gain = this.context.createGain();
     source.buffer = buffer;
     source.playbackRate.value = name === 'select' ? 1 + Math.min(Math.max(step, 0), 7) * 0.04 : 1;
-    gain.gain.value = name === 'wrong' ? 0.25 : name === 'select' ? 0.24 : 0.55;
+    gain.gain.value = name === 'wrong' ? 0.25 : name === 'select' ? 0.24 : name === 'click' ? 0.18 : name === 'shuffle' ? 0.28 : 0.55;
     if (name === 'select') {
       if (this.letterVoices.size >= 3) {
         const oldest = this.letterVoices.entries().next().value;

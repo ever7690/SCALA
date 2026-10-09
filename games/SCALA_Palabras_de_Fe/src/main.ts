@@ -146,7 +146,10 @@ function mount(): void {
     const button = (event.target as Element).closest<HTMLButtonElement>('[data-action]');
     if (!button || button.disabled) return;
     const action = button.dataset.action;
-    if (action !== 'letter') void audio.unlock();
+    if (action && action !== 'letter') {
+      const ready = audio.unlock();
+      if (!['shuffle', 'claim-daily', 'submit-selection'].includes(action)) void ready.then(() => feedback('click'));
+    }
     switch (action) {
       case 'play': startGame(); break;
       case 'home': goHome(); break;
@@ -214,7 +217,6 @@ function startGame(): void {
   el<HTMLElement>('#play-screen').hidden = false;
   renderPlay();
   persist();
-  feedback('click');
   if (!save.tutorialSeen) {
     save.tutorialSeen = true;
     persist();
@@ -233,7 +235,6 @@ function goHome(): void {
   el<HTMLElement>('#home-screen').hidden = false;
   renderHome();
   persist();
-  feedback('click');
 }
 
 function renderPlay(): void {
@@ -451,7 +452,6 @@ function nextLevel(): void {
   hintMode = false;
   renderPlay();
   persist();
-  feedback('click');
 }
 
 function shuffleWheel(): void {
@@ -462,7 +462,7 @@ function shuffleWheel(): void {
   }
   selected = [];
   renderWheel();
-  feedback('shuffle');
+  void audio.unlock().then(() => feedback('shuffle'));
 }
 
 function activateHint(): void {
@@ -571,7 +571,7 @@ function claimDaily(): void {
 
 function showSettings(): void {
   const row = (key: 'sound' | 'music' | 'haptic', title: string, description: string): string => `<button class="setting-row" data-action="${key}" role="switch" aria-checked="${save[key]}"><span><strong>${title}</strong><small>${description}</small></span><span class="toggle ${save[key] ? 'on' : ''}"><span></span></span></button>`;
-  modal(`<p class="eyebrow">A TU RITMO</p><h2>Ajustes</h2><div class="settings-list">${row('sound', 'Sonidos', 'Letras, aciertos y recompensas')}${row('music', 'Música ambiental', 'Un acompañamiento suave')}${row('haptic', 'Vibración', 'Respuesta breve al jugar')}</div><div class="settings-bottom"><button class="text-button" data-action="credits">Acerca de este juego</button><button class="text-button" data-action="privacy">Privacidad y tus datos</button><button class="text-button danger" data-action="restart-confirm">Reiniciar mi progreso</button></div><p class="fine-print">SCALA Palabras de Fe · v${__APP_VERSION__}<br>Tu progreso se guarda automáticamente en este dispositivo.</p>`);
+  modal(`<p class="eyebrow">A TU RITMO</p><h2>Ajustes</h2><div class="settings-list">${row('sound', 'Sonidos', 'Letras, botones y recompensas')}${row('music', 'Música ambiental', 'Un acompañamiento suave')}${row('haptic', 'Vibración', 'Respuesta breve al jugar')}</div><div class="settings-bottom"><button class="text-button" data-action="credits">Acerca de este juego</button><button class="text-button" data-action="privacy">Privacidad y tus datos</button><button class="text-button danger" data-action="restart-confirm">Reiniciar mi progreso</button></div><p class="fine-print">SCALA Palabras de Fe · v${__APP_VERSION__}<br>Tu progreso se guarda automáticamente en este dispositivo.</p>`);
 }
 
 function toggleSetting(setting: 'sound' | 'music' | 'haptic'): void {
@@ -580,7 +580,6 @@ function toggleSetting(setting: 'sound' | 'music' | 'haptic'): void {
   persist();
   showSettings();
   el<HTMLButtonElement>(`[data-action="${setting}"]`).focus({ preventScroll: true });
-  feedback('click');
 }
 
 function showHelp(): void {
@@ -599,7 +598,7 @@ function showKeyboard(): void {
 }
 
 function showCredits(): void {
-  modal('<img class="credits-logo" src="/brand/scala-original.png" alt="SCALA para una vida edificada"/><h2>Palabras de Fe</h2><p>Un juego de SCALA para disfrutar de las palabras, descubrir la Biblia y avanzar a tu ritmo.</p><div class="credits-list"><p><strong>Motor de crucigramas</strong><br>Word Tracer · Paul Hoskinson · MIT</p><p><strong>Efectos de sonido</strong><br>Kenney Interface Sounds · CC0</p><p><strong>Audio original SCALA</strong><br>Amanecer · música ambiental<br>Campanilla · selección de letras</p><p><strong>Tipografías</strong><br>Manrope · Lora · SIL Open Font License</p><p><strong>Texto bíblico</strong><br>Reina-Valera 1909 · dominio público<br>Fuente: BibleAquifer / eBible</p></div><p class="fine-print">1.000 niveles · 10 capítulos · Sin anuncios ni compras dentro del juego</p><button class="primary" data-action="close">Seguir mi camino</button>');
+  modal('<img class="credits-logo" src="/brand/scala-original.png" alt="SCALA para una vida edificada"/><h2>Palabras de Fe</h2><p>Un juego de SCALA para disfrutar de las palabras, descubrir la Biblia y avanzar a tu ritmo.</p><div class="credits-list"><p><strong>Motor de crucigramas</strong><br>Word Tracer · Paul Hoskinson · MIT</p><p><strong>Efectos de sonido</strong><br>Kenney Interface Sounds · CC0</p><p><strong>Audio original SCALA</strong><br>Amanecer · música ambiental<br>Campanilla · selección de letras<br>Toque · botones<br>Mezcla · letras</p><p><strong>Tipografías</strong><br>Manrope · Lora · SIL Open Font License</p><p><strong>Texto bíblico</strong><br>Reina-Valera 1909 · dominio público<br>Fuente: BibleAquifer / eBible</p></div><p class="fine-print">1.000 niveles · 10 capítulos · Sin anuncios ni compras dentro del juego</p><button class="primary" data-action="close">Seguir mi camino</button>');
 }
 
 function showPrivacy(): void {

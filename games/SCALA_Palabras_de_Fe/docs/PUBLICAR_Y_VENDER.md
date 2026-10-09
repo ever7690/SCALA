@@ -1,11 +1,11 @@
-# SCALA Palabras de Fe 1.1.2
+# SCALA Palabras de Fe 1.1.3
 
 Esta entrega prepara una versión comercial de pago único: 1.000 crucigramas en español, 10 capítulos, 29 versículos Reina-Valera 1909, monedas virtuales, pistas, palabras extra y regalo diario. Incluye sonidos, música ambiental, progreso local y juego sin conexión. No contiene publicidad, cuentas ni compras internas. El precio se fija al distribuir el juego, no dentro de la aplicación.
 
 ## Archivos de venta
 
-- `SCALA_Palabras_de_Fe_1.1.2_comercial.apk`: instalación directa en Android 7 o posterior, firmada con la clave propia de este juego.
-- `SCALA_Palabras_de_Fe_1.1.2_Google_Play.aab`: paquete firmado para cargar en Play Console. Un AAB no se instala directamente por USB.
+- `SCALA_Palabras_de_Fe_1.1.3_comercial.apk`: instalación directa en Android 7 o posterior, firmada con la clave propia de este juego.
+- `SCALA_Palabras_de_Fe_1.1.3_Google_Play.aab`: paquete firmado para cargar en Play Console. Un AAB no se instala directamente por USB.
 - `tienda/`: ícono PNG 512 × 512, gráfico JPEG 1024 × 500 y cuatro capturas JPEG 1080 × 1920 de la interfaz real del juego. La versión web de producción comparte interfaz y contenido con el APK; estas capturas no sustituyen la prueba en un teléfono Android.
 - `textos-tienda.json`: nombre, descripción breve y descripción completa en español.
 - `privacidad.html`: política que debe completarse con tu contacto real y alojarse en una URL pública antes de presentar el juego en Google Play.
@@ -16,7 +16,7 @@ La clave privada y su contraseña se entregan en un respaldo separado. No van de
 
 ## Antes de cobrar por la primera entrega
 
-1. Instala esta actualización en el Realme y revisa portada, icono, gestos, sonidos, pistas, final de nivel y guardado después de cerrar y volver a abrir. Repite un nivel en modo avión. La versión 1.1.0 de pruebas ya fue instalada y revisada visualmente por el propietario; la 1.1.2 requiere escuchar la campanilla nueva en el dispositivo. Los demás efectos y la música conservan sus archivos.
+1. Instala esta actualización en el Realme y revisa portada, icono, gestos, sonidos, pistas, final de nivel y guardado después de cerrar y volver a abrir. Repite un nivel en modo avión. La versión 1.1.0 de pruebas ya fue instalada y revisada visualmente por el propietario; el propietario confirmó que la campanilla de letras de 1.1.2 suena bien. En 1.1.3 se revisan en el dispositivo el nuevo ícono, los fondos y los sonidos de botones y mezcla; las pruebas automáticas no sustituyen esa revisión.
 2. Define precio, canal de venta y contacto de soporte. Entrega el contacto con el comprobante o la ficha del producto. Completa también `src/data/privacy.json` con ese contacto antes de publicar en una tienda.
 3. Distribuye el APK `comercial`, junto con el nombre de la aplicación, la versión, Android mínimo, tus datos de soporte y la huella SHA-256. El APK de pruebas y los archivos sin firmar son para desarrollo.
 
@@ -24,7 +24,7 @@ No se incluyen pasarela de pago, servidor de licencias ni protección contra la 
 
 ## Presentación en Google Play
 
-El paquete usa `com.scala.palabrasdefe`, versión `1.1.2`, código de versión `4`, SDK objetivo 36 y SDK mínimo 24. API 36 cumple el requisito de SDK objetivo publicado para nuevas aplicaciones y actualizaciones desde el 31 de agosto de 2026. Esto no equivale a aprobación de la tienda.
+El paquete usa `com.scala.palabrasdefe`, versión `1.1.3`, código de versión `5`, SDK objetivo 36 y SDK mínimo 24. API 36 cumple el requisito de SDK objetivo publicado para nuevas aplicaciones y actualizaciones desde el 31 de agosto de 2026. Esto no equivale a aprobación de la tienda.
 
 El propietario debe completar cuenta y verificación de desarrollador, perfil de pagos, precio, países, datos de soporte, clasificación de contenido, público objetivo y declaración de seguridad de los datos. Según el comportamiento actual de esta APK, la aplicación no recopila ni comparte datos personales; el progreso se conserva localmente y Android puede administrar copias del sistema. El formulario y la política siguen siendo necesarios aunque no se recopilen datos. No declares una clasificación por edad ni participación en un programa para niños sin completar los formularios correspondientes.
 
@@ -43,13 +43,13 @@ cd games/SCALA_Palabras_de_Fe
 export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
 export PATH="$JAVA_HOME/bin:$PATH"
 bash scripts/build_android.sh
-adb -d install -r entregables/SCALA_Palabras_de_Fe_1.1.2_pruebas.apk
+adb -d install -r entregables/SCALA_Palabras_de_Fe_1.1.3_pruebas.apk
 ```
 
 Para instalar el APK comercial descargado y descomprimido en OBRERO 1:
 
 ```bash
-adb -d install -r /ruta/SCALA_Palabras_de_Fe_1.1.2_comercial.apk
+adb -d install -r /ruta/SCALA_Palabras_de_Fe_1.1.3_comercial.apk
 ```
 
 ## Crear futuras versiones comerciales

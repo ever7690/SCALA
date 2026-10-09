@@ -1,0 +1,31 @@
+{
+  "version": "1.1.3",
+  "origin": "Síntesis original SCALA, MIT, sin grabaciones externas",
+  "generator": "scripts/create_interface_sounds.py",
+  "sounds": [
+    {
+      "file": "public/audio/scala-toque.wav",
+      "sha256": "30842ef3cca753a676ef2ef7e276801bc3b8b7a497685f20b83598b48a94bcb7",
+      "format": "PCM 16-bit mono, 44100 Hz",
+      "durationSeconds": 0.14,
+      "gain": 0.18,
+      "description": "Toque cristalino breve, ataque y cierre suaves"
+    },
+    {
+      "file": "public/audio/scala-mezcla.wav",
+      "sha256": "0d18e5b6f019fd31473496431ad2573d899ecf7195af08f1cbdc624c5cb832b5",
+      "format": "PCM 16-bit mono, 44100 Hz",
+      "durationSeconds": 0.28,
+      "gain": 0.28,
+      "description": "Soplo cálido con ascenso leve, sin tono de error"
+    }
+  ],
+  "preservedLetterChime": {
+    "file": "public/audio/scala-campanilla.wav",
+    "sha256": "469826041e91f1fe5f2cc7d0897a31c91880edd84f81061398fbefe6a571b23c",
+    "gain": 0.24,
+    "durationSeconds": 0.56
+  },
+  "musicUnchanged": true,
+  "otherEffectsUnchanged": true
+}

@@ -89,7 +89,21 @@ try {
   await page.evaluate(() => document.fonts.ready);
   assert.equal(await page.evaluate(() => document.fonts.check('16px "SCALA Sans"') && document.fonts.check('16px "SCALA Serif"')), true);
   assert.equal(await page.locator('.hero-logo').evaluate(image => image.naturalWidth), 2048);
+  await page.locator('.scenery img').evaluateAll(images => Promise.all(images.map(image => image.decode())));
   await page.screenshot({ path: 'entregables/portada.png', fullPage: true });
+  for (const action of ['settings', 'map', 'verses', 'daily', 'help']) {
+    const before = await page.evaluate(() => window.scalaPlayedAudio.length);
+    await page.locator(`#home-screen [data-action="${action}"]`).click();
+    await page.waitForFunction(before => window.scalaPlayedAudio.length > before, before);
+    const played = await page.evaluate(before => window.scalaPlayedAudio.slice(before), before);
+    assert.equal(played.length, 1);
+    assert(Math.abs(played[0].duration - 0.14) < 0.001);
+    assert(Math.abs(played[0].gain - 0.18) < 0.001);
+    await page.locator('#modal [data-action="close"]').first().click();
+    await page.waitForFunction(before => window.scalaPlayedAudio.length > before + 1, before);
+    assert.equal(await page.evaluate(() => window.scalaPlayedAudio.length), before + 2);
+  }
+  results.push('Los cinco accesos de portada suenan desde el primer toque, suavemente y sin duplicados');
   await page.locator('[data-action="play"]').click();
   await page.locator('#modal [data-action="close"]').last().click();
   await page.waitForFunction(() => window.scalaDecodedAudio === 7);
@@ -99,11 +113,12 @@ try {
   assert.equal(letterAudio.length, 4);
   assert(letterAudio.every(item => Math.abs(item.gain - 0.24) < 0.001));
   await page.locator('[data-action="shuffle"]').click();
+  await page.waitForFunction(() => Math.abs(window.scalaPlayedAudio.at(-1)?.duration - 0.28) < 0.001);
   const shuffleAudio = await page.evaluate(() => window.scalaPlayedAudio.at(-1));
-  assert(Math.abs(shuffleAudio.duration - 0.06820861678004535) < 0.001);
-  assert(Math.abs(shuffleAudio.gain - 0.55) < 0.001);
+  assert(Math.abs(shuffleAudio.duration - 0.28) < 0.001);
+  assert(Math.abs(shuffleAudio.gain - 0.28) < 0.001);
   assert.equal(shuffleAudio.rate, 1);
-  results.push('Campanilla en las cuatro letras del gesto; sonido de mezclar conservado');
+  results.push('Campanilla aprobada en las cuatro letras del gesto; mezcla con soplo suave y volumen controlado');
   assert((await saveState(page)).game.levels['1'].solved.includes('amor'));
   assert.equal((await saveState(page)).coins, 155);
   await typeWord(page, 'amor');
@@ -144,6 +159,7 @@ try {
   await page.locator('.game-header [data-action="settings"]').click();
   await page.locator('[data-action="music"]').click();
   assert.equal((await saveState(page)).music, false);
+  assert.equal(await page.evaluate(() => window.scalaPlayedAudio.length), mutedAudioCount);
   assert.equal(await page.locator('[data-action="music"]').evaluate(button => button === document.activeElement), true);
   await page.locator('[data-action="privacy"]').click();
   assert.equal(await page.locator('#modal').getAttribute('aria-labelledby'), 'modal-title');
@@ -182,7 +198,11 @@ try {
   assert(Math.abs(offlineAudio.duration - 0.56) < 0.001);
   assert(Math.abs(offlineAudio.gain - 0.24) < 0.001);
   results.push('Campanilla disponible sin conexión y selección de letras silenciosa con Sonidos desactivado');
+  await page.locator('.scenery img').evaluateAll(images => Promise.all(images.map(image => image.decode())));
+  assert.equal(await page.locator('.scenery').getAttribute('data-scene'), 'play');
+  assert.deepEqual(await page.locator('.scenery img').evaluateAll(images => images.map(image => [image.naturalWidth, image.naturalHeight])), [[841, 1870], [841, 1870]]);
   results.push('Recarga y juego sin conexión con progreso conservado');
+  results.push('Los dos fondos originales se cargan íntegros también sin conexión');
   assert.deepEqual(externalRequests, []);
   results.push('Tipografías sin conexión, privacidad accesible, foco conservado y ninguna petición a servidores externos');
   await context.close();

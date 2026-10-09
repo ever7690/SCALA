@@ -21,8 +21,8 @@ const png = file => `data:image/png;base64,${fs.readFileSync(file).toString('bas
 
 try {
   const page = await browser.newPage({ viewport: { width: 512, height: 512 } });
-  const mark = png('public/brand/scala-game-mark.png');
-  await page.setContent(`<html><body style="margin:0;background:#081829;display:grid;place-items:center;width:512px;height:512px"><img src="${mark}" style="width:93%;height:93%;object-fit:contain"></body></html>`);
+  const mark = png('public/brand/palabras-de-fe-icon-v2.png');
+  await page.setContent(`<html><body style="margin:0;background:#081829;display:grid;place-items:center;width:512px;height:512px"><img src="${mark}" style="width:100%;height:100%;object-fit:contain"></body></html>`);
   await page.locator('img').evaluate(image => image.decode());
   const icon = await page.evaluate(async mark => {
     const image = new Image();
@@ -35,13 +35,26 @@ try {
     context.fillStyle = '#081829';
     context.fillRect(0, 0, 512, 512);
     context.imageSmoothingQuality = 'high';
-    context.drawImage(image, 512 * 0.035, 512 * 0.035, 512 * 0.93, 512 * 0.93);
-    return canvas.toDataURL('image/png').split(',')[1];
+    context.drawImage(image, 0, 0, 512, 512);
+    const square = canvas.toDataURL('image/png').split(',')[1];
+    context.clearRect(0, 0, 512, 512);
+    context.save();
+    context.beginPath();
+    context.arc(256, 256, 256, 0, 2 * Math.PI);
+    context.clip();
+    context.drawImage(image, 0, 0, 512, 512);
+    context.restore();
+    return { square, round: canvas.toDataURL('image/png').split(',')[1] };
   }, mark);
-  fs.writeFileSync(`${output}/icono-512.png`, Buffer.from(icon, 'base64'));
-  if (process.argv.includes('--brand')) fs.copyFileSync(`${output}/icono-512.png`, 'public/brand/scala-icon.png');
+  fs.writeFileSync(`${output}/icono-512.png`, Buffer.from(icon.square, 'base64'));
+  if (process.argv.includes('--brand')) {
+    fs.copyFileSync(`${output}/icono-512.png`, 'public/brand/scala-icon.png');
+    const resources = 'android/app/src/main/res/mipmap-nodpi';
+    for (const name of ['ic_launcher.png', 'scala_launcher_art.png']) fs.writeFileSync(`${resources}/${name}`, Buffer.from(icon.square, 'base64'));
+    for (const name of ['ic_launcher_round.png', 'scala_launcher_round_art.png']) fs.writeFileSync(`${resources}/${name}`, Buffer.from(icon.round, 'base64'));
+  }
   await page.setViewportSize({ width: 900, height: 370 });
-  await page.setContent(`<html><head><style>body{margin:0;background:#f7f3e8;color:#18334a;font:14px system-ui}.row{display:flex;gap:55px;justify-content:center;align-items:center;height:270px}.sample{text-align:center}.mask{background:#081829;width:144px;height:144px;display:grid;place-items:center}.mask img{width:93%;height:93%;object-fit:contain}.circle{border-radius:50%}.squircle{border-radius:27%}.sample p{margin-top:18px;font-weight:600}.note{text-align:center;color:#576a76;font-size:13px}</style></head><body><div class="row"><div class="sample"><div class="mask circle"><img src="${mark}"></div><p>SCALA Palabras de Fe</p></div><div class="sample"><div class="mask squircle"><img src="${mark}"></div><p>SCALA Palabras de Fe</p></div><div class="sample"><div class="mask"><img src="${mark}"></div><p>SCALA Palabras de Fe</p></div></div><p class="note">Vista de las capas del ícono con máscaras habituales de Android.</p></body></html>`);
+  await page.setContent(`<html><head><style>body{margin:0;background:#f7f3e8;color:#18334a;font:14px system-ui}.row{display:flex;gap:55px;justify-content:center;align-items:center;height:270px}.sample{text-align:center}.mask{background:#081829;width:144px;height:144px;display:grid;place-items:center;overflow:hidden}.mask img{width:100%;height:100%;object-fit:contain}.circle{border-radius:50%}.squircle{border-radius:27%}.sample p{margin-top:18px;font-weight:600}.note{text-align:center;color:#576a76;font-size:13px}</style></head><body><div class="row"><div class="sample"><div class="mask circle"><img src="${mark}"></div><p>Palabras de Fe</p></div><div class="sample"><div class="mask squircle"><img src="${mark}"></div><p>Palabras de Fe</p></div><div class="sample"><div class="mask"><img src="${mark}"></div><p>Palabras de Fe</p></div></div><p class="note">Palabras de Fe · máscaras habituales de Android · arte sin recuadro ni margen exterior.</p></body></html>`);
   await page.locator('img').evaluateAll(images => Promise.all(images.map(image => image.decode())));
   await page.screenshot({ path: 'entregables/preview-iconos.png' });
   if (!process.argv.includes('--brand-only')) {

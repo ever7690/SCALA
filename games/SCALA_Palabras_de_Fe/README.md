@@ -1,4 +1,4 @@
-# SCALA Palabras de Fe 1.1.2
+# SCALA Palabras de Fe 1.1.3
 
 Juego Android de conectar letras y resolver crucigramas, con interfaz propia SCALA en español y motor MIT de Word Tracer. Incluye 1.000 niveles, 10 capítulos, palabras extra, monedas virtuales, pistas, regalo diario con racha, 29 versículos RV1909, sonidos Kenney CC0, música original y progreso local. No necesita cuentas ni conexión para jugar; no contiene anuncios ni compras internas.
 
@@ -8,9 +8,9 @@ La versión 1.1.1 refina los controles con botones azul y oro, un engranaje de c
 
 La versión 1.1.2 cambia únicamente el efecto de seleccionar letras por una campanilla original, con inicio y final suaves. Limita la superposición de campanillas durante gestos rápidos. Los demás efectos, incluida la mezcla de letras, y la música conservan sus archivos, volumen y velocidad. [FASE_FINAL_VENTA.md](docs/FASE_FINAL_VENTA.md) contiene el procedimiento final de instalación, comprobación y venta.
 
-## Compilar en OBRERO 1
+La versión 1.1.3 integra dos fondos originales azul y oro, un ícono de inicio que dice «Palabras de Fe», un toque cristalino breve para los controles y una mezcla de letras con soplo suave. Conserva la campanilla de letras aprobada, el resto de los efectos y la música. El logotipo SCALA dentro de la aplicación conserva exactamente sus bytes. Los fondos completos de 841 × 1870 se incluyen sin reescalar y funcionan sin conexión; sus prompts y huellas están en [fondos-scala.json](docs/fondos-scala.json).
 
-La rama `scala/bible-word-puzzle-fondos` prepara dos fondos originales para la siguiente revisión: amanecer entre montañas en la portada y un valle azul más sereno durante el juego. Los PNG completos de 841 × 1870 píxeles se incluyen sin reescalar, conservan la paleta azul y dorada y se almacenan sin conexión. Sus prompts y huellas están en [fondos-scala.json](docs/fondos-scala.json). Esta rama de arte conserva la versión base 1.1.2 mientras se prepara la siguiente entrega.
+## Compilar en OBRERO 1
 
 Requisitos: Node.js 22 o superior, JDK 21 y Android SDK con plataforma y Build-Tools 36.0.0. El wrapper descarga Gradle 9.3.1 y verifica su SHA-256; no se necesita Gradle global.
 
@@ -31,7 +31,7 @@ JAVA_TOOL_OPTIONS="${JAVA_TOOL_OPTIONS:-} -Djava.net.preferIPv4Stack=true" bash 
 El script comprueba JDK, código y 1.000 niveles, genera el contenido sin conexión y compila con dos trabajadores y 1,5 GB de memoria Gradle. Produce en `entregables/` el APK de pruebas, el APK release sin firmar, el AAB sin firmar y sus huellas. La app requiere Android 7.0 o posterior y se muestra en vertical.
 
 ```bash
-adb -d install -r entregables/SCALA_Palabras_de_Fe_1.1.2_pruebas.apk
+adb -d install -r entregables/SCALA_Palabras_de_Fe_1.1.3_pruebas.apk
 ```
 
 Para actualizar una APK de pruebas conservando el progreso, compila en el mismo equipo que creó la instalada. Las claves automáticas de depuración de OBRERO 1 y de la nube son distintas. La variante comercial usa `com.scala.palabrasdefe`; la de pruebas usa `com.scala.palabrasdefe.debug`. Se instalan por separado y cada una guarda su propio progreso.
@@ -69,7 +69,7 @@ Las pruebas validan los 1.000 tableros, soluciones, cruces y restauración. La i
 
 `public/brand/scala-original.png` conserva exactamente el PNG proporcionado de 2048 × 1638, sin cambios y con sus proporciones originales. SHA-256: `a6ada3a8a2afe73f0a38718fefd55b9734984800872049f5cd56f2259cec85e1`.
 
-El ícono Android usa fondo azul en toda la máscara y una variante de la marca con «Palabras de Fe» dentro de la zona segura. El nombre de la aplicación bajo el ícono es «SCALA Palabras de Fe». La variante y su especificación están en [DISENO_ICONO.md](docs/DISENO_ICONO.md).
+El ícono Android muestra un libro abierto, una cruz y «Palabras de Fe» sobre azul marino que llena la máscara. El ícono y su etiqueta bajo él dicen «Palabras de Fe»; la marca SCALA permanece en portada, cabecera y créditos. Incluye variantes adaptables y redondas para Android. La imagen maestra y su especificación están en [DISENO_ICONO.md](docs/DISENO_ICONO.md).
 
 Niveles: `src/data/bible-levels.json`. Versículos: `src/data/verses.json`. Política: `src/data/privacy.json`, que genera `public/privacidad.html`. Audio: `public/audio/`; música: `scala-amanecer.ogg`. Tipografías: `public/fonts/`. Estilo: `src/styles.css`.
 

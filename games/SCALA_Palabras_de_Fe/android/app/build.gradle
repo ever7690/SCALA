@@ -7,8 +7,8 @@ android {
         applicationId "com.scala.palabrasdefe"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 4
-        versionName "1.1.2"
+        versionCode 5
+        versionName "1.1.3"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         aaptOptions {
              // Files and dirs to omit from the packaged assets dir, modified to accommodate modern web apps.
@@ -23,8 +23,8 @@ android {
         debug {
             applicationIdSuffix ".debug"
             versionNameSuffix "-debug"
-            resValue "string", "app_name", "SCALA Palabras de Fe"
-            resValue "string", "title_activity_main", "SCALA Palabras de Fe"
+            resValue "string", "app_name", "Palabras de Fe"
+            resValue "string", "title_activity_main", "Palabras de Fe"
             resValue "string", "package_name", "com.scala.palabrasdefe.debug"
             resValue "string", "custom_url_scheme", "com.scala.palabrasdefe.debug"
         }

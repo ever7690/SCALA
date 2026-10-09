@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <inset xmlns:android="http://schemas.android.com/apk/res/android"
-    android:insetLeft="19%" android:insetTop="19%"
-    android:insetRight="19%" android:insetBottom="19%">
+    android:insetLeft="16.6667%" android:insetTop="16.6667%"
+    android:insetRight="16.6667%" android:insetBottom="16.6667%">
     <bitmap android:src="@mipmap/scala_launcher_art"
         android:gravity="fill" android:filter="true" />
 </inset>

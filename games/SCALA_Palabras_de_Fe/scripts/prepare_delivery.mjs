@@ -8,7 +8,10 @@ for (const [source, target] of [
   ['public/privacidad.html', 'entregables/privacidad.html'],
   ['NOTICE.md', 'entregables/documentacion/PROCEDENCIA_Y_LICENCIAS.md'],
   ['docs/DISENO_ICONO.md', 'entregables/documentacion/DISENO_ICONO.md'],
-  ['docs/prompt-icono.txt', 'entregables/documentacion/prompt-icono.txt'],
+  ['docs/prompt-icono.txt', 'entregables/documentacion/prompt-icono-anterior.txt'],
+  ['docs/prompt-icono-v2.txt', 'entregables/documentacion/prompt-icono-v2.txt'],
+  ['docs/fondos-scala.json', 'entregables/documentacion/fondos-scala.json'],
+  ['docs/sonidos-interfaz.json', 'entregables/documentacion/sonidos-interfaz.json'],
   ['LICENSE', 'entregables/documentacion/LICENSE'],
 ]) fs.copyFileSync(source, target);
 fs.cpSync('licenses', 'entregables/documentacion/licenses', { recursive: true });
