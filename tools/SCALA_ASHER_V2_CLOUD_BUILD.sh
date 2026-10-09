@@ -9,10 +9,10 @@ df -h /
 # Generate an ephemeral, runner-only RSA private key.
 openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:2048 -out "$RUNNER_TEMP/asher-private.pem" >/dev/null 2>&1
 mkdir -p cloud
-openssl rsa -in "$RUNNER_TEMP/asher-private.pem" -noout -modulus | sed 's/^Modulus=//' > cloud/ASHER_V2_BRIDGE_MODULUS.txt
+openssl rsa -in "$RUNNER_TEMP/asher-private.pem" -noout -modulus | sed 's/^Modulus=//' > cloud/ASHER_V2_BRIDGE_MODULUS_CHUNKED.txt
 git config user.email "actions@users.noreply.github.com"
 git config user.name "SCALA Cloud Builder"
-git add cloud/ASHER_V2_BRIDGE_MODULUS.txt
+git add cloud/ASHER_V2_BRIDGE_MODULUS_CHUNKED.txt
 git commit -m "Publish ephemeral ASHER RSA public key"
 git push origin HEAD:main
 echo 'PUBLIC_RSA_KEY_READY'
@@ -46,7 +46,7 @@ echo "VERIFIED_ALTERNATE_MINIOS_BASE"
 # An unreferenced Git blob is accessible only with its unpredictable SHA.
 # The SHA and artifact-password reach the runner via RSA ciphertext,
 # published without any plaintext image names or personal photo content.
-API="https://api.github.com/repos/$GITHUB_REPOSITORY/contents/cloud/ASHER_V2_BRIDGE_SEALED_REF.hex"
+API="https://api.github.com/repos/$GITHUB_REPOSITORY/contents/cloud/ASHER_V2_BRIDGE_SEALED_REF_CHUNKED.hex"
 found=0
 for n in $(seq 1 150); do
   if curl -fsSL --max-time 12 -H "Authorization: Bearer $GH_TOKEN" \
@@ -74,7 +74,17 @@ BLOB_SHA="$(cat "$RUNNER_TEMP/blob_sha.txt")"
 curl -fsSL --max-time 90 -H "Authorization: Bearer $GH_TOKEN" \
   -H "Accept: application/vnd.github+json" \
   "https://api.github.com/repos/$GITHUB_REPOSITORY/git/blobs/$BLOB_SHA" |
-  jq -r '.content' | base64 -d > "$RUNNER_TEMP/ASHERIMAGENES.tar.gz"
+  jq -r '.content' | base64 -d > "$RUNNER_TEMP/parts-manifest.txt"
+test "$(wc -l < "$RUNNER_TEMP/parts-manifest.txt")" -ge 10
+test "$(wc -l < "$RUNNER_TEMP/parts-manifest.txt")" -le 30
+: > "$RUNNER_TEMP/ASHERIMAGENES.tar.gz"
+while IFS= read -r PIECE; do
+  [[ "$PIECE" =~ ^[a-f0-9]{40}$ ]] || exit 1
+  curl -fsSL --retry 3 --max-time 90 -H "Authorization: Bearer $GH_TOKEN" \
+    -H "Accept: application/vnd.github+json" \
+    "https://api.github.com/repos/$GITHUB_REPOSITORY/git/blobs/$PIECE" |
+    jq -r '.content' | base64 -d >> "$RUNNER_TEMP/ASHERIMAGENES.tar.gz"
+done < "$RUNNER_TEMP/parts-manifest.txt"
 test "$(stat -c '%s' "$RUNNER_TEMP/ASHERIMAGENES.tar.gz")" -eq 7572956
 test "$(sha256sum "$RUNNER_TEMP/ASHERIMAGENES.tar.gz" | awk '{print $1}')" = 15091d28f306d351829d96437674ca9877fa2f63ac9e9bfadc1dbc8eb5fa83c0
 echo 'FIVE_USER_IMAGES_SHA_VERIFIED'
