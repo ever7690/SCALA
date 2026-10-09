@@ -1,0 +1,22 @@
+name: ASHER Cloud Bridge Connectivity Test
+on:
+  push:
+    paths:
+      - '.github/workflows/asher-bridge-test.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Check cloud bridge for non-sensitive 120-byte hash manifest
+        env:
+          ASHER_URL: "https://sdmntprbrazilsouth.oaiusercontent.com/files/00000000-724c-820e-97b7-d4a7f3cf68eb/raw?se=2026-10-09T00%3A37%3A44Z&sp=r&sv=2026-02-06&sr=b&scid=16f40857-7950-52e1-a438-0acf24fd78e0&skoid=bdd24bd8-9af5-4138-bfb1-19fba97a8611&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-08T12%3A51%3A51Z&ske=2026-10-09T12%3A51%3A51Z&sks=b&skv=2026-02-06&sig=Xq%2B1e0ooMNGgxJPHmq2wXnYSgjc/GIFmvhfZlNAcLpE%3D"
+        run: |
+          set -euo pipefail
+          curl -fL --max-time 30 --retry 2 "$ASHER_URL" -o sha.txt
+          test "$(stat -c %s sha.txt)" -eq 120
+          grep -q 798325928641854d3214e3d565eeb29088288334f66b51d83f907ab0561f6eb1 sha.txt
+          echo "ASHER CLOUD BRIDGE TEST PASS"
