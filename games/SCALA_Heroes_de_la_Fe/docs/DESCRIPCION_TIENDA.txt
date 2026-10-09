@@ -7,8 +7,8 @@ Juega rondas de 12 preguntas, gana experiencia y descubre nuevos personajes ilus
 
 Elige tu ritmo: practica sin reloj y con ayudas gratuitas; completa el desafío diario con una pregunta de cada personaje; o comparte un duelo local con otra persona en el mismo celular. En el duelo, ambos reciben las mismas preguntas y las soluciones se revelan al terminar los dos turnos.
 
-Campanillas suaves, música tranquila, una identidad azul y dorada y opciones para reducir el movimiento. Tu progreso se guarda para retomar una ronda cuando quieras.
+Notas suaves, música original de piano y cuerdas, una identidad blanca, marfil, oliva y dorada y opciones para reducir el movimiento. Tu progreso se guarda para retomar una ronda cuando quieras.
 
 Funciona sin conexión, sin anuncios, sin cuentas y sin compras de monedas. Los pasajes conservan la ortografía histórica de Reina-Valera 1909. Las ilustraciones son interpretaciones artísticas. Los duelos son locales: no hay partidas por Internet.
 
-Una aplicación original de SCALA para descubrir, aprender y compartir.
+Una aplicación original de Scala desarrollo cristiano para descubrir, aprender y compartir.

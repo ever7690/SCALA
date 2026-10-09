@@ -1,8 +1,8 @@
 # Entrega y publicación
 
-El paquete instalable es SCALA_Heroes_de_la_Fe_1.0.0_comercial.apk, firmado con la clave privada SCALA que ya posee el titular. La aplicación usa un identificador diferente al de Palabras de Fe, de modo que ambos juegos pueden convivir.
+El paquete instalable es SCALA_Heroes_de_la_Fe_1.1.0_comercial.apk, firmado con la clave privada SCALA que ya posee el titular. La aplicación usa un identificador diferente al de Palabras de Fe, de modo que ambos juegos pueden convivir. La versión 1.1.0 tiene código 2, conserva com.scala.heroesdefe y puede instalarse sobre la edición comercial 1.0.0 manteniendo los datos locales; no desinstales la edición anterior antes de actualizar.
 
-El AAB firmado, SCALA_Heroes_de_la_Fe_1.0.0_Google_Play.aab, es el archivo para cargar en Google Play Console. La APK comercial puede instalarse directamente para revisar el producto en un teléfono. Instalar una APK no equivale a publicar ni a obtener aprobación de una tienda.
+El AAB firmado, SCALA_Heroes_de_la_Fe_1.1.0_Google_Play.aab, es el archivo para cargar en Google Play Console. La APK comercial puede instalarse directamente para revisar el producto en un teléfono. Instalar una APK no equivale a publicar ni a obtener aprobación de una tienda.
 
 Se incluyen un ícono de 512 px, un gráfico de 1024 × 500 px, capturas reales de 1080 × 1920 px, la descripción en español, la política de privacidad y los informes de pruebas. Antes de publicar, el titular completa en su cuenta los datos del desarrollador y de contacto, el precio si desea venderlo, la clasificación de contenido, la declaración de datos y las pruebas que solicite la tienda. La política debe tener una URL pública y contacto reales.
 

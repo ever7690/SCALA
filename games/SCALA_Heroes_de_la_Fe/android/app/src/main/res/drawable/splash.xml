@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android"><item android:drawable="@color/scala_background"/><item android:width="240dp" android:height="192dp" android:gravity="center"><bitmap android:src="@drawable/scala_logo" android:gravity="fill" android:filter="true"/></item></layer-list>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"><item android:drawable="@color/scala_launch_background"/><item android:width="264dp" android:height="211dp" android:gravity="center"><bitmap android:src="@drawable/scala_logo" android:gravity="fill" android:filter="true"/></item></layer-list>

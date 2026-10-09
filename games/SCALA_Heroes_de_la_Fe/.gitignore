@@ -37,3 +37,9 @@ android/.kotlin/
 android/build/
 android/app/build/
 android/capacitor-cordova-android-plugins/build/
+
+artwork/heroes-home-v2.png
+artwork/heroes-home-v3.png
+artwork/heroes-quiz-v2.png
+artwork/heroes-icon-v2.png
+artwork/heroes-icon-v3.png

@@ -1,0 +1,17 @@
+{
+  "musicId": "1faaf4ce-af7e-43b4-a5b9-f43f419f9493",
+  "durationSeconds": 89.57383333333334,
+  "prompt": "Original instrumental soundtrack for a premium family Bible knowledge game titled Héroes de la Fe. Serene luminous neoclassical chamber ambient music, warm felt grand piano melody with a memorable gentle five-note theme, expressive soft string quartet and subtle harp arpeggios, delicate cinematic acoustic production, hopeful reverent mood, 68 BPM, 4/4, D major and B minor, restrained elegant dynamics, instrumental throughout. Flowing quiet introduction, lyrical middle, softened return to the opening harmony with a sustained D major ending suitable for a smooth looping mobile game background. Gentle rounded piano attacks, velvety strings, warm spacious studio reverb, balanced bass and clear mids, intimate polished professional sound. Create an independent original composition.",
+  "provider": "vidIQ generate_music",
+  "createdAt": "2026-10-09",
+  "royaltyFreeDescribedByProvider": true,
+  "containerDetected": "MP3 estéreo, 44100 Hz (el proveedor lo entregó con extensión .wav)",
+  "master": "artwork/audio/heroes-luz-del-camino-original.mp3",
+  "masterSHA256": "5a9a861d724de082921d5890057587e7cfd1b25be2b559bbad721258e1b448e7",
+  "actualMasterDurationSeconds": 89.573833,
+  "production": "public/audio/heroes-luz-del-camino.ogg",
+  "productionDurationSeconds": 87.2,
+  "normalizationLUFS": -19,
+  "loopCrossfadeSeconds": 1.2,
+  "creatorDescription": "Instrumental original generado para este proyecto mediante vidIQ; descrito como royalty-free por el proveedor."
+}

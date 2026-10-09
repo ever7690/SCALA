@@ -1,0 +1,186 @@
+{
+  "family": "Phosphor",
+  "style": "duotone",
+  "version": "2.1.1",
+  "source": "https://github.com/phosphor-icons/core",
+  "package": "@phosphor-icons/core",
+  "license": "MIT",
+  "licenseFile": "licenses/PHOSPHOR-MIT.txt",
+  "offline": true,
+  "icons": [
+    {
+      "key": "home",
+      "sourceIcon": "house",
+      "path": "artwork/icons/phosphor/house-duotone.svg",
+      "sha256": "bd9f3502ab7d63c3cc8a3cf91657e5974188ede3bd1ac7249333d9ce5d0d932f"
+    },
+    {
+      "key": "map",
+      "sourceIcon": "map-trifold",
+      "path": "artwork/icons/phosphor/map-trifold-duotone.svg",
+      "sha256": "51fc6df1cb4a67fcf8ec828735f3d2eb163c14d998b2bd34b1507782bf40bb5c"
+    },
+    {
+      "key": "book",
+      "sourceIcon": "book-open",
+      "path": "artwork/icons/phosphor/book-open-duotone.svg",
+      "sha256": "114456d637f78d1a748ef70768d3635c8f927fdfeed095a4ca9ded6f975ab8f5"
+    },
+    {
+      "key": "settings",
+      "sourceIcon": "gear-six",
+      "path": "artwork/icons/phosphor/gear-six-duotone.svg",
+      "sha256": "049e51d9b794d6b2649073414f90daed5ebadbebfcefb178170aef21c7ace330"
+    },
+    {
+      "key": "coins",
+      "sourceIcon": "coins",
+      "path": "artwork/icons/phosphor/coins-duotone.svg",
+      "sha256": "23551f8da502c3290481cd0ae01c518628f2ca851689effacfa901e7c54aafad"
+    },
+    {
+      "key": "sun",
+      "sourceIcon": "sun",
+      "path": "artwork/icons/phosphor/sun-duotone.svg",
+      "sha256": "6a180204ea92f2501de811908395e6dad15ddf2ca0a577f420fad8bef0b4c5ca"
+    },
+    {
+      "key": "users",
+      "sourceIcon": "users-three",
+      "path": "artwork/icons/phosphor/users-three-duotone.svg",
+      "sha256": "8df43f36d7329c365afa0672e2367af16a7bfc7d8820838dfe7358cce1a76aba"
+    },
+    {
+      "key": "play",
+      "sourceIcon": "play",
+      "path": "artwork/icons/phosphor/play-duotone.svg",
+      "sha256": "8485ad1efd20878370885ccf7b825aae21a3b2fede35734484475672ac707c48"
+    },
+    {
+      "key": "left",
+      "sourceIcon": "arrow-left",
+      "path": "artwork/icons/phosphor/arrow-left-duotone.svg",
+      "sha256": "d9b9a505ce3f1240e989bac22aa2b4ba0458f580e2a5a8843c37de4a9cdc63a8"
+    },
+    {
+      "key": "right",
+      "sourceIcon": "arrow-right",
+      "path": "artwork/icons/phosphor/arrow-right-duotone.svg",
+      "sha256": "5a480091cae4701fba918894eaa657bcbb3c705d0cb7a0eee954506f09aec11c"
+    },
+    {
+      "key": "clock",
+      "sourceIcon": "timer",
+      "path": "artwork/icons/phosphor/timer-duotone.svg",
+      "sha256": "fda04f76dea917e8196fabe509c0fe283ab0d4edca4001a0f965901905e4f0c5"
+    },
+    {
+      "key": "half",
+      "sourceIcon": "circle-half",
+      "path": "artwork/icons/phosphor/circle-half-duotone.svg",
+      "sha256": "962859eff2517923f1bca7aa255699b9056e898ea506acd31d21e9d4113312d8"
+    },
+    {
+      "key": "bookmark",
+      "sourceIcon": "bookmark-simple",
+      "path": "artwork/icons/phosphor/bookmark-simple-duotone.svg",
+      "sha256": "b560161da8079c67c381dcfd1ae69b39e8eed3815370cf2adc6ba4b3bea04aff"
+    },
+    {
+      "key": "check",
+      "sourceIcon": "check",
+      "path": "artwork/icons/phosphor/check-duotone.svg",
+      "sha256": "581385c1c40e6e618fe35f6ce2c39e81e0aab36a807ec64437424a5f56c8f240"
+    },
+    {
+      "key": "close",
+      "sourceIcon": "x",
+      "path": "artwork/icons/phosphor/x-duotone.svg",
+      "sha256": "2092e345cb389e4b3c9795d5aa467b7da4e230dd257ba40845a262c80d51f1ab"
+    },
+    {
+      "key": "pause",
+      "sourceIcon": "pause",
+      "path": "artwork/icons/phosphor/pause-duotone.svg",
+      "sha256": "d8cd1f4b61cc90a6f70bb87db2dc4bda686f8ef9f3c69722c3528860b5c43c1c"
+    },
+    {
+      "key": "sound",
+      "sourceIcon": "speaker-high",
+      "path": "artwork/icons/phosphor/speaker-high-duotone.svg",
+      "sha256": "df9b42e5af71a3f87a7588397ba9ad73f70133cbc1352e3f916ac8c2f380207b"
+    },
+    {
+      "key": "music",
+      "sourceIcon": "music-notes",
+      "path": "artwork/icons/phosphor/music-notes-duotone.svg",
+      "sha256": "3bef98ba3b52c89aa02fa9e77d76aae93cebe71f116afa1eb5df57ff21d17d02"
+    },
+    {
+      "key": "lock",
+      "sourceIcon": "lock-key",
+      "path": "artwork/icons/phosphor/lock-key-duotone.svg",
+      "sha256": "f2359ca4afe2cb03d25e9ce10cf088a046102cee60f5613dfed7d3f228c97c39"
+    },
+    {
+      "key": "shield",
+      "sourceIcon": "shield-check",
+      "path": "artwork/icons/phosphor/shield-check-duotone.svg",
+      "sha256": "e42c34a900022e60b41136a5744989af1cfb977247079afbfaf5a8440b86fd91"
+    },
+    {
+      "key": "crown",
+      "sourceIcon": "crown",
+      "path": "artwork/icons/phosphor/crown-duotone.svg",
+      "sha256": "0a5e35f6dc830d6bc593876df2fefc2fd02434ac0ce802ccd1a15307c9ebcc04"
+    },
+    {
+      "key": "star",
+      "sourceIcon": "star",
+      "path": "artwork/icons/phosphor/star-duotone.svg",
+      "sha256": "d99a65040b32b5da2b50077a15d8b8b5ae90307c1a5bd34771c3f7b21e055835"
+    },
+    {
+      "key": "footprint",
+      "sourceIcon": "footprints",
+      "path": "artwork/icons/phosphor/footprints-duotone.svg",
+      "sha256": "9f08d97c10be4e87800a2fcea6e6891428af83cd2c35f24149291c7e5bc56711"
+    },
+    {
+      "key": "sparkle",
+      "sourceIcon": "sparkle",
+      "path": "artwork/icons/phosphor/sparkle-duotone.svg",
+      "sha256": "c4740b4365131487e4b49b54fc554a6cbdde28aaad74c5a8a8be2195b5fb4c19"
+    },
+    {
+      "key": "help",
+      "sourceIcon": "question",
+      "path": "artwork/icons/phosphor/question-duotone.svg",
+      "sha256": "af995bac28b5f0007c9ff20cf23351dba0a8c07cea55868cd8b65056bc103515"
+    },
+    {
+      "key": "refresh",
+      "sourceIcon": "arrows-clockwise",
+      "path": "artwork/icons/phosphor/arrows-clockwise-duotone.svg",
+      "sha256": "32e3d1e35733d6ad0f9c03286ca756deb142e43f9cda1e5f36c3e3896b5d37ae"
+    },
+    {
+      "key": "trash",
+      "sourceIcon": "trash",
+      "path": "artwork/icons/phosphor/trash-duotone.svg",
+      "sha256": "a027137fcada51425999e4305ef8c9baec2328364c092fe94b48fa9eec7adc6b"
+    },
+    {
+      "key": "chart",
+      "sourceIcon": "chart-bar",
+      "path": "artwork/icons/phosphor/chart-bar-duotone.svg",
+      "sha256": "7c53ca5599782f50da2591abafd76d04d9fc9388877041911cb97ea585373d2f"
+    },
+    {
+      "key": "leaf",
+      "sourceIcon": "hand-heart",
+      "path": "artwork/icons/phosphor/hand-heart-duotone.svg",
+      "sha256": "58773db78b71504d7b74eb25caa788d7ac2cb9f16bfdd985fc2c46e97fe55b9b"
+    }
+  ]
+}

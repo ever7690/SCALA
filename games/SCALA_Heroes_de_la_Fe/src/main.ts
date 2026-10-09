@@ -78,8 +78,11 @@ dialog.addEventListener('close', () => { previousTick = performance.now(); });
 function starRow(score: number): string {
   return '<span class="stars" aria-label="' + stars(score) + ' de 3 estrellas">' + [1, 2, 3].map(value => icon('star', stars(score) >= value ? 'lit' : '')).join('') + '</span>';
 }
+function brandSignature(): string {
+  return '<div class="brand-signature"><img src="/brand/scala-original.png" alt="SCALA" width="2048" height="1638"><p>Scala desarrollo cristiano</p></div>';
+}
 function header(): string {
-  return '<header class="topbar"><img class="scala-logo" src="/brand/scala-original.png" alt="SCALA" width="2048" height="1638"><div class="topbar-right"><span class="currency">' + icon('coins') + '<strong data-coins>' + save.coins + '</strong><span class="sr-only"> monedas</span></span><button class="icon-button" data-action="help" aria-label="Cómo jugar">' + icon('help') + '</button></div></header>';
+  return '<header class="topbar"><img class="scala-logo" src="/brand/scala-original.png" alt="SCALA" width="2048" height="1638"><div class="topbar-right"><button type="button" class="currency" data-action="coins" aria-label="Mis monedas">' + icon('coins') + '<strong data-coins>' + save.coins + '</strong><span class="sr-only"> monedas</span></button><button class="icon-button" data-action="help" aria-label="Cómo jugar">' + icon('help') + '</button></div></header>';
 }
 function navigation(): string {
   return '<nav class="bottom-nav" aria-label="Navegación principal">' + [['home', 'Inicio', 'home'], ['journey', 'Mi camino', 'map'], ['collection', 'Colección', 'book'], ['settings', 'Ajustes', 'settings']].map(([id, label, symbol]) => '<button data-action="nav" data-view="' + id + '" class="' + (view === id ? 'active' : '') + '" ' + (view === id ? 'aria-current="page"' : '') + '>' + icon(symbol) + '<span>' + label + '</span></button>').join('') + '</nav>';
@@ -108,7 +111,7 @@ function renderHome(): void {
     progressPanel() + '<section class="modes"><button class="mode-card daily" data-action="daily"><span class="medallion">' + icon('sun') + '</span><span><b>Desafío de hoy</b><small>' + (done ? 'Completado · vuelve a practicar' : '12 historias · un nuevo desafío') + '</small></span>' + icon(done ? 'check' : 'right') + '</button><button class="mode-card" data-action="duel"><span class="medallion blue">' + icon('users') + '</span><span><b>Duelo entre amigos</b><small>Dos personas · el mismo celular</small></span>' + icon('right') + '</button></section>' +
     '<div class="section-title"><h2>Conoce a tus héroes</h2><button class="text-button" data-action="nav" data-view="journey">Ver todos ' + icon('right') + '</button></div><div class="hero-strip">' + heroes.slice(0, 6).map(item => '<button class="hero-chip ' + (!unlocked(save, item.id) ? 'locked' : '') + '" data-action="hero" data-hero="' + item.id + '">' + photo(item) + '<span>' + h(item.name) + '</span>' + (!unlocked(save, item.id) ? icon('lock') : '') + '</button>').join('') + '</div>' +
     '<div class="quiet-card"><span class="medallion">' + icon('book') + '</span><div><b>Aprende a tu ritmo</b><p>Sin reloj. Con pasajes y ayudas gratis.</p></div><button class="icon-button" data-action="practice" data-hero="' + current.id + '" aria-label="Practicar con ' + h(current.name) + '">' + icon('right') + '</button></div><p class="footer-note">' + icon('shield') + ' Sin conexión · Sin anuncios · Tu progreso queda contigo</p>';
-  frame(content);
+  frame(content + brandSignature());
 }
 function renderJourney(): void {
   const count = heroes.filter(item => unlocked(save, item.id)).length;
@@ -127,8 +130,8 @@ function renderCollection(): void {
   frame('<div class="heading"><span class="eyebrow">LO QUE VAS DESCUBRIENDO</span><h1>Tu <em>colección</em></h1><p>' + save.mastery.length + ' de ' + questions.length + ' preguntas respondidas bien</p></div><div class="stats"><div><strong>' + save.rounds + '</strong><span>Rondas</span></div><div><strong>' + save.correct + '</strong><span>Aciertos</span></div><div><strong>' + save.bestStreak + '</strong><span>Mejor racha</span></div></div><div class="tabs" role="tablist" aria-label="Colección"><button role="tab" aria-selected="' + (collectionTab === 'achievements') + '" class="' + (collectionTab === 'achievements' ? 'active' : '') + '" data-action="tab" data-tab="achievements">Logros · ' + list.filter(item => item.earned).length + '</button><button role="tab" aria-selected="' + (collectionTab === 'favorites') + '" class="' + (collectionTab === 'favorites' ? 'active' : '') + '" data-action="tab" data-tab="favorites">Favoritos · ' + save.favorites.length + '</button></div>' + cards);
 }
 function renderSettings(): void {
-  const switches: [keyof Settings, string, string, string][] = [['sound', 'Campanillas y efectos', 'Sonidos suaves para acompañarte', 'sound'], ['music', 'Música de fondo', 'Una melodía tranquila, a volumen bajo', 'music'], ['haptic', 'Vibración breve', 'Un toque al responder, si tu celular lo permite', 'sparkle'], ['reducedMotion', 'Reducir movimiento', 'Una interfaz con menos animaciones', 'leaf']];
-  frame('<div class="heading"><span class="eyebrow">A TU MANERA</span><h1>Pequeños <em>ajustes</em></h1><p>Haz de este camino tu espacio.</p></div><section class="settings-panel">' + switches.map(([key, title, description, symbol]) => '<label class="setting"><span class="setting-symbol">' + icon(symbol) + '</span><span><b>' + title + '</b><small>' + description + '</small></span><input type="checkbox" role="switch" aria-label="' + title + '" data-setting="' + key + '" ' + (save.settings[key] ? 'checked' : '') + '><span class="switch" aria-hidden="true"></span></label>').join('') + '</section><section class="settings-links">' + button('help', 'Cómo jugar', 'help') + button('privacy', 'Privacidad', 'shield') + button('credits', 'Acerca del juego', 'book') + button('reset', 'Reiniciar mi progreso', 'trash', 'danger') + '</section><div class="about-brand"><img src="/brand/scala-original.png" alt="SCALA" width="2048" height="1638"><b>Héroes de la Fe</b><span>Versión ' + __APP_VERSION__ + '</span><p>Hecho para descubrir, aprender y compartir.</p></div>');
+  const switches: [keyof Settings, string, string, string][] = [['sound', 'Sonidos suaves', 'Notas cálidas para cada acción', 'sound'], ['music', 'Música de fondo', 'Una melodía tranquila, a volumen bajo', 'music'], ['haptic', 'Vibración breve', 'Un toque al responder, si tu celular lo permite', 'sparkle'], ['reducedMotion', 'Reducir movimiento', 'Una interfaz con menos animaciones', 'leaf']];
+  frame('<div class="heading"><span class="eyebrow">A TU MANERA</span><h1>Pequeños <em>ajustes</em></h1><p>Haz de este camino tu espacio.</p></div><section class="settings-panel">' + switches.map(([key, title, description, symbol]) => '<label class="setting"><span class="setting-symbol">' + icon(symbol) + '</span><span><b>' + title + '</b><small>' + description + '</small></span><input type="checkbox" role="switch" aria-label="' + title + '" data-setting="' + key + '" ' + (save.settings[key] ? 'checked' : '') + '><span class="switch" aria-hidden="true"></span></label>').join('') + '</section><section class="settings-links">' + button('help', 'Cómo jugar', 'help') + button('privacy', 'Privacidad', 'shield') + button('credits', 'Acerca del juego', 'book') + button('reset', 'Reiniciar mi progreso', 'trash', 'danger') + '</section><div class="about-brand"><img src="/brand/scala-original.png" alt="SCALA" width="2048" height="1638"><p class="brand-caption">Scala desarrollo cristiano</p><b>Héroes de la Fe</b><span>Versión ' + __APP_VERSION__ + '</span><p>Hecho para descubrir, aprender y compartir.</p></div>');
 }
 function renderPlay(): void {
   const session = save.session;
@@ -158,7 +161,7 @@ function renderPlay(): void {
       return '<button data-action="aid" data-aid="' + aid + '" ' + (used || !free && save.coins < aidCosts[aid] ? 'disabled' : '') + '>' + icon(symbols[aid]) + '<b>' + labels[aid] + '</b><small>' + (used ? 'Utilizada' : free ? 'Gratis' : icon('coins') + ' ' + aidCosts[aid]) + '</small></button>';
     }).join('') + '</div>' + (session.verseUsed ? '<div class="scripture-hint"><span class="eyebrow">' + h(question.reference) + '</span><p>' + h(question.verse) + '</p></div>' : '<p class="play-note">' + (session.mode === 'practice' ? 'Lee con calma. Aquí el reloj descansa.' : 'Cada acierto suma 15 XP · cada 3 seguidos, 5 XP extra') + '</p>');
   }
-  frame('<div class="play-topbar"><button class="icon-button" data-action="pause" aria-label="Pausar ronda">' + icon('left') + '</button><span class="play-mode">' + (duel ? h(player) : session.mode === 'practice' ? 'Práctica libre' : session.mode === 'daily' ? 'Desafío de hoy' : 'Mi camino') + '</span><span class="currency">' + icon('coins') + '<strong data-coins>' + save.coins + '</strong></span></div><div class="round-progress"><div class="row"><span>Pregunta <b>' + (session.index + 1) + '</b> de 12</span><span class="timer ' + (session.frozenMsLeft ? 'frozen' : '') + '">' + icon('clock') + '<strong id="clock">' + (session.mode === 'practice' ? 'Sin reloj' : time(session.elapsedMs + session.penaltyMs)) + '</strong></span></div><div class="question-dots" aria-hidden="true">' + session.answers.map((value, index) => '<span class="' + (index === session.index ? 'current ' : '') + (value ? duel ? 'answered' : value.correct ? 'right' : 'wrong' : '') + '"></span>').join('') + '</div></div><div class="question-hero">' + photo(character, '', true) + '<div><span class="eyebrow">' + h(character.quality) + '</span><b>' + h(character.name) + '</b></div>' + (!duel && currentStreak(session) >= 3 ? '<span class="streak">' + icon('sparkle') + currentStreak(session) + '</span>' : '') + '</div><section class="question-panel" data-question-id="' + question.id + '"><h1>' + h(question.prompt) + '</h1><div class="answers">' + options + '</div></section>' + below, true);
+  frame('<div class="play-topbar"><button class="icon-button" data-action="pause" aria-label="Pausar ronda">' + icon('left') + '</button><span class="play-mode">' + (duel ? h(player) : session.mode === 'practice' ? 'Práctica libre' : session.mode === 'daily' ? 'Desafío de hoy' : 'Mi camino') + '</span><button type="button" class="currency" data-action="coins" aria-label="Mis monedas">' + icon('coins') + '<strong data-coins>' + save.coins + '</strong></button></div><div class="round-progress"><div class="row"><span>Pregunta <b>' + (session.index + 1) + '</b> de 12</span><span class="timer ' + (session.frozenMsLeft ? 'frozen' : '') + '">' + icon('clock') + '<strong id="clock">' + (session.mode === 'practice' ? 'Sin reloj' : time(session.elapsedMs + session.penaltyMs)) + '</strong></span></div><div class="question-dots" aria-hidden="true">' + session.answers.map((value, index) => '<span class="' + (index === session.index ? 'current ' : '') + (value ? duel ? 'answered' : value.correct ? 'right' : 'wrong' : '') + '"></span>').join('') + '</div></div><div class="question-hero">' + photo(character, '', true) + '<div><span class="eyebrow">' + h(character.quality) + '</span><b>' + h(character.name) + '</b></div>' + (!duel && currentStreak(session) >= 3 ? '<span class="streak">' + icon('sparkle') + currentStreak(session) + '</span>' : '') + '</div><section class="question-panel" data-question-id="' + question.id + '"><h1>' + h(question.prompt) + '</h1><div class="answers">' + options + '</div></section>' + below, true);
 }
 function renderResults(): void {
   const session = save.session;
@@ -231,6 +234,24 @@ function showDuel(): void {
 function help(): void {
   openModal('Cada historia abre un camino', '<div class="help-step"><span>1</span><div><h3>Responde y descubre</h3><p>12 preguntas por ronda, cuatro opciones y una respuesta correcta. Al responder, descubre el pasaje y guarda tus favoritos.</p></div></div><div class="help-step"><span>2</span><div><h3>Crece con tus aciertos</h3><p>Mi camino suma 15 XP y 3 monedas por acierto. Cada 3 aciertos seguidos suman 5 XP extra. Completar una ronda añade 20 XP y 10 monedas. Los héroes se desbloquean con tu experiencia.</p></div></div><div class="help-step"><span>3</span><div><h3>Elige tu ritmo</h3><p>Práctica no tiene reloj y sus ayudas son gratis. En Mi camino y Desafío, cada error suma 5 segundos. El reloj se detiene mientras lees la explicación o abres una ventana.</p></div></div><div class="help-step"><span>4</span><div><h3>Una mano cuando la necesitas</h3><p>50/50 retira dos opciones incorrectas por 25 monedas. Escritura muestra el pasaje por 20. Pausar detiene el reloj 12 segundos por 30, una vez por ronda. No hay compras de monedas.</p></div></div><p>El desafío diario mezcla los 12 héroes. Su recompensa se entrega una vez por fecha del dispositivo. Repetirlo permite practicar.</p><p>Para las estrellas de Mi camino: 6 aciertos dan una, 9 dan dos y 12 dan tres.</p>');
 }
+function showCoins(): void {
+  openModal('Mis monedas', '<div class="coin-balance"><span class="large-medallion">' + icon('coins') + '</span><strong>' + save.coins + '</strong><span>monedas para tu camino</span></div><h3>Se ganan aprendiendo</h3><p>Al terminar una ronda de Mi camino, recibes 3 monedas por cada acierto y 10 por completar la ronda. El primer desafío diario completado añade otras 20 monedas.</p><div class="coin-aid"><span>' + icon('half') + ' 50 / 50</span><b>' + aidCosts.half + '</b></div><div class="coin-aid"><span>' + icon('book') + ' Escritura</span><b>' + aidCosts.verse + '</b></div><div class="coin-aid"><span>' + icon('clock') + ' Pausar 12 segundos</span><b>' + aidCosts.pause + '</b></div><p class="edition-note">En Práctica, las ayudas son gratis. Las monedas son parte del juego; no hay compras y no se canjean por dinero.</p>');
+}
+function actionCue(target: HTMLElement): Cue {
+  if (target.dataset.action === 'license') return 'credits';
+  if (target.dataset.action === 'nav') return ({ home: 'home', journey: 'journey', collection: 'collection', settings: 'settings' } as Record<string, Cue>)[target.dataset.view ?? ''] ?? 'tap';
+  if (target.dataset.action === 'tab') return target.dataset.tab === 'favorites' ? 'bookmarks' : 'achievements';
+  const cues: Record<string, Cue> = { hero: 'hero', start: 'start', practice: 'practice', daily: 'daily', resume: 'resume', pause: 'pause', 'save-home': 'home', close: 'close', 'confirm-start': 'start', scripture: 'review', favorite: 'favorite', help: 'help', coins: 'coins', credits: 'credits', privacy: 'privacy', reset: 'reset', 'confirm-reset': 'reset', review: 'review', again: 'again', duel: 'duel', second: 'second' };
+  return cues[target.dataset.action ?? ''] ?? 'tap';
+}
+async function showLicense(id: string): Promise<void> {
+  const resources: Record<string, [string, string]> = { phosphor: ['Íconos Phosphor · MIT', 'PHOSPHOR-MIT.txt'], manrope: ['Manrope · SIL OFL', 'MANROPE-OFL.txt'], lora: ['Lora · SIL OFL', 'LORA-OFL.txt'], capacitor: ['Capacitor · MIT', 'CAPACITOR-MIT.txt'], scala: ['Código SCALA · MIT', 'SCALA-MIT.txt'] };
+  const resource = resources[id];
+  if (!resource) return;
+  const response = await fetch('/licenses/' + resource[1]);
+  if (!response.ok) { notify('No se pudo abrir la licencia.'); return; }
+  openModal(resource[0], '<pre class="license-text">' + h(await response.text()) + '</pre>');
+}
 document.addEventListener('click', event => {
   const target = event.target instanceof Element ? event.target.closest<HTMLElement>('[data-action]') : null;
   if (!target || target instanceof HTMLButtonElement && target.disabled) return;
@@ -240,7 +261,7 @@ document.addEventListener('click', event => {
   void (async () => {
     const soundReady = audio.unlock();
     const play = (cue: Cue): void => { void soundReady.then(() => audio.play(cue)); };
-    if (action !== 'answer' && action !== 'aid' && action !== 'next') play('tap');
+    if (action !== 'answer' && action !== 'aid' && action !== 'next') play(actionCue(target));
     const id = target.dataset.hero ?? activeHero().id;
     if (action === 'nav') { closeModal(); setView(target.dataset.view as View); }
     else if (action === 'hero') showHero(id);
@@ -273,7 +294,7 @@ document.addEventListener('click', event => {
       if (view !== 'play' || sessionId !== save.session?.id || index !== save.session?.index) return;
       const result = useAid(save, target.dataset.aid as 'half' | 'verse' | 'pause');
       if (!result.applied) { notify(result.reason ?? 'La ayuda no está disponible.'); return; }
-      play('aid');
+      play(target.dataset.aid === 'verse' ? 'verse' : target.dataset.aid === 'pause' ? 'freeze' : 'aid');
       persist();
       renderPlay();
       if (target.dataset.aid === 'pause') notify('El reloj descansa durante 12 segundos.');
@@ -286,7 +307,9 @@ document.addEventListener('click', event => {
       if (view === 'collection') renderCollection();
     } else if (action === 'tab') { collectionTab = target.dataset.tab ?? 'achievements'; renderCollection(); }
     else if (action === 'help') help();
-    else if (action === 'credits') openModal('Hecho para aprender', '<div class="credits-brand"><img src="/brand/scala-original.png" alt="SCALA"></div><h3>Héroes de la Fe · ' + __APP_VERSION__ + '</h3><p>Juego original SCALA: 12 personajes, 240 preguntas propias, ilustraciones originales y sonidos suaves. Funciona sin conexión y sin anuncios.</p><p>Pasajes: Biblia Reina-Valera 1909, de dominio público. Preguntas cotejadas con sus referencias. Ilustraciones artísticas creadas con ayuda de IA; no son reconstrucciones históricas.</p><p>Tipografías Manrope y Lora, bajo SIL Open Font License. Software: Capacitor, Vite y TypeScript. Los textos legales y las licencias se incluyen en el proyecto.</p><p>Inspirado en el género de trivia bíblica. SCALA es una aplicación independiente.</p>');
+    else if (action === 'coins') showCoins();
+    else if (action === 'license') await showLicense(target.dataset.license ?? '');
+    else if (action === 'credits') openModal('Hecho para aprender', '<div class="credits-brand"><img src="/brand/scala-original.png" alt="SCALA"><p class="brand-caption">Scala desarrollo cristiano</p></div><h3>Héroes de la Fe · ' + __APP_VERSION__ + '</h3><p>Juego original SCALA: 12 personajes, 240 preguntas propias, ilustraciones originales, música Luz del Camino y 34 sonidos suaves para sus acciones. Funciona sin conexión y sin anuncios.</p><p>Pasajes: Biblia Reina-Valera 1909, de dominio público. Preguntas cotejadas con sus referencias. Ilustraciones artísticas creadas con ayuda de IA; no son reconstrucciones históricas.</p><p>Íconos Phosphor Duotone, licencia MIT. Tipografías Manrope y Lora, bajo SIL Open Font License. Software: Capacitor, Vite y TypeScript. Los textos legales y las licencias se incluyen en el proyecto.</p><p>Inspirado en el género de trivia bíblica. SCALA es una aplicación independiente.</p><div class="settings-links">' + ([['phosphor', 'Íconos Phosphor · MIT'], ['manrope', 'Manrope · SIL OFL'], ['lora', 'Lora · SIL OFL'], ['capacitor', 'Capacitor · MIT'], ['scala', 'Código SCALA · MIT']].map(([id, title]) => button('license', title, 'book', 'secondary', 'data-license="' + id + '"')).join('')) + '</div>');
     else if (action === 'privacy') openModal('Tu privacidad', '<p>El juego guarda tu avance, preferencias, favoritos y los nombres del duelo únicamente en este dispositivo. No crea cuentas, no muestra anuncios, no usa analítica y no envía datos a servidores.</p><p>No necesita acceso a cámara, contactos, ubicación ni micrófono. La versión Android no tiene permiso para acceder a Internet.</p><p>Si tienes activada la copia de seguridad de Android, el sistema puede incluir tus datos locales en ella según tus ajustes. Puedes borrar el progreso desde Ajustes.</p><p>El desafío diario usa la fecha del dispositivo. Los nombres del duelo son opcionales y no se publican.</p>');
     else if (action === 'reset') openModal('¿Volver a empezar?', '<p>Se borrarán tus rondas, experiencia, monedas ganadas, favoritos y logros de este dispositivo. Tendrás de nuevo 120 monedas. Se conservarán tus ajustes de sonido.</p><div class="modal-actions">' + button('confirm-reset', 'Borrar mi progreso', 'trash', 'danger') + button('close', 'Conservar mi camino', 'left', 'primary') + '</div>');
     else if (action === 'confirm-reset') { const settings = save.settings; save = freshSave(); save.settings = settings; persist(); closeModal(); setView('home'); notify('Un nuevo comienzo.'); }
@@ -305,7 +328,8 @@ document.addEventListener('change', event => {
   audio.update(save.settings);
   persist();
   document.documentElement.dataset.motion = save.settings.reducedMotion ? 'reduce' : 'full';
-  void audio.unlock().then(() => audio.play('tap'));
+  const cue = ({ sound: 'sound', music: 'music', haptic: 'haptic', reducedMotion: 'motion' } as Record<keyof Settings, Cue>)[key];
+  void audio.unlock().then(() => audio.play(cue));
 });
 document.addEventListener('submit', event => {
   const form = event.target;
@@ -316,7 +340,7 @@ document.addEventListener('submit', event => {
   closeModal();
   persist();
   setView('play');
-  void audio.unlock().then(() => audio.play('tap'));
+  void audio.unlock().then(() => audio.play('duel'));
 });
 document.addEventListener('keydown', event => {
   if (event.key === 'Escape' && !dialog.open && view === 'play') { event.preventDefault(); pause(); }
@@ -355,4 +379,8 @@ if (Capacitor.isNativePlatform()) {
   void navigator.serviceWorker.register('/sw.js').catch(() => undefined);
 }
 render();
+window.setTimeout(() => {
+  const launch = document.querySelector<HTMLElement>('#launch-brand');
+  if (launch) launch.hidden = true;
+}, save.settings.reducedMotion ? 350 : 1200);
 if (restored.recovered) notify('El guardado anterior no se pudo leer. Puedes comenzar un nuevo camino.');

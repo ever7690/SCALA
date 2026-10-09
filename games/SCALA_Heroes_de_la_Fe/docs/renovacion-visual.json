@@ -1,0 +1,37 @@
+{
+  "version": "1.1.0",
+  "mode": "built-in image_gen",
+  "assets": [
+    {
+      "id": "heroes-icon",
+      "master": "artwork/heroes-icon-final-v2.png",
+      "prompt": "Use case: text-localization. Asset type: final phone launcher icon for Héroes de Fe. Edit the supplied approved icon: retain the wonderful open ivory Bible with champagne-gold page edges, olive shield with golden cross and three stars, warm white full-bleed background, high-resolution 3D elegance. Compact and move the book/shield/stars very slightly upward to create a dedicated lower title area. Add precisely the words \"Héroes de Fe\" in beautiful highly readable golden serif lettering, with an accented é. Use two centered lines: \"Héroes\" on the first larger line, \"de Fe\" on the second line. Letter forms must be thick enough to read on a phone icon, sculpted warm golden letters with subtle depth and clean edges. Title entirely inside the safe central area, below the book, not over it. Centered balanced symbol and text with comfortable full-bleed warm-white margins for round and squircle Android masks. No laurel, no branches, no leaves, no stems or plant decorations anywhere. No letter C, no SCALA logo, no additional writing, no watermark, no border. Preserve the refined original light palette and craftsmanship.",
+      "editReference": "Icono aprobado de Biblia, escudo y estrellas sin laurel",
+      "text": "Héroes de Fe",
+      "laurel": false
+    },
+    {
+      "id": "portada-clara",
+      "master": "artwork/heroes-portada-clara-v2.png",
+      "prompt": "Use case: stylized-concept. Asset type: final full-bleed portrait background for the original premium Android Bible trivia app Héroes de la Fe. Replace the generic garden motif with an unmistakably biblical hopeful illustrated scene in the same approved luminous warm-white, ivory, champagne-gold and soft olive palette. In the bottom 36%: an exquisite open ancient ivory Bible with softly sculpted golden page edges on a pale limestone ledge, a modest rolled parchment and elegant small bronze oil lamp nearby; beyond it a serene ancient Jerusalem-inspired city of ivory limestone domes and arches, softly distant holy-land hills and a winding bright path at golden dawn. Beautiful masterful softly rendered 3D storybook realism, fine texture and craftsmanship, breathtaking atmospheric depth and gentle sunrise rays, gentle emotionally inviting image. Top 60% remains mostly uninterrupted warm-white ivory negative space, with a graceful feathered transition into the lower biblical scene; central text area quiet for dark UI text. No figures, no branches, no leaves, no laurel, no garden plants. No blue or dark backdrop. Bible pages show subtle abstract paper texture without readable lettering, no invented scripture. Portrait 2:3, no text, no logos, no border, no interface, no watermark."
+    },
+    {
+      "id": "lectura-clara",
+      "master": "artwork/heroes-lectura-clara-v2.png",
+      "prompt": "Use case: stylized-concept. Asset type: reading and trivia background for the original premium Bible app Héroes de la Fe. Keep the approved luminous ivory and warm-white palette, soft champagne-gold accents and exceptional calm readability. Replace the botanical decorations with a clearly biblical subtle illustration along the bottom 20% and narrow lower side edges: a beautiful partially open ivory Bible with gilded page layers at a lower corner, a gently curled parchment scroll at the opposite lower corner, and far distant softly embossed Jerusalem-like stone arches and rolling holy-land hills in the extreme lower background. Refined delicate 3D paper and limestone craftsmanship with lovely luminous soft golden daylight and atmospheric depth. Top and central 80% is very clean mostly-white and ivory negative space with only extremely subtle silk-paper texture. Warm white #fcfbf7, ivory #f5f1e5, champagne-gold #bc9560, very muted olive-gray shadows. No leaves, no branches, no laurel or botanical decoration. No people, no text, no writing on the pages, no lettering, no logo, no frame, no UI, no watermark. Portrait 2:3 full bleed, peaceful, premium and beautiful."
+    }
+  ],
+  "requirements": {
+    "brandOriginalBytes": "preserved",
+    "companyLine": "Scala desarrollo cristiano",
+    "companyLineColor": "negro",
+    "palette": [
+      "#fcfbf7",
+      "#f5f1e5",
+      "#556c49",
+      "#855e2d"
+    ],
+    "launcher": "Héroes de Fe",
+    "branchesOnLauncher": false
+  }
+}

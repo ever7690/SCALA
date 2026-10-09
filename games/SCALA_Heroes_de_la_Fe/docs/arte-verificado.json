@@ -145,17 +145,44 @@
       "bytes": 160232
     },
     {
+      "id": "portada-clara",
+      "master": "artwork/heroes-portada-clara-v2.png",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "masterSHA256": "641aff2d44537f59b0384f76bf6cd0d87670dffc4eb11fd584090c873763e98e",
+      "production": "public/backgrounds/heroes-portada-clara.webp",
+      "productionSHA256": "300da77e8ba449ebc3c786ad9b16d06f46897f98a1681792cb3e518543282f79",
+      "bytes": 304606
+    },
+    {
+      "id": "lectura-clara",
+      "master": "artwork/heroes-lectura-clara-v2.png",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "masterSHA256": "f5884b5579c64ad5f8c370329d6258e3b85913f25e43d3bfdfccc61d75b210d2",
+      "production": "public/backgrounds/heroes-lectura-clara.webp",
+      "productionSHA256": "3241e157cdc3113f2cc0eb9a5482824c66c302150ce49f7cbf9cb888133ec36b",
+      "bytes": 186782
+    },
+    {
       "id": "heroes-icon",
-      "master": "artwork/heroes-icon-v1.png",
+      "master": "artwork/heroes-icon-final-v2.png",
       "dimensions": [
         1254,
         1254
       ],
-      "masterSHA256": "198397ebe317c4568ddeaa266e951445a9c80f753f34dbe4c08dd7d17af25010",
+      "masterSHA256": "20cc90b3c92f202552d96dd68364f5566528df725b11ee5608de7ad689e3759a",
       "production": "public/brand/heroes-icon.png",
-      "productionSHA256": "7d472f6d14d64d1301967f76990a476929363dd8a02c7a48a56b64f27f6286cc",
-      "bytes": 402098
+      "productionSHA256": "056a3131b3b92231ad64ce7bb7c1359e783200c077357c471085c9038863c928",
+      "bytes": 320410
     }
   ],
-  "originalMastersPreserved": true
+  "originalMastersPreserved": true,
+  "palette": "Blanco cálido, marfil, oliva y dorado",
+  "launcherText": "Héroes de Fe",
+  "launcherLaurel": false
 }

@@ -9,7 +9,7 @@ const browser = await chromium.launch({ headless: true, executablePath: process.
 try {
   const page = await browser.newPage();
   const assets = [];
-  for (const id of [...roster.map(hero => hero.id), 'heroes-icon']) {
+  for (const id of roster.map(hero => hero.id)) {
     const master = 'artwork/' + id + '-v1.png';
     const isIcon = id === 'heroes-icon';
     const encoded = fs.readFileSync(master).toString('base64');
@@ -43,6 +43,9 @@ try {
     }
     assets.push({ id, master, dimensions: [output.width, output.height], masterSHA256: crypto.createHash('sha256').update(fs.readFileSync(master)).digest('hex'), production: destination, productionSHA256: crypto.createHash('sha256').update(fs.readFileSync(destination)).digest('hex'), bytes: fs.statSync(destination).size });
   }
-  fs.writeFileSync('docs/arte-verificado.json', JSON.stringify({ assets, originalMastersPreserved: true }, null, 2) + '\n');
+  const previous = JSON.parse(fs.readFileSync('docs/arte-verificado.json', 'utf8'));
+  fs.writeFileSync('docs/arte-verificado.json', JSON.stringify({ assets: [...assets, ...previous.assets.filter(item => !roster.some(hero => hero.id === item.id))], originalMastersPreserved: true }, null, 2) + '\n');
   console.log(JSON.stringify({ portraits: roster.length, productionBytes: assets.reduce((total, item) => total + item.bytes, 0), mastersPreserved: true }));
 } finally { await browser.close(); }
+
+await import('./prepare_brand.mjs');

@@ -5,6 +5,7 @@ import crypto from 'node:crypto';
 fs.mkdirSync('entregables/documentacion', { recursive: true });
 for (const name of ['README.md', 'NOTICE.md', 'LICENSE']) fs.copyFileSync(name, 'entregables/documentacion/' + name);
 for (const file of fs.readdirSync('docs')) fs.copyFileSync('docs/' + file, 'entregables/documentacion/' + file);
+fs.cpSync('licenses', 'entregables/documentacion/licencias', { recursive: true });
 const report = { name: 'SCALA Héroes de la Fe', version: JSON.parse(fs.readFileSync('package.json')).version, applicationId: 'com.scala.heroesdefe', questions: 240, heroes: 12, compilerCommit: process.env.GITHUB_SHA ?? null, engine: JSON.parse(fs.readFileSync('entregables/pruebas-motor.json')), interface: JSON.parse(fs.readFileSync('entregables/pruebas-interfaz.json')), vulnerabilities: JSON.parse(fs.readFileSync('entregables/auditoria-npm.json')).metadata.vulnerabilities, assets: JSON.parse(fs.readFileSync('docs/arte-verificado.json')), deviceTest: 'Pendiente en teléfono físico' };
 fs.writeFileSync('entregables/VERIFICACION.json', JSON.stringify(report, null, 2) + '\n');
 const binaries = fs.readdirSync('entregables').filter(file => /\.(apk|aab)$/.test(file));

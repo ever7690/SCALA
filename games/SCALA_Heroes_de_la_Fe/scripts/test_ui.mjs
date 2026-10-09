@@ -33,6 +33,12 @@ try {
   const context = await browser.newContext({ viewport: { width: 390, height: 844 }, reducedMotion: 'reduce' });
   await context.addInitScript(() => {
     globalThis.__sounds = [];
+    const OriginalAudio = globalThis.Audio;
+    globalThis.Audio = function (...args) {
+      const instance = new OriginalAudio(...args);
+      globalThis.__music = instance;
+      return instance;
+    };
     const original = AudioBufferSourceNode.prototype.start;
     AudioBufferSourceNode.prototype.start = function (...args) {
       globalThis.__sounds.push({ frames: this.buffer?.length ?? 0, rate: this.playbackRate.value });
@@ -41,9 +47,18 @@ try {
   });
   const page = await context.newPage();
   page.on('pageerror', error => errors.push(error.message));
-  await page.goto(base);
+  await page.goto(base, { waitUntil: 'domcontentloaded' });
+  await page.locator('#launch-brand img').evaluate(image => image.decode());
+  assert.equal(await page.locator('#launch-brand p').textContent(), 'Scala desarrollo cristiano');
+  assert.equal(await page.locator('#launch-brand').evaluate(node => getComputedStyle(node).backgroundColor), 'rgb(255, 255, 255)');
+  assert.equal(await page.locator('#launch-brand img').evaluate(node => node.getBoundingClientRect().width), 224);
+  await page.screenshot({ path: directory + '/00-bienvenida.png' });
   await page.locator('.featured .portrait').evaluate(image => image.decode());
   assert.equal(await page.locator('.scala-logo').evaluate(image => image.naturalWidth), 2048);
+  await page.locator('#launch-brand').waitFor({ state: 'hidden' });
+  assert.equal(await page.locator('.brand-signature p').textContent(), 'Scala desarrollo cristiano');
+  assert.equal(await page.locator('.brand-signature p').evaluate(node => getComputedStyle(node).color), 'rgb(23, 27, 22)');
+  assert.equal(await page.locator('html').evaluate(node => getComputedStyle(node).backgroundColor), 'rgb(252, 251, 247)');
   await screenshot(page, '01-inicio');
   await click(page, '[data-action="help"]');
   await page.locator('#modal[open]').waitFor();
@@ -51,14 +66,37 @@ try {
   assert.ok(await page.evaluate(() => globalThis.__sounds.length > 0));
   assert.ok(await page.evaluate(() => globalThis.__sounds.every(sound => sound.frames > 0)));
   await click(page, '#modal [data-action="close"]');
+  await page.waitForFunction(() => globalThis.__sounds.length >= 2);
+  await click(page, '[data-action="coins"]');
+  await page.locator('.coin-balance').waitFor();
+  assert.equal(await page.locator('.coin-balance strong').textContent(), '120');
+  assert.equal(await page.locator('.coin-aid').count(), 3);
+  await page.waitForFunction(() => globalThis.__sounds.length >= 3);
+  assert.equal(await page.evaluate(() => new Set(globalThis.__sounds.slice(0, 3).map(sound => sound.frames)).size), 3);
+  await screenshot(page, '00-monedas');
+  await click(page, '#modal [data-action="close"]');
   await click(page, '[data-action="nav"][data-view="settings"]');
+  await page.locator('[data-setting="music"]').check();
+  await page.waitForFunction(() => globalThis.__music?.readyState >= 2);
+  assert.equal(await page.evaluate(() => globalThis.__music.loop), true);
+  assert.equal(await page.evaluate(() => new URL(globalThis.__music.src).pathname), '/audio/heroes-luz-del-camino.ogg');
+  const musicDuration = await page.evaluate(async () => {
+    const context = new AudioContext();
+    try {
+      const response = await fetch(globalThis.__music.src);
+      const buffer = await context.decodeAudioData(await response.arrayBuffer());
+      return buffer.duration;
+    } finally { await context.close(); }
+  });
+  assert.ok(Math.abs(musicDuration - 87.2) < 0.1);
+  await page.waitForFunction(() => !globalThis.__music.paused);
   await page.locator('[data-setting="music"]').uncheck();
   await page.locator('[data-setting="haptic"]').uncheck();
   const beforeMute = await page.evaluate(() => globalThis.__sounds.length);
   await page.locator('[data-setting="sound"]').uncheck();
   await click(page, '[data-action="nav"][data-view="home"]');
   assert.equal(await page.evaluate(() => globalThis.__sounds.length), beforeMute);
-  checks.push('Primer toque audible, campanillas decodificadas y silencio respetado');
+  checks.push('Ayuda, cierre y monedas con notas distintas; música original decodificada y silencio respetado');
   await click(page, '[data-action="start"]');
   await page.locator('.question-panel').waitFor();
   await screenshot(page, '02-pregunta');
@@ -174,6 +212,11 @@ try {
   await click(page, '[data-action="privacy"]');
   assert.ok((await page.locator('#modal').textContent()).includes('no envía datos'));
   await click(page, '#modal [data-action="close"]');
+  await click(page, '[data-action="credits"]');
+  await click(page, '#modal [data-license="phosphor"]');
+  await page.locator('.license-text').waitFor();
+  assert.ok((await page.locator('.license-text').textContent()).includes('Copyright (c) 2023 Phosphor Icons'));
+  await click(page, '#modal [data-action="close"]');
   await click(page, '[data-action="nav"][data-view="home"]');
   await click(page, '[data-action="start"]');
   await page.locator('.question-panel').waitFor();
@@ -189,7 +232,21 @@ try {
   await page.locator('.question-hero img').evaluate(image => image.decode());
   await page.evaluate(() => document.fonts.ready);
   assert.equal(await page.evaluate(() => document.fonts.check('16px Manrope')), true);
-  checks.push('Modo sin conexión: recarga, fuentes, ilustraciones y ronda guardada');
+  const offlineAudio = await page.evaluate(async () => {
+    const context = new AudioContext();
+    try {
+      return await Promise.all(['/audio/heroes-coins.wav', '/audio/heroes-luz-del-camino.ogg'].map(async url => {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error('Offline audio unavailable');
+        const buffer = await context.decodeAudioData(await response.arrayBuffer());
+        return { duration: buffer.duration, channels: buffer.numberOfChannels };
+      }));
+    } finally { await context.close(); }
+  });
+  assert.ok(offlineAudio.every(buffer => buffer.duration > 0 && buffer.channels === 2));
+  assert.ok(Math.abs(offlineAudio[1].duration - 87.2) < 0.1);
+  assert.ok(await page.evaluate(async () => (await (await fetch('/licenses/PHOSPHOR-MIT.txt')).text()).includes('Phosphor Icons')));
+  checks.push('Modo sin conexión: recarga, fuentes, ilustraciones, música, efectos y ronda guardada');
   await context.setOffline(false);
   await context.close();
   for (const width of [320, 390]) {
