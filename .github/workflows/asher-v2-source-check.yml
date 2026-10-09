@@ -1,0 +1,42 @@
+name: ASHER v2 - Source ISO recovery test
+on:
+  push:
+    paths:
+      - '.github/workflows/asher-v2-source-check.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify-upstream-url:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - name: Locate MiniOS11 X-24H2 v26.06 original download (no execution)
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          URL='https://www.mediafire.com/file/fhp6a26l3v789i3/MiniOS11_X-24H2_v26.06_x64_-_dprojects.rar/file'
+          curl -L --retry 2 -fsS --max-time 30 -A 'Mozilla/5.0' "$URL" > "$RUNNER_TEMP/mediafire.html"
+          python3 - <<'PY'
+          import html,re,os
+          from pathlib import Path
+          h=html.unescape((Path(os.environ['RUNNER_TEMP'])/'mediafire.html').read_text(errors='replace'))
+          matches=re.findall(r'https?://download\d+\.mediafire\.com/[^"\s<>]+',h)
+          for m in matches[:6]:
+              print('Candidate host:',m.split('/')[2])
+          if not matches:
+              print('No direct MediaFire download URL on current page')
+              raise SystemExit(2)
+          p=Path(os.environ['RUNNER_TEMP'])/'source-url.txt'
+          p.write_text(matches[0])
+          PY
+          python3 - <<'PY'
+          import os,subprocess
+          from pathlib import Path
+          url=(Path(os.environ['RUNNER_TEMP'])/'source-url.txt').read_text()
+          result=subprocess.run(['curl','-L','-sSI','--retry','1','--max-time','45',url],capture_output=True,text=True)
+          for line in result.stdout.splitlines():
+              if line.lower().startswith(('http/','content-length:','content-type:','content-disposition:')):
+                  print(line[:250])
+          if result.returncode: raise SystemExit(result.returncode)
+          PY
