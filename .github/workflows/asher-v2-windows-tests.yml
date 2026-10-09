@@ -51,6 +51,12 @@ jobs:
           $t = Get-ItemProperty 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize'
           $p = Get-ItemProperty 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\GameDVR'
           $o = Get-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation'
+          Write-Host "WHOAMI $(whoami)"
+          Write-Host "GameMode Values: $($g | Format-List | Out-String)"
+          Write-Host "GameDVR Values: $($d | Format-List | Out-String)"
+          Write-Host "DarkMode Values: $($t | Format-List | Out-String)"
+          Write-Host "Policy Values: $($p | Format-List | Out-String)"
+          Write-Host "OEM Values: $($o | Format-List | Out-String)"
 
           if ($g.AllowAutoGameMode -ne 1 -or $g.AutoGameModeEnabled -ne 1) {
             throw "Game Mode not enabled"
