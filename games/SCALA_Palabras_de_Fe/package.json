@@ -1,6 +1,6 @@
 {
   "name": "scala-palabras-de-fe",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Juego bíblico SCALA: 1000 crucigramas en español, audio y progreso sin conexión",
   "type": "module",
   "scripts": {

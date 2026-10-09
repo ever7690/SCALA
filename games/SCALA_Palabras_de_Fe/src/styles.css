@@ -23,6 +23,8 @@ button { -webkit-tap-highlight-color: transparent; cursor: pointer; color: inher
 button:disabled { cursor: default; }
 button:focus-visible, summary:focus-visible, input:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
 button svg { width: 22px; height: 22px; flex-shrink: 0; }
+.icon-surface { fill: currentColor; fill-opacity: 0.12; }
+.icon-accent { fill: currentColor; fill-opacity: 0.35; }
 [hidden] { display: none !important; }
 h1, h2, blockquote { font-family: 'SCALA Serif', Georgia, serif; }
 p, h1, h2, blockquote { margin: 0; }
@@ -40,6 +42,11 @@ p, h1, h2, blockquote { margin: 0; }
 .edition { font-size: 10px; letter-spacing: 1.3px; color: #c3cbd2; font-weight: 600; }
 .icon-button { border: 1px solid rgb(247 241 223 / 15%); background: rgb(8 23 39 / 45%); border-radius: 50%; width: 44px; height: 44px; flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; transition: border-color 0.18s, background 0.18s; }
 .icon-button:hover { border-color: var(--gold); }
+.control-button { position: relative; border-color: #73634a; border-radius: 14px; background: linear-gradient(145deg, #29445a, #12293d 72%); color: #f4d58d; box-shadow: inset 0 1px 0 rgb(255 235 192 / 18%), 0 3px 0 #071623, 0 6px 14px rgb(0 12 22 / 20%); transition: border-color 0.18s, background 0.18s, transform 0.18s, box-shadow 0.18s; }
+.control-button::before { content: ''; position: absolute; inset: 3px; border: 1px solid rgb(243 213 155 / 10%); border-radius: 10px; pointer-events: none; }
+.control-button svg { width: 23px; height: 23px; }
+.control-button:hover { background: linear-gradient(145deg, #35536b, #1a3349 72%); }
+.control-button:active { transform: translateY(2px); box-shadow: inset 0 1px 0 rgb(255 235 192 / 12%), 0 1px 0 #071623; }
 .brand-stage { margin: 16px 0 10px; display: flex; flex-direction: column; align-items: center; }
 .hero-logo { width: min(280px, 76vw); height: auto; display: block; object-fit: contain; }
 .brand-rule { width: 55px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); margin-top: 14px; }
@@ -67,13 +74,20 @@ h1 em { font-weight: 400; color: var(--gold); }
 .home-verse { font-size: 14px; line-height: 1.7; text-align: center; color: #f2e8d2; margin: 22px 10px 20px; font-style: italic; text-wrap: balance; }
 cite { display: block; color: var(--gold); font-style: normal; font-family: 'SCALA Sans', system-ui, sans-serif; font-size: 10px; letter-spacing: 0.7px; margin-top: 9px; }
 .home-footer { display: flex; justify-content: space-between; align-items: center; color: #c0ced5; font-size: 10px; margin-top: auto; padding: 2px 0; }
-.home-footer button { border: 0; min-height: 44px; padding: 5px 0 5px 8px; display: flex; align-items: center; gap: 4px; color: #f3e9d5; font-size: 11px; background: none; }
-.home-footer button svg { width: 14px; height: 14px; }
+.home-footer .help-button { min-height: 44px; padding: 7px 10px; display: flex; align-items: center; gap: 7px; border: 1px solid #73634a; border-radius: 13px; color: #f4d58d; font-size: 11px; font-weight: 700; background: linear-gradient(145deg, #29445a, #12293d 72%); box-shadow: inset 0 1px 0 rgb(255 235 192 / 13%), 0 3px 0 #071623; transition: border-color 0.18s, transform 0.18s; }
+.home-footer .help-button svg { width: 22px; height: 22px; }
+.home-footer .help-button:hover { border-color: var(--gold); }
+.home-footer .help-button:active { transform: translateY(2px); }
 .play-screen { height: calc(100dvh - max(10px, env(safe-area-inset-top)) - max(12px, env(safe-area-inset-bottom))); min-height: 580px; display: flex; flex-direction: column; align-items: center; position: relative; }
 .game-header { width: 100%; height: 65px; flex-shrink: 0; display: flex; align-items: center; gap: 10px; }
-.header-logo { width: 84px; height: 65px; object-fit: contain; margin-right: auto; }
-.coin-balance { display: flex; align-items: center; gap: 6px; min-height: 44px; border: 1px solid var(--line); border-radius: 23px; padding: 8px 11px; background: rgb(13 31 44 / 82%); font-size: 14px; font-weight: 750; }
-.coin-balance svg { color: var(--gold); width: 19px; height: 19px; }
+.header-logo { width: 84px; min-width: 0; height: 65px; object-fit: contain; margin-right: auto; }
+.coin-balance { display: flex; flex-shrink: 0; align-items: center; gap: 7px; min-height: 44px; border: 1px solid #8d7547; border-radius: 24px; padding: 5px 9px 5px 5px; background: linear-gradient(145deg, #294151, #112b3e 72%); color: #fff0cb; font-size: 14px; font-weight: 800; font-variant-numeric: tabular-nums; box-shadow: inset 0 1px 0 rgb(255 224 158 / 16%), 0 3px 0 #071623, 0 6px 14px rgb(0 12 22 / 20%); transition: border-color 0.18s, transform 0.18s; }
+.coin-balance:hover { border-color: var(--gold); }
+.coin-balance:active { transform: translateY(2px); }
+.coin-medallion { display: grid; place-items: center; flex-shrink: 0; width: 31px; height: 31px; border: 1px solid #ffe7a6; border-radius: 50%; background: linear-gradient(135deg, #ffedb7, #e6bd63 58%, #c99b43); color: #684719; box-shadow: inset 0 1px 0 #fff3cf, 0 2px 3px rgb(2 16 25 / 28%); }
+.coin-medallion svg { width: 25px; height: 25px; }
+.balance-chevron { display: flex; color: #d6bd85; }
+.balance-chevron svg { width: 13px; height: 13px; }
 .level-heading { text-align: center; background: none; border: none; display: flex; flex-direction: column; align-items: center; padding: 6px 0 8px; }
 .level-heading .eyebrow { font-size: 10px; letter-spacing: 1.6px; }
 .level-title { font-family: 'SCALA Serif', Georgia, serif; font-size: 25px; line-height: 1.2; font-weight: 400; margin-top: 3px; }
@@ -111,9 +125,12 @@ cite { display: block; color: var(--gold); font-style: normal; font-family: 'SCA
 .selection-actions button svg { width: 18px; height: 18px; }
 .selection-actions #confirm-word { left: auto; right: 5%; border-radius: 50%; background: var(--gold); color: #12334b; padding: 5px; }
 .game-tools { width: 100%; display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; padding: 12px 0 0; margin-top: auto; }
-.tool { background: rgb(11 32 47 / 76%); border: 1px solid var(--line); border-radius: 13px; padding: 10px 5px; display: flex; align-items: center; justify-content: center; gap: 7px; min-height: 51px; }
-.tool > svg { color: var(--gold); width: 19px; height: 19px; }
-.tool > span { font-size: 10px; font-weight: 650; text-align: left; }
+.tool { background: linear-gradient(145deg, rgb(35 59 77 / 96%), rgb(11 32 47 / 94%)); border: 1px solid #685b43; border-radius: 14px; padding: 9px 5px; display: flex; align-items: center; justify-content: center; gap: 5px; min-height: 52px; box-shadow: inset 0 1px 0 rgb(255 230 182 / 10%), 0 3px 0 rgb(6 21 32 / 80%); transition: border-color 0.18s, transform 0.18s; }
+.tool:hover { border-color: var(--gold); }
+.tool:active { transform: translateY(2px); }
+.control-emblem { display: grid; place-items: center; flex-shrink: 0; width: 27px; height: 30px; border: 1px solid #ac8d4f; border-radius: 9px; background: linear-gradient(140deg, #ffebb2, #e6c477 58%, #c7a052); color: #30414c; box-shadow: inset 0 1px 0 rgb(255 247 218 / 75%), 0 2px 4px rgb(0 12 22 / 25%); }
+.control-emblem svg { width: 21px; height: 21px; }
+.tool-label { min-width: 0; font-size: 10px; font-weight: 700; text-align: left; white-space: nowrap; }
 .tool small { display: flex; align-items: center; gap: 3px; color: #ccd8df; font-weight: 500; font-size: 9px; margin-top: 4px; }
 .tool small svg { width: 10px; height: 10px; }
 .completed-next { position: absolute; bottom: 78px; width: min(320px, 94%); z-index: 4; }
@@ -230,9 +247,10 @@ form input { width: 100%; margin: 13px 0 20px; padding: 15px; border: 1px solid 
   .edition { font-size: 9px; letter-spacing: 0.6px; }
   .game-header { gap: 7px; }
   .header-logo { width: 72px; }
-  .tool { gap: 5px; }
-  .tool > svg { width: 16px; height: 16px; }
-  .tool > span { font-size: 9px; }
+  .tool { gap: 4px; padding-left: 4px; padding-right: 4px; }
+  .control-emblem { width: 24px; height: 29px; border-radius: 8px; }
+  .control-emblem svg { width: 19px; height: 19px; }
+  .tool-label { font-size: 9px; }
   .tool small { font-size: 8px; }
   .daily-card small { max-width: 160px; }
 }

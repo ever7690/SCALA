@@ -1,8 +1,10 @@
-# SCALA Palabras de Fe 1.1.0
+# SCALA Palabras de Fe 1.1.1
 
 Juego Android de conectar letras y resolver crucigramas, con interfaz propia SCALA en español y motor MIT de Word Tracer. Incluye 1.000 niveles, 10 capítulos, palabras extra, monedas virtuales, pistas, regalo diario con racha, 29 versículos RV1909, sonidos Kenney CC0, música original y progreso local. No necesita cuentas ni conexión para jugar; no contiene anuncios ni compras internas.
 
 La versión 1.1.0 añade el ícono adaptable con el nombre del juego, tipografías Manrope y Lora sin conexión, paisajes suaves, controles más cómodos, animaciones de letras nuevas, navegación con el botón Atrás de Android y privacidad accesible desde Ajustes. Conserva el formato de guardado de la versión anterior.
+
+La versión 1.1.1 refina los controles con botones azul y oro, un engranaje de configuración, una medalla para las monedas y un símbolo de ayuda propio para «Cómo jugar». Los íconos vectoriales conservan su nitidez en todas las densidades de pantalla y los botones principales mantienen un área táctil mínima de 44 píxeles.
 
 ## Compilar en OBRERO 1
 
@@ -25,7 +27,7 @@ JAVA_TOOL_OPTIONS="${JAVA_TOOL_OPTIONS:-} -Djava.net.preferIPv4Stack=true" bash 
 El script comprueba JDK, código y 1.000 niveles, genera el contenido sin conexión y compila con dos trabajadores y 1,5 GB de memoria Gradle. Produce en `entregables/` el APK de pruebas, el APK release sin firmar, el AAB sin firmar y sus huellas. La app requiere Android 7.0 o posterior y se muestra en vertical.
 
 ```bash
-adb -d install -r entregables/SCALA_Palabras_de_Fe_1.1.0_pruebas.apk
+adb -d install -r entregables/SCALA_Palabras_de_Fe_1.1.1_pruebas.apk
 ```
 
 Para actualizar una APK de pruebas conservando el progreso, compila en el mismo equipo que creó la instalada. Las claves automáticas de depuración de OBRERO 1 y de la nube son distintas. La variante comercial usa `com.scala.palabrasdefe`; la de pruebas usa `com.scala.palabrasdefe.debug`. Se instalan por separado y cada una guarda su propio progreso.

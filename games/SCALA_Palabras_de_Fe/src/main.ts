@@ -31,8 +31,10 @@ interface Verse {
 const icons: Record<string, string> = {
   home: '<path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/>',
   back: '<path d="m15 18-6-6 6-6"/>',
-  settings: '<path d="m9 3-1 3-3 1 1 3-2 2 2 2-1 3 3 1 1 3h6l1-3 3-1-1-3 2-2-2-2 1-3-3-1-1-3z"/><circle cx="12" cy="12" r="3"/>',
-  coin: '<circle cx="12" cy="12" r="9"/><path d="M14 8h-3a2 2 0 0 0 0 4h2a2 2 0 0 1 0 4h-3m2-10v12"/>',
+  settings: '<path class="icon-surface" d="M10.2 3h3.6l.6 2.5 1.5.9 2.5-.7 1.8 3.1-1.9 1.8v2.8l1.9 1.8-1.8 3.1-2.5-.7-1.5.9-.6 2.5h-3.6l-.6-2.5-1.5-.9-2.5.7-1.8-3.1 1.9-1.8v-2.8L3.8 8.8l1.8-3.1 2.5.7 1.5-.9Z"/><circle cx="12" cy="12" r="3.2"/>',
+  coin: '<circle class="icon-surface" cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="6.7" stroke-width="1" opacity=".55"/><path class="icon-accent" d="m12 7.5 1.4 2.8 3.1.4-2.3 2.2.6 3.1-2.8-1.5L9.2 16l.6-3.1-2.3-2.2 3.1-.4Z" stroke-width="1.2"/>',
+  help: '<circle class="icon-surface" cx="12" cy="12" r="9"/><path d="M9.5 8.7a2.6 2.6 0 0 1 5 1c0 1.9-2.5 2.1-2.5 4"/><circle cx="12" cy="16.8" r=".8" fill="currentColor" stroke="none"/>',
+  chevron: '<path d="m8 10 4 4 4-4"/>',
   book: '<path d="M12 5v15M3 4c4-1 6 0 9 1 3-1 5-2 9-1v15c-4-1-6 0-9 1-3-1-5-2-9-1z"/>',
   gift: '<path d="M3 8h18v4H3zM5 12v9h14v-9M12 8v13"/><path d="M12 8c-7 0-7-7-3-6 3 1 3 6 3 6s0-5 3-6c4-1 4 6-3 6z"/>',
   shuffle: '<path d="M3 7h3c4 0 8 10 12 10h3m-4-4 4 4-4 4M3 17h3c2 0 4-2 5-5m2-3c2-2 3-2 5-2h3m-4-4 4 4-4 4"/>',
@@ -54,7 +56,7 @@ const icons: Record<string, string> = {
 };
 
 function icon(name: string): string {
-  return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${icons[name] ?? icons.star}</svg>`;
+  return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${icons[name] ?? icons.star}</svg>`;
 }
 
 function chapterIcon(chapter: Chapter): string {
@@ -193,14 +195,14 @@ function renderHome(): void {
   const reward = dailyReward(save, localDate());
   const verse = verses[0];
   el('#home-screen').innerHTML = `
-    <header class="home-top"><span class="edition">SCALA · JUEGOS CON PROPÓSITO</span><button class="icon-button" data-action="settings" aria-label="Ajustes">${icon('settings')}</button></header>
+    <header class="home-top"><span class="edition">SCALA · JUEGOS CON PROPÓSITO</span><button class="icon-button control-button" data-action="settings" aria-label="Ajustes">${icon('settings')}</button></header>
     <div class="brand-stage"><img class="hero-logo" src="/brand/scala-original.png" alt="SCALA, para una vida edificada" width="2048" height="1638" fetchpriority="high"/><span class="brand-rule"></span></div>
     <div class="home-title"><p class="eyebrow">CONECTA · DESCUBRE · CRECE</p><h1>Palabras <em>de Fe</em></h1><p>Un momento de paz.<br>Una palabra que te acerca.</p></div>
     <button class="primary play-cta" data-action="play"><span>${save.started ? 'Continuar el camino' : 'Comenzar a jugar'}<small>Nivel ${number} · ${chapters[current().groupIndex ?? 0].title}</small></span>${icon('arrow')}</button>
     <div class="home-shortcuts"><button class="shortcut" data-action="map">${icon('star')}<span>Mi camino<small>${progress()} de 1.000 niveles</small></span></button><button class="shortcut" data-action="verses">${icon('book')}<span>Mi colección<small>${verses.filter(v => v.unlockAt <= progress()).length} ${verses.filter(v => v.unlockAt <= progress()).length === 1 ? 'versículo' : 'versículos'}</small></span></button></div>
     <button class="daily-card ${reward.amount ? 'available' : ''}" data-action="daily"><span class="daily-icon">${icon('gift')}</span><span><strong>${reward.amount ? 'Tu regalo de hoy' : '¡Gracias por venir hoy!'}</strong><small>${reward.amount ? `Recibe ${reward.amount} monedas y sigue creciendo` : `Racha de ${save.streak} ${save.streak === 1 ? 'día' : 'días'} · vuelve mañana`}</small></span><span class="daily-value">${reward.amount ? `+${reward.amount}` : icon('check')}</span></button>
     <blockquote class="home-verse">“${escape(verse.text)}”<cite>${verse.reference} · RV1909</cite></blockquote>
-    <footer class="home-footer"><span>1.000 niveles · Sin conexión</span><button data-action="help">Cómo jugar ${icon('arrow')}</button></footer>`;
+    <footer class="home-footer"><span>1.000 niveles · Sin conexión</span><button class="help-button" data-action="help">${icon('help')}<span>Cómo jugar</span></button></footer>`;
 }
 
 function startGame(): void {
@@ -241,7 +243,7 @@ function renderPlay(): void {
   pointerId = null;
   boardObserver.disconnect();
   el('#play-screen').innerHTML = `
-    <header class="game-header"><button class="icon-button" data-action="home" aria-label="Volver a la portada">${icon('back')}</button><img class="header-logo" src="/brand/scala-original.png" alt="SCALA" width="2048" height="1638"/><button class="coin-balance" data-action="daily" aria-label="Monedas y regalo diario">${icon('coin')}<span id="coin-count">${save.coins}</span></button><button class="icon-button" data-action="settings" aria-label="Ajustes">${icon('settings')}</button></header>
+    <header class="game-header"><button class="icon-button control-button" data-action="home" aria-label="Volver a la portada">${icon('back')}</button><img class="header-logo" src="/brand/scala-original.png" alt="SCALA" width="2048" height="1638"/><button class="coin-balance" data-action="daily" aria-label="Monedas y regalo diario"><span class="coin-medallion">${icon('coin')}</span><span id="coin-count">${save.coins}</span><span class="balance-chevron">${icon('chevron')}</span></button><button class="icon-button control-button" data-action="settings" aria-label="Ajustes">${icon('settings')}</button></header>
     <button class="level-heading" data-action="map"><span class="eyebrow">${chapter.title.toUpperCase()}</span><span class="level-title">Nivel <strong>${level.number}</strong><span class="chapter-symbol">${chapterIcon(chapter)}</span></span></button>
     <div class="progress-track" role="progressbar" aria-label="Palabras del nivel" aria-valuemin="0" aria-valuemax="${level.answers.length}" aria-valuenow="0"><span id="level-progress"></span></div>
     <div class="board-area"><div id="board" class="board" aria-label="Crucigrama"></div></div>
@@ -249,7 +251,7 @@ function renderPlay(): void {
     <div class="selection-area"><div id="selection" class="selection" aria-live="polite">Une las letras</div><button id="clear-word" class="selection-clear" data-action="clear-selection" aria-label="Borrar palabra" hidden>${icon('close')}</button></div>
     <div id="wheel" class="letter-wheel" aria-label="Letras para formar palabras"><svg id="wheel-lines" class="wheel-lines" aria-hidden="true"><polyline id="word-line"/></svg><div id="letter-buttons"></div><button class="shuffle-button" data-action="shuffle" aria-label="Mezclar letras">${icon('shuffle')}</button></div>
     <div class="selection-actions"><button data-action="keyboard" aria-label="Escribir con teclado">${icon('keyboard')}</button><span id="gesture-help">Desliza o toca las letras</span><button id="confirm-word" data-action="submit-selection" aria-label="Comprobar palabra" hidden>${icon('check')}</button></div>
-    <footer class="game-tools"><button class="tool" data-action="hint">${icon('hint')}<span>Una pista<small>35 ${icon('coin')}</small></span></button><button class="tool" data-action="verses">${icon('book')}<span>Versículos<small>Mi colección</small></span></button><button class="tool" data-action="help">${icon('star')}<span>Cómo jugar<small>Conecta y descubre</small></span></button></footer>
+    <footer class="game-tools"><button class="tool" data-action="hint"><span class="control-emblem">${icon('hint')}</span><span class="tool-label">Una pista<small>35 ${icon('coin')}</small></span></button><button class="tool" data-action="verses"><span class="control-emblem">${icon('book')}</span><span class="tool-label">Versículos<small>Mi colección</small></span></button><button class="tool" data-action="help"><span class="control-emblem">${icon('help')}</span><span class="tool-label">Cómo jugar<small>Paso a paso</small></span></button></footer>
     <button id="completed-next" class="primary completed-next" data-action="next" hidden>${level.number === levels.length ? '¡Camino completo!' : 'Siguiente nivel'} ${icon('arrow')}</button>`;
   renderBoard();
   renderWheel();

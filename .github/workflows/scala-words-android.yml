@@ -71,7 +71,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: SCALA-Palabras-de-Fe-1.1.0
+          name: SCALA-Palabras-de-Fe
           path: games/SCALA_Palabras_de_Fe/entregables/
           retention-days: 30
           if-no-files-found: error
