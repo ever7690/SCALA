@@ -1,0 +1,67 @@
+name: ASHER v2 - Windows gaming settings tests
+
+on:
+  push:
+    paths:
+      - '.github/workflows/asher-v2-windows-tests.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  windows-registry:
+    runs-on: windows-2025
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Pillow and build SCALA script payload only
+        shell: pwsh
+        run: |
+          python -m pip install --disable-pip-version-check pillow
+          @'
+          import importlib.util, os
+          from pathlib import Path
+          spec = importlib.util.spec_from_file_location("asher", "tools/SCALA_ASHER_CALA_OS_V2_BUILDER.py")
+          module = importlib.util.module_from_spec(spec)
+          spec.loader.exec_module(module)
+          work = Path(os.environ["RUNNER_TEMP"]) / "asher-payload-test"
+          assets = work / "wallpapers"
+          assets.mkdir(parents=True, exist_ok=True)
+          module.build_scala_payload(work, assets)
+          print("SCALA Payload generated", work)
+          '@ | python -
+
+      - name: Execute scripts on disposable Windows runner
+        shell: pwsh
+        run: |
+          $scala = Join-Path $env:RUNNER_TEMP "asher-payload-test\payload\SCALA"
+          & powershell.exe -NoProfile -ExecutionPolicy Bypass -File (Join-Path $scala "SYSTEM_SCALA.ps1")
+          if ($LASTEXITCODE -ne 0) { throw "SYSTEM_SCALA failed" }
+          & powershell.exe -NoProfile -ExecutionPolicy Bypass -File (Join-Path $scala "USER_SCALA.ps1")
+          if ($LASTEXITCODE -ne 0) { throw "USER_SCALA failed" }
+
+          $g = Get-ItemProperty 'HKCU:\Software\Microsoft\GameBar'
+          $d = Get-ItemProperty 'HKCU:\System\GameConfigStore'
+          $t = Get-ItemProperty 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize'
+          $p = Get-ItemProperty 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\GameDVR'
+          $o = Get-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation'
+
+          if ($g.AllowAutoGameMode -ne 1 -or $g.AutoGameModeEnabled -ne 1) {
+            throw "Game Mode not enabled"
+          }
+          if ($d.GameDVR_Enabled -ne 0 -or $p.AllowGameDVR -ne 0) {
+            throw "Game DVR not disabled"
+          }
+          if ($t.AppsUseLightTheme -ne 0 -or $t.SystemUsesLightTheme -ne 0) {
+            throw "Dark Mode not enabled"
+          }
+          if ($o.Model -ne 'ASHER CALA OS - SCALA Gaming') {
+            throw "SCALA OEM identity not applied"
+          }
+          Write-Host "PASS: real Windows registry Game Mode, Game DVR, Dark Mode, OEM identity"
