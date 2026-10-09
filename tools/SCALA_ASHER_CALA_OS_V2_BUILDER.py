@@ -8,6 +8,7 @@ The generated ISO is a candidate until booted and installed on actual hardware.
 from __future__ import annotations
 
 import argparse
+import atexit
 import hashlib
 import os
 from pathlib import Path
@@ -338,6 +339,11 @@ def main():
     edited_esd = work / "edited.esd"
     temp_iso = out.with_name(out.name + ".building")
     require(not temp_iso.exists(), "Hay un archivo .building anterior; no lo sobreescribire")
+    # Automatically remove only the candidate .building created by this run.
+    atexit.register(lambda: temp_iso.unlink(missing_ok=True))
+    free_work = shutil.disk_usage(work).free
+    require(free_work >= 13 * (1024 ** 3),
+            f"Espacio libre insuficiente: {free_work} bytes; se requieren 13 GiB libres")
 
     cut_extent(src, original_esd, INSTALL_OFFSET, INSTALL_SIZE)
     require(digest_file(original_esd) == ORIGINAL_ESD_SHA,
