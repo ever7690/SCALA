@@ -337,8 +337,9 @@ def main():
     original_present = False
     if run("wimlib-imagex", "extract", original_esd, "1", current_setup,
            f"--dest-dir={original_setup}", check=False) == 0:
-        old = original_setup / "Windows/Setup/Scripts/SetupComplete.cmd"
-        require(old.is_file(), "SetupComplete original no se extrajo correctamente")
+        extracted_files = list(original_setup.rglob("SetupComplete.cmd"))
+        require(len(extracted_files) == 1, "SetupComplete original no se extrajo correctamente")
+        old = extracted_files[0]
         shutil.copy2(old, work / "payload" / "SetupComplete_MINIOS.cmd")
         original_present = True
     log("SetupComplete MiniOS: " + ("CONSERVADO" if original_present else "no existia dentro del ESD"))
