@@ -30,6 +30,9 @@ jobs:
           distribution: temurin
           java-version: '21'
       - uses: android-actions/setup-android@v3
+        with:
+          packages: platform-tools
+          log-accepted-android-sdk-licenses: false
       - name: Preparar SDK
         run: sdkmanager 'platforms;android-36' 'build-tools;36.0.0'
       - name: Dependencias
@@ -38,8 +41,6 @@ jobs:
         run: npm run check && npm test
       - name: Generar juego sin conexión
         run: npm run build
-      - name: Verificar interfaz y guardado
-        run: npx playwright install --with-deps chromium && npm run test:ui
       - name: Compilar APK
         run: |
           npx cap sync android
@@ -52,7 +53,10 @@ jobs:
           cp android/app/build/outputs/apk/release/app-release-unsigned.apk entregables/SCALA_Palabras_de_Fe_1.0.0_sin_firmar.apk
           sha256sum entregables/*.apk > entregables/SHA256SUMS.txt
           printf '%s\n' "Commit: $GITHUB_SHA" "Compilación: $GITHUB_RUN_ID" > entregables/COMPILACION.txt
+      - name: Verificar interfaz y guardado
+        run: npx playwright install --with-deps chromium && npm run test:ui
       - name: Entregar APK y verificaciones
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: SCALA-Palabras-de-Fe-1.0.0
