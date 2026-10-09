@@ -3,6 +3,7 @@ name: ASHER v2 - Windows gaming settings tests
 on:
   push:
     paths:
+      - 'tools/SCALA_ASHER_CALA_OS_V2_BUILDER.py'
       - '.github/workflows/asher-v2-windows-tests.yml'
   workflow_dispatch:
 
