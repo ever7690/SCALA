@@ -161,7 +161,7 @@ def build_scala_payload(work, wallpaper_dir):
     write_utf8(scala / "SYSTEM_SCALA.ps1", r"""
     $ErrorActionPreference = 'Continue'
     function Set-Dword($Path, $Name, $Value) {
-      New-Item -Path $Path -Force | Out-Null
+      if (-not (Test-Path -LiteralPath $Path)) { New-Item -Path $Path -Force | Out-Null }
       New-ItemProperty -Path $Path -Name $Name -Value $Value -PropertyType DWord -Force | Out-Null
     }
 
@@ -198,7 +198,7 @@ def build_scala_payload(work, wallpaper_dir):
     write_utf8(scala / "USER_SCALA.ps1", r"""
     $ErrorActionPreference = 'Continue'
     function Set-Dword($Path, $Name, $Value) {
-      New-Item $Path -Force | Out-Null
+      if (-not (Test-Path -LiteralPath $Path)) { New-Item -Path $Path -Force | Out-Null }
       New-ItemProperty -Path $Path -Name $Name -Value $Value -PropertyType DWord -Force | Out-Null
     }
     Set-Dword 'HKCU:\Software\Microsoft\GameBar' 'AllowAutoGameMode' 1
