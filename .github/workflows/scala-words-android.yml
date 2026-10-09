@@ -59,6 +59,8 @@ jobs:
           cp "$ANDROID_HOME/build-tools/36.0.0/lib/apksigner.jar" entregables/herramientas/
           cp "$ANDROID_HOME/build-tools/36.0.0/zipalign" entregables/herramientas/
           cp "$ANDROID_HOME/build-tools/36.0.0/aapt2" entregables/herramientas/
+          mkdir -p entregables/herramientas/lib64
+          cp "$ANDROID_HOME/build-tools/36.0.0/lib64/libc++.so" entregables/herramientas/lib64/
           sha256sum entregables/*.apk entregables/*.aab > entregables/SHA256SUMS.txt
           printf '%s\n' "Commit: $GITHUB_SHA" "Compilación: $GITHUB_RUN_ID" > entregables/COMPILACION.txt
       - name: Verificar interfaz y guardado
