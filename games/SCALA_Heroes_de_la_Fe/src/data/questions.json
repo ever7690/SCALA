@@ -1,0 +1,5495 @@
+[
+  {
+    "id": "noe-01",
+    "heroId": "noe",
+    "prompt": "¿A quién pidió Dios que construyera un arca?",
+    "choices": [
+      "Noé",
+      "Moisés",
+      "Elías",
+      "Pedro"
+    ],
+    "answer": 0,
+    "reference": "Génesis 6:13-14",
+    "verseKeys": [
+      "GEN 6:13",
+      "GEN 6:14"
+    ],
+    "verse": "Y dijo Dios á Noé: El fin de toda carne ha venido delante de mí; porque la tierra está llena de violencia á causa de ellos; y he aquí que yo los destruiré con la tierra. Hazte un arca de madera de Gopher: harás aposentos en el arca, y la embetunarás con brea por dentro y por fuera.",
+    "explanation": "Dios habló a Noé y le dio las instrucciones para construir el arca.",
+    "evidence": [
+      "Noé"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "noe-02",
+    "heroId": "noe",
+    "prompt": "¿Cuántos hijos tenía Noé?",
+    "choices": [
+      "Tres",
+      "Dos",
+      "Cinco",
+      "Siete"
+    ],
+    "answer": 0,
+    "reference": "Génesis 6:10",
+    "verseKeys": [
+      "GEN 6:10"
+    ],
+    "verse": "Y engendró Noé tres hijos: á Sem, á Châm, y á Japhet.",
+    "explanation": "Génesis nombra a sus tres hijos: Sem, Cam y Jafet.",
+    "evidence": [
+      "tres"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "noe-03",
+    "heroId": "noe",
+    "prompt": "¿Cuáles son los nombres de los hijos de Noé?",
+    "choices": [
+      "Sem, Cam y Jafet",
+      "Caín, Abel y Set",
+      "Pedro, Juan y Jacobo",
+      "José, Judá y Benjamín"
+    ],
+    "answer": 0,
+    "reference": "Génesis 6:10",
+    "verseKeys": [
+      "GEN 6:10"
+    ],
+    "verse": "Y engendró Noé tres hijos: á Sem, á Châm, y á Japhet.",
+    "explanation": "Sem, Cam y Jafet acompañan la historia de Noé.",
+    "evidence": [
+      "Sem",
+      "Châm",
+      "Japhet"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "noe-04",
+    "heroId": "noe",
+    "prompt": "¿De qué madera debía hacerse el arca?",
+    "choices": [
+      "Gofer",
+      "Olivo",
+      "Cedro",
+      "Palmera"
+    ],
+    "answer": 0,
+    "reference": "Génesis 6:14",
+    "verseKeys": [
+      "GEN 6:14"
+    ],
+    "verse": "Hazte un arca de madera de Gopher: harás aposentos en el arca, y la embetunarás con brea por dentro y por fuera.",
+    "explanation": "La instrucción menciona madera de gofer, escrita Gopher en RV1909.",
+    "evidence": [
+      "Gopher"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "noe-05",
+    "heroId": "noe",
+    "prompt": "¿Con qué debía recubrirse el arca por dentro y por fuera?",
+    "choices": [
+      "Brea",
+      "Oro",
+      "Arcilla",
+      "Lana"
+    ],
+    "answer": 0,
+    "reference": "Génesis 6:14",
+    "verseKeys": [
+      "GEN 6:14"
+    ],
+    "verse": "Hazte un arca de madera de Gopher: harás aposentos en el arca, y la embetunarás con brea por dentro y por fuera.",
+    "explanation": "La brea se menciona en las instrucciones de construcción.",
+    "evidence": [
+      "brea"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "noe-06",
+    "heroId": "noe",
+    "prompt": "¿Cuántos codos debía medir de largo el arca?",
+    "choices": [
+      "Trescientos",
+      "Cien",
+      "Cincuenta",
+      "Setecientos"
+    ],
+    "answer": 0,
+    "reference": "Génesis 6:15",
+    "verseKeys": [
+      "GEN 6:15"
+    ],
+    "verse": "Y de esta manera la harás: de trescientos codos la longitud del arca, de cincuenta codos su anchura, y de treinta codos su altura.",
+    "explanation": "El largo indicado fue de trescientos codos.",
+    "evidence": [
+      "trescientos"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "noe-07",
+    "heroId": "noe",
+    "prompt": "¿Cuántos niveles se describen para el arca?",
+    "choices": [
+      "Tres",
+      "Uno",
+      "Dos",
+      "Cuatro"
+    ],
+    "answer": 0,
+    "reference": "Génesis 6:16",
+    "verseKeys": [
+      "GEN 6:16"
+    ],
+    "verse": "Una ventana harás al arca, y la acabarás á un codo de elevación por la parte de arriba: y pondrás la puerta del arca á su lado; y le harás piso bajo, segundo y tercero.",
+    "explanation": "El texto menciona un piso bajo, un segundo y un tercero.",
+    "evidence": [
+      "segundo",
+      "tercero"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "noe-08",
+    "heroId": "noe",
+    "prompt": "¿Cuántas personas fueron salvadas en el arca, según 1 Pedro?",
+    "choices": [
+      "Ocho",
+      "Diez",
+      "Doce",
+      "Cuatro"
+    ],
+    "answer": 0,
+    "reference": "1 Pedro 3:20",
+    "verseKeys": [
+      "1PE 3:20"
+    ],
+    "verse": "Los cuales en otro tiempo fueron desobedientes, cuando una vez esperaba la paciencia de Dios en los días de Noé, cuando se aparejaba el arca; en la cual pocas, es á saber, ocho personas fueron salvas por agua.",
+    "explanation": "Pedro recuerda que ocho personas fueron preservadas por agua.",
+    "evidence": [
+      "ocho"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "noe-09",
+    "heroId": "noe",
+    "prompt": "¿Cuántos días y noches llovió durante el diluvio?",
+    "choices": [
+      "Cuarenta",
+      "Siete",
+      "Doce",
+      "Cien"
+    ],
+    "answer": 0,
+    "reference": "Génesis 7:12",
+    "verseKeys": [
+      "GEN 7:12"
+    ],
+    "verse": "Y hubo lluvia sobre la tierra cuarenta días y cuarenta noches.",
+    "explanation": "La lluvia duró cuarenta días y cuarenta noches.",
+    "evidence": [
+      "cuarenta"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "noe-10",
+    "heroId": "noe",
+    "prompt": "¿Qué ave soltó Noé antes de enviar la paloma?",
+    "choices": [
+      "Un cuervo",
+      "Un águila",
+      "Una golondrina",
+      "Una cigüeña"
+    ],
+    "answer": 0,
+    "reference": "Génesis 8:7",
+    "verseKeys": [
+      "GEN 8:7"
+    ],
+    "verse": "Y envió al cuervo, el cual salió, y estuvo yendo y tornando hasta que las aguas se secaron de sobre la tierra.",
+    "explanation": "Noé envió primero un cuervo para observar el estado de la tierra.",
+    "evidence": [
+      "cuervo"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "noe-11",
+    "heroId": "noe",
+    "prompt": "¿De qué árbol era la hoja que trajo la paloma?",
+    "choices": [
+      "Olivo",
+      "Higuera",
+      "Cedro",
+      "Almendro"
+    ],
+    "answer": 0,
+    "reference": "Génesis 8:11",
+    "verseKeys": [
+      "GEN 8:11"
+    ],
+    "verse": "Y la paloma volvió á él á la hora de la tarde; y he aquí que traía una hoja de oliva tomada en su pico: y entendió Noé que las aguas se habían retirado de sobre la tierra.",
+    "explanation": "La hoja de olivo indicó a Noé que las aguas estaban bajando.",
+    "evidence": [
+      "oliva"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "noe-12",
+    "heroId": "noe",
+    "prompt": "¿En qué mes reposó el arca sobre los montes?",
+    "choices": [
+      "El séptimo",
+      "El segundo",
+      "El décimo",
+      "El duodécimo"
+    ],
+    "answer": 0,
+    "reference": "Génesis 8:4",
+    "verseKeys": [
+      "GEN 8:4"
+    ],
+    "verse": "Y reposó el arca en el mes séptimo, á diecisiete días del mes, sobre los montes de Armenia.",
+    "explanation": "El arca reposó en el mes séptimo, el día diecisiete.",
+    "evidence": [
+      "séptimo"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "noe-13",
+    "heroId": "noe",
+    "prompt": "¿Quién cerró la puerta del arca después de que entró Noé?",
+    "choices": [
+      "Dios",
+      "Sem",
+      "Un mensajero",
+      "El capitán"
+    ],
+    "answer": 0,
+    "reference": "Génesis 7:16",
+    "verseKeys": [
+      "GEN 7:16"
+    ],
+    "verse": "Y los que vinieron, macho y hembra de toda carne vinieron, como le había mandado Dios: y Jehová le cerró la puerta.",
+    "explanation": "El relato dice que Jehová cerró la puerta.",
+    "evidence": [
+      "Jehová",
+      "cerró"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "noe-14",
+    "heroId": "noe",
+    "prompt": "¿Qué edad tenía Noé cuando llegó el diluvio?",
+    "choices": [
+      "Seiscientos años",
+      "Cien años",
+      "Trescientos años",
+      "Ochenta años"
+    ],
+    "answer": 0,
+    "reference": "Génesis 7:6",
+    "verseKeys": [
+      "GEN 7:6"
+    ],
+    "verse": "Y siendo Noé de seiscientos años, el diluvio de las aguas fué sobre la tierra.",
+    "explanation": "Noé tenía seiscientos años cuando las aguas cubrieron la tierra.",
+    "evidence": [
+      "seiscientos"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "noe-15",
+    "heroId": "noe",
+    "prompt": "¿Qué construyó Noé para ofrecer sacrificios al salir del arca?",
+    "choices": [
+      "Un altar",
+      "Un palacio",
+      "Un barco",
+      "Una torre"
+    ],
+    "answer": 0,
+    "reference": "Génesis 8:20",
+    "verseKeys": [
+      "GEN 8:20"
+    ],
+    "verse": "Y edificó Noé un altar á Jehová, y tomó de todo animal limpio y de toda ave limpia, y ofreció holocausto en el altar.",
+    "explanation": "Noé edificó un altar a Jehová después del diluvio.",
+    "evidence": [
+      "altar"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "noe-16",
+    "heroId": "noe",
+    "prompt": "¿Cuántos días prevalecieron las aguas sobre la tierra?",
+    "choices": [
+      "Ciento cincuenta",
+      "Cuarenta",
+      "Siete",
+      "Trescientos"
+    ],
+    "answer": 0,
+    "reference": "Génesis 7:24",
+    "verseKeys": [
+      "GEN 7:24"
+    ],
+    "verse": "Y prevalecieron las aguas sobre la tierra ciento y cincuenta días.",
+    "explanation": "Génesis distingue los días de lluvia de los ciento cincuenta días de aguas predominantes.",
+    "evidence": [
+      "ciento",
+      "cincuenta"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "noe-17",
+    "heroId": "noe",
+    "prompt": "¿Qué señal puso Dios en las nubes como recuerdo del pacto?",
+    "choices": [
+      "El arco iris",
+      "Una estrella",
+      "Una llama",
+      "Una corona"
+    ],
+    "answer": 0,
+    "reference": "Génesis 9:13",
+    "verseKeys": [
+      "GEN 9:13"
+    ],
+    "verse": "Mi arco pondré en las nubes, el cual será por señal de convenio entre mí y la tierra.",
+    "explanation": "El arco en las nubes fue la señal del pacto con la tierra.",
+    "evidence": [
+      "arco",
+      "nubes"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "noe-18",
+    "heroId": "noe",
+    "prompt": "¿Cómo respondió Noé a las instrucciones de Dios?",
+    "choices": [
+      "Hizo todo lo que Dios le mandó",
+      "Construyó una torre",
+      "Se fue a Egipto",
+      "Escondió el arca"
+    ],
+    "answer": 0,
+    "reference": "Génesis 6:22",
+    "verseKeys": [
+      "GEN 6:22"
+    ],
+    "verse": "E hízolo así Noé; hizo conforme á todo lo que Dios le mandó.",
+    "explanation": "Génesis destaca la obediencia de Noé a las instrucciones recibidas.",
+    "evidence": [
+      "Noé",
+      "mandó"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "noe-19",
+    "heroId": "noe",
+    "prompt": "¿Quiénes entraron al arca con Noé?",
+    "choices": [
+      "Su esposa, sus hijos y sus nueras",
+      "Solo su esposa",
+      "Solo sus amigos",
+      "Un ejército"
+    ],
+    "answer": 0,
+    "reference": "Génesis 7:7",
+    "verseKeys": [
+      "GEN 7:7"
+    ],
+    "verse": "Y vino Noé, y sus hijos, y su mujer, y las mujeres de sus hijos con él al arca, por las aguas del diluvio.",
+    "explanation": "Noé entró con su familia para protegerse de las aguas del diluvio.",
+    "evidence": [
+      "hijos",
+      "mujer"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "noe-20",
+    "heroId": "noe",
+    "prompt": "¿Qué ave envió Noé para comprobar si las aguas habían bajado?",
+    "choices": [
+      "Una paloma",
+      "Un gallo",
+      "Un pavo real",
+      "Un avestruz"
+    ],
+    "answer": 0,
+    "reference": "Génesis 8:8",
+    "verseKeys": [
+      "GEN 8:8"
+    ],
+    "verse": "Envió también de sí á la paloma, para ver si las aguas se habían retirado de sobre la faz de la tierra;",
+    "explanation": "La paloma fue enviada para observar si las aguas se habían retirado.",
+    "evidence": [
+      "paloma"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "abraham-01",
+    "heroId": "abraham",
+    "prompt": "¿Quién era el padre de Abraham?",
+    "choices": [
+      "Taré",
+      "Isaac",
+      "Labán",
+      "Ismael"
+    ],
+    "answer": 0,
+    "reference": "Génesis 11:27",
+    "verseKeys": [
+      "GEN 11:27"
+    ],
+    "verse": "Estas son las generaciones de Thare: Thare engendró á Abram, y á Nachôr, y á Harán; y Harán engendró á Lot.",
+    "explanation": "El texto nombra a Taré, escrito Thare en esta traducción histórica, como padre de Abram.",
+    "evidence": [
+      "Thare"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "abraham-02",
+    "heroId": "abraham",
+    "prompt": "¿Qué nombre dio Dios a la esposa de Abraham?",
+    "choices": [
+      "Sara",
+      "Rebeca",
+      "Raquel",
+      "Lea"
+    ],
+    "answer": 0,
+    "reference": "Génesis 17:15",
+    "verseKeys": [
+      "GEN 17:15"
+    ],
+    "verse": "Dijo también Dios á Abraham: A Sarai tu mujer no la llamarás Sarai, mas Sara será su nombre.",
+    "explanation": "Dios indicó que Sarai sería llamada Sara.",
+    "evidence": [
+      "Sara"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "abraham-03",
+    "heroId": "abraham",
+    "prompt": "¿Qué sobrino acompañó a Abraham en su viaje?",
+    "choices": [
+      "Lot",
+      "Esaú",
+      "Benjamín",
+      "Jonatán"
+    ],
+    "answer": 0,
+    "reference": "Génesis 12:5",
+    "verseKeys": [
+      "GEN 12:5"
+    ],
+    "verse": "Y tomó Abram á Sarai su mujer, y á Lot hijo de su hermano, y toda su hacienda que habían ganado, y las almas que habían adquirido en Harán, y salieron para ir á tierra de Canaán; y á tierra de Canaán llegaron.",
+    "explanation": "Lot era hijo del hermano de Abram y viajó con él.",
+    "evidence": [
+      "Lot"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "abraham-04",
+    "heroId": "abraham",
+    "prompt": "¿Qué debía dejar Abraham al recibir el llamado de Dios?",
+    "choices": [
+      "Su tierra y la casa de su padre",
+      "El arca",
+      "El templo de Jerusalén",
+      "Su rebaño para siempre"
+    ],
+    "answer": 0,
+    "reference": "Génesis 12:1",
+    "verseKeys": [
+      "GEN 12:1"
+    ],
+    "verse": "EMPERO Jehová había dicho á Abram: Vete de tu tierra y de tu parentela, y de la casa de tu padre, á la tierra que te mostraré;",
+    "explanation": "El llamado incluía salir de su tierra, su parentela y la casa de su padre.",
+    "evidence": [
+      "tierra",
+      "padre"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "abraham-05",
+    "heroId": "abraham",
+    "prompt": "¿Hacia qué tierra salió Abraham con Sara y Lot?",
+    "choices": [
+      "Canaán",
+      "Roma",
+      "Asiria",
+      "Grecia"
+    ],
+    "answer": 0,
+    "reference": "Génesis 12:5",
+    "verseKeys": [
+      "GEN 12:5"
+    ],
+    "verse": "Y tomó Abram á Sarai su mujer, y á Lot hijo de su hermano, y toda su hacienda que habían ganado, y las almas que habían adquirido en Harán, y salieron para ir á tierra de Canaán; y á tierra de Canaán llegaron.",
+    "explanation": "El grupo salió hacia la tierra de Canaán.",
+    "evidence": [
+      "Canaán"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "abraham-06",
+    "heroId": "abraham",
+    "prompt": "¿Con qué comparó Dios la descendencia de Abraham al mostrarle el cielo?",
+    "choices": [
+      "Con las estrellas",
+      "Con las nubes",
+      "Con los planetas visibles",
+      "Con los rayos"
+    ],
+    "answer": 0,
+    "reference": "Génesis 15:5",
+    "verseKeys": [
+      "GEN 15:5"
+    ],
+    "verse": "Y sacóle fuera, y dijo: Mira ahora á los cielos, y cuenta las estrellas, si las puedes contar. Y le dijo: Así será tu simiente.",
+    "explanation": "Dios le pidió mirar y contar las estrellas, como imagen de su descendencia.",
+    "evidence": [
+      "estrellas"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "abraham-07",
+    "heroId": "abraham",
+    "prompt": "¿Qué hijo prometió Dios que tendría Sara?",
+    "choices": [
+      "Isaac",
+      "Jacob",
+      "José",
+      "Samuel"
+    ],
+    "answer": 0,
+    "reference": "Génesis 17:19",
+    "verseKeys": [
+      "GEN 17:19"
+    ],
+    "verse": "Y respondió Dios: Ciertamente Sara tu mujer te parirá un hijo, y llamarás su nombre Isaac; y confirmaré mi pacto con él por alianza perpetua para su simiente después de él.",
+    "explanation": "La promesa señalaba que Sara daría a luz a Isaac.",
+    "evidence": [
+      "Isaac"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "abraham-08",
+    "heroId": "abraham",
+    "prompt": "¿Qué edad tenía Abraham cuando nació Isaac?",
+    "choices": [
+      "Cien años",
+      "Treinta años",
+      "Cuarenta años",
+      "Setenta años"
+    ],
+    "answer": 0,
+    "reference": "Génesis 21:5",
+    "verseKeys": [
+      "GEN 21:5"
+    ],
+    "verse": "Y era Abraham de cien años, cuando le nació Isaac su hijo.",
+    "explanation": "Abraham tenía cien años al nacer Isaac.",
+    "evidence": [
+      "cien"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "abraham-09",
+    "heroId": "abraham",
+    "prompt": "¿Cómo se llamaba Sara antes del cambio de nombre?",
+    "choices": [
+      "Sarai",
+      "Ester",
+      "Débora",
+      "Noemí"
+    ],
+    "answer": 0,
+    "reference": "Génesis 17:15",
+    "verseKeys": [
+      "GEN 17:15"
+    ],
+    "verse": "Dijo también Dios á Abraham: A Sarai tu mujer no la llamarás Sarai, mas Sara será su nombre.",
+    "explanation": "Sarai recibió el nombre de Sara.",
+    "evidence": [
+      "Sarai"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "abraham-10",
+    "heroId": "abraham",
+    "prompt": "¿Cómo se llamaba Abraham antes del cambio de nombre?",
+    "choices": [
+      "Abram",
+      "Israel",
+      "Eliseo",
+      "Adán"
+    ],
+    "answer": 0,
+    "reference": "Génesis 17:5",
+    "verseKeys": [
+      "GEN 17:5"
+    ],
+    "verse": "Y no se llamará más tu nombre Abram, sino que será tu nombre Abraham, porque te he puesto por padre de muchedumbre de gentes.",
+    "explanation": "Dios cambió su nombre de Abram a Abraham.",
+    "evidence": [
+      "Abram"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "abraham-11",
+    "heroId": "abraham",
+    "prompt": "¿Qué señal corporal se indicó en el pacto con Abraham?",
+    "choices": [
+      "La circuncisión",
+      "Un tatuaje",
+      "Una pulsera",
+      "Una corona"
+    ],
+    "answer": 0,
+    "reference": "Génesis 17:10",
+    "verseKeys": [
+      "GEN 17:10"
+    ],
+    "verse": "Este será mi pacto, que guardaréis entre mí y vosotros y tu simiente después de ti: Será circuncidado todo varón de entre vosotros.",
+    "explanation": "La circuncisión se indicó como señal del pacto.",
+    "evidence": [
+      "circuncidado"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "abraham-12",
+    "heroId": "abraham",
+    "prompt": "¿Cuántos varones vio Abraham cuando llegaron los visitantes?",
+    "choices": [
+      "Tres",
+      "Uno",
+      "Cinco",
+      "Doce"
+    ],
+    "answer": 0,
+    "reference": "Génesis 18:2",
+    "verseKeys": [
+      "GEN 18:2"
+    ],
+    "verse": "Y alzó sus ojos y miró, y he aquí tres varones que estaban junto á él: y cuando los vió, salió corriendo de la puerta de su tienda á recibirlos, é inclinóse hacia la tierra,",
+    "explanation": "Abraham vio a tres varones y salió a recibirlos.",
+    "evidence": [
+      "tres"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "abraham-13",
+    "heroId": "abraham",
+    "prompt": "¿Cómo reaccionó Sara interiormente al oír la promesa de un hijo?",
+    "choices": [
+      "Se rio",
+      "Se quedó dormida",
+      "Salió corriendo",
+      "Tocó una trompeta"
+    ],
+    "answer": 0,
+    "reference": "Génesis 18:12",
+    "verseKeys": [
+      "GEN 18:12"
+    ],
+    "verse": "Rióse, pues, Sara entre sí, diciendo: ¿Después que he envejecido tendré deleite, siendo también mi señor ya viejo?",
+    "explanation": "Sara se rio al considerar su edad y la de Abraham.",
+    "evidence": [
+      "rió"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "abraham-14",
+    "heroId": "abraham",
+    "prompt": "¿A qué ciudad se dirigían los varones cuando Abraham intercedió?",
+    "choices": [
+      "Sodoma",
+      "Nínive",
+      "Belén",
+      "Nazaret"
+    ],
+    "answer": 0,
+    "reference": "Génesis 18:22-23",
+    "verseKeys": [
+      "GEN 18:22",
+      "GEN 18:23"
+    ],
+    "verse": "Y apartáronse de allí los varones, y fueron hacia Sodoma: mas Abraham estaba aún delante de Jehová. Y acercóse Abraham y dijo: ¿Destruirás también al justo con el impío?",
+    "explanation": "Abraham habló con Dios mientras los varones se dirigían hacia Sodoma.",
+    "evidence": [
+      "Sodoma"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "abraham-15",
+    "heroId": "abraham",
+    "prompt": "¿Qué hijo llevó Abraham cuando recibió la prueba en Moriah?",
+    "choices": [
+      "Isaac",
+      "Ismael",
+      "Jacob",
+      "Esaú"
+    ],
+    "answer": 0,
+    "reference": "Génesis 22:2",
+    "verseKeys": [
+      "GEN 22:2"
+    ],
+    "verse": "Y dijo: Toma ahora tu hijo, tu único, Isaac, á quien amas, y vete á tierra de Moriah, y ofrécelo allí en holocausto sobre uno de los montes que yo te diré.",
+    "explanation": "El relato identifica a Isaac como el hijo de la prueba.",
+    "evidence": [
+      "Isaac"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "abraham-16",
+    "heroId": "abraham",
+    "prompt": "¿A qué tierra debía ir Abraham con Isaac?",
+    "choices": [
+      "Moriah",
+      "Galilea",
+      "Gosén",
+      "Moab"
+    ],
+    "answer": 0,
+    "reference": "Génesis 22:2",
+    "verseKeys": [
+      "GEN 22:2"
+    ],
+    "verse": "Y dijo: Toma ahora tu hijo, tu único, Isaac, á quien amas, y vete á tierra de Moriah, y ofrécelo allí en holocausto sobre uno de los montes que yo te diré.",
+    "explanation": "Dios señaló la tierra de Moriah para el viaje.",
+    "evidence": [
+      "Moriah"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "abraham-17",
+    "heroId": "abraham",
+    "prompt": "¿Qué animal encontró Abraham trabado en un zarzal?",
+    "choices": [
+      "Un carnero",
+      "Un becerro",
+      "Un león",
+      "Una paloma"
+    ],
+    "answer": 0,
+    "reference": "Génesis 22:13",
+    "verseKeys": [
+      "GEN 22:13"
+    ],
+    "verse": "Entonces alzó Abraham sus ojos, y miró, y he aquí un carnero á sus espaldas trabado en un zarzal por sus cuernos: y fué Abraham, y tomó el carnero, y ofrecióle en holocausto en lugar de su hijo.",
+    "explanation": "Abraham encontró un carnero y lo ofreció en lugar de su hijo.",
+    "evidence": [
+      "carnero"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "abraham-18",
+    "heroId": "abraham",
+    "prompt": "¿Qué alimento ofreció Abraham a sus visitantes en Génesis 18:5?",
+    "choices": [
+      "Pan",
+      "Pescado",
+      "Uvas secas",
+      "Miel"
+    ],
+    "answer": 0,
+    "reference": "Génesis 18:5",
+    "verseKeys": [
+      "GEN 18:5"
+    ],
+    "verse": "Y traeré un bocado de pan, y sustentad vuestro corazón; después pasaréis: porque por eso habéis pasado cerca de vuestro siervo. Y ellos dijeron: Haz así como has dicho.",
+    "explanation": "Abraham les ofreció pan para fortalecerlos antes de seguir el camino.",
+    "evidence": [
+      "pan"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "abraham-19",
+    "heroId": "abraham",
+    "prompt": "¿En qué cueva sepultó Abraham a Sara?",
+    "choices": [
+      "Macpela",
+      "Adulam",
+      "Elías",
+      "Qumrán"
+    ],
+    "answer": 0,
+    "reference": "Génesis 23:19",
+    "verseKeys": [
+      "GEN 23:19"
+    ],
+    "verse": "Y después de esto sepultó Abraham á Sara su mujer en la cueva de la heredad de Macpela enfrente de Mamre, que es Hebrón en la tierra de Canaán.",
+    "explanation": "Abraham sepultó a Sara en la cueva del campo de Macpela, frente a Mamre.",
+    "evidence": [
+      "Macpela"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "abraham-20",
+    "heroId": "abraham",
+    "prompt": "¿Cómo se llamó a Abraham por creer a Dios, según Santiago?",
+    "choices": [
+      "Amigo de Dios",
+      "Rey de Egipto",
+      "Sumo sacerdote",
+      "Hijo del trueno"
+    ],
+    "answer": 0,
+    "reference": "Santiago 2:23",
+    "verseKeys": [
+      "JAS 2:23"
+    ],
+    "verse": "Y fué cumplida la Escritura que dice: Abraham creyó á Dios, y le fué imputado á justicia, y fué llamado amigo de Dios.",
+    "explanation": "Santiago recuerda que Abraham creyó a Dios y fue llamado su amigo.",
+    "evidence": [
+      "amigo"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "jose-01",
+    "heroId": "jose",
+    "prompt": "¿Quién era el padre de José?",
+    "choices": [
+      "Jacob, también llamado Israel",
+      "Moisés",
+      "Abraham",
+      "David"
+    ],
+    "answer": 0,
+    "reference": "Génesis 37:3",
+    "verseKeys": [
+      "GEN 37:3"
+    ],
+    "verse": "Y amaba Israel á José más que á todos sus hijos, porque le había tenido en su vejez: y le hizo una ropa de diversos colores.",
+    "explanation": "Israel, el nombre recibido por Jacob, es identificado como padre de José.",
+    "evidence": [
+      "Israel",
+      "José"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "jose-02",
+    "heroId": "jose",
+    "prompt": "¿Cuántas estrellas se inclinaban ante José en su sueño?",
+    "choices": [
+      "Once",
+      "Siete",
+      "Tres",
+      "Veinte"
+    ],
+    "answer": 0,
+    "reference": "Génesis 37:9",
+    "verseKeys": [
+      "GEN 37:9"
+    ],
+    "verse": "Y soñó aún otro sueño, y contólo á sus hermanos, diciendo: He aquí que he soñado otro sueño, y he aquí que el sol y la luna y once estrellas se inclinaban á mí.",
+    "explanation": "En su sueño se inclinaban el sol, la luna y once estrellas.",
+    "evidence": [
+      "once"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "jose-03",
+    "heroId": "jose",
+    "prompt": "¿Qué prenda especial recibió José de su padre?",
+    "choices": [
+      "Una túnica de colores",
+      "Una armadura",
+      "Una capa de oro",
+      "Una vestidura de sacerdote"
+    ],
+    "answer": 0,
+    "reference": "Génesis 37:3",
+    "verseKeys": [
+      "GEN 37:3"
+    ],
+    "verse": "Y amaba Israel á José más que á todos sus hijos, porque le había tenido en su vejez: y le hizo una ropa de diversos colores.",
+    "explanation": "Su padre le hizo una túnica de diversos colores.",
+    "evidence": [
+      "colores"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "jose-04",
+    "heroId": "jose",
+    "prompt": "¿Por cuántas piezas de plata vendieron sus hermanos a José?",
+    "choices": [
+      "Veinte",
+      "Diez",
+      "Treinta",
+      "Cien"
+    ],
+    "answer": 0,
+    "reference": "Génesis 37:28",
+    "verseKeys": [
+      "GEN 37:28"
+    ],
+    "verse": "Y como pasaban los Midianitas mercaderes, sacaron ellos á José de la cisterna, y trajéronle arriba, y le vendieron á los Ismaelitas por veinte piezas de plata. Y llevaron á José á Egipto.",
+    "explanation": "José fue vendido por veinte piezas de plata.",
+    "evidence": [
+      "veinte"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "jose-05",
+    "heroId": "jose",
+    "prompt": "¿Dónde arrojaron sus hermanos a José antes de venderlo?",
+    "choices": [
+      "Una cisterna vacía",
+      "Un palacio",
+      "Un establo",
+      "Un jardín"
+    ],
+    "answer": 0,
+    "reference": "Génesis 37:24",
+    "verseKeys": [
+      "GEN 37:24"
+    ],
+    "verse": "Y tomáronlo, y echáronle en la cisterna; mas la cisterna estaba vacía, no había en ella agua.",
+    "explanation": "La cisterna estaba vacía y no tenía agua.",
+    "evidence": [
+      "cisterna"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "jose-06",
+    "heroId": "jose",
+    "prompt": "¿Quién compró a José en Egipto?",
+    "choices": [
+      "Potifar",
+      "Nabucodonosor",
+      "Herodes",
+      "Goliat"
+    ],
+    "answer": 0,
+    "reference": "Génesis 39:1",
+    "verseKeys": [
+      "GEN 39:1"
+    ],
+    "verse": "Y LLEVADO José á Egipto, comprólo Potiphar, eunuco de Faraón, capitán de los de la guardia, varón Egipcio, de mano de los Ismaelitas que lo habían llevado allá.",
+    "explanation": "Potifar, escrito Potiphar en RV1909, era un oficial de Faraón.",
+    "evidence": [
+      "Potiphar"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "jose-07",
+    "heroId": "jose",
+    "prompt": "¿Qué se inclinaba ante el manojo de José en su primer sueño?",
+    "choices": [
+      "Los manojos de sus hermanos",
+      "Los árboles del bosque",
+      "Los animales del campo",
+      "Las nubes"
+    ],
+    "answer": 0,
+    "reference": "Génesis 37:7",
+    "verseKeys": [
+      "GEN 37:7"
+    ],
+    "verse": "He aquí que atábamos manojos en medio del campo, y he aquí que mi manojo se levantaba, y estaba derecho, y que vuestros manojos estaban alrededor, y se inclinaban al mío.",
+    "explanation": "José relató que los manojos de sus hermanos se inclinaban ante el suyo.",
+    "evidence": [
+      "manojos"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "jose-08",
+    "heroId": "jose",
+    "prompt": "¿A qué dos oficiales interpretó José sus sueños en la prisión?",
+    "choices": [
+      "Al copero y al panadero",
+      "Al capitán y al músico",
+      "Al escriba y al juez",
+      "Al pastor y al herrero"
+    ],
+    "answer": 0,
+    "reference": "Génesis 40:5",
+    "verseKeys": [
+      "GEN 40:5"
+    ],
+    "verse": "Y ambos á dos, el copero y el panadero del rey de Egipto, que estaban arrestados en la prisión, vieron un sueño, cada uno su sueño en una misma noche, cada uno conforme á la declaración de su sueño.",
+    "explanation": "El copero y el panadero del rey tuvieron sueños la misma noche.",
+    "evidence": [
+      "copero",
+      "panadero"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "jose-09",
+    "heroId": "jose",
+    "prompt": "¿Cuántos sarmientos tenía la vid del sueño del copero?",
+    "choices": [
+      "Tres",
+      "Dos",
+      "Siete",
+      "Diez"
+    ],
+    "answer": 0,
+    "reference": "Génesis 40:10",
+    "verseKeys": [
+      "GEN 40:10"
+    ],
+    "verse": "Y en la vid tres sarmientos; y ella como que brotaba, y arrojaba su flor, viniendo á madurar sus racimos de uvas:",
+    "explanation": "Los tres sarmientos formaban parte del sueño del copero.",
+    "evidence": [
+      "tres"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "jose-10",
+    "heroId": "jose",
+    "prompt": "¿Cuántas canastillas llevaba el panadero en su sueño?",
+    "choices": [
+      "Tres",
+      "Una",
+      "Cinco",
+      "Doce"
+    ],
+    "answer": 0,
+    "reference": "Génesis 40:16",
+    "verseKeys": [
+      "GEN 40:16"
+    ],
+    "verse": "Y viendo el principal de los panaderos que había declarado para bien, dijo á José: También yo soñaba que veía tres canastillos blancos sobre mi cabeza;",
+    "explanation": "El panadero soñó con tres canastillos sobre su cabeza.",
+    "evidence": [
+      "tres"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "jose-11",
+    "heroId": "jose",
+    "prompt": "¿Cuántas vacas hermosas salieron del río en el sueño de Faraón?",
+    "choices": [
+      "Siete",
+      "Cuatro",
+      "Dos",
+      "Doce"
+    ],
+    "answer": 0,
+    "reference": "Génesis 41:2",
+    "verseKeys": [
+      "GEN 41:2"
+    ],
+    "verse": "Y que del río subían siete vacas, hermosas á la vista, y muy gordas, y pacían en el prado:",
+    "explanation": "El sueño comenzó con siete vacas hermosas y bien alimentadas.",
+    "evidence": [
+      "siete"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "jose-12",
+    "heroId": "jose",
+    "prompt": "¿Qué anunciaban los primeros siete años del sueño de Faraón?",
+    "choices": [
+      "Gran abundancia",
+      "Una guerra",
+      "Un diluvio",
+      "Un viaje al desierto"
+    ],
+    "answer": 0,
+    "reference": "Génesis 41:29",
+    "verseKeys": [
+      "GEN 41:29"
+    ],
+    "verse": "He aquí vienen siete años de grande hartura en toda la tierra de Egipto:",
+    "explanation": "José explicó que vendrían siete años de gran abundancia en Egipto.",
+    "evidence": [
+      "hartura"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "jose-13",
+    "heroId": "jose",
+    "prompt": "¿Qué vendría después de los siete años de abundancia?",
+    "choices": [
+      "Siete años de hambre",
+      "Cuarenta años de lluvia",
+      "Tres años de fiesta",
+      "Un siglo de paz"
+    ],
+    "answer": 0,
+    "reference": "Génesis 41:30",
+    "verseKeys": [
+      "GEN 41:30"
+    ],
+    "verse": "Y levantarse han tras ellos siete años de hambre; y toda la hartura será olvidada en la tierra de Egipto; y el hambre consumirá la tierra;",
+    "explanation": "Después de la abundancia llegarían siete años de hambre.",
+    "evidence": [
+      "hambre",
+      "siete"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "jose-14",
+    "heroId": "jose",
+    "prompt": "¿Qué edad tenía José al comenzar su servicio ante Faraón?",
+    "choices": [
+      "Treinta años",
+      "Diecisiete años",
+      "Cincuenta años",
+      "Ochenta años"
+    ],
+    "answer": 0,
+    "reference": "Génesis 41:46",
+    "verseKeys": [
+      "GEN 41:46"
+    ],
+    "verse": "Y era José de edad de treinta años cuando fué presentado delante de Faraón, rey de Egipto: y salió José de delante de Faraón, y transitó por toda la tierra de Egipto.",
+    "explanation": "José tenía treinta años cuando compareció ante Faraón.",
+    "evidence": [
+      "treinta"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "jose-15",
+    "heroId": "jose",
+    "prompt": "¿Qué puso Faraón en la mano de José al darle autoridad?",
+    "choices": [
+      "Su anillo",
+      "Una espada",
+      "Un reloj",
+      "Una rama"
+    ],
+    "answer": 0,
+    "reference": "Génesis 41:42",
+    "verseKeys": [
+      "GEN 41:42"
+    ],
+    "verse": "Entonces Faraón quitó su anillo de su mano, y púsolo en la mano de José, é hízole vestir de ropas de lino finísimo, y puso un collar de oro en su cuello;",
+    "explanation": "Faraón entregó su anillo a José como señal de autoridad.",
+    "evidence": [
+      "anillo"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "jose-16",
+    "heroId": "jose",
+    "prompt": "¿Cómo se llamó el primer hijo de José?",
+    "choices": [
+      "Manasés",
+      "Efraín",
+      "Benjamín",
+      "Leví"
+    ],
+    "answer": 0,
+    "reference": "Génesis 41:51",
+    "verseKeys": [
+      "GEN 41:51"
+    ],
+    "verse": "Y llamó José el nombre del primogénito Manasés; porque Dios (dijo) me hizo olvidar todo mi trabajo, y toda la casa de mi padre.",
+    "explanation": "José llamó Manasés a su primogénito.",
+    "evidence": [
+      "Manasés"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "jose-17",
+    "heroId": "jose",
+    "prompt": "¿Cómo se llamó el segundo hijo de José?",
+    "choices": [
+      "Efraín",
+      "Manasés",
+      "Simeón",
+      "Judá"
+    ],
+    "answer": 0,
+    "reference": "Génesis 41:52",
+    "verseKeys": [
+      "GEN 41:52"
+    ],
+    "verse": "Y el nombre del segundo llamólo Ephraim; porque Dios (dijo) me hizo fértil en la tierra de mi aflicción.",
+    "explanation": "El nombre del segundo hijo fue Efraín.",
+    "evidence": [
+      "Ephraim"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "jose-18",
+    "heroId": "jose",
+    "prompt": "¿Quién era el hermano menor de José?",
+    "choices": [
+      "Benjamín",
+      "Rubén",
+      "Dan",
+      "Isacar"
+    ],
+    "answer": 0,
+    "reference": "Génesis 43:29",
+    "verseKeys": [
+      "GEN 43:29"
+    ],
+    "verse": "Y alzando él sus ojos vió á Benjamín su hermano, hijo de su madre, y dijo: ¿Es éste vuestro hermano menor, de quien me hablasteis? Y dijo: Dios tenga misericordia de ti, hijo mío.",
+    "explanation": "José reconoció a Benjamín como su hermano e hijo de su madre.",
+    "evidence": [
+      "Benjamín"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "jose-19",
+    "heroId": "jose",
+    "prompt": "¿Qué mandó José colocar en el costal del hermano menor?",
+    "choices": [
+      "Su copa de plata",
+      "Su corona",
+      "Una túnica roja",
+      "Un pergamino"
+    ],
+    "answer": 0,
+    "reference": "Génesis 44:2",
+    "verseKeys": [
+      "GEN 44:2"
+    ],
+    "verse": "Y pondrás mi copa, la copa de plata, en la boca del costal del menor, con el dinero de su trigo. Y él hizo como dijo José.",
+    "explanation": "José indicó que su copa de plata se pusiera en el costal del menor.",
+    "evidence": [
+      "copa",
+      "plata"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "jose-20",
+    "heroId": "jose",
+    "prompt": "¿Qué propósito reconoció José al llegar antes que sus hermanos a Egipto?",
+    "choices": [
+      "Preservar vidas",
+      "Conquistar Roma",
+      "Construir el arca",
+      "Fundar un ejército"
+    ],
+    "answer": 0,
+    "reference": "Génesis 45:5",
+    "verseKeys": [
+      "GEN 45:5"
+    ],
+    "verse": "Ahora pues, no os entristezcáis, ni os pese de haberme vendido acá; que para preservación de vida me envió Dios delante de vosotros:",
+    "explanation": "José explicó que Dios lo había enviado para preservar la vida de su familia.",
+    "evidence": [
+      "vida"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "moises-01",
+    "heroId": "moises",
+    "prompt": "¿Cómo se llamaba la madre de Moisés?",
+    "choices": [
+      "Jocabed",
+      "Noemí",
+      "Lea",
+      "Sara"
+    ],
+    "answer": 0,
+    "reference": "Éxodo 6:20",
+    "verseKeys": [
+      "EXO 6:20"
+    ],
+    "verse": "Y Amram tomó por mujer á Jochêbed su tía; la cual le parió á Aarón y á Moisés. Y los años de la vida de Amram fueron ciento treinta y siete años.",
+    "explanation": "Jocabed, llamada Jochêbed en RV1909, fue madre de Aarón y Moisés.",
+    "evidence": [
+      "Jochebed"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "moises-02",
+    "heroId": "moises",
+    "prompt": "¿A qué tribu pertenecían los padres de Moisés?",
+    "choices": [
+      "Leví",
+      "Judá",
+      "Benjamín",
+      "Dan"
+    ],
+    "answer": 0,
+    "reference": "Éxodo 2:1",
+    "verseKeys": [
+      "EXO 2:1"
+    ],
+    "verse": "UN varón de la familia de Leví fué, y tomó por mujer una hija de Leví:",
+    "explanation": "Los padres de Moisés pertenecían a la casa de Leví.",
+    "evidence": [
+      "Leví"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "moises-03",
+    "heroId": "moises",
+    "prompt": "¿Dónde dejó la madre de Moisés la cesta con el niño?",
+    "choices": [
+      "Entre los juncos a la orilla del río",
+      "En el templo",
+      "Sobre una montaña",
+      "En una plaza"
+    ],
+    "answer": 0,
+    "reference": "Éxodo 2:3",
+    "verseKeys": [
+      "EXO 2:3"
+    ],
+    "verse": "Pero no pudiendo ocultarle más tiempo, tomó una arquilla de juncos, y calafateóla con pez y betún, y colocó en ella al niño, y púsolo en un carrizal á la orilla del río:",
+    "explanation": "La cesta fue colocada entre los juncos de la orilla del río.",
+    "evidence": [
+      "río"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "moises-04",
+    "heroId": "moises",
+    "prompt": "¿Quién encontró la cesta en la que estaba Moisés?",
+    "choices": [
+      "La hija de Faraón",
+      "La esposa de Noé",
+      "La reina Ester",
+      "La hermana de David"
+    ],
+    "answer": 0,
+    "reference": "Éxodo 2:5",
+    "verseKeys": [
+      "EXO 2:5"
+    ],
+    "verse": "Y la hija de Faraón descendió á lavarse al río, y paseándose sus doncellas por la ribera del río, vió ella la arquilla en el carrizal, y envió una criada suya á que la tomase.",
+    "explanation": "La hija de Faraón vio la cesta y mandó traerla.",
+    "evidence": [
+      "hija",
+      "Faraón"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "moises-05",
+    "heroId": "moises",
+    "prompt": "¿Qué hermano acompañó a Moisés para hablar al pueblo?",
+    "choices": [
+      "Aarón",
+      "Josué",
+      "Caleb",
+      "Esaú"
+    ],
+    "answer": 0,
+    "reference": "Éxodo 4:14",
+    "verseKeys": [
+      "EXO 4:14"
+    ],
+    "verse": "Entonces Jehová se enojó contra Moisés, y dijo: ¿No conozco yo á tu hermano Aarón, Levita, y que él hablará? Y aun he aquí que él te saldrá á recibir, y en viéndote, se alegrará en su corazón.",
+    "explanation": "Dios señaló a Aarón, hermano de Moisés, como su compañero para hablar.",
+    "evidence": [
+      "Aarón"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "moises-06",
+    "heroId": "moises",
+    "prompt": "¿Cómo se llamaba la hermana de Moisés y Aarón?",
+    "choices": [
+      "Miriam, también llamada María",
+      "Rut",
+      "Ester",
+      "Rebeca"
+    ],
+    "answer": 0,
+    "reference": "Números 26:59",
+    "verseKeys": [
+      "NUM 26:59"
+    ],
+    "verse": "Y la mujer de Amram se llamó Jochâbed, hija de Leví, la cual nació á Leví en Egipto: ésta parió de Amram á Aarón y á Moisés, y á María su hermana.",
+    "explanation": "Números enumera a Aarón, Moisés y María, conocida también como Miriam.",
+    "evidence": [
+      "María"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "moises-07",
+    "heroId": "moises",
+    "prompt": "¿Cómo se llamaba el padre de Moisés?",
+    "choices": [
+      "Amram",
+      "Isaí",
+      "Elcana",
+      "Zebedeo"
+    ],
+    "answer": 0,
+    "reference": "Éxodo 6:20",
+    "verseKeys": [
+      "EXO 6:20"
+    ],
+    "verse": "Y Amram tomó por mujer á Jochêbed su tía; la cual le parió á Aarón y á Moisés. Y los años de la vida de Amram fueron ciento treinta y siete años.",
+    "explanation": "Amram tomó por esposa a Jocabed y fue padre de Aarón y Moisés.",
+    "evidence": [
+      "Amram"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "moises-08",
+    "heroId": "moises",
+    "prompt": "¿Cómo se llamaba la esposa de Moisés?",
+    "choices": [
+      "Séfora",
+      "Sara",
+      "Débora",
+      "Elisabet"
+    ],
+    "answer": 0,
+    "reference": "Éxodo 2:21",
+    "verseKeys": [
+      "EXO 2:21"
+    ],
+    "verse": "Y Moisés acordó en morar con aquel varón; y él dió á Moisés á su hija Séphora:",
+    "explanation": "Moisés se casó con Séfora, hija de su anfitrión en Madián.",
+    "evidence": [
+      "Séphora"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "moises-09",
+    "heroId": "moises",
+    "prompt": "¿Cómo llamó Moisés a su primer hijo mencionado en Éxodo 2?",
+    "choices": [
+      "Gersón",
+      "Samuel",
+      "Isaac",
+      "Natán"
+    ],
+    "answer": 0,
+    "reference": "Éxodo 2:22",
+    "verseKeys": [
+      "EXO 2:22"
+    ],
+    "verse": "La cual le parió un hijo, y él le puso por nombre Gersom: porque dijo: Peregrino soy en tierra ajena.",
+    "explanation": "El nombre Gersón, escrito Gersom en RV1909, recuerda su estancia como extranjero.",
+    "evidence": [
+      "Gersom"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "moises-10",
+    "heroId": "moises",
+    "prompt": "¿Qué arbusto vio Moisés arder sin consumirse?",
+    "choices": [
+      "Una zarza",
+      "Una higuera",
+      "Una palmera",
+      "Un olivo"
+    ],
+    "answer": 0,
+    "reference": "Éxodo 3:2",
+    "verseKeys": [
+      "EXO 3:2"
+    ],
+    "verse": "Y apareciósele el Angel de Jehová en una llama de fuego en medio de una zarza: y él miró, y vió que la zarza ardía en fuego, y la zarza no se consumía.",
+    "explanation": "La zarza ardía, pero no se consumía.",
+    "evidence": [
+      "zarza"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "moises-11",
+    "heroId": "moises",
+    "prompt": "¿A qué monte llegó Moisés antes de ver la zarza?",
+    "choices": [
+      "Horeb",
+      "Ararat",
+      "Carmelo",
+      "Hermón"
+    ],
+    "answer": 0,
+    "reference": "Éxodo 3:1",
+    "verseKeys": [
+      "EXO 3:1"
+    ],
+    "verse": "Y APACENTANDO Moisés las ovejas de Jethro su suegro, sacerdote de Madián, llevó las ovejas detrás del desierto, y vino á Horeb, monte de Dios.",
+    "explanation": "Moisés llegó al monte de Dios, Horeb.",
+    "evidence": [
+      "Horeb"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "moises-12",
+    "heroId": "moises",
+    "prompt": "¿Qué respuesta dio Dios cuando Moisés preguntó su nombre?",
+    "choices": [
+      "Yo soy el que soy",
+      "Soy el hijo de David",
+      "Soy el rey de Egipto",
+      "Soy el pastor de Belén"
+    ],
+    "answer": 0,
+    "reference": "Éxodo 3:14",
+    "verseKeys": [
+      "EXO 3:14"
+    ],
+    "verse": "Y respondió Dios á Moisés: YO SOY EL QUE SOY. Y dijo: Así dirás á los hijos de Israel: YO SOY me ha enviado á vosotros.",
+    "explanation": "Dios respondió a Moisés: Yo soy el que soy.",
+    "evidence": [
+      "YO SOY"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "moises-13",
+    "heroId": "moises",
+    "prompt": "¿En qué se convirtió la vara de Moisés al echarla al suelo?",
+    "choices": [
+      "Una serpiente",
+      "Una paloma",
+      "Una flor",
+      "Un pez"
+    ],
+    "answer": 0,
+    "reference": "Éxodo 4:3",
+    "verseKeys": [
+      "EXO 4:3"
+    ],
+    "verse": "Y él le dijo: Échala en tierra. Y él la echó en tierra, y tornóse una culebra: y Moisés huía de ella.",
+    "explanation": "La vara se convirtió en una culebra, es decir, una serpiente.",
+    "evidence": [
+      "culebra"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "moises-14",
+    "heroId": "moises",
+    "prompt": "¿En qué se convirtió el agua del río durante la primera plaga?",
+    "choices": [
+      "Sangre",
+      "Aceite",
+      "Miel",
+      "Arena"
+    ],
+    "answer": 0,
+    "reference": "Éxodo 7:20",
+    "verseKeys": [
+      "EXO 7:20"
+    ],
+    "verse": "Y Moisés y Aarón hicieron como Jehová lo mandó; y alzando la vara hirió las aguas que había en el río, en presencia de Faraón y de sus siervos; y todas las aguas que había en el río se convirtieron en sangre.",
+    "explanation": "Moisés y Aarón actuaron ante Faraón y el agua se convirtió en sangre.",
+    "evidence": [
+      "sangre"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "moises-15",
+    "heroId": "moises",
+    "prompt": "¿Qué animales cubrieron Egipto cuando Aarón extendió su mano?",
+    "choices": [
+      "Ranas",
+      "Caballos",
+      "Ovejas",
+      "Águilas"
+    ],
+    "answer": 0,
+    "reference": "Éxodo 8:6",
+    "verseKeys": [
+      "EXO 8:6"
+    ],
+    "verse": "Entonces Aarón extendió su mano sobre las aguas de Egipto, y subieron ranas que cubrieron la tierra de Egipto.",
+    "explanation": "La segunda plaga llenó la tierra de Egipto de ranas.",
+    "evidence": [
+      "ranas"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "moises-16",
+    "heroId": "moises",
+    "prompt": "¿Cómo pasaron los israelitas por medio del mar?",
+    "choices": [
+      "Por tierra seca",
+      "En barcos",
+      "Sobre hielo",
+      "A nado"
+    ],
+    "answer": 0,
+    "reference": "Éxodo 14:22",
+    "verseKeys": [
+      "EXO 14:22"
+    ],
+    "verse": "Entonces los hijos de Israel entraron por medio de la mar en seco, teniendo las aguas como muro á su diestra y á su siniestra:",
+    "explanation": "Las aguas quedaron a sus lados y caminaron por tierra seca.",
+    "evidence": [
+      "seco"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "moises-17",
+    "heroId": "moises",
+    "prompt": "¿Qué dio Dios al pueblo para comer en el desierto?",
+    "choices": [
+      "Pan del cielo",
+      "Pasteles de higo",
+      "Carne de caballo",
+      "Uvas de Egipto"
+    ],
+    "answer": 0,
+    "reference": "Éxodo 16:15",
+    "verseKeys": [
+      "EXO 16:15"
+    ],
+    "verse": "Y viéndolo los hijos de Israel, se dijeron unos á otros: ¿Qué es esto? porque no sabían qué era. Entonces Moisés les dijo: Es el pan que Jehová os da para comer.",
+    "explanation": "Moisés explicó que el maná era el pan que Dios les había dado para comer.",
+    "evidence": [
+      "pan"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "moises-18",
+    "heroId": "moises",
+    "prompt": "¿De dónde salió agua cuando Moisés golpeó en Horeb?",
+    "choices": [
+      "De una peña",
+      "De una palmera",
+      "De un pozo construido por David",
+      "De una vasija de oro"
+    ],
+    "answer": 0,
+    "reference": "Éxodo 17:6",
+    "verseKeys": [
+      "EXO 17:6"
+    ],
+    "verse": "He aquí que yo estoy delante de ti allí sobre la peña en Horeb; y herirás la peña, y saldrán de ella aguas, y beberá el pueblo. Y Moisés lo hizo así en presencia de los ancianos de Israel.",
+    "explanation": "Dios indicó golpear la peña para que el pueblo tuviera agua.",
+    "evidence": [
+      "peña"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "moises-19",
+    "heroId": "moises",
+    "prompt": "¿Cuántos mandamientos se recuerdan como las palabras de las tablas?",
+    "choices": [
+      "Diez",
+      "Siete",
+      "Doce",
+      "Veinte"
+    ],
+    "answer": 0,
+    "reference": "Deuteronomio 10:4",
+    "verseKeys": [
+      "DEU 10:4"
+    ],
+    "verse": "Y escribió en las tablas conforme á la primera escritura, las diez palabras que Jehová os había hablado en el monte de en medio del fuego, el día de la asamblea; y diómelas Jehová.",
+    "explanation": "Deuteronomio habla de las diez palabras escritas en las tablas.",
+    "evidence": [
+      "diez"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "moises-20",
+    "heroId": "moises",
+    "prompt": "¿A qué monte subió Moisés para contemplar la tierra prometida?",
+    "choices": [
+      "Nebo",
+      "Ararat",
+      "Sión",
+      "Carmelo"
+    ],
+    "answer": 0,
+    "reference": "Deuteronomio 34:1",
+    "verseKeys": [
+      "DEU 34:1"
+    ],
+    "verse": "Y SUBIÓ Moisés de los campos de Moab al monte de Nebo, á la cumbre de Pisga, que está enfrente de Jericó: y mostróle Jehová toda la tierra de Galaad hasta Dan,",
+    "explanation": "Moisés subió al monte Nebo y contempló la tierra que Dios le mostró.",
+    "evidence": [
+      "Nebo"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "rut-01",
+    "heroId": "rut",
+    "prompt": "¿De qué pueblo era Rut?",
+    "choices": [
+      "Moabita",
+      "Egipcio",
+      "Filisteo",
+      "Asirio"
+    ],
+    "answer": 0,
+    "reference": "Rut 1:4",
+    "verseKeys": [
+      "RUT 1:4"
+    ],
+    "verse": "Los cuales tomaron para sí mujeres de Moab, el nombre de la una Orpha, y el nombre de la otra Ruth; y habitaron allí unos diez años.",
+    "explanation": "Rut era una mujer moabita que se unió a la familia de Noemí.",
+    "evidence": [
+      "Moab",
+      "Ruth"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "rut-02",
+    "heroId": "rut",
+    "prompt": "¿Quién era la suegra de Rut?",
+    "choices": [
+      "Noemí",
+      "Débora",
+      "Ana",
+      "Rebeca"
+    ],
+    "answer": 0,
+    "reference": "Rut 1:8",
+    "verseKeys": [
+      "RUT 1:8"
+    ],
+    "verse": "Y Noemi dijo á sus dos nueras: Andad, volveos cada una á la casa de su madre: Jehová haga con vosotras misericordia, como la habéis hecho con los muertos y conmigo.",
+    "explanation": "Rut decidió permanecer con Noemí y acompañarla.",
+    "evidence": [
+      "Noemi",
+      "nueras"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "rut-03",
+    "heroId": "rut",
+    "prompt": "¿Cómo se llamaba la otra nuera de Noemí?",
+    "choices": [
+      "Orfa",
+      "Lea",
+      "Raquel",
+      "Mical"
+    ],
+    "answer": 0,
+    "reference": "Rut 1:4",
+    "verseKeys": [
+      "RUT 1:4"
+    ],
+    "verse": "Los cuales tomaron para sí mujeres de Moab, el nombre de la una Orpha, y el nombre de la otra Ruth; y habitaron allí unos diez años.",
+    "explanation": "Orfa y Rut fueron las nueras de Noemí.",
+    "evidence": [
+      "Orpha"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "rut-04",
+    "heroId": "rut",
+    "prompt": "¿Quién había sido el primer esposo de Rut?",
+    "choices": [
+      "Mahlón",
+      "Booz",
+      "Obed",
+      "Isaí"
+    ],
+    "answer": 0,
+    "reference": "Rut 4:10",
+    "verseKeys": [
+      "RUT 4:10"
+    ],
+    "verse": "Y que también tomo por mi mujer á Ruth Moabita, mujer de Mahalón, para suscitar el nombre del difunto sobre su heredad, para que el nombre del muerto no se borre de entre sus hermanos y de la puerta de su lugar. Vosotros sois hoy testigos.",
+    "explanation": "El relato identifica a Rut como la esposa que había sido de Mahlón.",
+    "evidence": [
+      "Mahalón"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "rut-05",
+    "heroId": "rut",
+    "prompt": "¿A qué ciudad llegaron Rut y Noemí?",
+    "choices": [
+      "Belén",
+      "Jericó",
+      "Nínive",
+      "Damasco"
+    ],
+    "answer": 0,
+    "reference": "Rut 1:19",
+    "verseKeys": [
+      "RUT 1:19"
+    ],
+    "verse": "Anduvieron pues ellas dos hasta que llegaron á Beth-lehem: y aconteció que entrando en Beth-lehem, toda la ciudad se conmovió por razón de ellas, y decían: ¿No es ésta Noemi?",
+    "explanation": "Ambas llegaron a Belén después de salir de Moab.",
+    "evidence": [
+      "Beth-lehem"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "rut-06",
+    "heroId": "rut",
+    "prompt": "¿Qué cosecha comenzaba cuando llegaron a Belén?",
+    "choices": [
+      "La de cebada",
+      "La de aceitunas",
+      "La de uvas",
+      "La de higos"
+    ],
+    "answer": 0,
+    "reference": "Rut 1:22",
+    "verseKeys": [
+      "RUT 1:22"
+    ],
+    "verse": "Así volvió Noemi y Ruth Moabita su nuera con ella; volvió de los campos de Moab, y llegaron á Beth-lehem en el principio de la siega de las cebadas.",
+    "explanation": "Su llegada coincidió con el comienzo de la siega de la cebada.",
+    "evidence": [
+      "cebadas"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "rut-07",
+    "heroId": "rut",
+    "prompt": "¿En el campo de quién espigó Rut?",
+    "choices": [
+      "Booz",
+      "Gedeón",
+      "Samuel",
+      "Elías"
+    ],
+    "answer": 0,
+    "reference": "Rut 2:3",
+    "verseKeys": [
+      "RUT 2:3"
+    ],
+    "verse": "Fué pues, y llegando, espigó en el campo en pos de los segadores: y aconteció por ventura, que la suerte del campo era de Booz, el cual era de la parentela de Elimelech.",
+    "explanation": "Rut llegó a espigar a una parte del campo perteneciente a Booz.",
+    "evidence": [
+      "Booz"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "rut-08",
+    "heroId": "rut",
+    "prompt": "¿Qué hacía Rut detrás de los segadores?",
+    "choices": [
+      "Recogía espigas",
+      "Construía una torre",
+      "Pescaba",
+      "Plantaba cedros"
+    ],
+    "answer": 0,
+    "reference": "Rut 2:3",
+    "verseKeys": [
+      "RUT 2:3"
+    ],
+    "verse": "Fué pues, y llegando, espigó en el campo en pos de los segadores: y aconteció por ventura, que la suerte del campo era de Booz, el cual era de la parentela de Elimelech.",
+    "explanation": "Rut recogía las espigas que quedaban detrás de los segadores.",
+    "evidence": [
+      "espigó",
+      "segadores"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "rut-09",
+    "heroId": "rut",
+    "prompt": "¿Con qué imagen describió Booz la confianza de Rut en Dios?",
+    "choices": [
+      "Refugiarse bajo sus alas",
+      "Navegar sobre el mar",
+      "Escalar una muralla",
+      "Cruzar un desierto sola"
+    ],
+    "answer": 0,
+    "reference": "Rut 2:12",
+    "verseKeys": [
+      "RUT 2:12"
+    ],
+    "verse": "Jehová galardone tu obra, y tu remuneración sea llena por Jehová Dios de Israel, que has venido para cubrirte debajo de sus alas.",
+    "explanation": "Booz deseó que Dios recompensara a Rut, quien había buscado refugio bajo sus alas.",
+    "evidence": [
+      "alas"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "rut-10",
+    "heroId": "rut",
+    "prompt": "¿Quién dijo a Booz de dónde venía Rut?",
+    "choices": [
+      "El criado encargado de los segadores",
+      "El rey de Moab",
+      "Un sacerdote de Silo",
+      "Un mensajero de Egipto"
+    ],
+    "answer": 0,
+    "reference": "Rut 2:5-6",
+    "verseKeys": [
+      "RUT 2:5",
+      "RUT 2:6"
+    ],
+    "verse": "Y Booz dijo á su criado el sobrestante de los segadores: ¿Cúya es esta moza? Y el criado, sobrestante de los segadores, respondió y dijo: Es la moza de Moab, que volvió con Noemi de los campos de Moab;",
+    "explanation": "El criado que supervisaba a los segadores explicó que Rut había venido de Moab con Noemí.",
+    "evidence": [
+      "criado",
+      "segadores",
+      "Moab"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "rut-11",
+    "heroId": "rut",
+    "prompt": "¿En qué invitó Booz a mojar el pan a Rut?",
+    "choices": [
+      "Vinagre",
+      "Aceite perfumado",
+      "Miel",
+      "Leche"
+    ],
+    "answer": 0,
+    "reference": "Rut 2:14",
+    "verseKeys": [
+      "RUT 2:14"
+    ],
+    "verse": "Y Booz le dijo á la hora de comer: Allégate aquí, y come del pan, y moja tu bocado en el vinagre. Y sentóse ella junto á los segadores, y él le dió del potaje, y comió hasta que se hartó y le sobró.",
+    "explanation": "Durante la comida, Booz invitó a Rut a comer pan y mojarlo en vinagre.",
+    "evidence": [
+      "vinagre"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "rut-12",
+    "heroId": "rut",
+    "prompt": "¿Cuántos ancianos reunió Booz en la puerta de la ciudad?",
+    "choices": [
+      "Diez",
+      "Tres",
+      "Siete",
+      "Doce"
+    ],
+    "answer": 0,
+    "reference": "Rut 4:2",
+    "verseKeys": [
+      "RUT 4:2"
+    ],
+    "verse": "Entonces él tomó diez varones de los ancianos de la ciudad, y dijo: Sentaos aquí. Y ellos se sentaron.",
+    "explanation": "Booz pidió a diez ancianos que se sentaran como testigos.",
+    "evidence": [
+      "diez",
+      "ancianos"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "rut-13",
+    "heroId": "rut",
+    "prompt": "¿Qué objeto se quitaba para confirmar un acuerdo de redención?",
+    "choices": [
+      "Un zapato",
+      "Una corona",
+      "Un anillo",
+      "Un manto"
+    ],
+    "answer": 0,
+    "reference": "Rut 4:7",
+    "verseKeys": [
+      "RUT 4:7"
+    ],
+    "verse": "Había ya de largo tiempo esta costumbre en Israel en la redención ó contrato, que para la confirmación de cualquier negocio, el uno se quitaba el zapato y lo daba á su compañero: y este era el testimonio en Israel.",
+    "explanation": "El texto explica la costumbre de quitarse un zapato y darlo al otro como señal del acuerdo.",
+    "evidence": [
+      "zapato"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "rut-14",
+    "heroId": "rut",
+    "prompt": "¿Cómo se llamó el hijo de Rut y Booz?",
+    "choices": [
+      "Obed",
+      "Samuel",
+      "Elí",
+      "Absalón"
+    ],
+    "answer": 0,
+    "reference": "Rut 4:13-17",
+    "verseKeys": [
+      "RUT 4:13",
+      "RUT 4:14",
+      "RUT 4:15",
+      "RUT 4:16",
+      "RUT 4:17"
+    ],
+    "verse": "Booz pues tomó á Ruth, y ella fué su mujer; y luego que entró á ella, Jehová le dió que concibiese y pariese un hijo. Y las mujeres decían á Noemi: Loado sea Jehová, que hizo que no te faltase hoy pariente, cuyo nombre será nombrado en Israel. El cual será restaurador de tu alma, y el que sustentará tu vejez; pues que tu nuera, la cual te ama y te vale más que siete hijos, le ha parido. Y tomando Noemi el hijo, púsolo en su regazo, y fuéle su ama. Y las vecinas diciendo, A Noemi ha nacido un hijo, le pusieron nombre; y llamáronle Obed. Este es padre de Isaí, padre de David.",
+    "explanation": "Las vecinas llamaron Obed al hijo de Rut y Booz.",
+    "evidence": [
+      "Obed"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "rut-15",
+    "heroId": "rut",
+    "prompt": "¿De quién fue padre Obed?",
+    "choices": [
+      "Isaí",
+      "Abraham",
+      "Moisés",
+      "Jonatán"
+    ],
+    "answer": 0,
+    "reference": "Rut 4:22",
+    "verseKeys": [
+      "RUT 4:22"
+    ],
+    "verse": "Y Obed engendró á Isaí, é Isaí engendró á David.",
+    "explanation": "La genealogía dice que Obed engendró a Isaí, y que Isaí engendró a David.",
+    "evidence": [
+      "Obed",
+      "Isai",
+      "David"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "rut-16",
+    "heroId": "rut",
+    "prompt": "¿Qué nombre pidió Noemí que usaran al regresar?",
+    "choices": [
+      "Mara",
+      "Sara",
+      "Eva",
+      "Abigail"
+    ],
+    "answer": 0,
+    "reference": "Rut 1:20",
+    "verseKeys": [
+      "RUT 1:20"
+    ],
+    "verse": "Y ella les respondía: No me llaméis Noemi, sino llamadme Mara: porque en grande amargura me ha puesto el Todopoderoso.",
+    "explanation": "Noemí pidió que la llamaran Mara al expresar la amargura de su experiencia.",
+    "evidence": [
+      "Mara"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "rut-17",
+    "heroId": "rut",
+    "prompt": "¿Qué dijo Rut acerca del pueblo de Noemí?",
+    "choices": [
+      "Tu pueblo será mi pueblo",
+      "Tu pueblo será mi enemigo",
+      "Nunca visitaré tu pueblo",
+      "Solo iré durante la cosecha"
+    ],
+    "answer": 0,
+    "reference": "Rut 1:16",
+    "verseKeys": [
+      "RUT 1:16"
+    ],
+    "verse": "Y Ruth respondió: No me ruegues que te deje, y me aparte de ti: porque donde quiera que tú fueres, iré yo; y donde quiera que vivieres, viviré. Tu pueblo será mi pueblo, y tu Dios mi Dios.",
+    "explanation": "Rut expresó un compromiso duradero: el pueblo de Noemí sería también su pueblo.",
+    "evidence": [
+      "tu pueblo será mi pueblo"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "rut-18",
+    "heroId": "rut",
+    "prompt": "¿Con quiénes indicó Booz que permaneciera Rut en su campo?",
+    "choices": [
+      "Con sus criadas",
+      "Con los soldados",
+      "Con los mercaderes",
+      "Con los músicos"
+    ],
+    "answer": 0,
+    "reference": "Rut 2:8",
+    "verseKeys": [
+      "RUT 2:8"
+    ],
+    "verse": "Entonces Booz dijo á Ruth: Oye, hija mía, no vayas á espigar á otro campo, ni pases de aquí: y aquí estarás con mis mozas.",
+    "explanation": "Booz le ofreció un lugar seguro junto a sus criadas.",
+    "evidence": [
+      "mozas"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "rut-19",
+    "heroId": "rut",
+    "prompt": "¿Hasta cuándo siguió Rut espigando con las criadas de Booz?",
+    "choices": [
+      "Hasta acabar la siega de cebada y trigo",
+      "Hasta la llegada de una tormenta",
+      "Solo durante una mañana",
+      "Hasta que regresó el rey"
+    ],
+    "answer": 0,
+    "reference": "Rut 2:23",
+    "verseKeys": [
+      "RUT 2:23"
+    ],
+    "verse": "Estuvo pues junta con las mozas de Booz espigando, hasta que la siega de las cebadas y la de los trigos fué acabada; mas con su suegra habitó.",
+    "explanation": "Rut permaneció espigando durante las cosechas de cebada y trigo.",
+    "evidence": [
+      "cebadas",
+      "trigos"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "rut-20",
+    "heroId": "rut",
+    "prompt": "¿Cómo se llamaba el esposo de Noemí?",
+    "choices": [
+      "Elimelec",
+      "Esaú",
+      "Labán",
+      "Nabal"
+    ],
+    "answer": 0,
+    "reference": "Rut 1:2-3",
+    "verseKeys": [
+      "RUT 1:2",
+      "RUT 1:3"
+    ],
+    "verse": "El nombre de aquel varón era Elimelech, y el de su mujer Noemi; y los nombres de sus dos hijos eran, Mahalón y Chelión, Ephrateos de Beth-lehem de Judá. Llegaron pues á los campos de Moab, y asentaron allí. Y murió Elimelech, marido de Noemi, y quedó ella con sus dos hijos;",
+    "explanation": "Elimelec era el esposo de Noemí y murió durante su estancia en Moab.",
+    "evidence": [
+      "Elimelech",
+      "Noemi"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "david-01",
+    "heroId": "david",
+    "prompt": "¿Cómo se llamaba el padre de David?",
+    "choices": [
+      "Isaí",
+      "Saúl",
+      "Elí",
+      "Natán"
+    ],
+    "answer": 0,
+    "reference": "1 Samuel 16:1",
+    "verseKeys": [
+      "1SA 16:1"
+    ],
+    "verse": "Y DIJO Jehová á Samuel: ¿Hasta cuándo has tú de llorar á Saúl, habiéndolo yo desechado para que no reine sobre Israel? Hinche tu cuerno de aceite, y ven, te enviaré á Isaí de Beth-lehem: porque de sus hijos me he provisto de rey.",
+    "explanation": "Dios envió a Samuel a la casa de Isaí para ungir al futuro rey.",
+    "evidence": [
+      "Isai"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "david-02",
+    "heroId": "david",
+    "prompt": "¿A qué ciudad fue enviado Samuel para visitar a Isaí?",
+    "choices": [
+      "Belén",
+      "Nínive",
+      "Jericó",
+      "Tiro"
+    ],
+    "answer": 0,
+    "reference": "1 Samuel 16:1",
+    "verseKeys": [
+      "1SA 16:1"
+    ],
+    "verse": "Y DIJO Jehová á Samuel: ¿Hasta cuándo has tú de llorar á Saúl, habiéndolo yo desechado para que no reine sobre Israel? Hinche tu cuerno de aceite, y ven, te enviaré á Isaí de Beth-lehem: porque de sus hijos me he provisto de rey.",
+    "explanation": "Samuel fue enviado a Isaí, a quien el pasaje llama de Belén.",
+    "evidence": [
+      "Beth-lehem"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "david-03",
+    "heroId": "david",
+    "prompt": "¿Qué hacía David cuando Samuel preguntó por él?",
+    "choices": [
+      "Apacentaba las ovejas",
+      "Gobernaba una ciudad",
+      "Vendía telas",
+      "Construía barcos"
+    ],
+    "answer": 0,
+    "reference": "1 Samuel 16:11",
+    "verseKeys": [
+      "1SA 16:11"
+    ],
+    "verse": "Entonces dijo Samuel á Isaí: ¿Hanse acabado los mozos? Y él respondió: Aun queda el menor, que apacienta las ovejas. Y dijo Samuel á Isaí: Envía por él, porque no nos asentaremos á la mesa hasta que él venga aquí.",
+    "explanation": "David, el hijo menor, estaba cuidando las ovejas.",
+    "evidence": [
+      "menor",
+      "ovejas"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "david-04",
+    "heroId": "david",
+    "prompt": "¿Quién ungió a David en medio de sus hermanos?",
+    "choices": [
+      "Samuel",
+      "Moisés",
+      "Eliseo",
+      "Josué"
+    ],
+    "answer": 0,
+    "reference": "1 Samuel 16:13",
+    "verseKeys": [
+      "1SA 16:13"
+    ],
+    "verse": "Y Samuel tomó el cuerno del aceite, y ungiólo de entre sus hermanos: y desde aquel día en adelante el espíritu de Jehová tomó á David. Levantóse luego Samuel, y volvióse á Rama.",
+    "explanation": "Samuel tomó el aceite y ungió a David.",
+    "evidence": [
+      "Samuel",
+      "ungió"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "david-05",
+    "heroId": "david",
+    "prompt": "¿A qué pueblo pertenecía Goliat?",
+    "choices": [
+      "A los filisteos",
+      "A los moabitas",
+      "A los egipcios",
+      "A los romanos"
+    ],
+    "answer": 0,
+    "reference": "1 Samuel 17:4",
+    "verseKeys": [
+      "1SA 17:4"
+    ],
+    "verse": "Salió entonces un varón del campo de los Filisteos que se puso entre los dos campos, el cual se llamaba Goliath, de Gath, y tenía de altura seis codos y un palmo.",
+    "explanation": "Goliat salió del campamento de los filisteos y era de Gat.",
+    "evidence": [
+      "Filisteos",
+      "Goliath"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "david-06",
+    "heroId": "david",
+    "prompt": "¿Cuántas piedras lisas escogió David del arroyo?",
+    "choices": [
+      "Cinco",
+      "Dos",
+      "Siete",
+      "Doce"
+    ],
+    "answer": 0,
+    "reference": "1 Samuel 17:40",
+    "verseKeys": [
+      "1SA 17:40"
+    ],
+    "verse": "Tomó su cayado en su mano, y escogióse cinco piedras lisas del arroyo, y púsolas en el saco pastoril y en el zurrón que traía, y con su honda en su mano vase hacia el Filisteo.",
+    "explanation": "David escogió cinco piedras lisas antes de enfrentarse a Goliat.",
+    "evidence": [
+      "cinco",
+      "piedras"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "david-07",
+    "heroId": "david",
+    "prompt": "¿Dónde golpeó a Goliat la piedra lanzada por David?",
+    "choices": [
+      "En la frente",
+      "En el hombro",
+      "En la rodilla",
+      "En el pie"
+    ],
+    "answer": 0,
+    "reference": "1 Samuel 17:49",
+    "verseKeys": [
+      "1SA 17:49"
+    ],
+    "verse": "Y metiendo David su mano en el saco, tomó de allí una piedra, y tirósela con la honda, é hirió al Filisteo en la frente: y la piedra quedó hincada en la frente, y cayó en tierra sobre su rostro.",
+    "explanation": "La piedra alcanzó a Goliat en la frente.",
+    "evidence": [
+      "frente"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "david-08",
+    "heroId": "david",
+    "prompt": "¿Con qué venció David a Goliat antes de tomar su espada?",
+    "choices": [
+      "Con una honda y una piedra",
+      "Con un arco",
+      "Con una lanza",
+      "Con un escudo"
+    ],
+    "answer": 0,
+    "reference": "1 Samuel 17:50",
+    "verseKeys": [
+      "1SA 17:50"
+    ],
+    "verse": "Así venció David al Filisteo con honda y piedra; é hirió al Filisteo y matólo, sin tener David espada en su mano.",
+    "explanation": "El relato destaca que David venció con una honda y una piedra, sin llevar espada en su mano.",
+    "evidence": [
+      "honda",
+      "piedra"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "david-09",
+    "heroId": "david",
+    "prompt": "¿Quién se convirtió en un amigo muy cercano de David?",
+    "choices": [
+      "Jonatán",
+      "Amán",
+      "Acab",
+      "Labán"
+    ],
+    "answer": 0,
+    "reference": "1 Samuel 18:1",
+    "verseKeys": [
+      "1SA 18:1"
+    ],
+    "verse": "Y ASÍ que él hubo acabado de hablar con Saúl, el alma de Jonathán fué ligada con la de David, y amólo Jonathán como á su alma.",
+    "explanation": "Jonatán amó a David como a sí mismo y se unió a él en amistad.",
+    "evidence": [
+      "Jonathán",
+      "amó"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "david-10",
+    "heroId": "david",
+    "prompt": "¿Qué instrumento tocaba David para aliviar a Saúl?",
+    "choices": [
+      "Arpa",
+      "Trompeta",
+      "Flauta",
+      "Tambor"
+    ],
+    "answer": 0,
+    "reference": "1 Samuel 16:23",
+    "verseKeys": [
+      "1SA 16:23"
+    ],
+    "verse": "Y cuando el espíritu malo de parte de Dios era sobre Saúl, David tomaba el arpa, y tañía con su mano; y Saúl tenía refrigerio, y estaba mejor, y el espíritu malo se apartaba de él.",
+    "explanation": "David tocaba el arpa y Saúl encontraba alivio.",
+    "evidence": [
+      "arpa",
+      "Saul"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "david-11",
+    "heroId": "david",
+    "prompt": "¿Quién era el rey al que David servía con su música?",
+    "choices": [
+      "Saúl",
+      "Salomón",
+      "Herodes",
+      "Nabucodonosor"
+    ],
+    "answer": 0,
+    "reference": "1 Samuel 16:23",
+    "verseKeys": [
+      "1SA 16:23"
+    ],
+    "verse": "Y cuando el espíritu malo de parte de Dios era sobre Saúl, David tomaba el arpa, y tañía con su mano; y Saúl tenía refrigerio, y estaba mejor, y el espíritu malo se apartaba de él.",
+    "explanation": "David tocaba para Saúl, quien se sentía mejor al escucharlo.",
+    "evidence": [
+      "Saul",
+      "David"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "david-12",
+    "heroId": "david",
+    "prompt": "¿En el nombre de quién dijo David que se acercaba a Goliat?",
+    "choices": [
+      "Del Señor de los ejércitos",
+      "Del faraón",
+      "Del rey de Moab",
+      "De los dioses de Gat"
+    ],
+    "answer": 0,
+    "reference": "1 Samuel 17:45",
+    "verseKeys": [
+      "1SA 17:45"
+    ],
+    "verse": "Entonces dijo David al Filisteo: Tú vienes á mí con espada y lanza y escudo; mas yo vengo á ti en el nombre de Jehová de los ejércitos, el Dios de los escuadrones de Israel, que tú has provocado.",
+    "explanation": "David dijo que iba en el nombre del Dios de los ejércitos de Israel.",
+    "evidence": [
+      "Jehová",
+      "ejércitos"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "david-13",
+    "heroId": "david",
+    "prompt": "¿Qué animales mencionó David al contar cómo protegía su rebaño?",
+    "choices": [
+      "León y oso",
+      "Lobo y zorro",
+      "Águila y serpiente",
+      "Camello y caballo"
+    ],
+    "answer": 0,
+    "reference": "1 Samuel 17:34-35",
+    "verseKeys": [
+      "1SA 17:34",
+      "1SA 17:35"
+    ],
+    "verse": "Y David respondió á Saúl: Tu siervo era pastor en las ovejas de su padre, y venía un león, ó un oso, y tomaba algún cordero de la manada, Y salía yo tras él, y heríalo, y librábale de su boca: y si se levantaba contra mí, yo le echaba mano de la quijada, y lo hería y mataba.",
+    "explanation": "David relató que había defendido a sus ovejas de un león y un oso.",
+    "evidence": [
+      "león",
+      "oso"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "david-14",
+    "heroId": "david",
+    "prompt": "¿Cómo se llamaba el hermano mayor de David?",
+    "choices": [
+      "Eliab",
+      "Benjamín",
+      "Aarón",
+      "Andrés"
+    ],
+    "answer": 0,
+    "reference": "1 Samuel 17:13",
+    "verseKeys": [
+      "1SA 17:13"
+    ],
+    "verse": "Y los tres hijos mayores de Isaí habían ido á seguir á Saúl en la guerra. Y los nombres de sus tres hijos que habían ido á la guerra, eran, Eliab el primogénito, el segundo Abinadab, y el tercero Samma.",
+    "explanation": "Eliab era el mayor de los tres hermanos de David que habían seguido a Saúl a la guerra.",
+    "evidence": [
+      "Eliab",
+      "primogénito"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "david-15",
+    "heroId": "david",
+    "prompt": "¿Qué hija de Saúl fue dada por esposa a David?",
+    "choices": [
+      "Mical",
+      "Ester",
+      "Rut",
+      "Débora"
+    ],
+    "answer": 0,
+    "reference": "1 Samuel 18:27",
+    "verseKeys": [
+      "1SA 18:27"
+    ],
+    "verse": "Levantóse David, y partióse con su gente, é hirió doscientos hombres de los Filisteos; y trajo David los prepucios de ellos, y entregáronlos todos al rey, para que él fuese hecho yerno del rey. Y Saúl le dió á su hija Michâl por mujer.",
+    "explanation": "Saúl dio a David a su hija Mical como esposa.",
+    "evidence": [
+      "Michâl"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "david-16",
+    "heroId": "david",
+    "prompt": "¿Quién era el padre de Jonatán?",
+    "choices": [
+      "Saúl",
+      "Isaí",
+      "Natán",
+      "Booz"
+    ],
+    "answer": 0,
+    "reference": "1 Samuel 20:30",
+    "verseKeys": [
+      "1SA 20:30"
+    ],
+    "verse": "Entonces Saúl se enardeció contra Jonathán, y díjole: Hijo de la perversa y rebelde, ¿no sé yo que tú has elegido al hijo de Isaí para confusión tuya, y para confusión de la vergüenza de tu madre?",
+    "explanation": "El pasaje presenta a Saúl hablando con su hijo Jonatán.",
+    "evidence": [
+      "Saul",
+      "Jonathán"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "david-17",
+    "heroId": "david",
+    "prompt": "¿En qué ciudad reinó David sobre Judá durante siete años y seis meses?",
+    "choices": [
+      "Hebrón",
+      "Samaria",
+      "Capernaúm",
+      "Damasco"
+    ],
+    "answer": 0,
+    "reference": "2 Samuel 2:11",
+    "verseKeys": [
+      "2SA 2:11"
+    ],
+    "verse": "Y fué el número de los días que David reinó en Hebrón sobre la casa de Judá, siete años y seis meses.",
+    "explanation": "David reinó sobre Judá en Hebrón antes de reinar sobre todo Israel.",
+    "evidence": [
+      "Hebrón",
+      "siete",
+      "seis"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "david-18",
+    "heroId": "david",
+    "prompt": "¿Qué fortaleza conquistó David, llamada después ciudad de David?",
+    "choices": [
+      "Sion",
+      "Masada",
+      "Jericó",
+      "Silo"
+    ],
+    "answer": 0,
+    "reference": "2 Samuel 5:7",
+    "verseKeys": [
+      "2SA 5:7"
+    ],
+    "verse": "Empero David tomó la fortaleza de Sión, la cual es la ciudad de David.",
+    "explanation": "David tomó la fortaleza de Sion, que el pasaje identifica como la ciudad de David.",
+    "evidence": [
+      "Sión"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "david-19",
+    "heroId": "david",
+    "prompt": "¿Cómo se llamó el hijo que tuvieron David y Betsabé en este pasaje?",
+    "choices": [
+      "Salomón",
+      "Samuel",
+      "Jonatán",
+      "Eliseo"
+    ],
+    "answer": 0,
+    "reference": "2 Samuel 12:24",
+    "verseKeys": [
+      "2SA 12:24"
+    ],
+    "verse": "Y consoló David á Bath-sheba su mujer, y entrando á ella, durmió con ella; y parió un hijo, y llamó su nombre Salomón, al cual amó Jehová:",
+    "explanation": "Betsabé dio a luz a Salomón, hijo de David.",
+    "evidence": [
+      "Salomón"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "david-20",
+    "heroId": "david",
+    "prompt": "¿Qué hijo de David anunció que reinaba en Hebrón?",
+    "choices": [
+      "Absalón",
+      "Isaac",
+      "José",
+      "Obed"
+    ],
+    "answer": 0,
+    "reference": "2 Samuel 15:10",
+    "verseKeys": [
+      "2SA 15:10"
+    ],
+    "verse": "Empero envió Absalom espías por todas las tribus de Israel, diciendo: Cuando oyereis el sonido de la trompeta, diréis: Absalom reina en Hebrón.",
+    "explanation": "Absalón envió mensajeros para anunciar su proclamación como rey en Hebrón.",
+    "evidence": [
+      "Absalom",
+      "Hebrón"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "ester-01",
+    "heroId": "ester",
+    "prompt": "¿Cuál era el otro nombre de Ester?",
+    "choices": [
+      "Hadasa",
+      "Débora",
+      "Abigail",
+      "Priscila"
+    ],
+    "answer": 0,
+    "reference": "Ester 2:7",
+    "verseKeys": [
+      "EST 2:7"
+    ],
+    "verse": "Y había criado á Hadassa, que es Esther, hija de su tío, porque no tenía padre ni madre; y era moza de hermosa forma y de buen parecer; y como su padre y su madre murieron, Mardochêo la había tomado por hija suya.",
+    "explanation": "El pasaje identifica a Hadasa como Ester, criada por Mardoqueo.",
+    "evidence": [
+      "Hadassa",
+      "Esther"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "ester-02",
+    "heroId": "ester",
+    "prompt": "¿Quién crió a Ester tras la muerte de sus padres?",
+    "choices": [
+      "Mardoqueo",
+      "Daniel",
+      "Amán",
+      "Esdras"
+    ],
+    "answer": 0,
+    "reference": "Ester 2:7",
+    "verseKeys": [
+      "EST 2:7"
+    ],
+    "verse": "Y había criado á Hadassa, que es Esther, hija de su tío, porque no tenía padre ni madre; y era moza de hermosa forma y de buen parecer; y como su padre y su madre murieron, Mardochêo la había tomado por hija suya.",
+    "explanation": "Mardoqueo tomó a Ester como hija cuando ella quedó huérfana.",
+    "evidence": [
+      "Mardochêo",
+      "hija"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "ester-03",
+    "heroId": "ester",
+    "prompt": "¿Cómo se llamaba el padre de Ester?",
+    "choices": [
+      "Abihail",
+      "Isaí",
+      "Taré",
+      "Zacarías"
+    ],
+    "answer": 0,
+    "reference": "Ester 2:15",
+    "verseKeys": [
+      "EST 2:15"
+    ],
+    "verse": "Y llegado que fué el tiempo de Esther, hija de Abihail tío de Mardochêo, que él se había tomado por hija, para venir al rey, ninguna cosa procuró sino lo que dijo Hegai eunuco del rey, guarda de las mujeres: y ganaba Esther la gracia de todos los que la veían.",
+    "explanation": "Ester es presentada como hija de Abihail.",
+    "evidence": [
+      "Abihail"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "ester-04",
+    "heroId": "ester",
+    "prompt": "¿Qué rey puso la corona real sobre Ester?",
+    "choices": [
+      "Asuero",
+      "Saúl",
+      "David",
+      "Ciro"
+    ],
+    "answer": 0,
+    "reference": "Ester 2:17",
+    "verseKeys": [
+      "EST 2:17"
+    ],
+    "verse": "Y el rey amó á Esther sobre todas las mujeres, y halló gracia y benevolencia delante de él más que todas las vírgenes; y puso la corona real en su cabeza, é hízola reina en lugar de Vasthi.",
+    "explanation": "El rey Asuero hizo reina a Ester.",
+    "evidence": [
+      "corona",
+      "reina"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "ester-05",
+    "heroId": "ester",
+    "prompt": "¿Cómo se llamaba la reina que aparece antes de Ester?",
+    "choices": [
+      "Vasti",
+      "Sara",
+      "Noemí",
+      "Lea"
+    ],
+    "answer": 0,
+    "reference": "Ester 1:9",
+    "verseKeys": [
+      "EST 1:9"
+    ],
+    "verse": "Asimismo la reina Vasthi hizo banquete de mujeres, en la casa real del rey Assuero.",
+    "explanation": "Vasti aparece como la reina que ofreció un banquete a las mujeres.",
+    "evidence": [
+      "Vasthi"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "ester-06",
+    "heroId": "ester",
+    "prompt": "¿En qué ciudadela vivía Mardoqueo?",
+    "choices": [
+      "Susa",
+      "Jericó",
+      "Belén",
+      "Nazaret"
+    ],
+    "answer": 0,
+    "reference": "Ester 2:5",
+    "verseKeys": [
+      "EST 2:5"
+    ],
+    "verse": "Había un varón Judío en Susán residencia regia, cuyo nombre era Mardochêo, hijo de Jair, hijo de Simi, hijo de Cis, del linaje de Benjamín;",
+    "explanation": "El relato sitúa a Mardoqueo en Susa, residencia real.",
+    "evidence": [
+      "Susan"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "ester-07",
+    "heroId": "ester",
+    "prompt": "¿Quién fue elevado por el rey por encima de otros príncipes?",
+    "choices": [
+      "Amán",
+      "Moisés",
+      "Samuel",
+      "Booz"
+    ],
+    "answer": 0,
+    "reference": "Ester 3:1",
+    "verseKeys": [
+      "EST 3:1"
+    ],
+    "verse": "DESPUÉS de estas cosas, el rey Assuero engrandeció á Amán hijo de Amadatha Agageo, y ensalzólo, y puso su silla sobre todos los príncipes que estaban con él.",
+    "explanation": "Asuero elevó a Amán y le dio un puesto superior al de los demás príncipes.",
+    "evidence": [
+      "Amán",
+      "príncipes"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "ester-08",
+    "heroId": "ester",
+    "prompt": "¿Qué había mantenido Ester en secreto siguiendo el consejo de Mardoqueo?",
+    "choices": [
+      "Su pueblo y su familia",
+      "La ubicación del palacio",
+      "El nombre del rey",
+      "El idioma de los sirvientes"
+    ],
+    "answer": 0,
+    "reference": "Ester 2:10",
+    "verseKeys": [
+      "EST 2:10"
+    ],
+    "verse": "Esther no declaró su pueblo ni su nacimiento; porque Mardochêo le había mandado que no lo declarase.",
+    "explanation": "Ester no había declarado su pueblo ni su familia por indicación de Mardoqueo.",
+    "evidence": [
+      "pueblo",
+      "nacimiento"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "ester-09",
+    "heroId": "ester",
+    "prompt": "¿Cuántos días pidió Ester que ayunaran por ella?",
+    "choices": [
+      "Tres",
+      "Uno",
+      "Siete",
+      "Cuarenta"
+    ],
+    "answer": 0,
+    "reference": "Ester 4:16",
+    "verseKeys": [
+      "EST 4:16"
+    ],
+    "verse": "Ve, y junta á todos los Judíos que se hallan en Susán, y ayunad por mí, y no comáis ni bebáis en tres días, noche ni día: yo también con mis doncellas ayunaré igualmente, y así entraré al rey, aunque no sea conforme á la ley; y si perezco, que perezca.",
+    "explanation": "Ester pidió un ayuno de tres días antes de presentarse ante el rey.",
+    "evidence": [
+      "tres días"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "ester-10",
+    "heroId": "ester",
+    "prompt": "¿Qué extendió el rey hacia Ester cuando ella entró?",
+    "choices": [
+      "Un cetro de oro",
+      "Una espada",
+      "Una copa",
+      "Un pergamino"
+    ],
+    "answer": 0,
+    "reference": "Ester 5:2",
+    "verseKeys": [
+      "EST 5:2"
+    ],
+    "verse": "Y fué que, como vió á la reina Esther que estaba en el patio, ella obtuvo gracia en sus ojos; y el rey extendió á Esther el cetro de oro que tenía en la mano. Entonces se llegó Esther, y tocó la punta del cetro.",
+    "explanation": "El rey extendió hacia Ester su cetro de oro, señal de que la recibía.",
+    "evidence": [
+      "cetro",
+      "oro"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "ester-11",
+    "heroId": "ester",
+    "prompt": "¿A quiénes invitó Ester al primer banquete que preparó?",
+    "choices": [
+      "Al rey y a Amán",
+      "A Daniel y a sus amigos",
+      "A David y a Jonatán",
+      "A Rut y a Noemí"
+    ],
+    "answer": 0,
+    "reference": "Ester 5:4",
+    "verseKeys": [
+      "EST 5:4"
+    ],
+    "verse": "Y Esther dijo: Si al rey place, venga hoy el rey con Amán al banquete que le he hecho.",
+    "explanation": "Ester invitó al rey y a Amán a su banquete.",
+    "evidence": [
+      "rey",
+      "Amán",
+      "banquete"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "ester-12",
+    "heroId": "ester",
+    "prompt": "¿Dónde se encontraba Mardoqueo cuando oyó una conspiración?",
+    "choices": [
+      "En la puerta del rey",
+      "En el desierto",
+      "En una barca",
+      "En el monte Sinaí"
+    ],
+    "answer": 0,
+    "reference": "Ester 2:21",
+    "verseKeys": [
+      "EST 2:21"
+    ],
+    "verse": "En aquellos días, estando Mardochêo sentado á la puerta del rey, enojáronse Bigthán y Teres, dos eunucos del rey, de la guardia de la puerta, y procuraban poner mano en el rey Assuero.",
+    "explanation": "Mardoqueo estaba a la puerta del rey cuando supo del complot.",
+    "evidence": [
+      "puerta"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "ester-13",
+    "heroId": "ester",
+    "prompt": "¿Quiénes planearon atacar al rey Asuero?",
+    "choices": [
+      "Bigtán y Teres",
+      "Moisés y Aarón",
+      "Pedro y Juan",
+      "Elías y Eliseo"
+    ],
+    "answer": 0,
+    "reference": "Ester 2:21",
+    "verseKeys": [
+      "EST 2:21"
+    ],
+    "verse": "En aquellos días, estando Mardochêo sentado á la puerta del rey, enojáronse Bigthán y Teres, dos eunucos del rey, de la guardia de la puerta, y procuraban poner mano en el rey Assuero.",
+    "explanation": "Bigtán y Teres, guardas de la puerta, conspiraron contra el rey.",
+    "evidence": [
+      "Bigthán",
+      "Teres"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "ester-14",
+    "heroId": "ester",
+    "prompt": "¿Qué pidió el rey que le leyeran durante una noche sin sueño?",
+    "choices": [
+      "El libro de las memorias y crónicas",
+      "Una lista de cosechas",
+      "Un poema sobre el mar",
+      "Un contrato de compraventa"
+    ],
+    "answer": 0,
+    "reference": "Ester 6:1",
+    "verseKeys": [
+      "EST 6:1"
+    ],
+    "verse": "AQUELLA noche se le fué el sueño al rey, y dijo que le trajesen el libro de las memorias de las cosas de los tiempos: y leyéronlas delante del rey.",
+    "explanation": "El rey pidió que le leyeran las memorias y crónicas del reino.",
+    "evidence": [
+      "memorias",
+      "tiempos"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "ester-15",
+    "heroId": "ester",
+    "prompt": "¿Quién llevó a Mardoqueo a caballo para honrarlo públicamente?",
+    "choices": [
+      "Amán",
+      "Daniel",
+      "Elías",
+      "Abraham"
+    ],
+    "answer": 0,
+    "reference": "Ester 6:11",
+    "verseKeys": [
+      "EST 6:11"
+    ],
+    "verse": "Y Amán tomó el vestido y el caballo, y vistió á Mardochêo, y llevólo á caballo por la plaza de la ciudad, é hizo pregonar delante de él: Así se hará al varón cuya honra desea el rey.",
+    "explanation": "Amán tuvo que vestir a Mardoqueo y conducirlo a caballo por la ciudad.",
+    "evidence": [
+      "Amán",
+      "Mardochêo",
+      "caballo"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "ester-16",
+    "heroId": "ester",
+    "prompt": "¿Cuál fue la petición de Ester al revelar el peligro que corría?",
+    "choices": [
+      "Que se conservaran su vida y su pueblo",
+      "Que se construyera una torre",
+      "Que se vendieran las cosechas",
+      "Que se cambiara la capital"
+    ],
+    "answer": 0,
+    "reference": "Ester 7:3",
+    "verseKeys": [
+      "EST 7:3"
+    ],
+    "verse": "Entonces la reina Esther respondió y dijo: Oh rey, si he hallado gracia en tus ojos, y si al rey place, séame dada mi vida por mi petición, y mi pueblo por mi demanda.",
+    "explanation": "Ester pidió por su propia vida y por la de su pueblo.",
+    "evidence": [
+      "vida",
+      "pueblo"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "ester-17",
+    "heroId": "ester",
+    "prompt": "¿A quién señaló Ester como enemigo que amenazaba a su pueblo?",
+    "choices": [
+      "Amán",
+      "Mardoqueo",
+      "Booz",
+      "Samuel"
+    ],
+    "answer": 0,
+    "reference": "Ester 7:6",
+    "verseKeys": [
+      "EST 7:6"
+    ],
+    "verse": "Y Esther dijo: El enemigo y adversario es este malvado Amán. Entonces se turbó Amán delante del rey y de la reina.",
+    "explanation": "Ester identificó a Amán como el adversario que había planeado la destrucción.",
+    "evidence": [
+      "Amán",
+      "enemigo"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "ester-18",
+    "heroId": "ester",
+    "prompt": "¿Qué recibió Mardoqueo después de la caída de Amán?",
+    "choices": [
+      "El anillo del rey",
+      "El arca de Noé",
+      "El arpa de David",
+      "Las tablas de Moisés"
+    ],
+    "answer": 0,
+    "reference": "Ester 8:2",
+    "verseKeys": [
+      "EST 8:2"
+    ],
+    "verse": "Y quitóse el rey su anillo que había vuelto á tomar de Amán, y diólo á Mardochêo. Y Esther puso á Mardochêo sobre la casa de Amán.",
+    "explanation": "El rey entregó a Mardoqueo el anillo que había quitado a Amán.",
+    "evidence": [
+      "anillo",
+      "Mardochêo"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "ester-19",
+    "heroId": "ester",
+    "prompt": "¿Cómo se llama la celebración establecida para recordar la liberación?",
+    "choices": [
+      "Purim",
+      "Pentecostés",
+      "Pascua",
+      "Tabernáculos"
+    ],
+    "answer": 0,
+    "reference": "Ester 9:26",
+    "verseKeys": [
+      "EST 9:26"
+    ],
+    "verse": "Por esto llamaron á estos días Purim, del nombre Pur. Por todas las palabras pues de esta carta, y por lo que ellos vieron sobre esto, y lo que llegó á su noticia,",
+    "explanation": "Los días de celebración recibieron el nombre de Purim.",
+    "evidence": [
+      "Purim"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "ester-20",
+    "heroId": "ester",
+    "prompt": "¿A qué se refería la palabra Pur, de la que viene Purim?",
+    "choices": [
+      "A la suerte",
+      "A un jardín",
+      "A una corona",
+      "A un río"
+    ],
+    "answer": 0,
+    "reference": "Ester 9:24-26",
+    "verseKeys": [
+      "EST 9:24",
+      "EST 9:25",
+      "EST 9:26"
+    ],
+    "verse": "Porque Amán hijo de Amadatha, Agageo, enemigo de todos los Judíos, había ideado contra los Judíos para destruirlos, y echó Pur, que quiere decir suerte, para consumirlos y acabar con ellos. Mas como Esther vino á la presencia del rey, él intimó por carta: El perverso designio que aquél trazó contra los Judíos, recaiga sobre su cabeza; y cuélguenlo á él y á sus hijos en la horca. Por esto llamaron á estos días Purim, del nombre Pur. Por todas las palabras pues de esta carta, y por lo que ellos vieron sobre esto, y lo que llegó á su noticia,",
+    "explanation": "Pur significa suerte; el nombre recuerda la suerte echada por Amán.",
+    "evidence": [
+      "Pur",
+      "suerte"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "daniel-01",
+    "heroId": "daniel",
+    "prompt": "¿A qué imperio fueron llevados Daniel y sus compañeros?",
+    "choices": [
+      "Babilonia",
+      "Roma",
+      "Grecia",
+      "Egipto"
+    ],
+    "answer": 0,
+    "reference": "Daniel 1:1-6",
+    "verseKeys": [
+      "DAN 1:1",
+      "DAN 1:2",
+      "DAN 1:3",
+      "DAN 1:4",
+      "DAN 1:5",
+      "DAN 1:6"
+    ],
+    "verse": "EN el año tercero del reinado de Joacim rey de Judá, vino Nabucodonosor rey de Babilonia á Jerusalem, y cercóla. Y el Señor entregó en sus manos á Joacim rey de Judá, y parte de los vasos de la casa de Dios, y trájolos á tierra de Sinar, á la casa de su dios: y metió los vasos en la casa del tesoro de su dios. Y dijo el rey á Aspenaz, príncipe de sus eunucos, que trajese de los hijos de Israel, del linaje real de los príncipes, Muchachos en quienes no hubiese tacha alguna, y de buen parecer, y enseñados en toda sabiduría, y sabios en ciencia, y de buen entendimiento, é idóneos para estar en el palacio del rey; y que les enseñase las letras y la lengua de los Caldeos. Y señalóles el rey ración para cada día de la ración de la comida del rey, y del vino de su beber: que los criase tres años, para que al fin de ellos estuviesen delante del rey. Y fueron entre ellos, de los hijos de Judá, Daniel, Ananías, Misael y Azarías:",
+    "explanation": "Daniel aparece entre los jóvenes de Judá llevados a la corte de Babilonia.",
+    "evidence": [
+      "Babilonia",
+      "Daniel"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "daniel-02",
+    "heroId": "daniel",
+    "prompt": "¿Quién era el rey que sitió Jerusalén al inicio del libro de Daniel?",
+    "choices": [
+      "Nabucodonosor",
+      "Saúl",
+      "David",
+      "Asuero"
+    ],
+    "answer": 0,
+    "reference": "Daniel 1:1",
+    "verseKeys": [
+      "DAN 1:1"
+    ],
+    "verse": "EN el año tercero del reinado de Joacim rey de Judá, vino Nabucodonosor rey de Babilonia á Jerusalem, y cercóla.",
+    "explanation": "Nabucodonosor, rey de Babilonia, sitió Jerusalén.",
+    "evidence": [
+      "Nabucodonosor"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "daniel-03",
+    "heroId": "daniel",
+    "prompt": "¿Qué nombre recibió Daniel en la corte?",
+    "choices": [
+      "Beltsasar",
+      "Sadrac",
+      "Mesac",
+      "Abed-nego"
+    ],
+    "answer": 0,
+    "reference": "Daniel 1:7",
+    "verseKeys": [
+      "DAN 1:7"
+    ],
+    "verse": "A los cuales el príncipe de los eunucos puso nombres: y puso á Daniel, Beltsasar; y á Ananías, Sadrach; y á Misael, Mesach; y á Azarías, Abed-nego.",
+    "explanation": "El jefe de los eunucos dio a Daniel el nombre de Beltsasar.",
+    "evidence": [
+      "Beltsasar"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "daniel-04",
+    "heroId": "daniel",
+    "prompt": "¿Qué decidió Daniel acerca de la comida y el vino del rey?",
+    "choices": [
+      "No contaminarse con ellos",
+      "Guardar todo para el viaje",
+      "Venderlos en el mercado",
+      "Repartirlos entre soldados"
+    ],
+    "answer": 0,
+    "reference": "Daniel 1:8",
+    "verseKeys": [
+      "DAN 1:8"
+    ],
+    "verse": "Y Daniel propuso en su corazón de no contaminarse en la ración de la comida del rey, ni en el vino de su beber: pidió por tanto al príncipe de los eunucos de no contaminarse.",
+    "explanation": "Daniel se propuso no contaminarse con la comida ni el vino del rey.",
+    "evidence": [
+      "contaminarse",
+      "vino"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "daniel-05",
+    "heroId": "daniel",
+    "prompt": "¿Qué pidió Daniel que les dieran de comer durante la prueba?",
+    "choices": [
+      "Legumbres",
+      "Carne de caza",
+      "Pasteles",
+      "Pescado salado"
+    ],
+    "answer": 0,
+    "reference": "Daniel 1:12",
+    "verseKeys": [
+      "DAN 1:12"
+    ],
+    "verse": "Prueba, te ruego, tus siervos diez días, y dennos legumbres á comer, y agua á beber.",
+    "explanation": "Daniel pidió legumbres para comer y agua para beber.",
+    "evidence": [
+      "legumbres"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "daniel-06",
+    "heroId": "daniel",
+    "prompt": "¿Cuántos días duró la prueba de la alimentación?",
+    "choices": [
+      "Diez",
+      "Tres",
+      "Siete",
+      "Cuarenta"
+    ],
+    "answer": 0,
+    "reference": "Daniel 1:12-15",
+    "verseKeys": [
+      "DAN 1:12",
+      "DAN 1:13",
+      "DAN 1:14",
+      "DAN 1:15"
+    ],
+    "verse": "Prueba, te ruego, tus siervos diez días, y dennos legumbres á comer, y agua á beber. Parezcan luego delante de ti nuestros rostros, y los rostros de los muchachos que comen de la ración de la comida del rey; y según que vieres, harás con tus siervos. Consintió pues con ellos en esto, y probó con ellos diez días. Y al cabo de los diez días pareció el rostro de ellos mejor y más nutrido de carne, que los otros muchachos que comían de la ración de la comida del rey.",
+    "explanation": "La prueba se realizó durante diez días.",
+    "evidence": [
+      "diez días"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "daniel-07",
+    "heroId": "daniel",
+    "prompt": "¿Qué capacidad especial recibió Daniel?",
+    "choices": [
+      "Entender visiones y sueños",
+      "Construir barcos",
+      "Tocar el arpa",
+      "Hablar con las aves"
+    ],
+    "answer": 0,
+    "reference": "Daniel 1:17",
+    "verseKeys": [
+      "DAN 1:17"
+    ],
+    "verse": "Y á estos cuatro muchachos dióles Dios conocimiento é inteligencia en todas letras y ciencia: mas Daniel tuvo entendimiento en toda visión y sueños.",
+    "explanation": "Dios dio a Daniel entendimiento en visiones y sueños.",
+    "evidence": [
+      "visión",
+      "sueños"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "daniel-08",
+    "heroId": "daniel",
+    "prompt": "¿Quién, según Daniel, revela los misterios?",
+    "choices": [
+      "Dios en los cielos",
+      "El jefe de los soldados",
+      "El rey de Egipto",
+      "El constructor del palacio"
+    ],
+    "answer": 0,
+    "reference": "Daniel 2:28",
+    "verseKeys": [
+      "DAN 2:28"
+    ],
+    "verse": "Mas hay un Dios en los cielos, el cual revela los misterios, y él ha hecho saber al rey Nabucodonosor lo que ha de acontecer á cabo de días. Tu sueño, y las visiones de tu cabeza sobre tu cama, es esto:",
+    "explanation": "Daniel explicó al rey que hay un Dios en los cielos que revela misterios.",
+    "evidence": [
+      "Dios",
+      "cielos",
+      "misterios"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "daniel-09",
+    "heroId": "daniel",
+    "prompt": "¿De qué metal era la cabeza de la estatua del sueño?",
+    "choices": [
+      "Oro",
+      "Hierro",
+      "Plata",
+      "Bronce"
+    ],
+    "answer": 0,
+    "reference": "Daniel 2:32",
+    "verseKeys": [
+      "DAN 2:32"
+    ],
+    "verse": "La cabeza de esta imagen era de fino oro; sus pechos y sus brazos, de plata; su vientre y sus muslos, de metal;",
+    "explanation": "La cabeza de la estatua era de oro fino.",
+    "evidence": [
+      "cabeza",
+      "oro"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "daniel-10",
+    "heroId": "daniel",
+    "prompt": "¿Qué golpeó la estatua del sueño en los pies?",
+    "choices": [
+      "Una piedra",
+      "Un rayo",
+      "Un árbol",
+      "Una flecha"
+    ],
+    "answer": 0,
+    "reference": "Daniel 2:34",
+    "verseKeys": [
+      "DAN 2:34"
+    ],
+    "verse": "Estabas mirando, hasta que una piedra fué cortada, no con mano, la cual hirió á la imagen en sus pies de hierro y de barro cocido, y los desmenuzó.",
+    "explanation": "Una piedra cortada sin manos golpeó la estatua en sus pies.",
+    "evidence": [
+      "piedra",
+      "pies"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "daniel-11",
+    "heroId": "daniel",
+    "prompt": "¿Qué compañeros de Daniel fueron arrojados al horno de fuego?",
+    "choices": [
+      "Sadrac, Mesac y Abed-nego",
+      "Pedro, Juan y Santiago",
+      "Sem, Cam y Jafet",
+      "Moisés, Aarón y Josué"
+    ],
+    "answer": 0,
+    "reference": "Daniel 3:20",
+    "verseKeys": [
+      "DAN 3:20"
+    ],
+    "verse": "Y mandó á hombres muy vigorosos que tenía en su ejército, que atasen á Sadrach, Mesach, y Abed-nego, para echarlos en el horno de fuego ardiendo.",
+    "explanation": "Los tres compañeros fueron atados y echados al horno por no adorar la imagen.",
+    "evidence": [
+      "Sadrach",
+      "Mesach",
+      "Abed-nego"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "daniel-12",
+    "heroId": "daniel",
+    "prompt": "¿Cuántos hombres vio el rey caminando dentro del horno?",
+    "choices": [
+      "Cuatro",
+      "Dos",
+      "Tres",
+      "Siete"
+    ],
+    "answer": 0,
+    "reference": "Daniel 3:25",
+    "verseKeys": [
+      "DAN 3:25"
+    ],
+    "verse": "Respondió él y dijo: He aquí que yo veo cuatro varones sueltos, que se pasean en medio del fuego, y ningún daño hay en ellos: y el parecer del cuarto es semejante á hijo de los dioses.",
+    "explanation": "El rey vio cuatro hombres sueltos caminando en medio del fuego.",
+    "evidence": [
+      "cuatro",
+      "fuego"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "daniel-13",
+    "heroId": "daniel",
+    "prompt": "¿Quién fue el rey que vio una escritura en la pared?",
+    "choices": [
+      "Belsasar",
+      "David",
+      "Saúl",
+      "Salomón"
+    ],
+    "answer": 0,
+    "reference": "Daniel 5:1-5",
+    "verseKeys": [
+      "DAN 5:1",
+      "DAN 5:2",
+      "DAN 5:3",
+      "DAN 5:4",
+      "DAN 5:5"
+    ],
+    "verse": "EL rey Belsasar hizo un gran banquete á mil de sus príncipes, y en presencia de los mil bebía vino. Belsasar, con el gusto del vino, mandó que trajesen los vasos de oro y de plata que Nabucodonosor su padre había traído del templo de Jerusalem; para que bebiesen con ellos el rey y sus príncipes, sus mujeres y sus concubinas. Entonces fueron traídos los vasos de oro que habían traído del templo de la casa de Dios que estaba en Jerusalem, y bebieron con ellos el rey y sus príncipes, sus mujeres y sus concubinas. Bebieron vino, y alabaron á los dioses de oro y de plata, de metal, de hierro, de madera, y de piedra. En aquella misma hora salieron unos dedos de mano de hombre, y escribían delante del candelero sobre lo encalado de la pared del palacio real, y el rey veía la palma de la mano que escribía.",
+    "explanation": "Durante el banquete de Belsasar apareció una mano que escribió en la pared.",
+    "evidence": [
+      "Belsasar",
+      "pared"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "daniel-14",
+    "heroId": "daniel",
+    "prompt": "¿Qué palabra interpretó Daniel como haber sido pesado y hallado falto?",
+    "choices": [
+      "Tekel",
+      "Amén",
+      "Hosanna",
+      "Selah"
+    ],
+    "answer": 0,
+    "reference": "Daniel 5:27",
+    "verseKeys": [
+      "DAN 5:27"
+    ],
+    "verse": "TEKEL: Pesado has sido en balanza, y fuiste hallado falto.",
+    "explanation": "Daniel explicó que Tekel significaba que el rey había sido pesado en balanza y hallado falto.",
+    "evidence": [
+      "TEKEL",
+      "balanza"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "daniel-15",
+    "heroId": "daniel",
+    "prompt": "¿Qué rey gobernaba cuando Daniel fue arrojado al foso de los leones?",
+    "choices": [
+      "Darío",
+      "Herodes",
+      "Faraón",
+      "Asuero"
+    ],
+    "answer": 0,
+    "reference": "Daniel 6:1-7",
+    "verseKeys": [
+      "DAN 6:1",
+      "DAN 6:2",
+      "DAN 6:3",
+      "DAN 6:4",
+      "DAN 6:5",
+      "DAN 6:6",
+      "DAN 6:7"
+    ],
+    "verse": "PARECIÓ bien á Darío constituir sobre el reino ciento veinte gobernadores, que estuviesen en todo el reino. Y sobre ellos tres presidentes, de los cuales Daniel era el uno, á quienes estos gobernadores diesen cuenta, porque el rey no recibiese daño. Pero el mismo Daniel era superior á estos gobernadores y presidentes, porque había en él más abundancia de espíritu: y el rey pensaba de ponerlo sobre todo el reino. Entonces los presidentes y gobernadores buscaban ocasiones contra Daniel por parte del reino; mas no podían hallar alguna ocasión ó falta, porque él era fiel, y ningún vicio ni falta fué en él hallado. Entonces dijeron aquellos hombres: No hallaremos contra este Daniel ocasión alguna, si no la hallamos contra él en la ley de su Dios. Entonces estos gobernadores y presidentes se juntaron delante del rey, y le dijeron así: Rey Darío, para siempre vive: Todos los presidentes del reino, magistrados, gobernadores, grandes, y capitanes, han acordado por consejo promulgar un real edicto, y confirmarlo, que cualquiera que demandare petición de cualquier dios ú hombre en el espacio de treinta días, sino de ti, oh rey, sea echado en el foso de los leones.",
+    "explanation": "Los gobernantes buscaron que Darío firmara el decreto que usarían contra Daniel.",
+    "evidence": [
+      "Darío",
+      "leones"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "daniel-16",
+    "heroId": "daniel",
+    "prompt": "¿Cuántas veces al día oraba Daniel según el relato?",
+    "choices": [
+      "Tres",
+      "Una",
+      "Dos",
+      "Siete"
+    ],
+    "answer": 0,
+    "reference": "Daniel 6:10",
+    "verseKeys": [
+      "DAN 6:10"
+    ],
+    "verse": "Y Daniel, cuando supo que la escritura estaba firmada, entróse en su casa, y abiertas las ventanas de su cámara que estaban hacia Jerusalem, hincábase de rodillas tres veces al día, y oraba, y confesaba delante de su Dios, como lo solía hacer antes.",
+    "explanation": "Daniel oraba y daba gracias tres veces al día, como lo había hecho antes.",
+    "evidence": [
+      "tres",
+      "oraba"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "daniel-17",
+    "heroId": "daniel",
+    "prompt": "¿Hacia qué ciudad estaban abiertas las ventanas de Daniel?",
+    "choices": [
+      "Jerusalén",
+      "Roma",
+      "Nínive",
+      "Belén"
+    ],
+    "answer": 0,
+    "reference": "Daniel 6:10",
+    "verseKeys": [
+      "DAN 6:10"
+    ],
+    "verse": "Y Daniel, cuando supo que la escritura estaba firmada, entróse en su casa, y abiertas las ventanas de su cámara que estaban hacia Jerusalem, hincábase de rodillas tres veces al día, y oraba, y confesaba delante de su Dios, como lo solía hacer antes.",
+    "explanation": "Las ventanas de su habitación estaban abiertas hacia Jerusalén.",
+    "evidence": [
+      "Jerusalem"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "daniel-18",
+    "heroId": "daniel",
+    "prompt": "¿A dónde fue arrojado Daniel por continuar orando?",
+    "choices": [
+      "Al foso de los leones",
+      "A un horno de fuego",
+      "Al río Nilo",
+      "A una cisterna sin agua"
+    ],
+    "answer": 0,
+    "reference": "Daniel 6:16",
+    "verseKeys": [
+      "DAN 6:16"
+    ],
+    "verse": "Entonces el rey mandó, y trajeron á Daniel, y echáronle en el foso de los leones. Y hablando el rey dijo á Daniel: El Dios tuyo, á quien tú continuamente sirves, él te libre.",
+    "explanation": "El rey ordenó que Daniel fuera echado al foso de los leones.",
+    "evidence": [
+      "leones"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "daniel-19",
+    "heroId": "daniel",
+    "prompt": "¿Quién, según Daniel, cerró la boca de los leones?",
+    "choices": [
+      "Un ángel enviado por Dios",
+      "Un soldado del rey",
+      "Un pastor de ovejas",
+      "Un comerciante"
+    ],
+    "answer": 0,
+    "reference": "Daniel 6:22",
+    "verseKeys": [
+      "DAN 6:22"
+    ],
+    "verse": "El Dios mío envió su ángel, el cual cerró la boca de los leones, para que no me hiciesen mal: porque delante de él se halló en mí justicia: y aun delante de ti, oh rey, yo no he hecho lo que no debiese.",
+    "explanation": "Daniel dijo que Dios había enviado a su ángel para cerrar las bocas de los leones.",
+    "evidence": [
+      "ángel",
+      "boca"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "daniel-20",
+    "heroId": "daniel",
+    "prompt": "¿Qué hizo el rey antes de rescatar a Daniel por la mañana?",
+    "choices": [
+      "Fue apresuradamente al foso",
+      "Celebró un banquete",
+      "Salió a una batalla",
+      "Pidió música de arpa"
+    ],
+    "answer": 0,
+    "reference": "Daniel 6:19",
+    "verseKeys": [
+      "DAN 6:19"
+    ],
+    "verse": "El rey, por tanto, se levantó muy de mañana, y fué apriesa al foso de los leones:",
+    "explanation": "Al amanecer, el rey se levantó y fue de prisa al foso de los leones.",
+    "evidence": [
+      "mañana",
+      "apriesa"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "maria-01",
+    "heroId": "maria",
+    "prompt": "¿Qué ángel anunció a María el nacimiento de Jesús?",
+    "choices": [
+      "Gabriel",
+      "Miguel",
+      "Rafael",
+      "Uriel"
+    ],
+    "answer": 0,
+    "reference": "Lucas 1:26-27",
+    "verseKeys": [
+      "LUK 1:26",
+      "LUK 1:27"
+    ],
+    "verse": "Y al sexto mes, el ángel Gabriel fué enviado de Dios á una ciudad de Galilea, llamada Nazaret, A una virgen desposada con un varón que se llamaba José, de la casa de David: y el nombre de la virgen era María.",
+    "explanation": "Dios envió al ángel Gabriel a Nazaret, donde estaba María.",
+    "evidence": [
+      "Gabriel",
+      "María"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "maria-02",
+    "heroId": "maria",
+    "prompt": "¿En qué ciudad vivía María cuando recibió el anuncio del ángel?",
+    "choices": [
+      "Nazaret",
+      "Jericó",
+      "Roma",
+      "Nínive"
+    ],
+    "answer": 0,
+    "reference": "Lucas 1:26-27",
+    "verseKeys": [
+      "LUK 1:26",
+      "LUK 1:27"
+    ],
+    "verse": "Y al sexto mes, el ángel Gabriel fué enviado de Dios á una ciudad de Galilea, llamada Nazaret, A una virgen desposada con un varón que se llamaba José, de la casa de David: y el nombre de la virgen era María.",
+    "explanation": "El anuncio tuvo lugar en Nazaret, una ciudad de Galilea.",
+    "evidence": [
+      "Nazaret"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "maria-03",
+    "heroId": "maria",
+    "prompt": "¿Con quién estaba comprometida María?",
+    "choices": [
+      "José",
+      "Pedro",
+      "Zacarías",
+      "Booz"
+    ],
+    "answer": 0,
+    "reference": "Lucas 1:27",
+    "verseKeys": [
+      "LUK 1:27"
+    ],
+    "verse": "A una virgen desposada con un varón que se llamaba José, de la casa de David: y el nombre de la virgen era María.",
+    "explanation": "María estaba desposada con José, de la casa de David.",
+    "evidence": [
+      "José"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "maria-04",
+    "heroId": "maria",
+    "prompt": "¿Qué nombre indicó el ángel que debía poner al niño?",
+    "choices": [
+      "Jesús",
+      "Juan",
+      "Samuel",
+      "Isaac"
+    ],
+    "answer": 0,
+    "reference": "Lucas 1:31",
+    "verseKeys": [
+      "LUK 1:31"
+    ],
+    "verse": "Y he aquí, concebirás en tu seno, y parirás un hijo, y llamarás su nombre JESUS.",
+    "explanation": "El ángel indicó a María que llamara Jesús a su hijo.",
+    "evidence": [
+      "JESÚS"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "maria-05",
+    "heroId": "maria",
+    "prompt": "¿Qué pariente de María también esperaba un hijo?",
+    "choices": [
+      "Elisabet",
+      "Rut",
+      "Ester",
+      "Débora"
+    ],
+    "answer": 0,
+    "reference": "Lucas 1:36",
+    "verseKeys": [
+      "LUK 1:36"
+    ],
+    "verse": "Y he aquí, Elisabet tu parienta, también ella ha concebido hijo en su vejez; y este es el sexto mes á ella que es llamada la estéril:",
+    "explanation": "Gabriel contó a María que su pariente Elisabet estaba embarazada.",
+    "evidence": [
+      "Elisabet",
+      "parienta"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "maria-06",
+    "heroId": "maria",
+    "prompt": "¿Qué ocurrió cuando Elisabet escuchó el saludo de María?",
+    "choices": [
+      "El niño saltó en su vientre",
+      "Se apagaron las lámparas",
+      "La casa se llenó de agua",
+      "Apareció un arco iris"
+    ],
+    "answer": 0,
+    "reference": "Lucas 1:41",
+    "verseKeys": [
+      "LUK 1:41"
+    ],
+    "verse": "Y aconteció, que como oyó Elisabet la salutación de María, la criatura saltó en su vientre; y Elisabet fué llena del Espíritu Santo,",
+    "explanation": "El niño saltó en el vientre de Elisabet al escuchar ella el saludo de María.",
+    "evidence": [
+      "saltó",
+      "vientre"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "maria-07",
+    "heroId": "maria",
+    "prompt": "¿Qué respondió María al aceptar el anuncio del ángel?",
+    "choices": [
+      "Hágase conmigo conforme a tu palabra",
+      "Esperaré hasta la próxima cosecha",
+      "No regresaré a esta ciudad",
+      "Primero hablaré con el rey"
+    ],
+    "answer": 0,
+    "reference": "Lucas 1:38",
+    "verseKeys": [
+      "LUK 1:38"
+    ],
+    "verse": "Entonces María dijo: He aquí la sierva del Señor; hágase á mí conforme á tu palabra. Y el ángel partió de ella.",
+    "explanation": "María se presentó como sierva del Señor y aceptó su palabra.",
+    "evidence": [
+      "hágase",
+      "palabra"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "maria-08",
+    "heroId": "maria",
+    "prompt": "¿En quién dijo María que se alegraba su espíritu?",
+    "choices": [
+      "En Dios su Salvador",
+      "En el rey de Roma",
+      "En los bienes de su familia",
+      "En la fama de su ciudad"
+    ],
+    "answer": 0,
+    "reference": "Lucas 1:46-47",
+    "verseKeys": [
+      "LUK 1:46",
+      "LUK 1:47"
+    ],
+    "verse": "Entonces María dijo: engrandece mi alma al Señor; Y mi espíritu se alegró en Dios mi Salvador.",
+    "explanation": "En su cántico, María alabó al Señor y se alegró en Dios su Salvador.",
+    "evidence": [
+      "Dios",
+      "Salvador"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "maria-09",
+    "heroId": "maria",
+    "prompt": "¿Cuánto tiempo permaneció María con Elisabet?",
+    "choices": [
+      "Como tres meses",
+      "Una semana",
+      "Diez días",
+      "Dos años"
+    ],
+    "answer": 0,
+    "reference": "Lucas 1:56",
+    "verseKeys": [
+      "LUK 1:56"
+    ],
+    "verse": "Y se quedó María con ella como tres meses: después se volvió á su casa.",
+    "explanation": "María permaneció con ella alrededor de tres meses y luego regresó a su casa.",
+    "evidence": [
+      "tres meses"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "maria-10",
+    "heroId": "maria",
+    "prompt": "¿A qué ciudad viajó María con José para el registro?",
+    "choices": [
+      "Belén",
+      "Damasco",
+      "Tiro",
+      "Nínive"
+    ],
+    "answer": 0,
+    "reference": "Lucas 2:4-5",
+    "verseKeys": [
+      "LUK 2:4",
+      "LUK 2:5"
+    ],
+    "verse": "Y subió José de Galilea, de la ciudad de Nazaret, á Judea, á la ciudad de David, que se llama Bethlehem, por cuanto era de la casa y familia de David; Para ser empadronado con María su mujer, desposada con él, la cual estaba en cinta.",
+    "explanation": "José fue a Belén para ser empadronado con María.",
+    "evidence": [
+      "Bethlehem",
+      "María"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "maria-11",
+    "heroId": "maria",
+    "prompt": "¿Dónde acostó María a Jesús recién nacido?",
+    "choices": [
+      "En un pesebre",
+      "En una barca",
+      "En un trono",
+      "En una canasta sobre el río"
+    ],
+    "answer": 0,
+    "reference": "Lucas 2:7",
+    "verseKeys": [
+      "LUK 2:7"
+    ],
+    "verse": "Y parió á su hijo primogénito, y le envolvió en pañales, y acostóle en un pesebre, porque no había lugar para ellos en el mesón.",
+    "explanation": "María envolvió al niño en pañales y lo acostó en un pesebre.",
+    "evidence": [
+      "pesebre"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "maria-12",
+    "heroId": "maria",
+    "prompt": "¿Con qué envolvió María a su hijo recién nacido?",
+    "choices": [
+      "Con pañales",
+      "Con un manto de rey",
+      "Con hojas de palmera",
+      "Con una red de pesca"
+    ],
+    "answer": 0,
+    "reference": "Lucas 2:7",
+    "verseKeys": [
+      "LUK 2:7"
+    ],
+    "verse": "Y parió á su hijo primogénito, y le envolvió en pañales, y acostóle en un pesebre, porque no había lugar para ellos en el mesón.",
+    "explanation": "María cuidó de su hijo envolviéndolo en pañales.",
+    "evidence": [
+      "pañales"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "maria-13",
+    "heroId": "maria",
+    "prompt": "¿Quiénes llegaron y encontraron a María, José y al niño en el pesebre?",
+    "choices": [
+      "Los pastores",
+      "Los soldados de Pilato",
+      "Los hermanos de Moisés",
+      "Los consejeros de Darío"
+    ],
+    "answer": 0,
+    "reference": "Lucas 2:15-16",
+    "verseKeys": [
+      "LUK 2:15",
+      "LUK 2:16"
+    ],
+    "verse": "Y aconteció que como los ángeles se fueron de ellos al cielo, los pastores dijeron los unos á los otros: Pasemos pues hasta Bethlehem, y veamos esto que ha sucedido, que el Señor nos ha manifestado. Y vinieron apriesa, y hallaron á María, y á José, y al niño acostado en el pesebre.",
+    "explanation": "Los pastores fueron de prisa a Belén y encontraron a la familia.",
+    "evidence": [
+      "pastores",
+      "María",
+      "José"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "maria-14",
+    "heroId": "maria",
+    "prompt": "¿Cómo conservaba María lo que escuchaba acerca de Jesús?",
+    "choices": [
+      "Lo meditaba en su corazón",
+      "Lo escribía en las puertas",
+      "Lo anunciaba al emperador",
+      "Lo ocultaba en una cueva"
+    ],
+    "answer": 0,
+    "reference": "Lucas 2:19",
+    "verseKeys": [
+      "LUK 2:19"
+    ],
+    "verse": "Mas María guardaba todas estas cosas, confiriéndolas en su corazón.",
+    "explanation": "María guardaba estas cosas y las meditaba en su corazón.",
+    "evidence": [
+      "corazón"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "maria-15",
+    "heroId": "maria",
+    "prompt": "¿Cuántos días tenía Jesús cuando recibió su nombre y fue circuncidado?",
+    "choices": [
+      "Ocho",
+      "Tres",
+      "Doce",
+      "Cuarenta"
+    ],
+    "answer": 0,
+    "reference": "Lucas 2:21",
+    "verseKeys": [
+      "LUK 2:21"
+    ],
+    "verse": "Y pasados los ocho días para circuncidar al niño, llamaron su nombre JESÚS; el cual le fué puesto por el ángel antes que él fuese concebido en el vientre.",
+    "explanation": "Al cumplirse ocho días, se le dio el nombre de Jesús, como había indicado el ángel.",
+    "evidence": [
+      "ocho",
+      "JESÚS"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "maria-16",
+    "heroId": "maria",
+    "prompt": "¿Qué ofrecieron los magos al encontrar al niño con María?",
+    "choices": [
+      "Oro, incienso y mirra",
+      "Pan, aceite y sal",
+      "Plata, seda y trigo",
+      "Agua, leche y miel"
+    ],
+    "answer": 0,
+    "reference": "Mateo 2:11",
+    "verseKeys": [
+      "MAT 2:11"
+    ],
+    "verse": "Y entrando en la casa, vieron al niño con su madre María, y postrándose, le adoraron; y abriendo sus tesoros, le ofrecieron dones, oro é incienso y mirra.",
+    "explanation": "Los magos presentaron oro, incienso y mirra al niño.",
+    "evidence": [
+      "oro",
+      "incienso",
+      "mirra"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "maria-17",
+    "heroId": "maria",
+    "prompt": "¿A qué país huyeron José, María y Jesús para escapar de Herodes?",
+    "choices": [
+      "Egipto",
+      "Grecia",
+      "Moab",
+      "Asiria"
+    ],
+    "answer": 0,
+    "reference": "Mateo 2:13-14",
+    "verseKeys": [
+      "MAT 2:13",
+      "MAT 2:14"
+    ],
+    "verse": "Y partidos ellos, he aquí el ángel del Señor aparece en sueños á José, diciendo: Levántate, y toma al niño y á su madre, y huye á Egipto, y estáte allá hasta que yo te lo diga; porque ha de acontecer, que Herodes buscará al niño para matarlo. Y él despertando, tomó al niño y á su madre de noche, y se fué á Egipto;",
+    "explanation": "José llevó al niño y a su madre a Egipto siguiendo la advertencia del ángel.",
+    "evidence": [
+      "Egipto"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "maria-18",
+    "heroId": "maria",
+    "prompt": "¿Qué edad tenía Jesús cuando María y José lo buscaron durante la visita a Jerusalén?",
+    "choices": [
+      "Doce años",
+      "Cinco años",
+      "Ocho años",
+      "Treinta años"
+    ],
+    "answer": 0,
+    "reference": "Lucas 2:42-45",
+    "verseKeys": [
+      "LUK 2:42",
+      "LUK 2:43",
+      "LUK 2:44",
+      "LUK 2:45"
+    ],
+    "verse": "Y cuando fué de doce años, subieron ellos á Jerusalem conforme á la costumbre del día de la fiesta. Y acabados los días, volviendo ellos, se quedó el niño Jesús en Jerusalem, sin saberlo José y su madre. Y pensando que estaba en la compañía, anduvieron camino de un día; y le buscaban entre los parientes y entre los conocidos: Mas como no le hallasen, volvieron á Jerusalem buscándole.",
+    "explanation": "El relato de la búsqueda de Jesús en Jerusalén ocurrió cuando él tenía doce años.",
+    "evidence": [
+      "doce años"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "maria-19",
+    "heroId": "maria",
+    "prompt": "¿Dónde encontraron María y José a Jesús después de buscarlo?",
+    "choices": [
+      "En el templo, entre los maestros",
+      "En una barca",
+      "En el palacio de Herodes",
+      "En una viña"
+    ],
+    "answer": 0,
+    "reference": "Lucas 2:46",
+    "verseKeys": [
+      "LUK 2:46"
+    ],
+    "verse": "Y aconteció, que tres días después le hallaron en el templo, sentado en medio de los doctores, oyéndoles y preguntándoles.",
+    "explanation": "Encontraron a Jesús en el templo, escuchando y preguntando a los maestros.",
+    "evidence": [
+      "templo",
+      "doctores"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "maria-20",
+    "heroId": "maria",
+    "prompt": "¿Qué pidió María a los sirvientes en las bodas de Caná?",
+    "choices": [
+      "Hagan todo lo que Jesús les diga",
+      "Cierren las puertas del salón",
+      "Escondan las tinajas",
+      "Llamen a los soldados"
+    ],
+    "answer": 0,
+    "reference": "Juan 2:5",
+    "verseKeys": [
+      "JHN 2:5"
+    ],
+    "verse": "Su madre dice á los que servían: Haced todo lo que os dijere.",
+    "explanation": "María indicó a los sirvientes que hicieran lo que Jesús les dijera.",
+    "evidence": [
+      "Haced",
+      "dijere"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "pedro-01",
+    "heroId": "pedro",
+    "prompt": "¿Cuál era el nombre de Pedro antes de ser llamado Cefas?",
+    "choices": [
+      "Simón",
+      "Saulo",
+      "Leví",
+      "Natanael"
+    ],
+    "answer": 0,
+    "reference": "Juan 1:42",
+    "verseKeys": [
+      "JHN 1:42"
+    ],
+    "verse": "Y le trajo á Jesús. Y mirándole Jesús, dijo: Tú eres Simón, hijo de Jonás: tú serás llamado Cephas (que quiere decir, Piedra).",
+    "explanation": "Jesús dio a Simón el nombre Cefas, que significa piedra; Pedro es la forma griega de ese nombre.",
+    "evidence": [
+      "Simón",
+      "Cephas",
+      "Piedra"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "pedro-02",
+    "heroId": "pedro",
+    "prompt": "¿Quién era el hermano de Pedro?",
+    "choices": [
+      "Andrés",
+      "Felipe",
+      "Tomás",
+      "Santiago"
+    ],
+    "answer": 0,
+    "reference": "Mateo 4:18",
+    "verseKeys": [
+      "MAT 4:18"
+    ],
+    "verse": "Y andando Jesús junto á la mar de Galilea, vió á dos hermanos, Simón, que es llamado Pedro, y Andrés su hermano, que echaban la red en la mar; porque eran pescadores.",
+    "explanation": "Jesús vio a Simón Pedro y a su hermano Andrés junto al mar.",
+    "evidence": [
+      "Andrés",
+      "hermano"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "pedro-03",
+    "heroId": "pedro",
+    "prompt": "¿A qué se dedicaban Pedro y Andrés cuando Jesús los llamó?",
+    "choices": [
+      "A la pesca",
+      "A la carpintería",
+      "A la agricultura",
+      "A cobrar impuestos"
+    ],
+    "answer": 0,
+    "reference": "Mateo 4:18",
+    "verseKeys": [
+      "MAT 4:18"
+    ],
+    "verse": "Y andando Jesús junto á la mar de Galilea, vió á dos hermanos, Simón, que es llamado Pedro, y Andrés su hermano, que echaban la red en la mar; porque eran pescadores.",
+    "explanation": "Los hermanos echaban una red en el mar porque eran pescadores.",
+    "evidence": [
+      "pescadores"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "pedro-04",
+    "heroId": "pedro",
+    "prompt": "¿Qué dijo Jesús que haría de Pedro y Andrés?",
+    "choices": [
+      "Pescadores de hombres",
+      "Gobernadores de provincias",
+      "Constructores de palacios",
+      "Mercaderes del templo"
+    ],
+    "answer": 0,
+    "reference": "Mateo 4:19",
+    "verseKeys": [
+      "MAT 4:19"
+    ],
+    "verse": "Y díceles: Venid en pos de mí, y os haré pescadores de hombres.",
+    "explanation": "Jesús los invitó a seguirlo y les prometió hacerlos pescadores de hombres.",
+    "evidence": [
+      "pescadores",
+      "hombres"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "pedro-05",
+    "heroId": "pedro",
+    "prompt": "¿Qué dejó Pedro al seguir a Jesús en este relato?",
+    "choices": [
+      "Las redes",
+      "Una corona",
+      "Un carro de guerra",
+      "Un campo de cebada"
+    ],
+    "answer": 0,
+    "reference": "Mateo 4:20",
+    "verseKeys": [
+      "MAT 4:20"
+    ],
+    "verse": "Ellos entonces, dejando luego las redes, le siguieron.",
+    "explanation": "Pedro y Andrés dejaron inmediatamente las redes para seguir a Jesús.",
+    "evidence": [
+      "redes"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "pedro-06",
+    "heroId": "pedro",
+    "prompt": "¿Qué padecía la suegra de Pedro cuando Jesús la visitó?",
+    "choices": [
+      "Fiebre",
+      "Ceguera",
+      "Sordera",
+      "Una herida en el pie"
+    ],
+    "answer": 0,
+    "reference": "Mateo 8:14-15",
+    "verseKeys": [
+      "MAT 8:14",
+      "MAT 8:15"
+    ],
+    "verse": "Y vino Jesús á casa de Pedro, y vió á su suegra echada en cama, y con fiebre. Y tocó su mano, y la fiebre la dejó: y ella se levantó, y les servía.",
+    "explanation": "Jesús tocó la mano de la suegra de Pedro y la fiebre la dejó.",
+    "evidence": [
+      "fiebre"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "pedro-07",
+    "heroId": "pedro",
+    "prompt": "¿Sobre qué caminó Pedro al ir hacia Jesús?",
+    "choices": [
+      "Sobre el agua",
+      "Sobre una muralla",
+      "Sobre arena ardiente",
+      "Sobre una cuerda"
+    ],
+    "answer": 0,
+    "reference": "Mateo 14:29",
+    "verseKeys": [
+      "MAT 14:29"
+    ],
+    "verse": "Y él dijo: Ven. Y descendiendo Pedro del barco, andaba sobre las aguas para ir á Jesús.",
+    "explanation": "Pedro salió de la barca y caminó sobre el agua hacia Jesús.",
+    "evidence": [
+      "aguas"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "pedro-08",
+    "heroId": "pedro",
+    "prompt": "¿Qué gritó Pedro cuando comenzó a hundirse?",
+    "choices": [
+      "Señor, sálvame",
+      "Traigan mi espada",
+      "Busquen al rey",
+      "Cierren la puerta"
+    ],
+    "answer": 0,
+    "reference": "Mateo 14:30",
+    "verseKeys": [
+      "MAT 14:30"
+    ],
+    "verse": "Mas viendo el viento fuerte, tuvo miedo; y comenzándose á hundir, dió voces, diciendo: Señor, sálvame.",
+    "explanation": "Al tener miedo, Pedro pidió a Jesús que lo salvara.",
+    "evidence": [
+      "Señor",
+      "sálvame"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "pedro-09",
+    "heroId": "pedro",
+    "prompt": "¿Qué respondió Pedro cuando Jesús preguntó quién era él?",
+    "choices": [
+      "Tú eres el Cristo, el Hijo del Dios viviente",
+      "Tú eres el rey de Egipto",
+      "Tú eres un escriba de Roma",
+      "Tú eres un constructor de barcos"
+    ],
+    "answer": 0,
+    "reference": "Mateo 16:16",
+    "verseKeys": [
+      "MAT 16:16"
+    ],
+    "verse": "Y respondiendo Simón Pedro, dijo: Tú eres el Cristo, el Hijo del Dios viviente.",
+    "explanation": "Pedro confesó que Jesús era el Cristo, el Hijo del Dios viviente.",
+    "evidence": [
+      "Cristo",
+      "Dios viviente"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "pedro-10",
+    "heroId": "pedro",
+    "prompt": "¿Con qué dos discípulos acompañó Pedro a Jesús a la transfiguración?",
+    "choices": [
+      "Santiago y Juan",
+      "Felipe y Tomás",
+      "Andrés y Mateo",
+      "Bartolomé y Judas"
+    ],
+    "answer": 0,
+    "reference": "Mateo 17:1",
+    "verseKeys": [
+      "MAT 17:1"
+    ],
+    "verse": "Y DESPUÉS de seis días, Jesús toma á Pedro, y á Jacobo, y á Juan su hermano, y los lleva aparte á un monte alto:",
+    "explanation": "Jesús llevó a Pedro, Santiago y Juan a un monte alto.",
+    "evidence": [
+      "Jacobo",
+      "Juan"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "pedro-11",
+    "heroId": "pedro",
+    "prompt": "¿En qué animal encontraría Pedro una moneda para pagar el tributo?",
+    "choices": [
+      "En un pez",
+      "En una paloma",
+      "En un cordero",
+      "En un caballo"
+    ],
+    "answer": 0,
+    "reference": "Mateo 17:27",
+    "verseKeys": [
+      "MAT 17:27"
+    ],
+    "verse": "Mas porque no los escandalicemos, ve á la mar, y echa el anzuelo, y el primer pez que viniere, tómalo, y abierta su boca, hallarás un estatero: tómalo, y dáselo por mí y por ti.",
+    "explanation": "Jesús indicó a Pedro que encontraría una moneda en la boca del primer pez que sacara.",
+    "evidence": [
+      "pez",
+      "estatero"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "pedro-12",
+    "heroId": "pedro",
+    "prompt": "¿Cuántas veces anunció Jesús que Pedro lo negaría antes de cantar el gallo?",
+    "choices": [
+      "Tres",
+      "Una",
+      "Dos",
+      "Siete"
+    ],
+    "answer": 0,
+    "reference": "Mateo 26:34",
+    "verseKeys": [
+      "MAT 26:34"
+    ],
+    "verse": "Jesús le dice: De cierto te digo que esta noche, antes que el gallo cante, me negarás tres veces.",
+    "explanation": "Jesús anunció a Pedro que lo negaría tres veces esa noche.",
+    "evidence": [
+      "tres veces",
+      "gallo"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "pedro-13",
+    "heroId": "pedro",
+    "prompt": "¿Qué hizo Pedro al recordar las palabras de Jesús después de negarlo?",
+    "choices": [
+      "Lloró amargamente",
+      "Organizó un banquete",
+      "Regresó al palacio",
+      "Se coronó rey"
+    ],
+    "answer": 0,
+    "reference": "Mateo 26:75",
+    "verseKeys": [
+      "MAT 26:75"
+    ],
+    "verse": "Y se acordó Pedro de las palabras de Jesús, que le dijo: Antes que cante el gallo, me negarás tres veces. Y saliéndose fuera, lloró amargamente.",
+    "explanation": "Pedro recordó el anuncio de Jesús y salió a llorar amargamente.",
+    "evidence": [
+      "lloró",
+      "amargamente"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "pedro-14",
+    "heroId": "pedro",
+    "prompt": "¿A qué discípulo dijo Jesús: Apacienta mis ovejas?",
+    "choices": [
+      "A Pedro",
+      "A Judas Iscariote",
+      "A Tomás",
+      "A Felipe"
+    ],
+    "answer": 0,
+    "reference": "Juan 21:17",
+    "verseKeys": [
+      "JHN 21:17"
+    ],
+    "verse": "Dícele la tercera vez: Simón, hijo de Jonás, ¿me amas? Entristecióse Pedro de que le dijese la tercera vez: ¿Me amas? y dícele: Señor, tú sabes todas las cosas; tú sabes que te amo. Dícele Jesús: Apacienta mis ovejas.",
+    "explanation": "Jesús preguntó por tercera vez a Pedro si lo amaba y le encargó cuidar sus ovejas.",
+    "evidence": [
+      "Pedro",
+      "ovejas"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "pedro-15",
+    "heroId": "pedro",
+    "prompt": "¿En qué celebración predicó Pedro después de la venida del Espíritu Santo?",
+    "choices": [
+      "Pentecostés",
+      "Purim",
+      "Tabernáculos",
+      "La dedicación"
+    ],
+    "answer": 0,
+    "reference": "Hechos 2:1-14",
+    "verseKeys": [
+      "ACT 2:1",
+      "ACT 2:2",
+      "ACT 2:3",
+      "ACT 2:4",
+      "ACT 2:5",
+      "ACT 2:6",
+      "ACT 2:7",
+      "ACT 2:8",
+      "ACT 2:9",
+      "ACT 2:10",
+      "ACT 2:11",
+      "ACT 2:12",
+      "ACT 2:13",
+      "ACT 2:14"
+    ],
+    "verse": "Y COMO se cumplieron los días de Pentecostés, estaban todos unánimes juntos; Y de repente vino un estruendo del cielo como de un viento recio que corría, el cual hinchió toda la casa donde estaban sentados; Y se les aparecieron lenguas repartidas, como de fuego, que se asentó sobre cada uno de ellos. Y fueron todos llenos del Espíritu Santo, y comenzaron á hablar en otras lenguas, como el Espíritu les daba que hablasen. Moraban entonces en Jerusalem Judíos, varones religiosos, de todas las naciones debajo del cielo. Y hecho este estruendo, juntóse la multitud; y estaban confusos, porque cada uno les oía hablar su propia lengua. Y estaban atónitos y maravillados, diciendo: He aquí ¿no son Galileos todos estos que hablan? ¿Cómo, pues, les oímos nosotros hablar cada uno en nuestra lengua en que somos nacidos? Partos y Medos, y Elamitas, y los que habitamos en Mesopotamia, en Judea y en Capadocia, en el Ponto y en Asia, En Phrygia y Pamphylia, en Egipto y en las partes de Africa que está de la otra parte de Cirene, y Romanos extranjeros, tanto Judíos como convertidos, Cretenses y Arabes, les oímos hablar en nuestras lenguas las maravillas de Dios. Y estaban todos atónitos y perplejos, diciendo los unos á los otros: ¿Qué quiere ser esto? Mas otros burlándose, decían: Que están llenos de mosto. Entonces Pedro, poniéndose en pie con los once, alzó su voz, y hablóles diciendo: Varones Judíos, y todos los que habitáis en Jerusalem, esto os sea notorio, y oid mis palabras.",
+    "explanation": "El capítulo narra Pentecostés y el discurso de Pedro ante la multitud.",
+    "evidence": [
+      "Pentecostés",
+      "Pedro"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "pedro-16",
+    "heroId": "pedro",
+    "prompt": "¿Aproximadamente cuántas personas se añadieron después del discurso de Pedro?",
+    "choices": [
+      "Tres mil",
+      "Cien",
+      "Doce",
+      "Cinco mil"
+    ],
+    "answer": 0,
+    "reference": "Hechos 2:41",
+    "verseKeys": [
+      "ACT 2:41"
+    ],
+    "verse": "Así que, los que recibieron su palabra, fueron bautizados: y fueron añadidas á ellos aquel día como tres mil personas.",
+    "explanation": "El relato dice que aquel día se añadieron unas tres mil personas.",
+    "evidence": [
+      "tres mil"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "pedro-17",
+    "heroId": "pedro",
+    "prompt": "¿Con quién iba Pedro al templo cuando encontraron al hombre que no podía caminar?",
+    "choices": [
+      "Con Juan",
+      "Con Pablo",
+      "Con Bernabé",
+      "Con Silas"
+    ],
+    "answer": 0,
+    "reference": "Hechos 3:1-2",
+    "verseKeys": [
+      "ACT 3:1",
+      "ACT 3:2"
+    ],
+    "verse": "PEDRO y Juan subían juntos al templo á la hora de oración, la de nona. Y un hombre que era cojo desde el vientre de su madre, era traído; al cual ponían cada día á la puerta del templo que se llama la Hermosa, para que pidiese limosna de los que entraban en el templo.",
+    "explanation": "Pedro y Juan subían juntos al templo a la hora de la oración.",
+    "evidence": [
+      "Pedro",
+      "Juan"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "pedro-18",
+    "heroId": "pedro",
+    "prompt": "¿Cómo se llamaba la puerta donde estaba aquel hombre?",
+    "choices": [
+      "La Hermosa",
+      "La Dorada",
+      "La del Pastor",
+      "La de la Viña"
+    ],
+    "answer": 0,
+    "reference": "Hechos 3:2",
+    "verseKeys": [
+      "ACT 3:2"
+    ],
+    "verse": "Y un hombre que era cojo desde el vientre de su madre, era traído; al cual ponían cada día á la puerta del templo que se llama la Hermosa, para que pidiese limosna de los que entraban en el templo.",
+    "explanation": "El hombre era colocado a la puerta del templo llamada la Hermosa.",
+    "evidence": [
+      "Hermosa"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "pedro-19",
+    "heroId": "pedro",
+    "prompt": "¿Quién visitó a Pedro para sacarlo de la cárcel en este pasaje?",
+    "choices": [
+      "Un ángel del Señor",
+      "Un rey de Egipto",
+      "Un soldado de Roma",
+      "Un pescador de Tiro"
+    ],
+    "answer": 0,
+    "reference": "Hechos 12:7",
+    "verseKeys": [
+      "ACT 12:7"
+    ],
+    "verse": "Y he aquí, el ángel del Señor sobrevino, y una luz resplandeció en la cárcel; é hiriendo á Pedro en el lado, le despertó, diciendo: Levántate prestamente. Y las cadenas se le cayeron de las manos.",
+    "explanation": "Un ángel del Señor despertó a Pedro y sus cadenas cayeron.",
+    "evidence": [
+      "ángel",
+      "Pedro"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "pedro-20",
+    "heroId": "pedro",
+    "prompt": "¿Qué centurión invitó a Pedro a su casa?",
+    "choices": [
+      "Cornelio",
+      "Pilato",
+      "Herodes",
+      "Nabucodonosor"
+    ],
+    "answer": 0,
+    "reference": "Hechos 10:1-5",
+    "verseKeys": [
+      "ACT 10:1",
+      "ACT 10:2",
+      "ACT 10:3",
+      "ACT 10:4",
+      "ACT 10:5"
+    ],
+    "verse": "Y HABÍA un varón en Cesarea llamado Cornelio, centurión de la compañía que se llamaba la Italiana, Pío y temeroso de Dios con toda su casa, y que hacía muchas limosnas al pueblo, y oraba á Dios siempre. Este vió en visión manifiestamente, como á la hora nona del día, que un ángel de Dios entraba á él, y le decía: Cornelio. Y él, puestos en él los ojos, espantado, dijo: ¿Qué es, Señor? Y díjole: Tus oraciones y tus limosnas han subido en memoria á la presencia de Dios. Envía pues ahora hombres á Joppe, y haz venir á un Simón, que tiene por sobrenombre Pedro.",
+    "explanation": "Cornelio recibió la indicación de buscar a Simón, llamado Pedro.",
+    "evidence": [
+      "Cornelio",
+      "Pedro"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "pablo-01",
+    "heroId": "pablo",
+    "prompt": "¿Con qué nombre se conocía también a Pablo?",
+    "choices": [
+      "Saulo",
+      "Simón",
+      "Leví",
+      "Natanael"
+    ],
+    "answer": 0,
+    "reference": "Hechos 13:9",
+    "verseKeys": [
+      "ACT 13:9"
+    ],
+    "verse": "Entonces Saulo, que también es Pablo, lleno del Espíritu Santo, poniendo en él los ojos,",
+    "explanation": "El texto dice que Saulo también era llamado Pablo.",
+    "evidence": [
+      "Saulo",
+      "Pablo"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "pablo-02",
+    "heroId": "pablo",
+    "prompt": "¿Hacia qué ciudad viajaba Saulo cuando lo rodeó una luz del cielo?",
+    "choices": [
+      "Damasco",
+      "Roma",
+      "Belén",
+      "Nínive"
+    ],
+    "answer": 0,
+    "reference": "Hechos 9:3",
+    "verseKeys": [
+      "ACT 9:3"
+    ],
+    "verse": "Y yendo por el camino, aconteció que llegando cerca de Damasco, súbitamente le cercó un resplandor de luz del cielo;",
+    "explanation": "La luz del cielo lo rodeó cuando se acercaba a Damasco.",
+    "evidence": [
+      "Damasco",
+      "luz"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "pablo-03",
+    "heroId": "pablo",
+    "prompt": "¿Quién habló a Saulo durante su encuentro camino a Damasco?",
+    "choices": [
+      "Jesús",
+      "Pedro",
+      "Moisés",
+      "Samuel"
+    ],
+    "answer": 0,
+    "reference": "Hechos 9:4-5",
+    "verseKeys": [
+      "ACT 9:4",
+      "ACT 9:5"
+    ],
+    "verse": "Y cayendo en tierra, oyó una voz que le decía: Saulo, Saulo, ¿por qué me persigues? Y él dijo: ¿Quién eres, Señor? Y él dijo: Yo soy Jesús á quien tú persigues: dura cosa te es dar coces contra el aguijón.",
+    "explanation": "La voz se identificó como Jesús, a quien Saulo perseguía.",
+    "evidence": [
+      "Jesús"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "pablo-04",
+    "heroId": "pablo",
+    "prompt": "¿Cuántos días estuvo Saulo sin ver después de aquel encuentro?",
+    "choices": [
+      "Tres",
+      "Uno",
+      "Siete",
+      "Cuarenta"
+    ],
+    "answer": 0,
+    "reference": "Hechos 9:9",
+    "verseKeys": [
+      "ACT 9:9"
+    ],
+    "verse": "Donde estuvo tres días sin ver, y no comió, ni bebió.",
+    "explanation": "Saulo estuvo tres días sin ver, sin comer ni beber.",
+    "evidence": [
+      "tres días"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "pablo-05",
+    "heroId": "pablo",
+    "prompt": "¿Quién fue enviado a visitar a Saulo en Damasco?",
+    "choices": [
+      "Ananías",
+      "Bernabé",
+      "Silas",
+      "Timoteo"
+    ],
+    "answer": 0,
+    "reference": "Hechos 9:10-12",
+    "verseKeys": [
+      "ACT 9:10",
+      "ACT 9:11",
+      "ACT 9:12"
+    ],
+    "verse": "Había entonces un discípulo en Damasco llamado Ananías, al cual el Señor dijo en visión: Ananías. Y él respondió: Heme aquí, Señor. Y el Señor le dijo: Levántate, y ve á la calle que se llama la Derecha, y busca en casa de Judas á uno llamado Saulo, de Tarso: porque he aquí, él ora; Y ha visto en visión un varón llamado Ananías, que entra y le pone la mano encima, para que reciba la vista.",
+    "explanation": "El Señor indicó a Ananías que buscara a Saulo en la calle Derecha.",
+    "evidence": [
+      "Ananías",
+      "Saulo"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "pablo-06",
+    "heroId": "pablo",
+    "prompt": "¿Cómo escapó Saulo de Damasco cuando vigilaban las puertas?",
+    "choices": [
+      "Lo bajaron por el muro en una canasta",
+      "Salió a caballo por la plaza",
+      "Nadó por un río",
+      "Se escondió en un carro del rey"
+    ],
+    "answer": 0,
+    "reference": "Hechos 9:25",
+    "verseKeys": [
+      "ACT 9:25"
+    ],
+    "verse": "Entonces los discípulos, tomándole de noche, le bajaron por el muro en una espuerta.",
+    "explanation": "Los discípulos lo bajaron de noche por el muro en una canasta.",
+    "evidence": [
+      "muro",
+      "espuerta"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "pablo-07",
+    "heroId": "pablo",
+    "prompt": "¿Quién presentó a Saulo a los apóstoles en Jerusalén?",
+    "choices": [
+      "Bernabé",
+      "Jonatán",
+      "Cornelio",
+      "Natán"
+    ],
+    "answer": 0,
+    "reference": "Hechos 9:27",
+    "verseKeys": [
+      "ACT 9:27"
+    ],
+    "verse": "Entonces Bernabé, tomándole, lo trajo á los apóstoles, y contóles cómo había visto al Señor en el camino, y que le había hablado, y cómo en Damasco había hablado confiadamente en el nombre de Jesús.",
+    "explanation": "Bernabé contó a los apóstoles lo que había ocurrido a Saulo y cómo predicaba.",
+    "evidence": [
+      "Bernabé",
+      "apóstoles"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "pablo-08",
+    "heroId": "pablo",
+    "prompt": "¿En qué ciudad había nacido Pablo?",
+    "choices": [
+      "Tarso",
+      "Belén",
+      "Jericó",
+      "Caná"
+    ],
+    "answer": 0,
+    "reference": "Hechos 22:3",
+    "verseKeys": [
+      "ACT 22:3"
+    ],
+    "verse": "Yo de cierto soy Judío, nacido en Tarso de Cilicia, mas criado en esta ciudad á los pies de Gamaliel, enseñado conforme á la verdad de la ley de la patria, celoso de Dios, como todos vosotros sois hoy.",
+    "explanation": "Pablo dijo que había nacido en Tarso de Cilicia.",
+    "evidence": [
+      "Tarso"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "pablo-09",
+    "heroId": "pablo",
+    "prompt": "¿A los pies de qué maestro se había formado Pablo?",
+    "choices": [
+      "Gamaliel",
+      "Elí",
+      "Nicodemo",
+      "Zaqueo"
+    ],
+    "answer": 0,
+    "reference": "Hechos 22:3",
+    "verseKeys": [
+      "ACT 22:3"
+    ],
+    "verse": "Yo de cierto soy Judío, nacido en Tarso de Cilicia, mas criado en esta ciudad á los pies de Gamaliel, enseñado conforme á la verdad de la ley de la patria, celoso de Dios, como todos vosotros sois hoy.",
+    "explanation": "Pablo explicó que había sido instruido a los pies de Gamaliel.",
+    "evidence": [
+      "Gamaliel"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "pablo-10",
+    "heroId": "pablo",
+    "prompt": "¿Qué ciudadanía tenía Pablo desde su nacimiento?",
+    "choices": [
+      "Romana",
+      "Babilónica",
+      "Egipcia",
+      "Moabita"
+    ],
+    "answer": 0,
+    "reference": "Hechos 22:27-28",
+    "verseKeys": [
+      "ACT 22:27",
+      "ACT 22:28"
+    ],
+    "verse": "Y viniendo el tribuno, le dijo: Dime, ¿eres tú Romano? Y él dijo: Sí. Y respondió el tribuno: Yo con grande suma alcancé esta ciudadanía. Entonces Pablo dijo: Pero yo lo soy de nacimiento.",
+    "explanation": "Pablo confirmó que era ciudadano romano de nacimiento.",
+    "evidence": [
+      "Romano",
+      "nací"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "pablo-11",
+    "heroId": "pablo",
+    "prompt": "¿Quién viajó con Pablo en la misión mencionada en Hechos 13?",
+    "choices": [
+      "Bernabé",
+      "Abraham",
+      "David",
+      "Moisés"
+    ],
+    "answer": 0,
+    "reference": "Hechos 13:2-4",
+    "verseKeys": [
+      "ACT 13:2",
+      "ACT 13:3",
+      "ACT 13:4"
+    ],
+    "verse": "Ministrando pues éstos al Señor, y ayunando, dijo el Espíritu Santo: Apartadme á Bernabé y á Saulo para la obra para la cual los he llamado. Entonces habiendo ayunado y orado, y puesto las manos encima de ellos, despidiéronlos. Y ellos, enviados así por el Espíritu Santo, descendieron á Seleucia; y de allí navegaron á Cipro.",
+    "explanation": "El Espíritu Santo indicó que apartaran a Bernabé y a Saulo para la obra.",
+    "evidence": [
+      "Bernabé",
+      "Saulo"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "pablo-12",
+    "heroId": "pablo",
+    "prompt": "¿Con quién oraba y cantaba Pablo en la cárcel de Filipos?",
+    "choices": [
+      "Con Silas",
+      "Con Andrés",
+      "Con Tomás",
+      "Con Felipe"
+    ],
+    "answer": 0,
+    "reference": "Hechos 16:25",
+    "verseKeys": [
+      "ACT 16:25"
+    ],
+    "verse": "Mas á media noche, orando Pablo y Silas, cantaban himnos á Dios: y los que estaban presos los oían.",
+    "explanation": "Pablo y Silas oraban y cantaban himnos a medianoche.",
+    "evidence": [
+      "Pablo",
+      "Silas"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "pablo-13",
+    "heroId": "pablo",
+    "prompt": "¿Qué ocurrió mientras Pablo y Silas estaban en la cárcel?",
+    "choices": [
+      "Un gran terremoto",
+      "Una lluvia de granizo",
+      "Una inundación del mar",
+      "Un incendio en la ciudad"
+    ],
+    "answer": 0,
+    "reference": "Hechos 16:26",
+    "verseKeys": [
+      "ACT 16:26"
+    ],
+    "verse": "Entonces fué hecho de repente un gran terremoto, de tal manera que los cimientos de la cárcel se movían; y luego todas las puertas se abrieron, y las prisiones de todos se soltaron.",
+    "explanation": "Un terremoto sacudió los cimientos, abrió las puertas y soltó las cadenas.",
+    "evidence": [
+      "terremoto"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "pablo-14",
+    "heroId": "pablo",
+    "prompt": "¿Qué preguntó el carcelero a Pablo y Silas?",
+    "choices": [
+      "¿Qué debo hacer para ser salvo?",
+      "¿Dónde se compra una barca?",
+      "¿Quién construyó este templo?",
+      "¿Cuándo comienza la cosecha?"
+    ],
+    "answer": 0,
+    "reference": "Hechos 16:30",
+    "verseKeys": [
+      "ACT 16:30"
+    ],
+    "verse": "Y sacándolos fuera, les dice: Señores, ¿qué es menester que yo haga para ser salvo?",
+    "explanation": "El carcelero preguntó qué debía hacer para ser salvo.",
+    "evidence": [
+      "salvo"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "pablo-15",
+    "heroId": "pablo",
+    "prompt": "¿En qué lugar de Atenas habló Pablo acerca del Dios que da vida?",
+    "choices": [
+      "En el Areópago",
+      "En el monte Sinaí",
+      "En el palacio de Susa",
+      "En la puerta Hermosa"
+    ],
+    "answer": 0,
+    "reference": "Hechos 17:22-25",
+    "verseKeys": [
+      "ACT 17:22",
+      "ACT 17:23",
+      "ACT 17:24",
+      "ACT 17:25"
+    ],
+    "verse": "Estando pues Pablo en medio del Areópago, dijo: Varones Atenienses, en todo os veo como más supersticiosos; Porque pasando y mirando vuestros santuarios, hallé también un altar en el cual estaba esta inscripción: AL DIOS NO CONOCIDO. Aquél pues, que vosotros honráis sin conocerle, á éste os anuncio yo. El Dios que hizo el mundo y todas las cosas que en él hay, éste, como sea Señor del cielo y de la tierra, no habita en templos hechos de manos, Ni es honrado con manos de hombres, necesitado de algo; pues él da á todos vida, y respiración, y todas las cosas;",
+    "explanation": "Pablo habló en el Areópago sobre el Dios que hizo el mundo y da vida a todos.",
+    "evidence": [
+      "Areópago",
+      "vida"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "pablo-16",
+    "heroId": "pablo",
+    "prompt": "¿Con qué matrimonio trabajó Pablo en Corinto?",
+    "choices": [
+      "Aquila y Priscila",
+      "Abraham y Sara",
+      "Isaac y Rebeca",
+      "Booz y Rut"
+    ],
+    "answer": 0,
+    "reference": "Hechos 18:1-3",
+    "verseKeys": [
+      "ACT 18:1",
+      "ACT 18:2",
+      "ACT 18:3"
+    ],
+    "verse": "PASADAS estas cosas, Pablo partió de Atenas, y vino á Corinto. Y hallando á un Judío llamado Aquila, natural del Ponto, que hacía poco que había venido de Italia, y á Priscila su mujer, (porque Claudio había mandado que todos los Judíos saliesen de Roma) se vino á ellos; Y porque era de su oficio, posó con ellos, y trabajaba; porque el oficio de ellos era hacer tiendas.",
+    "explanation": "En Corinto Pablo se unió a Aquila y Priscila, que compartían su oficio.",
+    "evidence": [
+      "Aquila",
+      "Priscila"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "pablo-17",
+    "heroId": "pablo",
+    "prompt": "¿Cuál era el oficio que Pablo compartía con Aquila y Priscila?",
+    "choices": [
+      "Hacer tiendas",
+      "Construir barcos",
+      "Fabricar monedas",
+      "Cultivar viñas"
+    ],
+    "answer": 0,
+    "reference": "Hechos 18:3",
+    "verseKeys": [
+      "ACT 18:3"
+    ],
+    "verse": "Y porque era de su oficio, posó con ellos, y trabajaba; porque el oficio de ellos era hacer tiendas.",
+    "explanation": "Pablo trabajaba haciendo tiendas, igual que Aquila y Priscila.",
+    "evidence": [
+      "tiendas"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "pablo-18",
+    "heroId": "pablo",
+    "prompt": "¿En qué isla llegaron a tierra los sobrevivientes del naufragio de Pablo?",
+    "choices": [
+      "Malta",
+      "Chipre",
+      "Creta",
+      "Patmos"
+    ],
+    "answer": 0,
+    "reference": "Hechos 28:1",
+    "verseKeys": [
+      "ACT 28:1"
+    ],
+    "verse": "Y CUANDO escapamos, entonces supimos que la isla se llamaba Melita.",
+    "explanation": "Después del naufragio, supieron que la isla se llamaba Malta.",
+    "evidence": [
+      "Melita"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "pablo-19",
+    "heroId": "pablo",
+    "prompt": "¿Qué animal se prendió de la mano de Pablo al poner ramas en el fuego?",
+    "choices": [
+      "Una víbora",
+      "Una paloma",
+      "Un pez",
+      "Un león"
+    ],
+    "answer": 0,
+    "reference": "Hechos 28:3",
+    "verseKeys": [
+      "ACT 28:3"
+    ],
+    "verse": "Entonces habiendo Pablo recogido algunos sarmientos, y puéstolos en el fuego, una víbora, huyendo del calor, le acometió á la mano.",
+    "explanation": "Una víbora salió por el calor y se prendió de su mano.",
+    "evidence": [
+      "víbora"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "pablo-20",
+    "heroId": "pablo",
+    "prompt": "¿Cuáles son las tres virtudes que permanecen según 1 Corintios 13?",
+    "choices": [
+      "Fe, esperanza y amor",
+      "Fuerza, riqueza y fama",
+      "Poder, ciencia y gloria",
+      "Honor, orgullo y éxito"
+    ],
+    "answer": 0,
+    "reference": "1 Corintios 13:13",
+    "verseKeys": [
+      "1CO 13:13"
+    ],
+    "verse": "Y ahora permanecen la fe, la esperanza, y la caridad, estas tres: empero la mayor de ellas es la caridad.",
+    "explanation": "El pasaje enumera fe, esperanza y caridad; caridad expresa aquí el amor.",
+    "evidence": [
+      "fe",
+      "esperanza",
+      "caridad"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "jesus-01",
+    "heroId": "jesus",
+    "prompt": "¿En qué ciudad nació Jesús?",
+    "choices": [
+      "Belén",
+      "Nazaret",
+      "Roma",
+      "Jericó"
+    ],
+    "answer": 0,
+    "reference": "Mateo 2:1",
+    "verseKeys": [
+      "MAT 2:1"
+    ],
+    "verse": "Y COMO fué nacido Jesús en Bethlehem de Judea en días del rey Herodes, he aquí unos magos vinieron del oriente á Jerusalem,",
+    "explanation": "Mateo sitúa el nacimiento de Jesús en Belén de Judea.",
+    "evidence": [
+      "Bethlehem"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "jesus-02",
+    "heroId": "jesus",
+    "prompt": "¿Quién bautizó a Jesús en el Jordán?",
+    "choices": [
+      "Juan",
+      "Pedro",
+      "Pablo",
+      "Moisés"
+    ],
+    "answer": 0,
+    "reference": "Mateo 3:13",
+    "verseKeys": [
+      "MAT 3:13"
+    ],
+    "verse": "Entonces Jesús vino de Galilea á Juan al Jordán, para ser bautizado de él.",
+    "explanation": "Jesús fue de Galilea al Jordán para ser bautizado por Juan.",
+    "evidence": [
+      "Juan",
+      "bautizado"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "jesus-03",
+    "heroId": "jesus",
+    "prompt": "¿En forma de qué ave descendió el Espíritu de Dios después del bautismo?",
+    "choices": [
+      "Paloma",
+      "Águila",
+      "Cuervo",
+      "Golondrina"
+    ],
+    "answer": 0,
+    "reference": "Mateo 3:16",
+    "verseKeys": [
+      "MAT 3:16"
+    ],
+    "verse": "Y Jesús, después que fué bautizado, subió luego del agua; y he aquí los cielos le fueron abiertos, y vió al Espíritu de Dios que descendía como paloma, y venía sobre él.",
+    "explanation": "El Espíritu de Dios descendió como una paloma sobre Jesús.",
+    "evidence": [
+      "paloma"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "jesus-04",
+    "heroId": "jesus",
+    "prompt": "¿Cuánto tiempo ayunó Jesús en el desierto?",
+    "choices": [
+      "Cuarenta días y cuarenta noches",
+      "Tres días",
+      "Una semana",
+      "Doce noches"
+    ],
+    "answer": 0,
+    "reference": "Mateo 4:2",
+    "verseKeys": [
+      "MAT 4:2"
+    ],
+    "verse": "Y habiendo ayunado cuarenta días y cuarenta noches, después tuvo hambre.",
+    "explanation": "El relato dice que Jesús ayunó cuarenta días y cuarenta noches.",
+    "evidence": [
+      "cuarenta días",
+      "cuarenta noches"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "jesus-05",
+    "heroId": "jesus",
+    "prompt": "¿En qué pueblo convirtió Jesús el agua en vino?",
+    "choices": [
+      "Caná",
+      "Belén",
+      "Nínive",
+      "Betania"
+    ],
+    "answer": 0,
+    "reference": "Juan 2:1-11",
+    "verseKeys": [
+      "JHN 2:1",
+      "JHN 2:2",
+      "JHN 2:3",
+      "JHN 2:4",
+      "JHN 2:5",
+      "JHN 2:6",
+      "JHN 2:7",
+      "JHN 2:8",
+      "JHN 2:9",
+      "JHN 2:10",
+      "JHN 2:11"
+    ],
+    "verse": "Y AL tercer día hiciéronse unas bodas en Caná de Galilea; y estaba allí la madre de Jesús. Y fué también llamado Jesús y sus discípulos á las bodas. Y faltando el vino, la madre de Jesús le dijo: Vino no tienen. Y dícele Jesús: ¿Qué tengo yo contigo, mujer? aun no ha venido mi hora. Su madre dice á los que servían: Haced todo lo que os dijere. Y estaban allí seis tinajuelas de piedra para agua, conforme á la purificación de los Judíos, que cabían en cada una dos ó tres cántaros. Díceles Jesús: Henchid estas tinajuelas de agua. E hinchiéronlas hasta arriba. Y díceles: Sacad ahora, y presentad al maestresala. Y presentáronle. Y como el maestresala gustó el agua hecha vino, que no sabía de dónde era (mas lo sabían los sirvientes que habían sacado el agua), el maestresala llama al esposo, Y dícele: Todo hombre pone primero el buen vino, y cuando están satisfechos, entonces lo que es peor; mas tú has guardado el buen vino hasta ahora. Este principio de señales hizo Jesús en Caná de Galilea, y manifestó su gloria; y sus discípulos creyeron en él.",
+    "explanation": "Jesús realizó esta señal en una boda en Caná de Galilea.",
+    "evidence": [
+      "Caná",
+      "vino"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "jesus-06",
+    "heroId": "jesus",
+    "prompt": "¿Con cuántos panes comenzó la alimentación de los cinco mil?",
+    "choices": [
+      "Cinco",
+      "Dos",
+      "Siete",
+      "Doce"
+    ],
+    "answer": 0,
+    "reference": "Mateo 14:17-21",
+    "verseKeys": [
+      "MAT 14:17",
+      "MAT 14:18",
+      "MAT 14:19",
+      "MAT 14:20",
+      "MAT 14:21"
+    ],
+    "verse": "Y ellos dijeron: No tenemos aquí sino cinco panes y dos peces. Y él les dijo: Traédmelos acá. Y mandando á las gentes recostarse sobre la hierba, tomando los cinco panes y los dos peces, alzando los ojos al cielo, bendijo, y partió y dió los panes á los discípulos, y los discípulos á las gentes. Y comieron todos, y se hartaron; y alzaron lo que sobró de los pedazos, doce cestas llenas. Y los que comieron fueron como cinco mil hombres, sin las mujeres y los niños.",
+    "explanation": "Los discípulos tenían cinco panes y dos peces antes de que Jesús alimentara a la multitud.",
+    "evidence": [
+      "cinco panes"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "jesus-07",
+    "heroId": "jesus",
+    "prompt": "¿Cuántos peces tenían en ese mismo relato?",
+    "choices": [
+      "Dos",
+      "Cinco",
+      "Siete",
+      "Doce"
+    ],
+    "answer": 0,
+    "reference": "Mateo 14:17",
+    "verseKeys": [
+      "MAT 14:17"
+    ],
+    "verse": "Y ellos dijeron: No tenemos aquí sino cinco panes y dos peces.",
+    "explanation": "Los discípulos dijeron que tenían cinco panes y dos peces.",
+    "evidence": [
+      "dos peces"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "jesus-08",
+    "heroId": "jesus",
+    "prompt": "¿Cuántos cestos de sobras recogieron después de alimentar a los cinco mil?",
+    "choices": [
+      "Doce",
+      "Tres",
+      "Cinco",
+      "Siete"
+    ],
+    "answer": 0,
+    "reference": "Mateo 14:20",
+    "verseKeys": [
+      "MAT 14:20"
+    ],
+    "verse": "Y comieron todos, y se hartaron; y alzaron lo que sobró de los pedazos, doce cestas llenas.",
+    "explanation": "Después de que todos comieron, recogieron doce cestos llenos.",
+    "evidence": [
+      "doce cestas"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "jesus-09",
+    "heroId": "jesus",
+    "prompt": "¿Qué hizo Jesús cuando sus discípulos temían la tormenta?",
+    "choices": [
+      "Reprendió al viento y habló al mar",
+      "Saltó de la barca",
+      "Pidió una espada",
+      "Buscó al gobernador"
+    ],
+    "answer": 0,
+    "reference": "Marcos 4:39",
+    "verseKeys": [
+      "MRK 4:39"
+    ],
+    "verse": "Y levantándose, increpó al viento, y dijo á la mar: Calla, enmudece. Y cesó el viento, y fué hecha grande bonanza.",
+    "explanation": "Jesús reprendió al viento y ordenó al mar que callara; hubo gran calma.",
+    "evidence": [
+      "viento",
+      "mar",
+      "bonanza"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "jesus-10",
+    "heroId": "jesus",
+    "prompt": "¿A qué amigo llamó Jesús fuera del sepulcro?",
+    "choices": [
+      "Lázaro",
+      "Saulo",
+      "Booz",
+      "Jonatán"
+    ],
+    "answer": 0,
+    "reference": "Juan 11:43-44",
+    "verseKeys": [
+      "JHN 11:43",
+      "JHN 11:44"
+    ],
+    "verse": "Y habiendo dicho estas cosas, clamó á gran voz: Lázaro, ven fuera. Y el que había estado muerto, salió, atadas las manos y los pies con vendas; y su rostro estaba envuelto en un sudario. Díceles Jesús: Desatadle, y dejadle ir.",
+    "explanation": "Jesús llamó a Lázaro y este salió del sepulcro.",
+    "evidence": [
+      "Lázaro"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "jesus-11",
+    "heroId": "jesus",
+    "prompt": "¿Qué hizo Jesús al ver el dolor de quienes lloraban por Lázaro?",
+    "choices": [
+      "Lloró",
+      "Se quedó dormido",
+      "Se marchó a Roma",
+      "Pidió un tributo"
+    ],
+    "answer": 0,
+    "reference": "Juan 11:33-35",
+    "verseKeys": [
+      "JHN 11:33",
+      "JHN 11:34",
+      "JHN 11:35"
+    ],
+    "verse": "Jesús entonces, como la vió llorando, y á los Judíos que habían venido juntamente con ella llorando, se conmovió en espíritu, y turbóse, Y dijo: ¿Dónde le pusisteis? Dícenle: Señor, ven, y ve. Y lloró Jesús.",
+    "explanation": "El relato muestra la compasión de Jesús y dice que lloró.",
+    "evidence": [
+      "Jesús",
+      "lloró"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "jesus-12",
+    "heroId": "jesus",
+    "prompt": "¿A qué cobrador de impuestos llamó Jesús mientras estaba sentado en el puesto de tributos?",
+    "choices": [
+      "Mateo",
+      "Tomás",
+      "Andrés",
+      "Felipe"
+    ],
+    "answer": 0,
+    "reference": "Mateo 9:9",
+    "verseKeys": [
+      "MAT 9:9"
+    ],
+    "verse": "Y pasando Jesús de allí, vió á un hombre que estaba sentado al banco de los públicos tributos, el cual se llamaba Mateo; y dícele: Sígueme. Y se levantó, y le siguió.",
+    "explanation": "Jesús vio a Mateo y lo llamó a seguirlo.",
+    "evidence": [
+      "Mateo",
+      "tributos"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "jesus-13",
+    "heroId": "jesus",
+    "prompt": "¿A quién dijo Jesús que bajara de un árbol porque iría a su casa?",
+    "choices": [
+      "Zaqueo",
+      "Nicodemo",
+      "Cornelio",
+      "Ananías"
+    ],
+    "answer": 0,
+    "reference": "Lucas 19:5",
+    "verseKeys": [
+      "LUK 19:5"
+    ],
+    "verse": "Y como vino á aquel lugar Jesús, mirando, le vió, y díjole: Zaqueo, date priesa, desciende, porque hoy es necesario que pose en tu casa.",
+    "explanation": "Jesús llamó a Zaqueo por su nombre y anunció que se quedaría en su casa.",
+    "evidence": [
+      "Zaqueo",
+      "casa"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "jesus-14",
+    "heroId": "jesus",
+    "prompt": "¿Cuál es el gran y primer mandamiento según Jesús?",
+    "choices": [
+      "Amar a Dios con todo el corazón",
+      "Acumular la mayor riqueza",
+      "Buscar el primer lugar",
+      "No viajar fuera de la ciudad"
+    ],
+    "answer": 0,
+    "reference": "Mateo 22:37-38",
+    "verseKeys": [
+      "MAT 22:37",
+      "MAT 22:38"
+    ],
+    "verse": "Y Jesús le dijo: Amarás al Señor tu Dios de todo tu corazón, y de toda tu alma, y de toda tu mente. Este es el primero y el grande mandamiento.",
+    "explanation": "Jesús enseñó a amar al Señor con todo el corazón, el alma y la mente.",
+    "evidence": [
+      "Amarás",
+      "corazón"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "jesus-15",
+    "heroId": "jesus",
+    "prompt": "¿Qué mandamiento dijo Jesús que es semejante al primero?",
+    "choices": [
+      "Amar al prójimo como a uno mismo",
+      "Construir un palacio",
+      "Evitar a todos los extranjeros",
+      "Ser siempre el más fuerte"
+    ],
+    "answer": 0,
+    "reference": "Mateo 22:39",
+    "verseKeys": [
+      "MAT 22:39"
+    ],
+    "verse": "Y el segundo es semejante á éste: Amarás á tu prójimo como á ti mismo.",
+    "explanation": "Jesús añadió el mandamiento de amar al prójimo como a uno mismo.",
+    "evidence": [
+      "prójimo",
+      "ti mismo"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "jesus-16",
+    "heroId": "jesus",
+    "prompt": "¿Quién ayudó al hombre herido en la parábola contada por Jesús?",
+    "choices": [
+      "Un samaritano",
+      "Un soldado romano",
+      "Un rey de Egipto",
+      "Un pescador de Galilea"
+    ],
+    "answer": 0,
+    "reference": "Lucas 10:33-34",
+    "verseKeys": [
+      "LUK 10:33",
+      "LUK 10:34"
+    ],
+    "verse": "Mas un Samaritano que transitaba, viniendo cerca de él, y viéndole, fué movido á misericordia; Y llegándose, vendó sus heridas, echándoles aceite y vino; y poniéndole sobre su cabalgadura, llevóle al mesón, y cuidó de él.",
+    "explanation": "El samaritano se compadeció del hombre herido y cuidó sus heridas.",
+    "evidence": [
+      "Samaritano",
+      "heridas"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "jesus-17",
+    "heroId": "jesus",
+    "prompt": "¿Sobre qué construyó su casa el hombre prudente de la enseñanza de Jesús?",
+    "choices": [
+      "Sobre la roca",
+      "Sobre la arena",
+      "Sobre una barca",
+      "Sobre ramas secas"
+    ],
+    "answer": 0,
+    "reference": "Mateo 7:24",
+    "verseKeys": [
+      "MAT 7:24"
+    ],
+    "verse": "Cualquiera, pues, que me oye estas palabras, y las hace, le compararé á un hombre prudente, que edificó su casa sobre la peña;",
+    "explanation": "Jesús comparó a quien escucha y practica sus palabras con quien construye sobre la roca.",
+    "evidence": [
+      "prudente",
+      "peña"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "jesus-18",
+    "heroId": "jesus",
+    "prompt": "¿Qué hizo Jesús con los pies de sus discípulos durante la cena?",
+    "choices": [
+      "Los lavó",
+      "Los cubrió de oro",
+      "Los ató con una cuerda",
+      "Los pintó de azul"
+    ],
+    "answer": 0,
+    "reference": "Juan 13:5",
+    "verseKeys": [
+      "JHN 13:5"
+    ],
+    "verse": "Luego puso agua en un lebrillo, y comenzó á lavar los pies de los discípulos, y á limpiarlos con la toalla con que estaba ceñido.",
+    "explanation": "Jesús lavó los pies de sus discípulos como ejemplo de servicio.",
+    "evidence": [
+      "lavar",
+      "pies"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "jesus-19",
+    "heroId": "jesus",
+    "prompt": "¿Qué mandamiento nuevo dio Jesús a sus discípulos?",
+    "choices": [
+      "Que se amaran unos a otros como él los amó",
+      "Que fueran los más ricos",
+      "Que dejaran de ayudar a los pobres",
+      "Que no recibieran visitas"
+    ],
+    "answer": 0,
+    "reference": "Juan 13:34",
+    "verseKeys": [
+      "JHN 13:34"
+    ],
+    "verse": "Un mandamiento nuevo os doy: Que os améis unos á otros: como os he amado, que también os améis los unos á los otros.",
+    "explanation": "Jesús dio el mandamiento de amarse unos a otros según su propio amor.",
+    "evidence": [
+      "améis",
+      "amado"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "jesus-20",
+    "heroId": "jesus",
+    "prompt": "¿Qué anunciaron a las mujeres acerca de Jesús junto al sepulcro?",
+    "choices": [
+      "No está aquí, ha resucitado",
+      "Ha viajado a Egipto",
+      "Está construyendo una barca",
+      "Se encuentra en el palacio"
+    ],
+    "answer": 0,
+    "reference": "Lucas 24:5-6",
+    "verseKeys": [
+      "LUK 24:5",
+      "LUK 24:6"
+    ],
+    "verse": "Y como tuviesen ellas temor, y bajasen el rostro á tierra, les dijeron: ¿Por qué buscáis entre los muertos al que vive? No está aquí, mas ha resucitado: acordaos de lo que os habló, cuando aun estaba en Galilea,",
+    "explanation": "El anuncio a las mujeres fue que Jesús había resucitado.",
+    "evidence": [
+      "resucitado"
+    ],
+    "difficulty": 3
+  }
+]

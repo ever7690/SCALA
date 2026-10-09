@@ -1,0 +1,122 @@
+[
+  {
+    "id": "noe",
+    "name": "Noé",
+    "title": "Un nuevo comienzo",
+    "quality": "Obediencia",
+    "xp": 0,
+    "book": "Génesis 6–9",
+    "description": "En medio de una generación difícil, Noé escuchó a Dios y construyó el arca. Su historia habla de obediencia, cuidado y la esperanza de un nuevo comienzo.",
+    "color": "#69b4cb"
+  },
+  {
+    "id": "abraham",
+    "name": "Abraham",
+    "title": "Una promesa que guía",
+    "quality": "Confianza",
+    "xp": 100,
+    "book": "Génesis 12–23",
+    "description": "Abraham salió de su tierra sin conocer todo el camino. Aprendió a confiar en la promesa de Dios y recibió a Isaac en su vejez.",
+    "color": "#dfa777"
+  },
+  {
+    "id": "jose",
+    "name": "José",
+    "title": "Sabiduría y perdón",
+    "quality": "Perdón",
+    "xp": 260,
+    "book": "Génesis 37–50",
+    "description": "José atravesó la separación de su familia y años de dificultad en Egipto. Con sabiduría y perdón ayudó a preservar vidas durante el hambre.",
+    "color": "#8cbab1"
+  },
+  {
+    "id": "moises",
+    "name": "Moisés",
+    "title": "El camino de la libertad",
+    "quality": "Liderazgo",
+    "xp": 460,
+    "book": "Éxodo · Deuteronomio",
+    "description": "Moisés fue preservado siendo un niño y llamado desde una zarza ardiente. Guio al pueblo fuera de Egipto y transmitió las palabras del pacto.",
+    "color": "#a3c1dc"
+  },
+  {
+    "id": "rut",
+    "name": "Rut",
+    "title": "La fuerza de la lealtad",
+    "quality": "Lealtad",
+    "xp": 700,
+    "book": "Rut 1–4",
+    "description": "Rut acompañó a Noemí y trabajó con constancia en Belén. Su historia une la lealtad, la generosidad y una familia que forma parte de la historia de David.",
+    "color": "#d7b588"
+  },
+  {
+    "id": "david",
+    "name": "David",
+    "title": "Un corazón valiente",
+    "quality": "Valentía",
+    "xp": 980,
+    "book": "1 y 2 Samuel",
+    "description": "David cuidó ovejas, tocó el arpa y llegó a ser rey de Israel. Su historia muestra valor, amistad y la importancia de reconocer los propios errores.",
+    "color": "#90b9d9"
+  },
+  {
+    "id": "ester",
+    "name": "Ester",
+    "title": "Valor para actuar",
+    "quality": "Valor",
+    "xp": 1320,
+    "book": "Ester 2–9",
+    "description": "Ester llegó a ser reina y decidió hablar cuando su pueblo estaba en peligro. Su historia invita a actuar con valor, prudencia y solidaridad.",
+    "color": "#c0a5db"
+  },
+  {
+    "id": "daniel",
+    "name": "Daniel",
+    "title": "Fidelidad sin miedo",
+    "quality": "Fidelidad",
+    "xp": 1710,
+    "book": "Daniel 1–6",
+    "description": "Daniel mantuvo su fe lejos de su tierra. Su constancia en la oración y sus decisiones en la corte forman parte de una historia de fidelidad.",
+    "color": "#8cbea8"
+  },
+  {
+    "id": "maria",
+    "name": "María",
+    "title": "Una respuesta de fe",
+    "quality": "Disponibilidad",
+    "xp": 2150,
+    "book": "Lucas 1–2 · Juan 2",
+    "description": "María recibió el anuncio del ángel y acompañó los primeros años de Jesús. Guardó lo vivido en su corazón y respondió con disposición y fe.",
+    "color": "#a2c8df"
+  },
+  {
+    "id": "pedro",
+    "name": "Pedro",
+    "title": "Volver a comenzar",
+    "quality": "Esperanza",
+    "xp": 2640,
+    "book": "Evangelios · Hechos",
+    "description": "Pedro dejó sus redes para seguir a Jesús. Después de errores y restauración, anunció el evangelio con valentía y acompañó a la primera comunidad.",
+    "color": "#86b1c6"
+  },
+  {
+    "id": "pablo",
+    "name": "Pablo",
+    "title": "Una vida transformada",
+    "quality": "Constancia",
+    "xp": 3180,
+    "book": "Hechos 9–28",
+    "description": "El encuentro de Saulo con Jesús cambió su camino. Pablo viajó, enseñó y escribió cartas para animar a las comunidades cristianas.",
+    "color": "#bda6d3"
+  },
+  {
+    "id": "jesus",
+    "name": "Jesús",
+    "title": "El amor que transforma",
+    "quality": "Amor",
+    "xp": 3770,
+    "book": "Mateo · Marcos · Lucas · Juan",
+    "description": "Jesús enseñó, sanó y mostró el amor de Dios. Los evangelios narran su vida, su muerte y su resurrección, centro de la esperanza cristiana.",
+    "color": "#e5c889"
+  }
+]

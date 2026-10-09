@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Héroes de Fe</string>
+    <string name="title_activity_main">Héroes de Fe</string>
+    <string name="package_name">com.scala.heroesdefe</string>
+    <string name="custom_url_scheme">com.scala.heroesdefe</string>
+</resources>

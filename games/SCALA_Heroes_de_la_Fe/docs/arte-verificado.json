@@ -1,0 +1,161 @@
+{
+  "assets": [
+    {
+      "id": "noe",
+      "master": "artwork/noe-v1.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "masterSHA256": "623a8f236b4dbb630b2dbb601480a952bdc338138ca823eeb73950f0a833b369",
+      "production": "public/heroes/noe.webp",
+      "productionSHA256": "9d6dfec524c1a94a7cde063181a0b0e3212f005eb460bcbc9342b1033b1f4aab",
+      "bytes": 193304
+    },
+    {
+      "id": "abraham",
+      "master": "artwork/abraham-v1.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "masterSHA256": "5cba8a1d0f07d2c856c0b71562b502c3904a484cacb001c5b517010c55ce8c35",
+      "production": "public/heroes/abraham.webp",
+      "productionSHA256": "7c7f16c23079289ebcee5e84e57cac4f90cfb2fed7344b7eacb698fa06c23b8b",
+      "bytes": 190010
+    },
+    {
+      "id": "jose",
+      "master": "artwork/jose-v1.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "masterSHA256": "93aa1e8fa1b4f00d29df7e8080e8f310d63600e09c824f6431a0433b2fdd84d4",
+      "production": "public/heroes/jose.webp",
+      "productionSHA256": "d10bbca5c95d8646822fb9736281b5efbb7aa0784b259318e7acb397018ace2c",
+      "bytes": 161448
+    },
+    {
+      "id": "moises",
+      "master": "artwork/moises-v1.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "masterSHA256": "06e2083479b623712b99d4dd0a322a14fe9dc35c72196a0f92e406a5312dbed0",
+      "production": "public/heroes/moises.webp",
+      "productionSHA256": "5fd54c2643282898fb6e7b68a8ecbc10cddb3e74fbe4b4929c090f7a0238289f",
+      "bytes": 191198
+    },
+    {
+      "id": "rut",
+      "master": "artwork/rut-v1.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "masterSHA256": "e878d6c7bd7de46d1ed126cd34710257d85b054eb2adf0d31d7995b0e43ef102",
+      "production": "public/heroes/rut.webp",
+      "productionSHA256": "398a20e41edeca6d2e947531c529bbd4eb56b3fc834e806d67a45aa9e828d188",
+      "bytes": 205730
+    },
+    {
+      "id": "david",
+      "master": "artwork/david-v1.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "masterSHA256": "7e06b04a44fad0c2433225929d24265ba8214b2f37a021d292c88b8ab5c5edcd",
+      "production": "public/heroes/david.webp",
+      "productionSHA256": "13d41ac80088cd3df6bbd0212bfa83c2885801f72229190dd03a996b6f8bdf8b",
+      "bytes": 183962
+    },
+    {
+      "id": "ester",
+      "master": "artwork/ester-v1.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "masterSHA256": "d480c8a0324ac2a112793746f227076441b8c204b04e9033962a471dd41dab7c",
+      "production": "public/heroes/ester.webp",
+      "productionSHA256": "3c3e927a6cd39af69475b73b962bd78985b1dab9f315925f2ead4cb6be789478",
+      "bytes": 168986
+    },
+    {
+      "id": "daniel",
+      "master": "artwork/daniel-v1.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "masterSHA256": "a8a6534051fc76916bd8ecdfa9514f8ea675c9443b224f3d55fa85ab5824cb32",
+      "production": "public/heroes/daniel.webp",
+      "productionSHA256": "ae21653b15345aca7614616e9d5d2ace6472df756458d86562b38494485e52e7",
+      "bytes": 181560
+    },
+    {
+      "id": "maria",
+      "master": "artwork/maria-v1.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "masterSHA256": "96c3a9e4f24dcb0f8e7a9cf642eea9789d2a55e2e0a6730533d8e6254a801ac4",
+      "production": "public/heroes/maria.webp",
+      "productionSHA256": "58e92d66b4618a2427c46276ef71b250b5262d61bc814dd31405981acf1f4266",
+      "bytes": 171222
+    },
+    {
+      "id": "pedro",
+      "master": "artwork/pedro-v1.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "masterSHA256": "432197f3d79fa97f5a211a36a299f8a982fd8acaf24d0598ac89cd7fdd91b0a2",
+      "production": "public/heroes/pedro.webp",
+      "productionSHA256": "5993decf4c92be256799b576752263a974b4554840707403fa8ee8c47dbbbdeb",
+      "bytes": 188730
+    },
+    {
+      "id": "pablo",
+      "master": "artwork/pablo-v1.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "masterSHA256": "9649b30cdbbd0fefd56cfe7f2c0e9bd025ca5090f3481302fd504537c91e5181",
+      "production": "public/heroes/pablo.webp",
+      "productionSHA256": "6747715b9bd459a351a062e8402978b92271dfa72a9ffaaa1dd8300b4d8d8822",
+      "bytes": 148584
+    },
+    {
+      "id": "jesus",
+      "master": "artwork/jesus-v1.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "masterSHA256": "26f90a8bba56a94745ef1c6f3a0b6045f2494d596c841fd6f192f0b1d21a5a2e",
+      "production": "public/heroes/jesus.webp",
+      "productionSHA256": "98b825500bd9cf95d20d62c739b3b0130a00f923f8f9e3e43b82b9f9e96bba5b",
+      "bytes": 160232
+    },
+    {
+      "id": "heroes-icon",
+      "master": "artwork/heroes-icon-v1.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "masterSHA256": "198397ebe317c4568ddeaa266e951445a9c80f753f34dbe4c08dd7d17af25010",
+      "production": "public/brand/heroes-icon.png",
+      "productionSHA256": "7d472f6d14d64d1301967f76990a476929363dd8a02c7a48a56b64f27f6286cc",
+      "bytes": 402098
+    }
+  ],
+  "originalMastersPreserved": true
+}

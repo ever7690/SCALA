@@ -1,0 +1,24 @@
+{
+  "source": "BibleAquifer/ReinaValera1909",
+  "commit": "84a071324be17c7c66db17dd204d7804e66d728b",
+  "translation": "Reina-Valera 1909, dominio público",
+  "questionOrigin": "Redacción propia SCALA",
+  "questions": 240,
+  "heroes": {
+    "noe": 20,
+    "abraham": 20,
+    "jose": 20,
+    "moises": 20,
+    "rut": 20,
+    "david": 20,
+    "ester": 20,
+    "daniel": 20,
+    "maria": 20,
+    "pedro": 20,
+    "pablo": 20,
+    "jesus": 20
+  },
+  "allReferencesResolved": true,
+  "allEvidencePresentInCitedPassages": true,
+  "questionsSHA256": "dc3a3e3d790a570b5e35320bd892bb343ca247f09e8323497b3b1e4de4106b33"
+}
