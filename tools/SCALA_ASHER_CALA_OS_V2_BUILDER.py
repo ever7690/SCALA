@@ -185,12 +185,14 @@ def build_scala_payload(work, wallpaper_dir):
     & powercfg.exe /S SCHEME_MIN | Out-Null
 
     # Se aplica por usuario al iniciar sesion, sin servicio de fondo permanente.
-    New-Item 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run' -Force | Out-Null
+    if (-not (Test-Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run')) {
+      New-Item 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run' -Force | Out-Null
+    }
     New-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run' -Name 'SCALA User Gaming' -PropertyType String -Value 'powershell.exe -NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File "C:\SCALA\USER_SCALA.ps1"' -Force | Out-Null
 
     # OEM: identidad de la edicion, no cambia componentes Microsoft del sistema.
     $oem = 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation'
-    New-Item $oem -Force | Out-Null
+    if (-not (Test-Path $oem)) { New-Item $oem -Force | Out-Null }
     New-ItemProperty $oem -Name 'Manufacturer' -PropertyType String -Value 'SCALA' -Force | Out-Null
     New-ItemProperty $oem -Name 'Model' -PropertyType String -Value 'ASHER CALA OS - SCALA Gaming' -Force | Out-Null
     exit 0
