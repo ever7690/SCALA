@@ -16,6 +16,12 @@ bash scripts/build_android.sh
 
 Si ya tienes el repositorio, usa una carpeta independiente para evitar modificar los otros proyectos de SCALA.
 
+Si trabajas desde MASTER, conecta primero con `ssh -t obrero@192.168.1.42` y ejecuta los comandos de compilación en esa sesión. El wrapper usa el paquete binario oficial de Gradle 9.3.1 y comprueba su SHA-256. Ante un error de conexión `NoRouteToHost`, prueba IPv4 para esa compilación:
+
+```bash
+JAVA_TOOL_OPTIONS="${JAVA_TOOL_OPTIONS:-} -Djava.net.preferIPv4Stack=true" bash scripts/build_android.sh
+```
+
 En Android Studio, instala Android SDK Platform 36 y Android SDK Build-Tools 36.0.0. Define `ANDROID_HOME` con la ruta de tu SDK; por ejemplo `$HOME/Android/Sdk`. El script ejecuta la comprobación del código, valida los 1.000 niveles, genera la web, sincroniza Capacitor y compila ambos APK con dos trabajadores y 1,5 GB de memoria Gradle.
 
 Entregables:
