@@ -1,0 +1,52 @@
+name: ASHER v2 - Verify original ISO source
+on:
+  push:
+    paths:
+      - '.github/workflows/asher-v2-original-iso-check.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify-original-minios:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - name: Install RAR extractor
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq 7zip
+
+      - name: Download and verify original MiniOS via verified MediaFire endpoint
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          df -h .
+          LINK='https://www.mediafire.com/file/fhp6a26l3v789i3/MiniOS11_X-24H2_v26.06_x64_-_dprojects.rar/file'
+          curl -fLsS -A 'Mozilla/5.0' --max-time 60 "$LINK" > "$RUNNER_TEMP/mediafire.html"
+          python3 - <<'PY'
+          from pathlib import Path
+          import html,os,re
+          raw=html.unescape((Path(os.environ['RUNNER_TEMP'])/'mediafire.html').read_text(errors='replace'))
+          m=re.search(r'https?://download\d+\.mediafire\.com/[^"\s<>]+',raw)
+          if not m: raise SystemExit('No source media link available')
+          (Path(os.environ['RUNNER_TEMP'])/'mediafire-link.txt').write_text(m.group(0))
+          print('Resolved host:',m.group(0).split('/')[2])
+          PY
+          URL="$(cat "$RUNNER_TEMP/mediafire-link.txt")"
+          echo "Downloading source archive..."
+          curl -fL -C - --retry 5 --retry-all-errors --retry-delay 5 --connect-timeout 30 --max-time 2100 --progress-bar "$URL" -o "$RUNNER_TEMP/MiniOS11-source.rar"
+          test "$(stat -c '%s' "$RUNNER_TEMP/MiniOS11-source.rar")" -eq 3972549566 || { echo "Unexpected RAR size"; exit 1; }
+          echo "RAR archive listing:"
+          7zz l -pdprojects "$RUNNER_TEMP/MiniOS11-source.rar" | tail -25
+          mkdir "$RUNNER_TEMP/original-iso"
+          echo "Extracting..."
+          7zz x -y -pdprojects "-o$RUNNER_TEMP/original-iso" "$RUNNER_TEMP/MiniOS11-source.rar"
+          ISO="$(find "$RUNNER_TEMP/original-iso" -type f -iname '*.iso' -print -quit)"
+          test -n "$ISO" || { echo 'No ISO inside archive'; exit 1; }
+          SIZE="$(stat -c '%s' "$ISO")"
+          HASH="$(sha256sum "$ISO" | awk '{print $1}')"
+          echo "ISO_REAL_SIZE=$SIZE"
+          echo "ISO_REAL_SHA256=$HASH"
+          test "$SIZE" -eq 3959740416 || { echo "SIZE_MISMATCH"; exit 1; }
+          test "$HASH" = '798325928641854d3214e3d565eeb29088288334f66b51d83f907ab0561f6eb1' || { echo "SHA_MISMATCH"; exit 1; }
+          echo 'PASS: source ISO matches user original SHA256 exactly'
