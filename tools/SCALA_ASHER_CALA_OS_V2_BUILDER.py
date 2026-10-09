@@ -97,7 +97,11 @@ def compare_padding_zero(iso, offset, length):
 
 def write_utf8(path, content):
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(textwrap.dedent(content).lstrip(), encoding="utf-8")
+    normalized = textwrap.dedent(content).lstrip().replace("\r\n", "\n")
+    if path.suffix.lower() == ".cmd":
+        path.write_bytes(normalized.replace("\n", "\r\n").encode("utf-8"))
+    else:
+        path.write_text(normalized, encoding="utf-8")
 
 def build_assets(work, images_source):
     assets = work / "assets"
