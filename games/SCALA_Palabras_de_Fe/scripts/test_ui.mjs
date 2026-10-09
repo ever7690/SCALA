@@ -5,7 +5,7 @@ import assert from 'node:assert/strict';
 import { chromium } from 'playwright';
 
 const dataset = JSON.parse(fs.readFileSync('src/data/bible-levels.json', 'utf8'));
-const types = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.png': 'image/png', '.ogg': 'audio/ogg', '.wav': 'audio/wav', '.json': 'application/json', '.webmanifest': 'application/manifest+json' };
+const types = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.png': 'image/png', '.ogg': 'audio/ogg', '.wav': 'audio/wav', '.woff2': 'font/woff2', '.svg': 'image/svg+xml', '.json': 'application/json', '.webmanifest': 'application/manifest+json' };
 const server = http.createServer((request, response) => {
   const url = new URL(request.url, 'http://localhost');
   const file = path.resolve('dist', url.pathname === '/' ? 'index.html' : `.${decodeURIComponent(url.pathname)}`);
@@ -30,7 +30,7 @@ async function typeWord(page, word) {
   await page.locator('#word-form .primary').click();
 }
 
-async function dragWord(page, word) {
+async function dragWord(page, word, avoidCrossing = false) {
   const letters = await page.locator('.letter').evaluateAll(buttons => buttons.map(button => ({ text: button.textContent.toLowerCase(), index: Number(button.dataset.letter) })));
   const used = new Set();
   const points = [];
@@ -43,16 +43,24 @@ async function dragWord(page, word) {
   }
   await page.mouse.move(points[0].x, points[0].y);
   await page.mouse.down();
-  for (const point of points.slice(1)) await page.mouse.move(point.x, point.y, { steps: 12 });
+  const wheel = await page.locator('#wheel').boundingBox();
+  for (const point of points.slice(1)) {
+    if (avoidCrossing) await page.mouse.move(wheel.x + wheel.width / 2, wheel.y + wheel.height / 2, { steps: 8 });
+    await page.mouse.move(point.x, point.y, { steps: 12 });
+  }
   await page.mouse.up();
 }
 
 try {
   const context = await browser.newContext({ viewport: { width: 360, height: 800 }, deviceScaleFactor: 2 });
   const page = await context.newPage();
+  const externalRequests = [];
+  page.on('request', request => { if (!request.url().startsWith(base) && !request.url().startsWith('data:')) externalRequests.push(request.url()); });
   page.on('pageerror', error => failures.push(error.message));
   await page.goto(base);
   await page.locator('.hero-logo').waitFor();
+  await page.evaluate(() => document.fonts.ready);
+  assert.equal(await page.evaluate(() => document.fonts.check('16px "SCALA Sans"') && document.fonts.check('16px "SCALA Serif"')), true);
   assert.equal(await page.locator('.hero-logo').evaluate(image => image.naturalWidth), 2048);
   await page.screenshot({ path: 'entregables/portada.png', fullPage: true });
   await page.locator('[data-action="play"]').click();
@@ -93,7 +101,18 @@ try {
   assert.equal((await saveState(page)).sound, false);
   await page.locator('[data-action="music"]').click();
   assert.equal((await saveState(page)).music, false);
+  assert.equal(await page.locator('[data-action="music"]').evaluate(button => button === document.activeElement), true);
+  await page.locator('[data-action="privacy"]').click();
+  assert.equal(await page.locator('#modal').getAttribute('aria-labelledby'), 'modal-title');
+  assert((await page.locator('.privacy-sections').textContent()).includes('copias de seguridad'));
+  await page.screenshot({ path: 'entregables/privacidad.png', fullPage: true });
+  await page.locator('#modal [data-action="settings"]').click();
+  await page.locator('[data-action="restart-confirm"]').click();
+  await page.locator('#modal [data-action="settings"]').click();
+  assert.equal((await saveState(page)).game.currentIndexInGroup, 1);
+  await page.screenshot({ path: 'entregables/ajustes.png', fullPage: true });
   await page.locator('#modal [data-action="close"]').click();
+  assert.equal(await page.locator('.game-header [data-action="settings"]').evaluate(button => button === document.activeElement), true);
   await page.locator('.coin-balance').click();
   const beforeGift = (await saveState(page)).coins;
   await page.locator('[data-action="claim-daily"]').click();
@@ -107,15 +126,20 @@ try {
   await context.setOffline(true);
   await page.reload();
   await page.locator('[data-action="play"]').click();
+  await page.evaluate(() => document.fonts.ready);
+  assert.equal(await page.evaluate(() => document.fonts.check('16px "SCALA Sans"') && document.fonts.check('16px "SCALA Serif"')), true);
   assert.equal((await saveState(page)).game.currentIndexInGroup, 1);
   assert.equal(await page.locator('.letter').count(), dataset.levels[1].letterWheel.length);
   results.push('Recarga y juego sin conexión con progreso conservado');
+  assert.deepEqual(externalRequests, []);
+  results.push('Tipografías sin conexión, privacidad accesible, foco conservado y ninguna petición a servidores externos');
   await context.close();
   for (const viewport of [{ width: 320, height: 640 }, { width: 390, height: 844 }]) {
     const context = await browser.newContext({ viewport });
     const page = await context.newPage();
     page.on('pageerror', error => failures.push(error.message));
     await page.goto(base);
+    await page.evaluate(() => document.fonts.ready);
     await page.locator('[data-action="play"]').click();
     await page.locator('#modal [data-action="close"]').last().click();
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth > innerWidth);
@@ -124,6 +148,49 @@ try {
     assert(footer.y + footer.height <= viewport.height + 2, `Controles fuera de pantalla ${viewport.width}`);
     await page.screenshot({ path: `entregables/movil-${viewport.width}.png`, fullPage: true });
     results.push(`Pantalla ${viewport.width}×${viewport.height}: sin desbordamiento y controles accesibles`);
+    await context.close();
+  }
+  for (const number of [265, 1000]) {
+    const level = dataset.levels[number - 1];
+    const context = await browser.newContext({ viewport: { width: 320, height: 640 }, reducedMotion: 'reduce' });
+    await context.addInitScript(level => {
+      localStorage.setItem('scala.palabras-de-fe.v1', JSON.stringify({
+        version: 1, updatedAt: Date.now(), coins: 500, rewardedLevels: Array.from({ length: level.number - 1 }, (item, index) => { void item; return String(index + 1); }),
+        creditedWords: [], lastDaily: '', streak: 0, sound: false, music: false, haptic: false, started: true, tutorialSeen: true,
+        game: { schemaVersion: 3, currentGroupId: level.groupId, currentIndexInGroup: level.indexInGroup, levels: {} },
+      }));
+    }, level);
+    const page = await context.newPage();
+    page.on('pageerror', error => failures.push(error.message));
+    await page.goto(base);
+    await page.evaluate(() => document.fonts.ready);
+    await page.locator('[data-action="play"]').click();
+    assert.equal(await page.locator('.letter').count(), 8);
+    const board = await page.locator('#board').boundingBox();
+    const area = await page.locator('.board-area').boundingBox();
+    assert(board.x >= 0 && board.x + board.width <= 320);
+    assert(board.y >= area.y - 1 && board.y + board.height <= area.y + area.height + 1);
+    assert.equal(await page.locator('.cell.revealed').first().count(), 0);
+    await dragWord(page, level.focusWord, true);
+    assert((await saveState(page)).game.levels[level.id]?.solved.includes(level.focusWord), `Gesto en nivel ${number}: ${await page.locator('#toast').textContent()}`);
+    if (number === 1000) {
+      for (const answer of level.answers) {
+        if ((await saveState(page)).rewardedLevels.length === 1000) break;
+        if (!(await saveState(page)).game.levels[level.id].solved.includes(answer.text)) await typeWord(page, answer.text);
+      }
+      await page.locator('.victory-modal').waitFor();
+      assert((await page.locator('#modal h2').textContent()).includes('vida edificada'));
+      const before = (await saveState(page)).coins;
+      await page.locator('#modal [data-action="next"]').click();
+      assert.equal((await saveState(page)).coins, before);
+      await page.locator('[data-action="play"]').click();
+      await page.locator('#completed-next').click();
+      assert.equal((await saveState(page)).coins, before);
+      results.push('Nivel 1000: final completo, letras repetidas y recompensas sin duplicarse');
+    } else {
+      await page.screenshot({ path: 'entregables/crucigrama-amplio.png', fullPage: true });
+      results.push('Crucigrama de 11 columnas con 8 letras en 320×640 y movimiento reducido');
+    }
     await context.close();
   }
   assert.deepEqual(failures, []);

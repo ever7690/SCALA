@@ -27,3 +27,8 @@ data/raw/wordnet/**/*.gz
 
 # OS/editor noise
 .DS_Store
+*.keystore
+*.jks
+*.p12
+*.password
+signing-private/

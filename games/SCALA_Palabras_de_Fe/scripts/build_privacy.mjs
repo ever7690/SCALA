@@ -1,0 +1,7 @@
+import fs from 'node:fs';
+
+const privacy = JSON.parse(fs.readFileSync('src/data/privacy.json', 'utf8'));
+const escape = text => text.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
+const sections = privacy.sections.map(section => `<section><h2>${escape(section.title)}</h2><p>${escape(section.text)}</p></section>`).join('\n');
+fs.writeFileSync('public/privacidad.html', `<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><title>Privacidad · SCALA Palabras de Fe</title><style>body{margin:0;background:#f7f3e8;color:#1b3546;font:16px/1.8 system-ui,sans-serif}main{max-width:760px;margin:auto;padding:56px 24px}header{border-bottom:2px solid #ba9354;padding-bottom:24px;margin-bottom:30px}h1{font:400 36px/1.2 Georgia,serif;margin:12px 0}h2{font-size:20px;margin:28px 0 8px}p{margin:0 0 16px}.brand{font-weight:700;letter-spacing:3px;font-size:13px;color:#806229}footer{border-top:1px solid #d9d1bd;margin-top:35px;padding-top:20px;font-size:14px}</style></head><body><main><header><div class="brand">SCALA PALABRAS DE FE</div><h1>Política de privacidad</h1><p>${escape(privacy.summary)}</p><small>Actualización: ${escape(privacy.updated)}</small></header>${sections}<footer><strong>Responsable: SCALA</strong><p>${escape(privacy.contact)}</p></footer></main></body></html>\n`);

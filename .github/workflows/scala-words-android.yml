@@ -39,27 +39,37 @@ jobs:
         run: npm ci
       - name: Comprobar código y 1000 niveles
         run: npm run check && npm test
+      - name: Auditar dependencias
+        run: npm audit --json > entregables/auditoria-npm.json
       - name: Generar juego sin conexión
         run: npm run build
-      - name: Compilar APK
+      - name: Compilar APK y AAB
         run: |
           npx cap sync android
           chmod +x android/gradlew
           cd android
-          ./gradlew --no-daemon --max-workers=2 :app:assembleDebug :app:assembleRelease
+          ./gradlew --no-daemon --max-workers=2 :app:assembleDebug :app:assembleRelease :app:bundleRelease
       - name: Preparar entrega
         run: |
-          cp android/app/build/outputs/apk/debug/app-debug.apk entregables/SCALA_Palabras_de_Fe_1.0.0_pruebas.apk
-          cp android/app/build/outputs/apk/release/app-release-unsigned.apk entregables/SCALA_Palabras_de_Fe_1.0.0_sin_firmar.apk
-          sha256sum entregables/*.apk > entregables/SHA256SUMS.txt
+          scala_version="$(node -p 'JSON.parse(require("fs").readFileSync("package.json", "utf8")).version')"
+          cp android/app/build/outputs/apk/debug/app-debug.apk "entregables/SCALA_Palabras_de_Fe_${scala_version}_pruebas.apk"
+          cp android/app/build/outputs/apk/release/app-release-unsigned.apk "entregables/SCALA_Palabras_de_Fe_${scala_version}_sin_firmar.apk"
+          cp android/app/build/outputs/bundle/release/app-release.aab "entregables/SCALA_Palabras_de_Fe_${scala_version}_sin_firmar.aab"
+          mkdir -p entregables/herramientas
+          cp "$ANDROID_HOME/build-tools/36.0.0/lib/apksigner.jar" entregables/herramientas/
+          cp "$ANDROID_HOME/build-tools/36.0.0/zipalign" entregables/herramientas/
+          cp "$ANDROID_HOME/build-tools/36.0.0/aapt2" entregables/herramientas/
+          sha256sum entregables/*.apk entregables/*.aab > entregables/SHA256SUMS.txt
           printf '%s\n' "Commit: $GITHUB_SHA" "Compilación: $GITHUB_RUN_ID" > entregables/COMPILACION.txt
       - name: Verificar interfaz y guardado
         run: npx playwright install --with-deps chromium && npm run test:ui
+      - name: Preparar materiales comerciales
+        run: npm run store:prepare && node scripts/prepare_delivery.mjs
       - name: Entregar APK y verificaciones
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: SCALA-Palabras-de-Fe-1.0.0
+          name: SCALA-Palabras-de-Fe-1.1.0
           path: games/SCALA_Palabras_de_Fe/entregables/
           retention-days: 30
           if-no-files-found: error

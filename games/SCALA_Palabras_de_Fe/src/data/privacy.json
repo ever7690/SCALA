@@ -1,0 +1,27 @@
+{
+  "updated": "9 de octubre de 2026",
+  "summary": "SCALA Palabras de Fe funciona sin conexión, sin cuentas, sin publicidad y sin compras dentro del juego.",
+  "contact": "Para soporte o consultas de privacidad, utiliza el canal de contacto SCALA indicado en la ficha del producto o en tu comprobante de compra.",
+  "sections": [
+    {
+      "title": "Qué se guarda",
+      "text": "El juego guarda en este dispositivo tus niveles, palabras descubiertas, monedas virtuales, racha diaria y preferencias de sonido, música y vibración. Las monedas solo sirven para jugar; no tienen valor monetario. No solicita nombre, correo, ubicación, contactos, cámara ni micrófono."
+    },
+    {
+      "title": "Recopilación y comunicación",
+      "text": "SCALA no recibe ni comparte datos personales o de juego desde esta aplicación. No contiene analítica, rastreadores ni anuncios. La APK Android no solicita permiso de acceso a Internet. Si compras el juego en una tienda, esa tienda gestiona el pago conforme a su propia política."
+    },
+    {
+      "title": "Tus controles",
+      "text": "Puedes desactivar sonidos, música y vibración desde Ajustes. La vibración solo se activa si eliges usarla y el teléfono la admite. Reiniciar mi progreso borra tu avance y monedas y empieza una partida nueva; conserva tus preferencias de audio. Para borrar todos los datos locales, usa Almacenamiento > Borrar datos en los ajustes de Android o desinstala la aplicación."
+    },
+    {
+      "title": "Conservación y copias del sistema",
+      "text": "El avance se conserva mientras mantengas los datos del juego. Android puede incluirlos en las copias de seguridad o transferencias que hayas habilitado en tu teléfono. Esas copias dependen del sistema, del fabricante y de tus ajustes; SCALA no las recibe ni administra. Para eliminarlas o evitar que se restauren, revisa la configuración de copias de seguridad de tu dispositivo."
+    },
+    {
+      "title": "Uso por familias",
+      "text": "No se pide una cuenta ni datos personales para jugar. El regalo diario y la racha no exigen pagos ni generan notificaciones. El contenido consiste en crucigramas en español y versículos bíblicos Reina-Valera 1909; puedes avanzar a tu ritmo."
+    }
+  ]
+}

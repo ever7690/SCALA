@@ -1,0 +1,10 @@
+Herramienta: imagegen integrada
+Modo: edición con referencia local, fondo transparente
+
+Use case: text-localization.
+Asset type: Android adaptive launcher icon foreground for the Christian word game "SCALA Palabras de Fe".
+Edit target: the supplied transparent SCALA logo. Keep the identity and the beautiful existing blue-and-gold open Bible, golden stairway and Christian cross. Preserve the recognizable SCALA wordmark. Do not change the original brand identity.
+Change: remove the small tagline "para una vida edificada" and replace it with the game title in two precisely spelled lines: "PALABRAS" then "DE FE". Render those two lines in a robust, elegant, clearly legible cream-and-gold sans-serif. The full spelling must be exact. The book and SCALA wordmark must remain professionally proportioned.
+Composition: produce a square 1024 by 1024 transparent foreground asset. All visible artwork and all typography must fit within the central 60 percent of the canvas width and height, suitable for Android's adaptive icon safe zone. Compact coherent composition with no excess gaps between emblem and text. Crisp edges, strong small-size readability, high quality.
+Background: truly transparent. No square card, no circular plaque, no white surround, no border, no shadow cast outside the foreground. The app supplies a full-bleed navy background separately.
+No mockup, no device, no extra slogans, no watermark. Preserve the original navy and warm gold color language.

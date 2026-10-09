@@ -27,9 +27,11 @@ npm test
 npm run build
 npx cap sync android
 chmod +x android/gradlew
-(cd android && ./gradlew "-Dorg.gradle.java.home=$JAVA_HOME" --no-daemon --max-workers=2 :app:assembleDebug :app:assembleRelease)
+(cd android && ./gradlew "-Dorg.gradle.java.home=$JAVA_HOME" --no-daemon --max-workers=2 :app:assembleDebug :app:assembleRelease :app:bundleRelease)
 mkdir -p entregables
-cp android/app/build/outputs/apk/debug/app-debug.apk entregables/SCALA_Palabras_de_Fe_1.0.0_pruebas.apk
-cp android/app/build/outputs/apk/release/app-release-unsigned.apk entregables/SCALA_Palabras_de_Fe_1.0.0_sin_firmar.apk
-sha256sum entregables/*.apk > entregables/SHA256SUMS.txt
-printf '%s\n' 'APK de pruebas firmado y APK release sin firmar disponibles en entregables/.'
+scala_version="$(node -p 'JSON.parse(require("fs").readFileSync("package.json", "utf8")).version')"
+cp android/app/build/outputs/apk/debug/app-debug.apk "entregables/SCALA_Palabras_de_Fe_${scala_version}_pruebas.apk"
+cp android/app/build/outputs/apk/release/app-release-unsigned.apk "entregables/SCALA_Palabras_de_Fe_${scala_version}_sin_firmar.apk"
+cp android/app/build/outputs/bundle/release/app-release.aab "entregables/SCALA_Palabras_de_Fe_${scala_version}_sin_firmar.aab"
+sha256sum entregables/*.apk entregables/*.aab > entregables/SHA256SUMS.txt
+printf '%s\n' 'APK de pruebas, APK release y AAB disponibles en entregables/. Usa scripts/sign_android.sh para firmar la versión comercial con tu clave privada.'

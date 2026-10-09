@@ -1,14 +1,15 @@
 {
   "name": "scala-palabras-de-fe",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Juego bíblico SCALA: 1000 crucigramas en español, audio y progreso sin conexión",
   "type": "module",
   "scripts": {
     "dev": "vite --host",
     "check": "tsc --noEmit && eslint",
-    "build": "tsc && vite build && node scripts/build_offline.mjs",
+    "build": "tsc && node scripts/build_privacy.mjs && vite build && node scripts/build_offline.mjs",
     "test": "node scripts/validate_game.mjs",
     "test:ui": "node scripts/test_ui.mjs",
+    "store:prepare": "node scripts/prepare_store.mjs",
     "cap:sync": "npm run build && cap sync android",
     "android:build": "bash scripts/build_android.sh",
     "android:open": "cap open android",
@@ -31,6 +32,7 @@
   },
   "dependencies": {
     "@capacitor/android": "8.4.3",
+    "@capacitor/app": "8.1.2",
     "@capacitor/core": "8.4.3",
     "@capacitor/preferences": "^8.0.1"
   }

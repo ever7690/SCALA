@@ -1,6 +1,9 @@
 import './styles.css';
 import dataset from './data/bible-levels.json';
 import verseData from './data/verses.json';
+import privacy from './data/privacy.json';
+import { Capacitor } from '@capacitor/core';
+import { App } from '@capacitor/app';
 import { GameStateManager } from './game-engine';
 import type { Level, LevelGroupDefinition } from './types';
 import { GameAudio } from './audio';
@@ -40,10 +43,23 @@ const icons: Record<string, string> = {
   arrow: '<path d="M4 12h16m-6-6 6 6-6 6"/>',
   lock: '<rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V6a4 4 0 0 1 8 0v4"/>',
   keyboard: '<rect x="2" y="5" width="20" height="14" rx="3"/><path d="M6 9h1m4 0h1m4 0h1M6 13h1m4 0h1m4 0h1M7 16h10"/>',
+  sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/>',
+  boat: '<path d="M12 3v13H4L12 3Zm0 2 7 8h-7M3 16h18l-4 5H7z"/>',
+  path: '<path d="M5 21c-3-6 13-5 10-10S8 8 12 3M12 3l-4 1m4-1 1 4"/>',
+  shield: '<path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6zM8 12l3 3 5-6"/>',
+  music: '<path d="M10 17V5l10-2v12M10 8l10-2"/><ellipse cx="7" cy="18" rx="3" ry="2"/><ellipse cx="17" cy="16" rx="3" ry="2"/>',
+  spark: '<path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5z"/>',
+  cross: '<path d="M9 3h6v5h5v6h-5v7H9v-7H4V8h5z"/>',
+  sprout: '<path d="M12 21V11M12 14c-7 0-9-3-9-8 6 0 9 2 9 8Zm0-3c0-5 3-8 9-8 0 5-3 8-9 8Z"/>',
 };
 
 function icon(name: string): string {
   return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${icons[name] ?? icons.star}</svg>`;
+}
+
+function chapterIcon(chapter: Chapter): string {
+  const names: Record<string, string> = { 'primeros-pasos': 'star', creacion: 'sun', promesa: 'boat', libertad: 'path', valientes: 'shield', salmos: 'music', profetas: 'spark', jesus: 'cross', parabolas: 'sprout', comunidad: 'home' };
+  return icon(names[chapter.id] ?? 'star');
 }
 
 function el<T extends Element = HTMLElement>(selector: string): T {
@@ -113,7 +129,7 @@ function toast(message: string, positive = false): void {
 
 function mount(): void {
   el('#app').innerHTML = `
-    <div class="scenery" aria-hidden="true"><div class="sky-glow"></div><div class="sun"></div><div class="ridge ridge-far"></div><div class="ridge ridge-mid"></div><div class="ridge ridge-near"></div><div class="stars"></div></div>
+    <div class="scenery" aria-hidden="true"><div class="sky-glow"></div><div class="sun"></div><svg class="ridge ridge-far" viewBox="0 0 1000 400" preserveAspectRatio="none"><path d="M0 180Q85 110 170 170T320 145Q410 55 490 160T650 120Q755 40 835 145T1000 120V400H0Z"/></svg><svg class="ridge ridge-mid" viewBox="0 0 1000 400" preserveAspectRatio="none"><path d="M0 200Q80 155 165 205T340 185Q450 85 545 210T740 165Q870 105 1000 205V400H0Z"/></svg><svg class="ridge ridge-near" viewBox="0 0 1000 400" preserveAspectRatio="none"><path d="M0 220Q155 165 290 225T575 235Q730 160 870 220T1000 215V400H0Z"/></svg><div class="stars"></div></div>
     <main class="app-frame"><section id="home-screen" class="home-screen"></section><section id="play-screen" class="play-screen" hidden></section></main>
     <div id="toast" class="toast" role="status" aria-live="polite"></div>
     <dialog id="modal" aria-label="Ventana del juego"><div id="modal-content"></div></dialog>`;
@@ -149,6 +165,7 @@ function mount(): void {
       case 'music': toggleSetting('music'); break;
       case 'haptic': toggleSetting('haptic'); break;
       case 'credits': showCredits(); break;
+      case 'privacy': showPrivacy(); break;
       case 'restart-confirm': showRestartConfirm(); break;
       case 'restart': restart(); break;
       case 'submit-selection': submitSelection(); break;
@@ -180,10 +197,10 @@ function renderHome(): void {
     <div class="brand-stage"><img class="hero-logo" src="/brand/scala-original.png" alt="SCALA, para una vida edificada" width="2048" height="1638" fetchpriority="high"/><span class="brand-rule"></span></div>
     <div class="home-title"><p class="eyebrow">CONECTA · DESCUBRE · CRECE</p><h1>Palabras <em>de Fe</em></h1><p>Un momento de paz.<br>Una palabra que te acerca.</p></div>
     <button class="primary play-cta" data-action="play"><span>${save.started ? 'Continuar el camino' : 'Comenzar a jugar'}<small>Nivel ${number} · ${chapters[current().groupIndex ?? 0].title}</small></span>${icon('arrow')}</button>
-    <div class="home-shortcuts"><button class="shortcut" data-action="map">${icon('star')}<span>Mi camino<small>${progress()} de 1.000 niveles</small></span></button><button class="shortcut" data-action="verses">${icon('book')}<span>Mi colección<small>${verses.filter(v => v.unlockAt <= progress()).length} versículos</small></span></button></div>
+    <div class="home-shortcuts"><button class="shortcut" data-action="map">${icon('star')}<span>Mi camino<small>${progress()} de 1.000 niveles</small></span></button><button class="shortcut" data-action="verses">${icon('book')}<span>Mi colección<small>${verses.filter(v => v.unlockAt <= progress()).length} ${verses.filter(v => v.unlockAt <= progress()).length === 1 ? 'versículo' : 'versículos'}</small></span></button></div>
     <button class="daily-card ${reward.amount ? 'available' : ''}" data-action="daily"><span class="daily-icon">${icon('gift')}</span><span><strong>${reward.amount ? 'Tu regalo de hoy' : '¡Gracias por venir hoy!'}</strong><small>${reward.amount ? `Recibe ${reward.amount} monedas y sigue creciendo` : `Racha de ${save.streak} ${save.streak === 1 ? 'día' : 'días'} · vuelve mañana`}</small></span><span class="daily-value">${reward.amount ? `+${reward.amount}` : icon('check')}</span></button>
     <blockquote class="home-verse">“${escape(verse.text)}”<cite>${verse.reference} · RV1909</cite></blockquote>
-    <footer class="home-footer"><span>1.000 niveles · Sin conexión</span><button data-action="help">Cómo jugar</button></footer>`;
+    <footer class="home-footer"><span>1.000 niveles · Sin conexión</span><button data-action="help">Cómo jugar ${icon('arrow')}</button></footer>`;
 }
 
 function startGame(): void {
@@ -225,8 +242,8 @@ function renderPlay(): void {
   boardObserver.disconnect();
   el('#play-screen').innerHTML = `
     <header class="game-header"><button class="icon-button" data-action="home" aria-label="Volver a la portada">${icon('back')}</button><img class="header-logo" src="/brand/scala-original.png" alt="SCALA" width="2048" height="1638"/><button class="coin-balance" data-action="daily" aria-label="Monedas y regalo diario">${icon('coin')}<span id="coin-count">${save.coins}</span></button><button class="icon-button" data-action="settings" aria-label="Ajustes">${icon('settings')}</button></header>
-    <button class="level-heading" data-action="map"><span class="eyebrow">${chapter.title.toUpperCase()}</span><span class="level-title">Nivel <strong>${level.number}</strong><span class="chapter-symbol">${chapter.symbol}</span></span></button>
-    <div class="progress-track"><span id="level-progress"></span></div>
+    <button class="level-heading" data-action="map"><span class="eyebrow">${chapter.title.toUpperCase()}</span><span class="level-title">Nivel <strong>${level.number}</strong><span class="chapter-symbol">${chapterIcon(chapter)}</span></span></button>
+    <div class="progress-track" role="progressbar" aria-label="Palabras del nivel" aria-valuemin="0" aria-valuemax="${level.answers.length}" aria-valuenow="0"><span id="level-progress"></span></div>
     <div class="board-area"><div id="board" class="board" aria-label="Crucigrama"></div></div>
     <div class="word-status"><span id="word-count"></span><button class="bonus-counter" data-action="bonus">${icon('star')}<span id="bonus-count"></span></button></div>
     <div class="selection-area"><div id="selection" class="selection" aria-live="polite">Une las letras</div><button id="clear-word" class="selection-clear" data-action="clear-selection" aria-label="Borrar palabra" hidden>${icon('close')}</button></div>
@@ -239,10 +256,11 @@ function renderPlay(): void {
   boardObserver.observe(el('.board-area'));
 }
 
-function renderBoard(): void {
+function renderBoard(animate = false): void {
   const level = current();
   const grid = manager.getGridState();
   const board = el('#board');
+  const previous = new Set(Array.from(board.querySelectorAll<HTMLElement>('.revealed'), cell => `${cell.dataset.row}:${cell.dataset.col}`));
   board.style.setProperty('--cols', String(level.cols));
   board.style.setProperty('--rows', String(level.rows));
   board.style.setProperty('--cell-size', `min(38px, calc((min(100vw, 460px) - 52px - ${(level.cols - 1) * 3}px) / ${level.cols}), calc((var(--available-board-height, var(--board-height)) - ${(level.rows - 1) * 3}px) / ${level.rows}))`);
@@ -252,7 +270,7 @@ function renderBoard(): void {
     for (let col = 0; col < level.cols; col++) {
       const cell = occupied.get(`${row}:${col}`);
       if (!cell) cells += '<span class="cell empty" aria-hidden="true"></span>';
-      else cells += `<button class="cell ${cell.revealed ? 'revealed' : 'hidden-letter'}${hintMode && !cell.revealed ? ' hint-target' : ''}" data-row="${row}" data-col="${col}" aria-label="Fila ${row + 1}, columna ${col + 1}${cell.revealed ? `, ${cell.letter?.toUpperCase()}` : ', letra oculta'}" ${cell.revealed || !hintMode ? 'tabindex="-1"' : ''}>${cell.revealed ? cell.letter?.toUpperCase() : ''}</button>`;
+      else cells += `<button class="cell ${cell.revealed ? 'revealed' : 'hidden-letter'}${animate && cell.revealed && !previous.has(`${row}:${col}`) ? ' just-revealed' : ''}${hintMode && !cell.revealed ? ' hint-target' : ''}" data-row="${row}" data-col="${col}" aria-label="Fila ${row + 1}, columna ${col + 1}${cell.revealed ? `, ${cell.letter?.toUpperCase()}` : ', letra oculta'}" ${cell.revealed || !hintMode ? 'tabindex="-1"' : ''}>${cell.revealed ? cell.letter?.toUpperCase() : ''}</button>`;
     }
   }
   board.innerHTML = cells;
@@ -264,6 +282,7 @@ function renderBoard(): void {
   el('#word-count').textContent = `${solved} de ${level.answers.length} palabras`;
   el('#bonus-count').textContent = `Extra · ${manager.getBonusWords().length}`;
   el('#level-progress').style.width = `${solved / level.answers.length * 100}%`;
+  el('.progress-track').setAttribute('aria-valuenow', String(solved));
   el('#coin-count').textContent = String(save.coins);
   el<HTMLButtonElement>('#completed-next').hidden = !manager.isCurrentLevelComplete();
 }
@@ -292,10 +311,13 @@ function renderWheel(): void {
   el('#wheel').onpointermove = event => {
     if (pointerId !== event.pointerId) return;
     if (Math.hypot(event.clientX - startPoint.x, event.clientY - startPoint.y) > 8) dragged = true;
-    const target = [...document.querySelectorAll<HTMLButtonElement>('.letter')].find(button => {
+    let nearest: { button: HTMLButtonElement; distance: number } | null = null;
+    for (const button of document.querySelectorAll<HTMLButtonElement>('.letter')) {
       const rect = button.getBoundingClientRect();
-      return Math.hypot(event.clientX - rect.left - rect.width / 2, event.clientY - rect.top - rect.height / 2) <= rect.width * 0.62;
-    });
+      const distance = Math.hypot(event.clientX - rect.left - rect.width / 2, event.clientY - rect.top - rect.height / 2);
+      if (distance <= rect.width * 0.56 && (!nearest || distance < nearest.distance)) nearest = { button, distance };
+    }
+    const target = nearest?.button;
     if (target) {
       const index = Number(target.dataset.letter);
       if (selected.length > 1 && selected.at(-2) === index) { selected.pop(); updateSelection(); } else selectLetter(index);
@@ -375,7 +397,7 @@ function acceptWord(rawWord: string): void {
     result.autoSolved.forEach(answer => rewardWord(answer, 5));
     feedback('correct');
     toast(`${word.toUpperCase()} · ¡Muy bien! +5`, true);
-    renderBoard();
+    renderBoard(true);
     finishIfComplete();
   } else if (result.result === 'bonus') {
     rewardWord(word, 5);
@@ -385,7 +407,7 @@ function acceptWord(rawWord: string): void {
   } else if (result.result === 'already-solved' || result.result === 'already-bonus') toast('Ya encontraste esta palabra. Prueba otra.');
   else {
     feedback('wrong');
-    toast(word.length < 3 ? 'Busca palabras de tres letras o más.' : 'Prueba otra combinación. Tú puedes.');
+    toast(word.length < 2 ? 'Usa dos letras o más para formar una palabra.' : 'Prueba otra combinación. Tú puedes.');
     el('#wheel').classList.remove('shake');
     void el('#wheel').offsetWidth;
     el('#wheel').classList.add('shake');
@@ -471,7 +493,13 @@ function modal(content: string, className = ''): void {
   if (!dialog.open) lastFocus = document.activeElement as HTMLElement | null;
   el('#modal-content').innerHTML = `<button class="modal-close icon-button" data-action="close" aria-label="Cerrar">${icon('close')}</button>${content}`;
   dialog.className = className;
+  const heading = el('#modal-content').querySelector('h2');
+  if (heading) {
+    heading.id = 'modal-title';
+    dialog.setAttribute('aria-labelledby', heading.id);
+  }
   if (!dialog.open) dialog.showModal();
+  dialog.scrollTop = 0;
 }
 
 function closeModal(): void {
@@ -497,7 +525,7 @@ function showMap(): void {
       const locked = level.number > limit;
       return `<button class="level-dot ${completed ? 'done' : locked ? 'locked' : level.number === current().number ? 'current' : ''}" data-action="pick-level" data-level="${level.number}" aria-label="Nivel ${level.number}${completed ? ', completado' : locked ? ', bloqueado' : ''}" ${locked ? 'disabled' : ''}>${completed ? icon('check') : locked ? icon('lock') : level.number}</button>`;
     }).join('') : `<p class="chapter-locked">${icon('lock')} Completa el capítulo anterior para continuar.</p>`;
-    return `<details class="chapter-card" ${chapter.id === current().groupId ? 'open' : ''}><summary><span class="chapter-badge">${chapter.symbol}</span><span><strong>${chapter.title}</strong><small>${chapter.subtitle} · ${done}/100</small></span><span class="chapter-range">${chapter.start}–${chapter.end}</span></summary><div class="level-map">${numbers}</div></details>`;
+    return `<details class="chapter-card" ${chapter.id === current().groupId ? 'open' : ''}><summary><span class="chapter-badge">${chapterIcon(chapter)}</span><span><strong>${chapter.title}</strong><small>${chapter.subtitle} · ${done}/100</small></span><span class="chapter-range">${chapter.start}–${chapter.end}</span></summary><div class="level-map">${numbers}</div></details>`;
   }).join('');
   modal(`<p class="eyebrow">CADA PALABRA ES UN PASO</p><h2>Mi camino</h2><p class="modal-subtitle">${progress()} de 1.000 niveles completados</p><div class="chapter-list">${chapterCards}</div>`, 'large-modal');
 }
@@ -539,7 +567,7 @@ function claimDaily(): void {
 
 function showSettings(): void {
   const row = (key: 'sound' | 'music' | 'haptic', title: string, description: string): string => `<button class="setting-row" data-action="${key}" role="switch" aria-checked="${save[key]}"><span><strong>${title}</strong><small>${description}</small></span><span class="toggle ${save[key] ? 'on' : ''}"><span></span></span></button>`;
-  modal(`<p class="eyebrow">A TU RITMO</p><h2>Ajustes</h2><div class="settings-list">${row('sound', 'Sonidos', 'Letras, aciertos y recompensas')}${row('music', 'Música ambiental', 'Un acompañamiento suave')}${row('haptic', 'Vibración', 'Respuesta breve al jugar')}</div><div class="settings-bottom"><button class="text-button" data-action="credits">Acerca de este juego</button><button class="text-button danger" data-action="restart-confirm">Reiniciar mi progreso</button></div><p class="fine-print">SCALA Palabras de Fe · v${__APP_VERSION__}<br>Tu progreso se guarda automáticamente en este dispositivo.</p>`);
+  modal(`<p class="eyebrow">A TU RITMO</p><h2>Ajustes</h2><div class="settings-list">${row('sound', 'Sonidos', 'Letras, aciertos y recompensas')}${row('music', 'Música ambiental', 'Un acompañamiento suave')}${row('haptic', 'Vibración', 'Respuesta breve al jugar')}</div><div class="settings-bottom"><button class="text-button" data-action="credits">Acerca de este juego</button><button class="text-button" data-action="privacy">Privacidad y tus datos</button><button class="text-button danger" data-action="restart-confirm">Reiniciar mi progreso</button></div><p class="fine-print">SCALA Palabras de Fe · v${__APP_VERSION__}<br>Tu progreso se guarda automáticamente en este dispositivo.</p>`);
 }
 
 function toggleSetting(setting: 'sound' | 'music' | 'haptic'): void {
@@ -547,11 +575,12 @@ function toggleSetting(setting: 'sound' | 'music' | 'haptic'): void {
   audio.configure(save);
   persist();
   showSettings();
+  el<HTMLButtonElement>(`[data-action="${setting}"]`).focus({ preventScroll: true });
   feedback('click');
 }
 
 function showHelp(): void {
-  modal(`<div class="help-word"><span>A</span><span>M</span><span>O</span><span>R</span></div><p class="eyebrow">UNA PALABRA A LA VEZ</p><h2>Conecta y descubre</h2><ol class="help-steps"><li><strong>Une las letras.</strong> Desliza el dedo para formar una palabra y suelta para comprobarla.</li><li><strong>Completa el crucigrama.</strong> También puedes tocar las letras y pulsar ${icon('check')}, o usar el teclado.</li><li><strong>Encuentra palabras extra.</strong> Gana monedas, usa pistas y desbloquea versículos.</li></ol><p class="fine-print">Busca palabras de 3 letras o más. Las tildes se omiten en las casillas; la Ñ conserva su forma. Puedes retroceder durante un gesto.</p><button class="primary" data-action="close">${screen === 'play' ? '¡Vamos a jugar!' : 'Entendido'} ${icon('arrow')}</button>`);
+  modal(`<div class="help-word"><span>A</span><span>M</span><span>O</span><span>R</span></div><p class="eyebrow">UNA PALABRA A LA VEZ</p><h2>Conecta y descubre</h2><ol class="help-steps"><li><strong>Une las letras.</strong> Desliza el dedo para formar una palabra y suelta para comprobarla.</li><li><strong>Completa el crucigrama.</strong> También puedes tocar las letras y pulsar ${icon('check')}, o usar el teclado.</li><li><strong>Encuentra palabras extra.</strong> Gana monedas, usa pistas y desbloquea versículos.</li></ol><p class="fine-print">También pueden contar palabras extra de dos letras. Las tildes se omiten en las casillas; la Ñ conserva su forma. Puedes retroceder durante un gesto.</p><button class="primary" data-action="close">${screen === 'play' ? '¡Vamos a jugar!' : 'Entendido'} ${icon('arrow')}</button>`);
 }
 
 function showKeyboard(): void {
@@ -566,7 +595,11 @@ function showKeyboard(): void {
 }
 
 function showCredits(): void {
-  modal('<img class="credits-logo" src="/brand/scala-original.png" alt="SCALA para una vida edificada"/><h2>Palabras de Fe</h2><p>Un juego de SCALA para disfrutar de las palabras, descubrir la Biblia y avanzar a tu ritmo.</p><div class="credits-list"><p><strong>Motor de crucigramas</strong><br>Word Tracer · Paul Hoskinson · MIT</p><p><strong>Efectos de sonido</strong><br>Kenney Interface Sounds · CC0</p><p><strong>Música</strong><br>Amanecer · composición original SCALA</p><p><strong>Texto bíblico</strong><br>Reina-Valera 1909 · dominio público<br>Fuente: BibleAquifer / eBible</p></div><p class="fine-print">1.000 niveles · 10 capítulos · Juego sin conexión</p><button class="primary" data-action="close">Seguir mi camino</button>');
+  modal('<img class="credits-logo" src="/brand/scala-original.png" alt="SCALA para una vida edificada"/><h2>Palabras de Fe</h2><p>Un juego de SCALA para disfrutar de las palabras, descubrir la Biblia y avanzar a tu ritmo.</p><div class="credits-list"><p><strong>Motor de crucigramas</strong><br>Word Tracer · Paul Hoskinson · MIT</p><p><strong>Efectos de sonido</strong><br>Kenney Interface Sounds · CC0</p><p><strong>Música</strong><br>Amanecer · composición original SCALA</p><p><strong>Tipografías</strong><br>Manrope · Lora · SIL Open Font License</p><p><strong>Texto bíblico</strong><br>Reina-Valera 1909 · dominio público<br>Fuente: BibleAquifer / eBible</p></div><p class="fine-print">1.000 niveles · 10 capítulos · Sin anuncios ni compras dentro del juego</p><button class="primary" data-action="close">Seguir mi camino</button>');
+}
+
+function showPrivacy(): void {
+  modal(`<p class="eyebrow">TU TRANQUILIDAD, PRIMERO</p><h2>Privacidad y tus datos</h2><p class="modal-subtitle">${escape(privacy.summary)}</p><div class="privacy-sections">${privacy.sections.map(section => `<section><h3>${escape(section.title)}</h3><p>${escape(section.text)}</p></section>`).join('')}</div><p class="fine-print">SCALA · Actualizado el ${privacy.updated}<br>${escape(privacy.contact)}</p><button class="primary" data-action="settings">Volver a ajustes</button>`, 'large-modal');
 }
 
 function showRestartConfirm(): void {
@@ -596,6 +629,13 @@ async function boot(): Promise<void> {
   mount();
   renderHome();
   persist();
+  if (Capacitor.getPlatform() === 'android') {
+    void App.addListener('backButton', () => {
+      if (el<HTMLDialogElement>('#modal').open) closeModal();
+      else if (screen === 'play') goHome();
+      else { persist(); void App.minimizeApp(); }
+    });
+  }
   if ('serviceWorker' in navigator && !window.location.href.startsWith('https://localhost')) void navigator.serviceWorker.register('/sw.js').catch(() => undefined);
 }
 
