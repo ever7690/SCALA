@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - '.github/workflows/asher-v2-cloud-build.yml'
+      - 'tools/SCALA_ASHER_V2_CLOUD_BUILD.sh'
   workflow_dispatch:
 permissions:
   contents: write
