@@ -63,6 +63,16 @@ jobs:
           assert 'AutoGameModeEnabled' in (scala/'USER_SCALA.ps1').read_text()
           assert 'SetupComplete_MINIOS.cmd' in wrapper.read_text()
           assert 'Ever Nelson Calamontes' in (scala/'DEDICATORIA.txt').read_text()
+          assert b'\r\n' in (scala/'GAMING_CENTER.cmd').read_bytes()
+          assert b'\r\n' in wrapper.read_bytes()
+          assert shutil.which('pwsh'), 'PowerShell parser unavailable on cloud runner'
+          for ps in scala.glob('*.ps1'):
+              env=os.environ.copy()
+              env['SCALA_PSFILE']=str(ps)
+              subprocess.run(['pwsh','-NoProfile','-Command',
+                  '$tokens=$null; $errors=$null; [System.Management.Automation.Language.Parser]::ParseFile($env:SCALA_PSFILE, [ref]$tokens, [ref]$errors) | Out-Null; if ($errors.Count -gt 0) { $errors | Format-List | Out-String | Write-Error; exit 1 }'],
+                  check=True,env=env)
+          print('PASS: PowerShell syntax and Windows CMD CRLF')
 
           root=base/'root'
           oldwall=root/'Windows/Web/Wallpaper/Windows'
