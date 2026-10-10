@@ -1,0 +1,42 @@
+{
+  "version": "1.2.0",
+  "versionCode": 3,
+  "checkedAt": "2026-10-10T22:31:40.798Z",
+  "finalReleaseReady": false,
+  "codeCheckPassed": true,
+  "webBuildPassed": true,
+  "lessons": 30,
+  "uniqueStoryIllustrations": 30,
+  "uniqueStoryIcons": 30,
+  "distinctAdventureIcon": true,
+  "questionsNarrated": 60,
+  "originalStoryAudioPreserved": true,
+  "originalCharacterBytesPreserved": true,
+  "interfaceChecksPassed": true,
+  "interfaceChecks": [
+    "bienvenida estática única",
+    "música y narración con volumen independiente",
+    "60 decisiones, 30 ilustraciones e iconos propios y preguntas narradas",
+    "continuación tras cierre",
+    "PIN y recuperación sin perder progreso",
+    "bloqueo persistente de intentos",
+    "ajustes de volumen y presentación guardados",
+    "catálogo confirmado solo tras PIN y cierre del acceso al abrir",
+    "30 gestos guardados y calma con movimiento reducido",
+    "36 vistas adaptables, botones >=44px",
+    "historias y preguntas narradas sin conexión",
+    "respaldo de guardado dañado"
+  ],
+  "responsiveViews": 36,
+  "interfaceJavaScriptErrors": [],
+  "interfaceFailedRequests": [],
+  "musicControlTestUsedDevelopmentFixture": true,
+  "originalMusicPresent": false,
+  "expectedMusicSHA256": "04e2c4e879b56adcd220f3cad8f892a6922576f8361c8e4c871e836a2c196319",
+  "androidAPKCompiled": false,
+  "androidAPKInstalled": false,
+  "pending": [
+    "MP3 original enviado por SCALA",
+    "Compilación e instalación Android de la versión 1.2.0"
+  ]
+}

@@ -8,6 +8,8 @@ La zona infantil funciona sin conexión, sin anuncios de terceros, cobros, cuent
 
 Las emociones elegidas no se guardan. Se conserva el progreso educativo, los gestos practicados, el punto de continuación, los ajustes y la protección familiar solo en este dispositivo. El adulto conserva la responsabilidad de escuchar y proteger.
 
+Esta rama conserva la actualización preparada. Falta volver a adjuntar el MP3 original de SCALA antes de compilar la APK final; no se publica una sustitución. El informe artwork/VERIFICACION_PREVIA_1.2.0.json distingue las pruebas de interfaz con audio provisional de la compilación e instalación Android pendientes.
+
 ## Comprobar y compilar
 
 Necesita Node.js 22 o superior, JDK 21 y Android SDK con plataforma 36 y herramientas 36.0.0.
