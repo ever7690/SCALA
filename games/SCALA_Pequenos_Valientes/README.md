@@ -8,7 +8,7 @@ La zona infantil funciona sin conexión, sin anuncios de terceros, cobros, cuent
 
 Las emociones elegidas no se guardan. Se conserva el progreso educativo, los gestos practicados, el punto de continuación, los ajustes y la protección familiar solo en este dispositivo. El adulto conserva la responsabilidad de escuchar y proteger.
 
-Esta rama conserva la actualización preparada. Falta volver a adjuntar el MP3 original de SCALA antes de compilar la APK final; no se publica una sustitución. El informe artwork/VERIFICACION_PREVIA_1.2.0.json distingue las pruebas de interfaz con audio provisional de la compilación e instalación Android pendientes.
+El MP3 original aportado por SCALA está incorporado y su SHA-256 coincide con el archivo aprobado. El informe artwork/VERIFICACION_PREVIA_1.2.0.json registra el estado de las pruebas; la compilación y la instalación Android se verifican antes de preparar la entrega.
 
 ## Comprobar y compilar
 

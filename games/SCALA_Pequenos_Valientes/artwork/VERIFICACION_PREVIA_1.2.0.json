@@ -1,7 +1,7 @@
 {
   "version": "1.2.0",
   "versionCode": 3,
-  "checkedAt": "2026-10-10T22:31:40.798Z",
+  "checkedAt": "2026-10-10T22:44:59.707Z",
   "finalReleaseReady": false,
   "codeCheckPassed": true,
   "webBuildPassed": true,
@@ -31,12 +31,13 @@
   "interfaceJavaScriptErrors": [],
   "interfaceFailedRequests": [],
   "musicControlTestUsedDevelopmentFixture": true,
-  "originalMusicPresent": false,
+  "originalMusicPresent": true,
   "expectedMusicSHA256": "04e2c4e879b56adcd220f3cad8f892a6922576f8361c8e4c871e836a2c196319",
   "androidAPKCompiled": false,
   "androidAPKInstalled": false,
   "pending": [
-    "MP3 original enviado por SCALA",
+    "Pruebas completas con el MP3 original",
     "Compilación e instalación Android de la versión 1.2.0"
-  ]
+  ],
+  "originalMusicSHA256": "04e2c4e879b56adcd220f3cad8f892a6922576f8361c8e4c871e836a2c196319"
 }
