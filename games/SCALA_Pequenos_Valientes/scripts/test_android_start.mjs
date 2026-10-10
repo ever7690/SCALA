@@ -108,7 +108,7 @@ try {
   assert.deepEqual(exceptions, []);
   const logs = adb('logcat', '-d', '-v', 'brief');
   assert.ok(!logs.includes('Process: ' + packageName + ', PID:'), 'La aplicación no debe sufrir una excepción nativa.');
-  fs.writeFileSync('entregables/VERIFICACION_ANDROID.json', JSON.stringify({ passed: true, api: 30, package: packageName, versionCode: 3, userAgent: await evaluate('navigator.userAgent'), checks: ['APK instalado', 'bienvenida cargada en WebView nativo', 'marca y pie de página presentes', 'inicio infantil tras pulsar entrada', 'sin excepciones JavaScript ni fallo nativo'] }, null, 2) + '\n');
+  fs.writeFileSync('entregables/VERIFICACION_ANDROID.json', JSON.stringify({ passed: true, api: 30, package: packageName, versionCode: 3, userAgent: await evaluate('navigator.userAgent'), musicFromWelcome: musicReady, suppliedMusicDuration: await evaluate("document.querySelector('#background-music').duration"), checks: ['APK instalado', 'bienvenida cargada en WebView nativo', 'música original en bucle antes de pulsar la entrada', 'marca y pie de página presentes', 'inicio infantil tras pulsar entrada', 'sin excepciones JavaScript ni fallo nativo'] }, null, 2) + '\n');
   console.log('Instalación y entrada en Android 11 comprobadas.');
 } finally {
   try { capture('estado-final'); fs.writeFileSync('entregables/android/logcat.txt', adb('logcat', '-d', '-v', 'brief')); } catch (error) { console.log('Diagnóstico incompleto:', error.message); }
