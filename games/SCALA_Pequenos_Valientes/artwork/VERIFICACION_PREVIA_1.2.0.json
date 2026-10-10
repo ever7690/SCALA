@@ -1,8 +1,8 @@
 {
   "version": "1.2.0",
   "versionCode": 3,
-  "checkedAt": "2026-10-10T22:46:42.704Z",
-  "finalReleaseReady": false,
+  "checkedAt": "2026-10-10T23:02:40.609Z",
+  "finalReleaseReady": true,
   "codeCheckPassed": true,
   "webBuildPassed": true,
   "lessons": 30,
@@ -33,11 +33,15 @@
   "musicControlTestUsedDevelopmentFixture": false,
   "originalMusicPresent": true,
   "expectedMusicSHA256": "04e2c4e879b56adcd220f3cad8f892a6922576f8361c8e4c871e836a2c196319",
-  "androidAPKCompiled": false,
-  "androidAPKInstalled": false,
+  "androidAPKCompiled": true,
+  "androidAPKInstalled": true,
   "pending": [
-    "Compilación e instalación Android de la versión 1.2.0"
+    "Prueba en el teléfono real del propietario",
+    "Revisión comercial y aprobación de la tienda"
   ],
   "originalMusicSHA256": "04e2c4e879b56adcd220f3cad8f892a6922576f8361c8e4c871e836a2c196319",
-  "learningChecksPassed": true
+  "learningChecksPassed": true,
+  "androidAPI": 30,
+  "androidRealDeviceTested": false,
+  "storeReleaseApproved": false
 }
