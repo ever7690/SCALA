@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import assert from 'node:assert/strict';
+import crypto from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 
 fs.mkdirSync('entregables/android', { recursive: true });
@@ -25,7 +26,9 @@ async function evaluate(expression) {
   return result.result.value;
 }
 function capture(name) {
-  fs.writeFileSync('entregables/android/' + name + '.png', execFileSync('adb', ['exec-out', 'screencap', '-p'], { timeout: 15000, maxBuffer: 16 * 1024 * 1024 }));
+  const bytes = execFileSync('adb', ['exec-out', 'screencap', '-p'], { timeout: 20000, maxBuffer: 16 * 1024 * 1024 });
+  fs.writeFileSync('entregables/android/' + name + '.png', bytes);
+  return crypto.createHash('sha256').update(bytes).digest('hex');
 }
 try {
   adb('logcat', '-c');
@@ -73,20 +76,28 @@ try {
   const before = await evaluate('document.body.innerText');
   assert.ok(before.includes('Scala desarrollo cristiano'));
   fs.writeFileSync('entregables/android/bienvenida.txt', before);
-  capture('01-bienvenida');
-  const point = await evaluate("(() => { const r = document.querySelector('#enter-world').getBoundingClientRect(); return { x: r.left+r.width/2, y: r.top+r.height/2 }; })()");
-  await command('Input.dispatchMouseEvent', { type: 'mousePressed', x: point.x, y: point.y, button: 'left', clickCount: 1 });
-  await command('Input.dispatchMouseEvent', { type: 'mouseReleased', x: point.x, y: point.y, button: 'left', clickCount: 1 });
+  assert.equal(await evaluate("document.querySelector('#launch-brand').hidden"), false);
+  const welcomeImage = capture('01-bienvenida');
+  const point = await evaluate("(() => { const r = document.querySelector('#enter-world').getBoundingClientRect(); return { x: r.left+r.width/2, y: r.top+r.height/2, scale: window.devicePixelRatio }; })()");
+  const windows = adb('shell', 'dumpsys', 'window', 'windows');
+  fs.writeFileSync('entregables/android/ventanas.txt', windows);
+  const section = windows.split(/(?=Window #\d+ Window\{)/u).find(part => part.trimStart().startsWith('Window #') && part.includes(packageName + '/com.scala.pequenosvalientes.MainActivity'));
+  const content = section?.match(/content=\[(\d+),(\d+)\]/u);
+  const offsetX = content ? Number(content[1]) : 0;
+  const offsetY = content ? Number(content[2]) : 24 * point.scale;
+  adb('shell', 'input', 'tap', String(Math.round(point.x * point.scale + offsetX)), String(Math.round(point.y * point.scale + offsetY)));
   let homeVisible = false;
   for (let attempt = 0; attempt < 15; attempt++) {
-    homeVisible = await evaluate("Boolean(document.querySelector('#page-title')?.textContent.includes('pequeño valiente'))");
+    homeVisible = await evaluate("Boolean(document.querySelector('#launch-brand').hidden && !document.querySelector('#app').hidden && document.querySelector('#page-title')?.textContent.includes('pequeño valiente'))");
     if (homeVisible) break;
     await wait();
   }
   assert.ok(homeVisible, 'La entrada debe abrir el inicio infantil.');
   await evaluate("Promise.all(Array.from(document.images).map(image => image.decode().catch(() => undefined)))");
+  await evaluate('new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)))');
+  await wait();
   fs.writeFileSync('entregables/android/inicio.txt', await evaluate('document.body.innerText'));
-  capture('02-inicio');
+  assert.notEqual(capture('02-inicio'), welcomeImage, 'La pantalla debe cambiar después de pulsar la entrada.');
   assert.deepEqual(exceptions, []);
   const logs = adb('logcat', '-d', '-v', 'brief');
   assert.ok(!logs.includes('Process: ' + packageName + ', PID:'), 'La aplicación no debe sufrir una excepción nativa.');
