@@ -20,6 +20,9 @@ export class AppAudio {
     this.settings = settings;
     this.music.id = 'background-music';
     this.voice.id = 'story-voice';
+    this.music.hidden = true;
+    this.voice.hidden = true;
+    document.body.append(this.music, this.voice);
     this.music.loop = true;
     this.music.preload = 'auto';
     this.voice.preload = 'none';

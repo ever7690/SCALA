@@ -1,6 +1,6 @@
 # Revisión antes de vender
 
-La versión 1.1.0 amplía la entrega instalada con 30 historias y nuevas actividades; esta actualización debe comprobarse en el teléfono y con familias. No se declara validación clínica, pedagógica ni comercial que aún no se haya realizado.
+La versión 1.2.0 mejora la entrega instalada con 30 ilustraciones, 30 iconos de historia, un icono exclusivo de aventuras y 60 preguntas narradas. Esta actualización debe comprobarse en el teléfono y con familias. No se declara validación clínica, pedagógica ni comercial que aún no se haya realizado.
 
 1. **Contenido:** pedir revisión a un profesional de infancia o educación y a un responsable de formación cristiana. Comprobar comprensión entre 6 y 12 años, lenguaje local, guía sobre burlas repetidas y cuidado de los límites. La disculpa no debe obligar a aceptar nuevas burlas. La fe no debe presentarse como medida del valor o del bienestar del niño.
 2. **Prueba con familias:** observar junto a adultos si los niños entienden qué hacer, distinguen a los personajes, leen o escuchan con comodidad y encuentran la ayuda. Solicitar consentimiento de los responsables. Registrar observaciones generales sin recopilar relatos íntimos en la app ni publicar datos de menores.

@@ -33,7 +33,7 @@ function capture(name) {
 try {
   adb('logcat', '-c');
   console.log(adb('install', '-r', 'android/app/build/outputs/apk/debug/app-debug.apk').trim());
-  assert.match(adb('shell', 'dumpsys', 'package', packageName), /versionCode=2\b/u);
+  assert.match(adb('shell', 'dumpsys', 'package', packageName), /versionCode=3\b/u);
   console.log(adb('shell', 'am', 'start', '-W', '-n', packageName + '/com.scala.pequenosvalientes.MainActivity').trim());
   const pid = adb('shell', 'pidof', packageName).trim().split(/\s+/u)[0];
   assert.ok(pid);
@@ -78,6 +78,13 @@ try {
   fs.writeFileSync('entregables/android/bienvenida.txt', before);
   assert.equal(await evaluate("document.querySelector('#launch-brand').hidden"), false);
   const welcomeImage = capture('01-bienvenida');
+  let musicReady = false;
+  for (let attempt = 0; attempt < 15; attempt++) {
+    musicReady = await evaluate("(() => { const music = document.querySelector('#background-music'); return Boolean(music && music.loop && !music.paused && music.duration > 140); })()");
+    if (musicReady) break;
+    await wait();
+  }
+  assert.ok(musicReady, 'La música debe reproducirse en la primera bienvenida, antes de pulsar la entrada.');
   const point = await evaluate("(() => { const r = document.querySelector('#enter-world').getBoundingClientRect(); return { x: r.left+r.width/2, y: r.top+r.height/2, scale: window.devicePixelRatio }; })()");
   const windows = adb('shell', 'dumpsys', 'window', 'windows');
   fs.writeFileSync('entregables/android/ventanas.txt', windows);
@@ -101,7 +108,7 @@ try {
   assert.deepEqual(exceptions, []);
   const logs = adb('logcat', '-d', '-v', 'brief');
   assert.ok(!logs.includes('Process: ' + packageName + ', PID:'), 'La aplicación no debe sufrir una excepción nativa.');
-  fs.writeFileSync('entregables/VERIFICACION_ANDROID.json', JSON.stringify({ passed: true, api: 30, package: packageName, versionCode: 2, userAgent: await evaluate('navigator.userAgent'), checks: ['APK instalado', 'bienvenida cargada en WebView nativo', 'marca y pie de página presentes', 'inicio infantil tras pulsar entrada', 'sin excepciones JavaScript ni fallo nativo'] }, null, 2) + '\n');
+  fs.writeFileSync('entregables/VERIFICACION_ANDROID.json', JSON.stringify({ passed: true, api: 30, package: packageName, versionCode: 3, userAgent: await evaluate('navigator.userAgent'), checks: ['APK instalado', 'bienvenida cargada en WebView nativo', 'marca y pie de página presentes', 'inicio infantil tras pulsar entrada', 'sin excepciones JavaScript ni fallo nativo'] }, null, 2) + '\n');
   console.log('Instalación y entrada en Android 11 comprobadas.');
 } finally {
   try { capture('estado-final'); fs.writeFileSync('entregables/android/logcat.txt', adb('logcat', '-d', '-v', 'brief')); } catch (error) { console.log('Diagnóstico incompleto:', error.message); }

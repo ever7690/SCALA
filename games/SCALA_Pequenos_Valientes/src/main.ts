@@ -55,7 +55,7 @@ function header(): string {
   return `<header class="topbar"><button class="brand-home" type="button" data-nav="home" aria-label="Ir al inicio"><img src="/brand/scala-original.png" alt="SCALA" width="93" height="75"></button><div class="wordmark"><span>ESCALITO Y SUS AMIGOS</span><strong>Pequeños Valientes</strong></div><button class="round-button help-shortcut" type="button" data-nav="help" aria-label="Buscar ayuda">${icon('help')}</button></header>`;
 }
 function nav(): string {
-  const items: { route: Route; label: string; icon: IconId }[] = [{ route: 'home', label: 'Inicio', icon: 'home' }, { route: 'feelings', label: 'Siento', icon: 'heart' }, { route: 'path', label: 'Aventuras', icon: 'story' }, { route: 'family', label: 'Familia', icon: 'family' }, { route: 'settings', label: 'Ajustes', icon: 'gear' }];
+  const items: { route: Route; label: string; icon: IconId }[] = [{ route: 'home', label: 'Inicio', icon: 'home' }, { route: 'feelings', label: 'Siento', icon: 'heart' }, { route: 'path', label: 'Aventuras', icon: 'path' }, { route: 'family', label: 'Familia', icon: 'family' }, { route: 'settings', label: 'Ajustes', icon: 'gear' }];
   return `<nav class="bottom-nav" aria-label="Menú principal">${items.map(item => `<button type="button" data-nav="${item.route}" ${route === item.route || route === 'lesson' && item.route === 'path' ? 'aria-current="page"' : ''}>${icon(item.icon)}<span>${item.label}</span></button>`).join('')}</nav>`;
 }
 function title(kicker: string, heading: string, description = ''): string {
@@ -86,7 +86,7 @@ function lessonView(): string {
 }
 function settings(): string {
   const slider = (name: 'music' | 'sound' | 'voice', label: string, description: string, symbol: IconId): string => `<label class="setting-row">${icon(symbol)}<span><strong>${label}</strong><small>${description}</small><input type="range" min="0" max="100" value="${Math.round(state.settings[name] * 100)}" data-setting="${name}" aria-label="Volumen de ${label.toLowerCase()}"></span><output id="volume-${name}">${Math.round(state.settings[name] * 100)}%</output></label>`;
-  return `${title('A TU MANERA', 'Ajustes', 'Elige cómo quieres escuchar y ver tu aventura.') }<section class="settings-card">${slider('music', 'Música', 'Un fondo suave que te acompaña', 'sun')}${slider('sound', 'Botones', 'Pequeños sonidos al elegir', 'gear')}${slider('voice', 'Narración', 'Escucha nuestras historias', 'voice')}</section>${musicPicker()}<section class="settings-card"><label class="toggle-row"><span><strong>Letras más grandes</strong><small>Más espacio para leer</small></span><input type="checkbox" role="switch" data-toggle="largeText" ${state.settings.largeText ? 'checked' : ''}></label><label class="toggle-row"><span><strong>Movimiento suave</strong><small>Pequeñas transiciones en los botones</small></span><input type="checkbox" role="switch" data-toggle="motion" ${state.settings.motion ? 'checked' : ''}></label></section><section class="settings-brand"><img src="/brand/scala-original.png" alt="SCALA" width="152" height="122"><small>Desarrollo cristiano</small><h2>Pequeños Valientes</h2><p>Versión 1.2.0 · Una aventura con Escalito y sus amigos</p></section>${button('family', 'Espacio para la familia', 'lock', 'secondary')}<p class="quiet-note">Las historias y los sonidos están en tu teléfono. Puedes jugar sin conexión.</p>`;
+  return `${title('A TU MANERA', 'Ajustes', 'Elige cómo quieres escuchar y ver tu aventura.') }<section class="settings-card">${slider('music', 'Música', 'Un fondo suave que te acompaña', 'sun')}${slider('sound', 'Botones', 'Pequeños sonidos al elegir', 'gear')}${slider('voice', 'Narración', 'Historias, preguntas y opciones', 'voice')}</section>${musicPicker()}<section class="settings-card"><label class="toggle-row"><span><strong>Letras más grandes</strong><small>Más espacio para leer</small></span><input type="checkbox" role="switch" data-toggle="largeText" ${state.settings.largeText ? 'checked' : ''}></label><label class="toggle-row"><span><strong>Movimiento suave</strong><small>Ojitos y transiciones suaves</small></span><input type="checkbox" role="switch" data-toggle="motion" ${state.settings.motion ? 'checked' : ''}></label></section><section class="settings-brand"><img src="/brand/scala-original.png" alt="SCALA" width="152" height="122"><small>Desarrollo cristiano</small><h2>Pequeños Valientes</h2><p>Versión 1.2.0 · Una aventura con Escalito y sus amigos</p></section>${button('family', 'Espacio para la familia', 'lock', 'secondary')}<p class="quiet-note">Las historias y los sonidos están en tu teléfono. Puedes jugar sin conexión.</p>`;
 }
 function friends(): string {
   return `${title('CADA AMIGO TIENE ALGO ESPECIAL', 'Nuestro grupo', 'Aprendemos a escucharnos y a cuidar lo que hacemos.') }<div class="friends-grid">${(Object.keys(characters) as CharacterId[]).map(id => `<article class="friend-card" style="--tile-color:${characters[id].color}"><div>${actor(id)}</div><h2>${characters[id].name}</h2><p>${characters[id].description}</p></article>`).join('')}</div>${button('path', 'Descubrir sus historias', 'story')}`;
@@ -144,6 +144,7 @@ function openLesson(id: string, resume = false): void {
   if (!lessonById(id)) return;
   audio.stopVoice(); stopCalm(); adultUnlocked = false; lessonId = id; step = resume && state.session?.lessonId === id ? state.session.step : 0; selected = null;
   state = { ...state, session: { lessonId, step } }; void persist(); route = 'lesson'; render(true);
+  if (step === 1 || step === 2) void audio.playVoice(`pregunta-${lessonId}-${step}`);
 }
 const navCue: Record<Route, Cue> = { home: 'home', feelings: 'feel', help: 'help', path: 'path', lesson: 'story', family: 'family', settings: 'settings', friends: 'family', calm: 'calm', kindness: 'kindness', scala: 'scala' };
 root.addEventListener('click', async event => {
@@ -178,7 +179,7 @@ root.addEventListener('click', async event => {
     if ((step === 1 || step === 2) && (selected === null || !lessonById(lessonId)!.challenges[step - 1].choices[selected]?.helpful)) return;
     step = Math.min(3, step + 1); selected = null; audio.stopVoice(); state = { ...state, session: { lessonId, step } }; void persist(); render(true); if (step === 1 || step === 2) void audio.playVoice(`pregunta-${lessonId}-${step}`); return;
   }
-  if (action === 'lesson-back') { audio.stopVoice(); step = Math.max(0, step - 1); selected = null; state = { ...state, session: { lessonId, step } }; void persist(); render(true); return; }
+  if (action === 'lesson-back') { audio.stopVoice(); step = Math.max(0, step - 1); selected = null; state = { ...state, session: { lessonId, step } }; void persist(); render(true); if (step === 1 || step === 2) void audio.playVoice(`pregunta-${lessonId}-${step}`); return; }
   if (action === 'finish') { state = completeLesson(state, lessonId); await persist(); navigate('path'); return; }
   if (action === 'narration' || action === 'question-voice') { const played = await audio.playVoice(action === 'narration' ? lessonId : `pregunta-${lessonId}-${step}`); if (!played) target.querySelector('span:last-child')!.textContent = state.settings.voice === 0 ? 'Activa la narración en Ajustes' : 'Toca otra vez para escuchar'; return; }
   if (action === 'forgot') { openModal('recovery'); return; }
@@ -242,7 +243,7 @@ document.addEventListener('keydown', event => {
 });
 function suspend(active: boolean): void {
   audio.setActive(active);
-  if (!active) { stopCalm(); adultUnlocked = false; selectedMood = null; if (modal !== 'recovery-code') modal = null; void flushState(); }
+  if (!active) { stopEyes(); stopCalm(); adultUnlocked = false; selectedMood = null; if (modal !== 'recovery-code') modal = null; void flushState(); }
   else if (entered) render();
 }
 document.addEventListener('visibilitychange', () => suspend(!document.hidden));
@@ -260,7 +261,7 @@ enter.addEventListener('click', () => {
   entered = true; launch.hidden = true; root.hidden = false; render(true); void audio.unlock().then(() => audio.play('home'));
 });
 async function prepareVisuals(): Promise<void> {
-  const assets = [...Object.keys(characters).map(id => `/characters/${id}.webp`), ...['heart', 'story', 'mischief', 'help', 'friends', 'home', 'gear', 'sun', 'play', 'check', 'back', 'lock', 'voice', 'gift', 'feel', 'care'].map(id => `/icons/toys/${id}.webp`), '/backgrounds/garden.webp', '/backgrounds/forest.webp'];
+  const assets = [...Object.keys(characters).map(id => `/characters/${id}.webp`), ...['heart', 'story', 'mischief', 'help', 'friends', 'home', 'gear', 'sun', 'play', 'check', 'back', 'lock', 'voice', 'gift', 'feel', 'care', 'adventure'].map(id => `/icons/toys/${id}.webp`), '/backgrounds/garden.webp', '/backgrounds/forest.webp'];
   await Promise.all(assets.map(async source => { const image = new Image(); image.src = source; await image.decode().catch(() => undefined); }));
 }
 void Promise.all([loadState(), prepareVisuals()]).then(([result]) => {

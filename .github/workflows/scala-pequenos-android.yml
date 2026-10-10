@@ -1,7 +1,7 @@
 name: SCALA Pequeños Valientes Android
 on:
   push:
-    branches: [scala/pequenos-valientes]
+    branches: [scala/pequenos-valientes, scala/pequenos-valientes-final-art]
     paths:
       - games/SCALA_Pequenos_Valientes/**
       - .github/workflows/scala-pequenos-android.yml

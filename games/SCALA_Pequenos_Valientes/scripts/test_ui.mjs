@@ -5,7 +5,7 @@ import { serve } from './serve.mjs';
 
 fs.mkdirSync('entregables/capturas', { recursive: true });
 const hosted = await serve();
-const browser = await chromium.launch({ headless: true, ...(process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE ? { executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE } : {}), args: ['--no-sandbox', '--autoplay-policy=no-user-gesture-required'] });
+const browser = await chromium.launch({ headless: true, ...(process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE ? { executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE } : {}), args: ['--no-sandbox', '--autoplay-policy=no-user-gesture-required', '--enable-unsafe-swiftshader'] });
 const context = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 1 });
 const page = await context.newPage();
 const errors = [];
@@ -31,7 +31,11 @@ try {
   assert.equal(await page.locator('#launch-brand img').evaluate(image => getComputedStyle(image).animationName), 'none');
   assert.equal(await page.locator('#launch-brand .welcome-footer').innerText(), 'Scala desarrollo cristiano');
   await capture('01-bienvenida');
+  await page.waitForFunction(() => window.pvTestAudio[0]?.duration > 80 && !window.pvTestAudio[0].paused);
+  const welcomeMusicTime = await page.evaluate(() => window.pvTestAudio[0].currentTime);
+  assert.ok(await page.evaluate(() => window.pvTestAudio[0].src.endsWith('valientes-fondo-scala.mp3')));
   await enter();
+  assert.ok(await page.evaluate(time => window.pvTestAudio[0].currentTime >= time, welcomeMusicTime));
   await capture('02-inicio');
   await page.waitForFunction(() => window.pvTestAudio[0]?.duration > 80 && !window.pvTestAudio[0].paused);
   assert.ok(await page.evaluate(() => window.pvTestAudio[0].loop && window.pvTestAudio[0].volume < .15));
@@ -45,6 +49,8 @@ try {
   await capture('04-apoyo');
   await click('.bottom-nav [data-nav=path]');
   assert.equal(await page.locator('.lesson-tile').count(), 30);
+  const iconSources = await page.locator('.lesson-tile .story-icon img').evaluateAll(images => images.map(image => image.getAttribute('src')));
+  assert.equal(new Set(iconSources).size, 30);
   await click('[data-chapter="5"]');
   assert.equal(await page.locator('.lesson-tile').count(), 5);
   assert.equal(await page.locator('.lesson-number').first().innerText(), '26');
@@ -52,13 +58,17 @@ try {
   await capture('05-aventuras');
   await click('[data-lesson=mi-voz]');
   await capture('06-historia');
+  assert.ok(await page.locator('.story-illustration img').evaluate(image => image.complete && image.naturalWidth === 1280));
   await click('[data-action=narration]');
   await page.waitForFunction(() => !window.pvTestAudio[1].paused);
-  assert.ok(await page.evaluate(() => window.pvTestAudio[0].volume < .05 && window.pvTestAudio[1].volume === .9));
+  await page.waitForFunction(() => window.pvTestAudio[0].volume < .05 && window.pvTestAudio[1].volume === .9);
   await click('[data-action=narration]');
-  assert.ok(await page.evaluate(() => window.pvTestAudio[1].paused && window.pvTestAudio[0].volume > .1));
+  await page.waitForFunction(() => window.pvTestAudio[1].paused && window.pvTestAudio[0].volume > .1);
   await click('[data-action=lesson-next]');
+  await page.waitForFunction(() => !window.pvTestAudio[1].paused && window.pvTestAudio[1].src.endsWith('voz-pregunta-mi-voz-1.mp3'));
+  await page.waitForFunction(() => document.querySelector('.question-voice')?.getAttribute('aria-pressed') === 'true');
   await click('[data-choice="1"]');
+  assert.ok(await page.evaluate(() => window.pvTestAudio[1].paused));
   assert.ok(await page.locator('[data-action=lesson-next]').isDisabled());
   assert.ok((await page.locator('.feedback').innerText()).includes('fingir'));
   await click('[data-choice="0"]');
@@ -72,7 +82,10 @@ try {
   await click('[data-action=finish]');
   assert.ok((await page.locator('.journey-summary').innerText()).includes('1 de 30'));
   for (const id of ['mi-limite', 'pido-ayuda', 'acompanamos', 'reparamos', 'mi-valor', 'casa-scala', 'colores-del-corazon', 'cuando-me-enojo', 'lugar-en-ronda', 'dos-ideas', 'puedo-equivocarme', 'espero-mi-turno', 'verdad-con-cuidado', 'promesa-pequena', 'permiso-primero', 'broma-para-todos', 'nadie-fuera', 'te-escucho', 'disculpa-con-acciones', 'a-mi-ritmo', 'valiente-con-miedo', 'adultos-que-cuidan', 'secreto-que-pesa', 'pantallas-en-familia', 'mi-espacio', 'gracias-pequenas', 'jardin-compartido', 'ayudo-con-cuidado', 'celebramos-camino']) {
-    await click(`[data-lesson=${id}]`); await click('[data-action=lesson-next]'); await click('[data-choice="0"]'); await click('[data-action=lesson-next]'); await click('[data-choice="0"]'); await click('[data-action=lesson-next]'); await click('[data-action=finish]');
+    await click(`[data-lesson=${id}]`);
+    const illustration = await page.locator('.story-illustration img').evaluate(async image => { await image.decode(); return { width: image.naturalWidth, source: image.getAttribute('src') }; });
+    assert.equal(illustration.width, 1280); assert.equal(illustration.source, `/stories/${id}.webp`);
+    await click('[data-action=lesson-next]'); await click('[data-choice="0"]'); await click('[data-action=lesson-next]'); await click('[data-choice="0"]'); await click('[data-action=lesson-next]'); await click('[data-action=finish]');
   }
   assert.ok((await page.locator('.journey-summary').innerText()).includes('30 de 30'));
   await click('.bottom-nav [data-nav=family]');
@@ -120,18 +133,24 @@ try {
   await page.locator('[data-setting=sound]').fill('50');
   await page.locator('[data-toggle=largeText]').check();
   await page.locator('[data-toggle=motion]').uncheck();
-  await click('[data-music-theme=clasico]');
-  assert.ok(await page.evaluate(() => window.pvTestAudio[0].src.endsWith('valientes-mundo-amable.ogg')));
+  assert.ok(await page.evaluate(() => window.pvTestAudio[0].src.endsWith('valientes-fondo-scala.mp3')));
   await capture('09-ajustes');
   await page.reload(); await enter(); await click('.bottom-nav [data-nav=settings]');
   assert.equal(await page.locator('[data-setting=music]').inputValue(), '0');
-  assert.equal(await page.locator('[data-music-theme=clasico]').getAttribute('aria-pressed'), 'true');
+  assert.equal(await page.locator('[data-music-theme]').count(), 0);
   assert.ok(await page.locator('[data-toggle=largeText]').isChecked());
   assert.ok(!await page.locator('[data-toggle=motion]').isChecked());
   await page.locator('[data-toggle=largeText]').uncheck();
   await page.locator('[data-setting=music]').fill('22');
   await click('.bottom-nav [data-nav=home]'); await click('[data-nav=friends]'); await capture('10-amigos');
   assert.equal(await page.locator('.friend-card').count(), 6);
+  assert.equal(await page.locator('.character-eyes').count(), 0);
+  await click('.bottom-nav [data-nav=settings]'); await page.locator('[data-toggle=motion]').check();
+  await click('.bottom-nav [data-nav=home]'); await click('[data-nav=friends]');
+  await page.waitForFunction(() => document.querySelectorAll('.character-eyes').length === 6);
+  const phases = await page.locator('.character-eyes').evaluateAll(images => images.map(image => image.dataset.gaze));
+  await page.waitForFunction(previous => [...document.querySelectorAll('.character-eyes')].some((image, i) => image.dataset.gaze !== previous[i]), phases);
+  await click('.bottom-nav [data-nav=settings]'); await page.locator('[data-toggle=motion]').uncheck();
   await click('.bottom-nav [data-nav=home]'); await click('[data-nav=calm]');
   await click('[data-action=calm-start]');
   assert.equal(await page.locator('.calm-orbit').evaluate(element => getComputedStyle(element).animationName), 'none');
@@ -169,12 +188,16 @@ try {
   await click('[data-action=path]'); await click('[data-lesson=celebramos-camino]'); await click('[data-action=narration]');
   await page.waitForFunction(() => !window.pvTestAudio[1].paused && window.pvTestAudio[1].duration > 25);
   assert.ok((await page.locator('.story-text').innerText()).includes('Tu voz, tus límites'));
+  await click('[data-action=lesson-next]');
+  await page.waitForFunction(() => !window.pvTestAudio[1].paused && window.pvTestAudio[1].duration > 10 && window.pvTestAudio[1].src.endsWith('voz-pregunta-celebramos-camino-1.mp3'));
+  await click('[data-choice="0"]'); await click('[data-action=lesson-next]');
+  await page.waitForFunction(() => !window.pvTestAudio[1].paused && window.pvTestAudio[1].duration > 10 && window.pvTestAudio[1].src.endsWith('voz-pregunta-celebramos-camino-2.mp3'));
   await context.setOffline(false);
   await page.evaluate(() => localStorage.setItem('CapacitorStorage.scala-pequenos-valientes-v1', '{bad json'));
   await page.reload(); await enter(); await click('.bottom-nav [data-nav=path]');
   assert.ok((await page.locator('.journey-summary').innerText()).includes('30 de 30'));
   assert.deepEqual(errors, []); assert.deepEqual(failures, []);
-  const report = { passed: true, checks: ['bienvenida estática única', 'música y narración con volumen independiente', '60 decisiones y 30 historias', 'continuación tras cierre', 'PIN y recuperación sin perder progreso', 'bloqueo persistente de intentos', 'ajustes y melodía guardados', 'catálogo confirmado solo tras PIN y cierre del acceso al abrir', '30 gestos guardados y calma con movimiento reducido', '36 vistas adaptables, botones >=44px', 'voz e historia sin conexión', 'respaldo de guardado dañado'], responsive: checks, errors, failures };
+  const report = { passed: true, checks: ['bienvenida estática única', 'música y narración con volumen independiente', '60 decisiones, 30 ilustraciones e iconos propios y preguntas narradas', 'continuación tras cierre', 'PIN y recuperación sin perder progreso', 'bloqueo persistente de intentos', 'ajustes de volumen y presentación guardados', 'catálogo confirmado solo tras PIN y cierre del acceso al abrir', '30 gestos guardados y calma con movimiento reducido', '36 vistas adaptables, botones >=44px', 'historias y preguntas narradas sin conexión', 'respaldo de guardado dañado'], responsive: checks, errors, failures };
   fs.writeFileSync('entregables/VERIFICACION_INTERFAZ.json', JSON.stringify(report, null, 2) + '\n');
   console.log(JSON.stringify(report));
 } finally { await context.close(); await browser.close(); await hosted.close(); }

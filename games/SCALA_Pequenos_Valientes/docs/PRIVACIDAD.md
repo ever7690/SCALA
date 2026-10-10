@@ -1,10 +1,10 @@
 # Privacidad de Pequeños Valientes
 
-Versión 1.1.0 · 10 de octubre de 2026
+Versión 1.2.0 · 10 de octubre de 2026
 
 La zona infantil de esta aplicación educativa SCALA funciona sin conexión, con acompañamiento adulto. No solicita cuentas, correo, nombre, edad, ubicación, contactos, fotografías, micrófono ni relatos personales. No incluye anuncios de terceros, compras integradas, chat, rastreadores ni servicios de analítica. La aplicación Android no declara permiso de acceso a Internet para el contenido local.
 
-Se conservan en el dispositivo las historias y gestos practicados, el número de elecciones por historia, el paso de la aventura en curso, los ajustes de volumen, melodía y presentación, y la protección del espacio familiar. Las emociones elegidas son temporales y no se guardan. Las pausas de calma no generan un historial. Los reintentos de PIN se limitan localmente. El PIN y el código de recuperación se almacenan como hashes con sal; el código solo se muestra al crear o cambiar el acceso.
+Se conservan en el dispositivo las historias y gestos practicados, el número de elecciones por historia, el paso de la aventura en curso, los ajustes de volumen y presentación, y la protección del espacio familiar. Las emociones elegidas son temporales y no se guardan. Las pausas de calma no generan un historial. Los reintentos de PIN se limitan localmente. El PIN y el código de recuperación se almacenan como hashes con sal; el código solo se muestra al crear o cambiar el acceso.
 
 El almacenamiento utiliza preferencias locales de Android, con respaldo del último guardado válido. Las copias automáticas de datos de Android están deshabilitadas. No existe sincronización entre dispositivos. La actualización desde 1.0.0 conserva los guardados válidos. El PIN es una barrera local de uso, no una verificación de edad.
 

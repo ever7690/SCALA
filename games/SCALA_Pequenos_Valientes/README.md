@@ -2,7 +2,7 @@
 
 Aventura educativa cristiana original para niños de 6 a 12 años y sus familias. Escalito, Lupi, Ana, Luz, Mateo y Roko acompañan **30 historias completas y 60 decisiones** sobre sentimientos, límites, apoyo adulto, amistad, reparación, fe y dignidad. Cada historia tiene narración en español, una práctica y orientación para la familia.
 
-La versión 1.1.0 añade tres rincones: pausas de calma opcionales de 40 segundos, 30 pequeños gestos y la casa SCALA, un lugar de encuentro imaginario. Incluye paisajes en todas las pantallas, bienvenida urbana con la marca estática, 16 iconos infantiles en 3D, expresiones con movimiento suave desactivable, dos melodías y 17 efectos originales. Las historias están abiertas: no se bloquean por fecha ni se exige una racha diaria.
+La versión 1.2.0 incorpora una ilustración propia y un icono diferente para cada una de las 30 historias, un icono exclusivo de Mi aventura y 60 preguntas narradas con sus opciones A, B y C. La música aportada por SCALA se reproduce desde la bienvenida, se repite y baja suavemente durante la voz. Conserva las 30 narraciones de historias, los 17 efectos originales, las pausas de calma opcionales, los 30 pequeños gestos y la casa SCALA. Los seis personajes recortados tienen movimiento suave de ojos desactivable; las ilustraciones completas son estáticas. Las historias están abiertas y se pueden repetir a cualquier ritmo.
 
 La zona infantil funciona sin conexión, sin anuncios de terceros, cobros, cuentas, analítica ni chat. El espacio familiar, protegido por PIN, contiene una promoción claramente identificada de los recursos de SCALA en **https://vitacala.online/**. Requiere confirmación antes de abrir el navegador externo. Ese sitio necesita internet y tiene sus propias prácticas de datos. La app no añade permiso de Internet para sus actividades locales.
 
@@ -22,7 +22,7 @@ npm run test:ui
 bash scripts/build_android.sh
 ```
 
-Los recursos de producción ya están en public-runtime/. No hace falta generar imágenes ni voz durante la compilación. El identificador comercial es com.scala.pequenosvalientes, versión 1.1.0, código 2. Usando la misma clave, la instalación conserva el progreso y el PIN de 1.0.0. La variante de pruebas usa .debug y no reemplaza la comercial.
+Los recursos de producción están en public-runtime/. No hace falta generar imágenes ni voz durante la compilación. El identificador comercial es com.scala.pequenosvalientes, versión 1.2.0, código 3. Usando la misma clave, la instalación conserva el progreso y el PIN de las versiones anteriores. La variante de pruebas usa .debug y no reemplaza la comercial. Las pruebas verifican el SHA-256 del MP3 aportado por SCALA y rechazan una compilación si falta o se sustituye ese archivo.
 
 ## Firmar
 
@@ -34,6 +34,6 @@ Conserva la misma clave para las actualizaciones. Nunca publiques la clave ni su
 
 ## Producción y publicación
 
-Las seis narraciones anteriores se conservan; las 24 nuevas usan una voz femenina cálida de catálogo Kokoro ef_dora. Son voces diferentes, con el mismo objetivo de lectura amable. Jardín tierno es una composición original; Mundo amable conserva la música anterior. Consulta docs/RECURSOS_Y_DERECHOS.md y los manifiestos de recursos. Los originales de imagen y WAV de producción no se publican en Git; los archivos finales sí.
+Las 30 narraciones de las historias se conservan sin cambios. Las 60 preguntas usan Kokoro ef_dora, velocidad 0,96, con la misma producción local de las últimas 24 historias. El proceso no utiliza créditos de voz externos. La música de esta versión es el archivo MP3 enviado por SCALA; las composiciones anteriores se conservan como recursos de archivo, sin selector en la interfaz. Consulta docs/RECURSOS_Y_DERECHOS.md y los manifiestos de recursos. Los originales de imagen y los modelos de voz no se publican en Git; los archivos finales sí.
 
 Esta actualización se entrega para comprobar en el teléfono. Las pruebas técnicas no sustituyen la revisión del contenido infantil y la observación con familias. La documentación identifica los pasos de publicación pendientes: soporte y política pública, revisión del contenido y recursos y configuración y aprobación de la tienda. No se promete tratamiento, eficacia clínica ni facturación.

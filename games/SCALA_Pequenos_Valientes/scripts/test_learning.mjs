@@ -109,4 +109,40 @@ assert.match(fs.readFileSync('android/app/build.gradle', 'utf8'), /versionCode 3
 for (const name of ['heart', 'story', 'mischief', 'help', 'friends', 'home', 'gear', 'sun', 'play', 'check', 'back', 'lock', 'voice', 'gift', 'feel', 'care']) assert.ok(fs.statSync(`public-runtime/icons/toys/${name}.webp`).size > 5000);
 for (const name of ['urban', 'forest', 'house']) assert.ok(fs.statSync(`public-runtime/backgrounds/${name}.webp`).size > 100000);
 checks.push('17 sonidos suaves distintos, dos melodías, treinta voces, marca original y privacidad nativa');
+const questionScripts = JSON.parse(fs.readFileSync('artwork/question-narration-scripts.json', 'utf8'));
+const questionAudio = JSON.parse(fs.readFileSync('artwork/question-narration-manifest.json', 'utf8'));
+assert.equal(questionScripts.length, 60);
+assert.equal(questionAudio.files.length, 60);
+assert.equal(questionAudio.voice, 'ef_dora');
+assert.equal(questionAudio.networkDisabled, true);
+const sceneHashes = new Set();
+const iconHashes = new Set();
+for (const lesson of lessons) {
+  for (const [directory, hashes] of [['stories', sceneHashes], ['icons/stories', iconHashes]]) {
+    const bytes = fs.readFileSync(`public-runtime/${directory}/${lesson.id}.webp`);
+    assert.equal(bytes.subarray(0, 4).toString(), 'RIFF');
+    assert.equal(bytes.subarray(8, 12).toString(), 'WEBP');
+    hashes.add(crypto.createHash('sha256').update(bytes).digest('hex'));
+  }
+  for (let index = 0; index < lesson.challenges.length; index++) {
+    const script = questionScripts.find(item => item.lessonId === lesson.id && item.step === index + 1);
+    const recording = questionAudio.files.find(item => item.lessonId === lesson.id && item.step === index + 1);
+    assert.ok(script.text.includes(lesson.challenges[index].question));
+    for (const [choiceIndex, choice] of lesson.challenges[index].choices.entries()) {
+      assert.ok(script.text.includes(`Inciso ${String.fromCharCode(65 + choiceIndex)}.`));
+      assert.ok(script.text.includes(choice.text));
+    }
+    assert.ok(script.text.endsWith('¿Cuál elegirás tú?'));
+    assert.equal(crypto.createHash('sha256').update(script.text).digest('hex'), recording.textSHA256);
+    assert.equal(crypto.createHash('sha256').update(fs.readFileSync('public-runtime/audio/' + recording.file)).digest('hex'), recording.sha256);
+    assert.ok(recording.duration > 8 && recording.duration < 40);
+  }
+}
+assert.equal(sceneHashes.size, 30);
+assert.equal(iconHashes.size, 30);
+assert.ok(fs.statSync('public-runtime/icons/toys/adventure.webp').size > 4000);
+assert.ok(fs.existsSync('public-runtime/audio/valientes-fondo-scala.mp3'), 'Falta el MP3 original enviado por SCALA.');
+const music = fs.readFileSync('public-runtime/audio/valientes-fondo-scala.mp3');
+assert.equal(crypto.createHash('sha256').update(music).digest('hex'), '04e2c4e879b56adcd220f3cad8f892a6922576f8361c8e4c871e836a2c196319');
+checks.push('treinta ilustraciones e iconos diferentes, sesenta preguntas completas narradas y música original enviada por SCALA');
 console.log(JSON.stringify({ passed: true, lessons: 30, decisions: 60, characters: 6, sounds: 17, narrations: 30, logoOriginalSHA256: logoSha, checks }));
