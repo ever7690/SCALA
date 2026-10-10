@@ -1,14 +1,46 @@
 {
-  "creditsUsed": 109,
-  "provider": "vidIQ",
-  "voice": "Sarah, stock voice",
+  "creditsUsedOriginal": 109,
+  "creditsUsedUpdate": 0,
   "musicTargetLufs": -22,
   "narrationTargetLufs": -18,
+  "music": {
+    "valientes-mundo-amable.ogg": {
+      "provider": "vidIQ",
+      "retainedOriginal": true
+    },
+    "valientes-jardin-tierno.ogg": {
+      "provider": "SCALA",
+      "composition": "Original modal synthesis, 72 BPM, looping felt-style piano and soft sustained harmony"
+    }
+  },
+  "narration": {
+    "original": {
+      "voice": "Sarah, stock catalog voice via vidIQ",
+      "storyIds": [
+        "mi-voz",
+        "mi-limite",
+        "pido-ayuda",
+        "acompanamos",
+        "reparamos",
+        "mi-valor"
+      ]
+    },
+    "extension": {
+      "model": "hexgrad/Kokoro-82M",
+      "voice": "ef_dora",
+      "language": "español",
+      "speed": 0.96,
+      "license": "Apache-2.0",
+      "modelSHA256": "496dba118d1a58f5f3db2efc88dbdc216e0483fc89fe6e47ee1f2c53f18ad1e4",
+      "storyCount": 24,
+      "voiceCloning": false
+    }
+  },
   "files": [
     {
       "name": "valientes-back.wav",
-      "bytes": 45026,
-      "sha256": "e88317a31470fb1a2607cb755f29b29ec36dd1a00ae5ad10874ffe0f8fb9be01",
+      "bytes": 49876,
+      "sha256": "b5a6afa01daed0453afef980a076dd8b4d0a0b069832edbe75201ef11f4b4740",
       "programs": [],
       "streams": [
         {
@@ -18,13 +50,29 @@
         }
       ],
       "format": {
-        "duration": "0.510000"
+        "duration": "0.564989"
+      }
+    },
+    {
+      "name": "valientes-calm.wav",
+      "bytes": 57374,
+      "sha256": "be6b3bc89676aaf7dc578ac3697f6e4588dd47f4cf9a7ba5acbd3484e3b973fd",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "pcm_s16le",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "0.650000"
       }
     },
     {
       "name": "valientes-complete.wav",
-      "bytes": 67518,
-      "sha256": "3b108e03abcc545c1b45265c6edde5156ecd4adafe6dd80fa1100fb38d04889e",
+      "bytes": 68840,
+      "sha256": "f96220c5e841fb03d9391fb0d69822bbe398a5038960d43493c7446b57d16c78",
       "programs": [],
       "streams": [
         {
@@ -34,13 +82,13 @@
         }
       ],
       "format": {
-        "duration": "0.765011"
+        "duration": "0.780000"
       }
     },
     {
       "name": "valientes-family.wav",
-      "bytes": 45026,
-      "sha256": "854535f5247a56474a4a2e431bdd967652c17c0b5540fad420b8ee8a3f863aec",
+      "bytes": 57374,
+      "sha256": "d6f7d3a0a0f4a3a3e4192a3175a642765a9e0316c81d0e85051edf22335eb2d0",
       "programs": [],
       "streams": [
         {
@@ -50,13 +98,13 @@
         }
       ],
       "format": {
-        "duration": "0.510000"
+        "duration": "0.650000"
       }
     },
     {
       "name": "valientes-feel.wav",
-      "bytes": 45026,
-      "sha256": "6d571e869759826757167e55b61aac1c7f211b03b875a3d2a7f717012fb57bd1",
+      "bytes": 49876,
+      "sha256": "2923623ccaf0b578f8c3f87c7e71f044116b41bca04ace478cb6e7791e30a062",
       "programs": [],
       "streams": [
         {
@@ -66,13 +114,13 @@
         }
       ],
       "format": {
-        "duration": "0.510000"
+        "duration": "0.564989"
       }
     },
     {
       "name": "valientes-help.wav",
-      "bytes": 52964,
-      "sha256": "05d9becbf622bfe0d76df5ef29d0f206b9801b3124a615bd90060d72e14e586a",
+      "bytes": 57374,
+      "sha256": "92af7590a1de82caf8ea64fe666b427f6ed3ac84061ea350194bfd62cf652ac4",
       "programs": [],
       "streams": [
         {
@@ -82,13 +130,13 @@
         }
       ],
       "format": {
-        "duration": "0.600000"
+        "duration": "0.650000"
       }
     },
     {
       "name": "valientes-home.wav",
-      "bytes": 52964,
-      "sha256": "6f87943743bf25a9356f5969bdec4e9cc8b0d40e88c9fd0366bb5189fede838a",
+      "bytes": 57374,
+      "sha256": "594497991d1a249ba7df54fdea0d6e7a6d5116690d5016b2bc11e9235dea37e2",
       "programs": [],
       "streams": [
         {
@@ -98,13 +146,45 @@
         }
       ],
       "format": {
-        "duration": "0.600000"
+        "duration": "0.650000"
+      }
+    },
+    {
+      "name": "valientes-jardin-tierno.ogg",
+      "bytes": 971405,
+      "sha256": "9a4e7b127f25161a465e05268250130735d30aee7fd695235073f12c6db926d2",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ],
+      "format": {
+        "duration": "106.700000"
+      }
+    },
+    {
+      "name": "valientes-kindness.wav",
+      "bytes": 57374,
+      "sha256": "3335656b8317e1c15b63b9172e9cb3f511bb2698fb2ae313bef930e90848b9c5",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "pcm_s16le",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "0.650000"
       }
     },
     {
       "name": "valientes-lock.wav",
-      "bytes": 45026,
-      "sha256": "536151acd08c91c855670ba9e5bd9f316a1d40f13db3b768d5f3dc5946eb8c8c",
+      "bytes": 57374,
+      "sha256": "7c15daada32d528deba2a4f6cb8b4116b11ef58d72de58e346deb60d48147651",
       "programs": [],
       "streams": [
         {
@@ -114,7 +194,7 @@
         }
       ],
       "format": {
-        "duration": "0.510000"
+        "duration": "0.650000"
       }
     },
     {
@@ -135,8 +215,8 @@
     },
     {
       "name": "valientes-path.wav",
-      "bytes": 52964,
-      "sha256": "b4aed1cd3eb49db44a79747de92395963474604dc3f25cda9a2e50857298c9ea",
+      "bytes": 57374,
+      "sha256": "58acb51f7636d498ecf061d56db5e38e9ec17a4637f5fcd2ef9d900ac48e24e9",
       "programs": [],
       "streams": [
         {
@@ -146,13 +226,13 @@
         }
       ],
       "format": {
-        "duration": "0.600000"
+        "duration": "0.650000"
       }
     },
     {
       "name": "valientes-practice.wav",
-      "bytes": 45026,
-      "sha256": "022e46adb19c2e71bf08b797be67cc1e34dbb1b7821606cf7616ac9f63540df6",
+      "bytes": 49876,
+      "sha256": "f4337e572436543ec17f430940d8cbe9e53ce9d73c1012e5bc998d9111c47bdf",
       "programs": [],
       "streams": [
         {
@@ -162,13 +242,29 @@
         }
       ],
       "format": {
-        "duration": "0.510000"
+        "duration": "0.564989"
+      }
+    },
+    {
+      "name": "valientes-scala.wav",
+      "bytes": 57374,
+      "sha256": "52d5b336d913d03d40cced79aaa8eefdac544c1d504391ada3a646e37d2d640a",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "pcm_s16le",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "0.650000"
       }
     },
     {
       "name": "valientes-select.wav",
-      "bytes": 37088,
-      "sha256": "829ad9b70b10371cb8275e34d2f9cc706f282e8553d661bff078f8b2ed0b199e",
+      "bytes": 42380,
+      "sha256": "cb39ca3ca78b904d7b0e45f0ab1dd92e5e9a0b95774f5429292e2af7c660be85",
       "programs": [],
       "streams": [
         {
@@ -178,13 +274,13 @@
         }
       ],
       "format": {
-        "duration": "0.420000"
+        "duration": "0.480000"
       }
     },
     {
       "name": "valientes-settings.wav",
-      "bytes": 45026,
-      "sha256": "4867c39fd1a72a470416bdac7d3a13c7d60e035db4e86d1b769816ad7173457e",
+      "bytes": 49876,
+      "sha256": "4aabb3e6ebc120bf796b14a7184cf35c89c6839f97af20d523c42c9f62629fbe",
       "programs": [],
       "streams": [
         {
@@ -194,13 +290,13 @@
         }
       ],
       "format": {
-        "duration": "0.510000"
+        "duration": "0.564989"
       }
     },
     {
       "name": "valientes-story.wav",
-      "bytes": 45026,
-      "sha256": "c7d5dc128160cff6e73291b51fb447720af51a506cde0e09f355b51e99d59d0f",
+      "bytes": 57374,
+      "sha256": "81b4e500eccc1bd70d3868dc9269934d10b4cd51f4f4de0ab623707c7694d8c7",
       "programs": [],
       "streams": [
         {
@@ -210,13 +306,13 @@
         }
       ],
       "format": {
-        "duration": "0.510000"
+        "duration": "0.650000"
       }
     },
     {
       "name": "valientes-toggle.wav",
-      "bytes": 37088,
-      "sha256": "db0d2fd20d57b00a7752e3e1aa1e5925db771588da99f4690add4f5d5e5963e3",
+      "bytes": 42380,
+      "sha256": "29ec666f0891cebe8109437f1a2a99d843d88e1a77b4b62a650db0cbda1a7e68",
       "programs": [],
       "streams": [
         {
@@ -226,13 +322,13 @@
         }
       ],
       "format": {
-        "duration": "0.420000"
+        "duration": "0.480000"
       }
     },
     {
       "name": "valientes-voice.wav",
-      "bytes": 45026,
-      "sha256": "04df728c91e9ef4f28a6c26a69b8508f59ffc89bd8e50829ffea1990c77ac8e1",
+      "bytes": 49876,
+      "sha256": "dd088f45a47167829696ba2e66c5bed9e98971ac03e5181626d912087063e9ca",
       "programs": [],
       "streams": [
         {
@@ -242,7 +338,23 @@
         }
       ],
       "format": {
-        "duration": "0.510000"
+        "duration": "0.564989"
+      }
+    },
+    {
+      "name": "voz-a-mi-ritmo.mp3",
+      "bytes": 736488,
+      "sha256": "6fff80a4a22e9415f28b4b97f0c608a674be9808dd0987fbfe0e91cfc3799346",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "46.001633"
       }
     },
     {
@@ -259,6 +371,230 @@
       ],
       "format": {
         "duration": "32.026122"
+      }
+    },
+    {
+      "name": "voz-adultos-que-cuidan.mp3",
+      "bytes": 756132,
+      "sha256": "0b7e3d82ffc0156616e77b84d75b1b18fa3288d3383605f0ba6fdc6e7739a34d",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "47.229388"
+      }
+    },
+    {
+      "name": "voz-ayudo-con-cuidado.mp3",
+      "bytes": 796256,
+      "sha256": "0282fc774118a71853ba9c96c73d43e21a89e68c9ae9bc9a9f0479cd3d9a8e65",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "49.737143"
+      }
+    },
+    {
+      "name": "voz-broma-para-todos.mp3",
+      "bytes": 749444,
+      "sha256": "26202e12c6dcadb9ed03a45d11a1b9d354a3f40f8ae5be660d0481b8b99a741a",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "46.811429"
+      }
+    },
+    {
+      "name": "voz-casa-scala.mp3",
+      "bytes": 920808,
+      "sha256": "0772fc923a6ceaa5de6e22a140663959806c2e8911292dbf35904f6755596ee8",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "57.521633"
+      }
+    },
+    {
+      "name": "voz-celebramos-camino.mp3",
+      "bytes": 787897,
+      "sha256": "b860669c70c8fad07b8697fbbbe9a86c41a37e71234411cdbb1a09a773382a36",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "49.214694"
+      }
+    },
+    {
+      "name": "voz-colores-del-corazon.mp3",
+      "bytes": 775358,
+      "sha256": "96a33441babdc9047cde65f7d33170701356fe98d247fb88e51af7c4a5a5a45c",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "48.431020"
+      }
+    },
+    {
+      "name": "voz-cuando-me-enojo.mp3",
+      "bytes": 745683,
+      "sha256": "32294d55a20192016c29f700ae54e722792dc3e29b6e98511f089c8d3d92cef9",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "46.576327"
+      }
+    },
+    {
+      "name": "voz-disculpa-con-acciones.mp3",
+      "bytes": 745683,
+      "sha256": "96b18a96aaab5900f18f2262c03976d0928cf0e8a628c9bec63ec394ac63a32d",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "46.576327"
+      }
+    },
+    {
+      "name": "voz-dos-ideas.mp3",
+      "bytes": 732726,
+      "sha256": "ce0c674cafbcdc30ef337c54f1b1acb4c80ef75227c26863eb3d1e643be7f837",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "45.766531"
+      }
+    },
+    {
+      "name": "voz-espero-mi-turno.mp3",
+      "bytes": 756968,
+      "sha256": "ce34e07680250559f0ece5f595d0f11190834f61492b494e43007b13c097d526",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "47.281633"
+      }
+    },
+    {
+      "name": "voz-gracias-pequenas.mp3",
+      "bytes": 763237,
+      "sha256": "3fe19c1d7f15800f78c9405e4f0afb4676a6214162b736528e6a4052fcf82d30",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "47.673469"
+      }
+    },
+    {
+      "name": "voz-jardin-compartido.mp3",
+      "bytes": 784553,
+      "sha256": "c7d9e7cd150c7e579cdf2161df72c9352793db58f9fc8fa4bc4d0cb0bf043177",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "49.005714"
+      }
+    },
+    {
+      "name": "voz-lugar-en-ronda.mp3",
+      "bytes": 727711,
+      "sha256": "501f1182004dfbd463f5a879c163fd458cf4fac92726ea7568f3f377e24371f2",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "45.453061"
+      }
+    },
+    {
+      "name": "voz-mi-espacio.mp3",
+      "bytes": 731890,
+      "sha256": "c9fa680559f3e7791b48b58b66f6a949348fad82012b9db6a274d5d560019a14",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "45.714286"
       }
     },
     {
@@ -310,6 +646,54 @@
       }
     },
     {
+      "name": "voz-nadie-fuera.mp3",
+      "bytes": 729382,
+      "sha256": "60c18d1b58a893adfddec147cac53834a37074419d7be9347d318e3cf86d64d4",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "45.557551"
+      }
+    },
+    {
+      "name": "voz-pantallas-en-familia.mp3",
+      "bytes": 818408,
+      "sha256": "5f47900a46bc870620c30dfca107757399b21c311720aec941113729902168a3",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "51.121633"
+      }
+    },
+    {
+      "name": "voz-permiso-primero.mp3",
+      "bytes": 753624,
+      "sha256": "4a79a70e1966df426db99e5d80e85d132bb89fdacd2664b14780646c4122814c",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "47.072653"
+      }
+    },
+    {
       "name": "voz-pido-ayuda.mp3",
       "bytes": 529598,
       "sha256": "400c544ba1abf7b84a76112bb6f7e1ac1d42bbfca7ce12c4c4505ced8227503a",
@@ -326,6 +710,38 @@
       }
     },
     {
+      "name": "voz-promesa-pequena.mp3",
+      "bytes": 713500,
+      "sha256": "90d8098ec7c4e6c27df723a42ed811581802aa2c8c6038ed5f5b10f27573f861",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "44.564898"
+      }
+    },
+    {
+      "name": "voz-puedo-equivocarme.mp3",
+      "bytes": 722277,
+      "sha256": "987650fcf84f4a3700e4c2dd2a09e502125f74ebc9c51b91c262a8e129150b29",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "45.113469"
+      }
+    },
+    {
       "name": "voz-reparamos.mp3",
       "bytes": 547570,
       "sha256": "7e4af6f45acdca34bbcf2c4a55d0515a07777243a83a4c79d8ea17cf74f9591c",
@@ -339,6 +755,70 @@
       ],
       "format": {
         "duration": "34.194286"
+      }
+    },
+    {
+      "name": "voz-secreto-que-pesa.mp3",
+      "bytes": 745265,
+      "sha256": "7cb36bb3de19db4717c897be9bfb6dfb099100c4e0d06779da612d3e6df489ae",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "46.550204"
+      }
+    },
+    {
+      "name": "voz-te-escucho.mp3",
+      "bytes": 718933,
+      "sha256": "dedba45be28fdbce030f31f1e068055179f78baf0c4c755670574e5d5c92d5d4",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "44.904490"
+      }
+    },
+    {
+      "name": "voz-valiente-con-miedo.mp3",
+      "bytes": 750698,
+      "sha256": "2c914a8919e94bc61a867f0d14e5164740764bd13eae7b85191e057cd2cefa65",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "46.889796"
+      }
+    },
+    {
+      "name": "voz-verdad-con-cuidado.mp3",
+      "bytes": 698453,
+      "sha256": "781401dd91eb630a1c78dced74bf687bee503ec37368df1a6dc1b1c02839cba1",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "43.624490"
       }
     }
   ]

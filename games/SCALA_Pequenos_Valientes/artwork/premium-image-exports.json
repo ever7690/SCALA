@@ -1,0 +1,126 @@
+{
+  "generator": "OpenAI image_gen",
+  "originalSHA256": {
+    "urban": "d57838325b0aead510c440e55269ef4ae704d4f1ee488ffa72048a6637e72915",
+    "forest": "1ad0daecf2c13e859e8669da8a51e1f2efd6428f1b920f3d4c68799192662641",
+    "house": "93e1641906831adf6cb1d12ee99a4be226fabc530450d259b906feb81cf413fc",
+    "icons": "2224b6345229469fa6c8473f00e4af29dc137400e74cf8bd4160b3977081b9f7"
+  },
+  "crops": {
+    "heart": [
+      0,
+      0,
+      331,
+      320
+    ],
+    "story": [
+      331,
+      0,
+      352,
+      320
+    ],
+    "mischief": [
+      685,
+      0,
+      291,
+      320
+    ],
+    "help": [
+      984,
+      0,
+      312,
+      324
+    ],
+    "friends": [
+      0,
+      322,
+      347,
+      309
+    ],
+    "home": [
+      349,
+      323,
+      331,
+      310
+    ],
+    "gear": [
+      687,
+      326,
+      295,
+      307
+    ],
+    "sun": [
+      987,
+      326,
+      308,
+      303
+    ],
+    "play": [
+      21,
+      630,
+      307,
+      278
+    ],
+    "check": [
+      349,
+      635,
+      316,
+      274
+    ],
+    "back": [
+      676,
+      647,
+      309,
+      265
+    ],
+    "lock": [
+      989,
+      634,
+      307,
+      278
+    ],
+    "voice": [
+      0,
+      915,
+      354,
+      299
+    ],
+    "gift": [
+      356,
+      910,
+      312,
+      304
+    ],
+    "feel": [
+      679,
+      920,
+      307,
+      294
+    ],
+    "care": [
+      987,
+      915,
+      309,
+      299
+    ]
+  },
+  "outputIcons": [
+    "heart",
+    "story",
+    "mischief",
+    "help",
+    "friends",
+    "home",
+    "gear",
+    "sun",
+    "play",
+    "check",
+    "back",
+    "lock",
+    "voice",
+    "gift",
+    "feel",
+    "care"
+  ],
+  "originalBrandModified": false
+}

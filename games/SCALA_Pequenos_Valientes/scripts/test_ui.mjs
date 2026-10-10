@@ -18,7 +18,11 @@ await page.addInitScript(() => {
   window.Audio = function (...args) { const element = new NativeAudio(...args); window.pvTestAudio.push(element); return element; };
 });
 const enter = async () => { await page.locator('#enter-world').waitFor(); await page.waitForFunction(() => !document.querySelector('#enter-world').disabled); await page.locator('#enter-world').click(); await page.locator('.welcome-scene').waitFor(); };
-const capture = async name => { await page.screenshot({ path: `entregables/capturas/${name}.png`, fullPage: false }); };
+const capture = async name => {
+  const decoded = await page.locator('img').evaluateAll(async images => Promise.all(images.map(async image => { await image.decode().catch(() => undefined); return { src: image.getAttribute('src'), ready: image.naturalWidth > 0 }; })));
+  assert.ok(decoded.every(image => image.ready), JSON.stringify(decoded));
+  await page.screenshot({ path: `entregables/capturas/${name}.png`, fullPage: false });
+};
 const click = async selector => { await page.locator(selector).click(); };
 const pinForm = async (pin, confirm) => { await page.locator('[name=pin]').fill(pin); if (confirm) { await page.locator('[name=confirm]').fill(confirm); await page.locator('[name=adult]').check(); } await page.locator('#pin-form button[type=submit]').click(); };
 try {
@@ -40,6 +44,11 @@ try {
   assert.ok((await page.locator('.help-steps').innerText()).includes('otro adulto'));
   await capture('04-apoyo');
   await click('.bottom-nav [data-nav=path]');
+  assert.equal(await page.locator('.lesson-tile').count(), 30);
+  await click('[data-chapter="5"]');
+  assert.equal(await page.locator('.lesson-tile').count(), 5);
+  assert.equal(await page.locator('.lesson-number').first().innerText(), '26');
+  await click('[data-chapter=all]');
   await capture('05-aventuras');
   await click('[data-lesson=mi-voz]');
   await capture('06-historia');
@@ -61,11 +70,11 @@ try {
   await click('[data-choice="0"]');
   await click('[data-action=lesson-next]');
   await click('[data-action=finish]');
-  assert.ok((await page.locator('.journey-summary').innerText()).includes('1 de 6'));
-  for (const id of ['mi-limite', 'pido-ayuda', 'acompanamos', 'reparamos', 'mi-valor']) {
+  assert.ok((await page.locator('.journey-summary').innerText()).includes('1 de 30'));
+  for (const id of ['mi-limite', 'pido-ayuda', 'acompanamos', 'reparamos', 'mi-valor', 'casa-scala', 'colores-del-corazon', 'cuando-me-enojo', 'lugar-en-ronda', 'dos-ideas', 'puedo-equivocarme', 'espero-mi-turno', 'verdad-con-cuidado', 'promesa-pequena', 'permiso-primero', 'broma-para-todos', 'nadie-fuera', 'te-escucho', 'disculpa-con-acciones', 'a-mi-ritmo', 'valiente-con-miedo', 'adultos-que-cuidan', 'secreto-que-pesa', 'pantallas-en-familia', 'mi-espacio', 'gracias-pequenas', 'jardin-compartido', 'ayudo-con-cuidado', 'celebramos-camino']) {
     await click(`[data-lesson=${id}]`); await click('[data-action=lesson-next]'); await click('[data-choice="0"]'); await click('[data-action=lesson-next]'); await click('[data-choice="0"]'); await click('[data-action=lesson-next]'); await click('[data-action=finish]');
   }
-  assert.ok((await page.locator('.journey-summary').innerText()).includes('6 de 6'));
+  assert.ok((await page.locator('.journey-summary').innerText()).includes('30 de 30'));
   await click('.bottom-nav [data-nav=family]');
   await pinForm('2580', '2580');
   await page.locator('.recovery-code').waitFor();
@@ -75,6 +84,18 @@ try {
   assert.ok(!stored.includes(recovery) && !stored.includes('2580'));
   await click('[data-action=saved-code]');
   await capture('08-familia');
+  assert.equal(await page.locator('.adult-catalog').count(), 1);
+  await click('[data-action=catalog]');
+  await capture('14-catalogo-familiar');
+  await click('.close-dialog');
+  assert.equal(await page.locator('[data-action=catalog]').evaluate(button => button === document.activeElement), true);
+  await page.evaluate(() => { window.pvCatalogOpened = []; window.open = url => { window.pvCatalogOpened.push(url); return null; }; });
+  await click('[data-action=catalog]'); await click('[data-action=open-catalog]');
+  assert.deepEqual(await page.evaluate(() => window.pvCatalogOpened), ['https://vitacala.online/']);
+  assert.equal(await page.locator('.adult-catalog').count(), 0);
+  await click('.bottom-nav [data-nav=family]');
+  assert.equal(await page.locator('[name=pin]').count(), 1);
+  await click('[data-action=close-modal]');
   await click('.bottom-nav [data-nav=home]');
   await click('.bottom-nav [data-nav=family]');
   for (let i = 0; i < 5; i++) { await pinForm('9999'); await page.waitForFunction(() => document.querySelector('.form-message')?.textContent.length > 10); }
@@ -98,20 +119,37 @@ try {
   await page.locator('[data-setting=sound]').fill('50');
   await page.locator('[data-toggle=largeText]').check();
   await page.locator('[data-toggle=motion]').uncheck();
+  await click('[data-music-theme=clasico]');
+  assert.ok(await page.evaluate(() => window.pvTestAudio[0].src.endsWith('valientes-mundo-amable.ogg')));
   await capture('09-ajustes');
   await page.reload(); await enter(); await click('.bottom-nav [data-nav=settings]');
   assert.equal(await page.locator('[data-setting=music]').inputValue(), '0');
+  assert.equal(await page.locator('[data-music-theme=clasico]').getAttribute('aria-pressed'), 'true');
   assert.ok(await page.locator('[data-toggle=largeText]').isChecked());
   assert.ok(!await page.locator('[data-toggle=motion]').isChecked());
   await page.locator('[data-toggle=largeText]').uncheck();
   await page.locator('[data-setting=music]').fill('22');
   await click('.bottom-nav [data-nav=home]'); await click('[data-nav=friends]'); await capture('10-amigos');
   assert.equal(await page.locator('.friend-card').count(), 6);
+  await click('.bottom-nav [data-nav=home]'); await click('[data-nav=calm]');
+  await click('[data-action=calm-start]');
+  assert.equal(await page.locator('.calm-orbit').evaluate(element => getComputedStyle(element).animationName), 'none');
+  await click('[data-action=calm-stop]');
+  assert.equal(await page.locator('[data-action=calm-start]').count(), 1);
+  await capture('11-rincon-de-calma');
+  await click('.bottom-nav [data-nav=home]'); await click('[data-nav=kindness]');
+  await click('[data-kindness="29"]'); await click('[data-action=kindness-done]');
+  await capture('12-pequenos-gestos');
+  await page.reload(); await enter(); await click('[data-nav=kindness]');
+  assert.equal(await page.locator('[data-kindness="29"] span').innerText(), '✓');
+  await click('.bottom-nav [data-nav=home]'); await click('[data-nav=scala]');
+  await capture('13-casa-scala');
+  assert.ok((await page.locator('.story-text').innerText()).includes('mundo imaginario'));
   const checks = [];
   for (const width of [320, 360, 390, 540]) {
     await page.setViewportSize({ width, height: 844 });
-    for (const destination of ['home', 'feelings', 'help', 'path', 'friends', 'settings']) {
-      if (destination === 'friends') { await click('.bottom-nav [data-nav=home]'); await click('[data-nav=friends]'); }
+    for (const destination of ['home', 'feelings', 'help', 'path', 'friends', 'settings', 'calm', 'kindness', 'scala']) {
+      if (['friends', 'calm', 'kindness', 'scala'].includes(destination)) { await click('.bottom-nav [data-nav=home]'); await click(`[data-nav=${destination}]`); }
       else await click(destination === 'help' ? '.help-shortcut' : `.bottom-nav [data-nav=${destination}]`);
       const bounds = await page.evaluate(() => ({ scroll: document.documentElement.scrollWidth, width: innerWidth, smallButtons: [...document.querySelectorAll('button')].filter(button => button.offsetParent !== null && button.getBoundingClientRect().height < 44).map(button => button.textContent.trim()) }));
       assert.ok(bounds.scroll <= bounds.width, `${destination} overflows at ${width}`);
@@ -127,12 +165,15 @@ try {
   await click('.bottom-nav [data-nav=path]'); await click('[data-lesson=reparamos]'); await click('[data-action=narration]');
   await page.waitForFunction(() => !window.pvTestAudio[1].paused);
   assert.ok((await page.locator('.story-text').innerText()).includes('no obliga'));
+  await click('[data-action=path]'); await click('[data-lesson=celebramos-camino]'); await click('[data-action=narration]');
+  await page.waitForFunction(() => !window.pvTestAudio[1].paused && window.pvTestAudio[1].duration > 25);
+  assert.ok((await page.locator('.story-text').innerText()).includes('Tu voz, tus límites'));
   await context.setOffline(false);
   await page.evaluate(() => localStorage.setItem('CapacitorStorage.scala-pequenos-valientes-v1', '{bad json'));
   await page.reload(); await enter(); await click('.bottom-nav [data-nav=path]');
-  assert.ok((await page.locator('.journey-summary').innerText()).includes('6 de 6'));
+  assert.ok((await page.locator('.journey-summary').innerText()).includes('30 de 30'));
   assert.deepEqual(errors, []); assert.deepEqual(failures, []);
-  const report = { passed: true, checks: ['bienvenida estática única', 'música y narración con volumen independiente', '12 decisiones y 6 historias', 'continuación tras cierre', 'PIN y recuperación sin perder progreso', 'bloqueo persistente de intentos', 'ajustes guardados', '24 vistas adaptables, botones >=44px', 'voz e historia sin conexión', 'respaldo de guardado dañado'], responsive: checks, errors, failures };
+  const report = { passed: true, checks: ['bienvenida estática única', 'música y narración con volumen independiente', '60 decisiones y 30 historias', 'continuación tras cierre', 'PIN y recuperación sin perder progreso', 'bloqueo persistente de intentos', 'ajustes y melodía guardados', 'catálogo confirmado solo tras PIN y cierre del acceso al abrir', '30 gestos guardados y calma con movimiento reducido', '36 vistas adaptables, botones >=44px', 'voz e historia sin conexión', 'respaldo de guardado dañado'], responsive: checks, errors, failures };
   fs.writeFileSync('entregables/VERIFICACION_INTERFAZ.json', JSON.stringify(report, null, 2) + '\n');
   console.log(JSON.stringify(report));
 } finally { await context.close(); await browser.close(); await hosted.close(); }

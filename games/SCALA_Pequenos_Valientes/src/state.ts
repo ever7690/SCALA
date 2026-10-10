@@ -6,6 +6,7 @@ export interface Settings {
   voice: number;
   motion: boolean;
   largeText: boolean;
+  musicTheme: 'tierno' | 'clasico';
 }
 export interface PinRecord {
   salt: string;
@@ -22,11 +23,12 @@ export interface State {
   failedPins: number;
   pinBlockedUntil: number;
   session: { lessonId: string; step: number } | null;
+  kindness: number[];
 }
 
-export const defaultSettings: Settings = { music: 0.22, sound: 0.5, voice: 0.9, motion: true, largeText: false };
+export const defaultSettings: Settings = { music: 0.22, sound: 0.5, voice: 0.9, motion: true, largeText: false, musicTheme: 'tierno' };
 export function initialState(): State {
-  return { version: 1, completed: [], attempts: {}, settings: { ...defaultSettings }, pin: null, failedPins: 0, pinBlockedUntil: 0, session: null };
+  return { version: 1, completed: [], attempts: {}, settings: { ...defaultSettings }, pin: null, failedPins: 0, pinBlockedUntil: 0, session: null, kindness: [] };
 }
 const finite = (value: unknown, fallback: number, max = 1): number => typeof value === 'number' && Number.isFinite(value) ? Math.max(0, Math.min(max, value)) : fallback;
 const hex = (value: unknown, length: number): value is string => typeof value === 'string' && value.length === length && /^[a-f0-9]+$/u.test(value);
@@ -46,6 +48,7 @@ export function restoreState(raw: unknown): State {
       music: finite(value.settings.music, defaultSettings.music), sound: finite(value.settings.sound, defaultSettings.sound), voice: finite(value.settings.voice, defaultSettings.voice),
       motion: typeof value.settings.motion === 'boolean' ? value.settings.motion : true,
       largeText: typeof value.settings.largeText === 'boolean' ? value.settings.largeText : false,
+      musicTheme: value.settings.musicTheme === 'clasico' ? 'clasico' : 'tierno',
     };
   }
   const pin = value.pin;
@@ -53,6 +56,7 @@ export function restoreState(raw: unknown): State {
   base.failedPins = Math.floor(finite(value.failedPins, 0, 10000));
   base.pinBlockedUntil = finite(value.pinBlockedUntil, 0, Number.MAX_SAFE_INTEGER);
   if (value.session && ids.has(value.session.lessonId) && Number.isInteger(value.session.step) && value.session.step >= 0 && value.session.step <= 3) base.session = { ...value.session };
+  base.kindness = Array.isArray(value.kindness) ? [...new Set(value.kindness.filter(id => Number.isInteger(id) && id >= 0 && id < 30))] : [];
   return base;
 }
 export function recordPractice(state: State, id: string): State {
@@ -74,5 +78,5 @@ export function pinFailure(state: State, now: number): State {
   return { ...state, failedPins: failures, pinBlockedUntil: failures % 5 === 0 ? now + Math.min(300000, 30000 * Math.ceil(failures / 5)) : state.pinBlockedUntil };
 }
 export function resetProgress(state: State): State {
-  return { ...state, completed: [], attempts: {}, session: null };
+  return { ...state, completed: [], attempts: {}, session: null, kindness: [] };
 }

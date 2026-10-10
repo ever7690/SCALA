@@ -1,0 +1,120 @@
+body{background:#e3edcf url('/backgrounds/forest.webp') center/cover fixed}
+.app-shell{position:relative;isolation:isolate;background:transparent;--world-background:url('/backgrounds/garden.webp');border-color:#d9bd83;min-height:100vh;min-height:100dvh}
+.app-shell[inert]{pointer-events:none;user-select:none}
+.app-shell::before{content:"";position:fixed;inset:0 auto 0 50%;transform:translateX(-50%);width:min(580px,100%);z-index:-1;background:linear-gradient(#fff3dc63,#fff2d44a 40%,#f4ecc47a),var(--world-background) center/cover;pointer-events:none}
+.app-shell[data-landscape=forest]{--world-background:url('/backgrounds/forest.webp')}
+.app-shell[data-landscape=house]{--world-background:url('/backgrounds/house.webp')}
+.app-shell[data-landscape=urban]{--world-background:url('/backgrounds/urban.webp')}
+.app-shell[data-landscape=school]{--world-background:url('/backgrounds/school.webp')}
+.topbar{background:linear-gradient(#fff8eaf5,#fff6e8df);border-bottom:1px solid #d8b874;box-shadow:0 5px 22px #74533314}
+.page-heading{background:linear-gradient(115deg,#fff8eaf7,#fff7e2e8);border:1px solid #dec07e;border-radius:22px;padding:17px 18px;box-shadow:0 4px 15px #68592a12}
+.page-heading h1{color:#463420}
+.eyebrow{color:#715334}
+.toy-icon{background:transparent;border:0;box-shadow:none;border-radius:0}
+.toy-icon img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 3px 3px #5a382416)}
+.round-button{border:1px solid #d7b475;background:linear-gradient(#fffdf3,#ffe8ad);box-shadow:0 3px 0 #cda566,0 5px 12px #77622b20}
+.round-button .toy-icon{width:41px;height:41px}
+.primary{background:linear-gradient(#ffd97f,#ffc35f);border:1px solid #c7974f;box-shadow:0 4px 0 #c9954e,0 7px 18px #7747181f}
+.primary .toy-icon,.secondary .toy-icon{width:33px;height:33px}
+.secondary{background:linear-gradient(#fffdf3,#ffebba);border-color:#d3af69}
+.text-button{color:#513c26;background:#fff7e5cc;border-radius:17px;margin:0 0 14px;padding:5px 9px}
+.welcome-scene{border:2px solid #d6ad60;box-shadow:0 5px 0 #ccaf72,0 12px 22px #4d512327}
+.welcome-scene .pill{background:#fff6d3e8;color:#6a4928;border-color:#b9995d}
+.support-banner{border:1px solid #a7b37b;background:linear-gradient(125deg,#eff7d7,#d6edb1);box-shadow:0 4px 0 #a8b679,0 7px 14px #5265351d}
+.support-banner>.toy-icon{width:51px;height:51px}
+.activity-tile{border:1px solid #cda75f;padding:15px 14px;gap:7px;box-shadow:0 4px 0 #c6a267,0 8px 16px #664c251b}
+.activity-tile>.toy-icon{width:64px;height:64px}
+.activity-tile strong{font-size:.94rem}
+.activity-tile>span:last-child{font-size:.72rem;color:#55432e}
+.peach{background:linear-gradient(135deg,#ffecd6,#ffcca6)}
+.yellow{background:linear-gradient(135deg,#fff5c1,#ffe18b)}
+.green{background:linear-gradient(135deg,#eaf7d5,#bfdf9c)}
+.purple{background:linear-gradient(135deg,#f4e5ff,#d9bce9)}
+.next-adventure,.message-card,.small-card,.settings-card,.settings-brand,.family-brand,.adult-guide,.story-text,.challenge-card{background:#fff9ecef;border-color:#cfae73;box-shadow:0 4px 16px #68502712}
+.next-adventure .toy-icon{width:53px;height:53px}
+.home-footer,.quiet-note{background:#fff7e6e6;border:1px solid #dbc494;border-radius:18px;padding:12px 14px;color:#634d31}
+.bottom-nav{background:#fff8e7f5;border-color:#cfae73;box-shadow:0 -5px 25px #5c53251a}
+.bottom-nav .toy-icon{width:39px;height:39px}
+.bottom-nav [aria-current]{background:linear-gradient(#ffeebd,#ffdf99);border-color:#cda85d}
+.feelings-guide{background:#fff6e8f2;border-color:#c5b279}
+.mood-button{border-color:#bc9c63;box-shadow:0 4px 0 #bda371;min-height:127px}
+.mood-face{width:68px;height:68px;overflow:visible;filter:drop-shadow(0 4px 3px #ae842526)}
+.emoji-eyes{transform-box:fill-box;transform-origin:center;animation:gentle-blink 6.6s infinite}
+.mood-button:nth-child(2) .emoji-eyes{animation-delay:-2.4s}
+.mood-button:nth-child(3) .emoji-eyes{animation-delay:-4.1s}
+.mood-button:nth-child(4) .emoji-eyes{animation-delay:-1.5s}
+.mood-button:nth-child(5) .emoji-eyes{animation-delay:-5.2s}
+@keyframes gentle-blink{0%,92%,96%,100%{transform:scaleY(1)}94%{transform:scaleY(.12)}}
+.help-hero{background:linear-gradient(135deg,#fff1d3f5,#ffddb5f2);border-color:#cba46a}
+.help-steps{background:#fff9eeeF;border:1px solid #d8b981;border-radius:25px;padding:1px 18px;box-shadow:0 4px 17px #57602b17}
+.journey-summary{background:#eaf3cef2;border-color:#a5b57b}
+.journey-summary>.toy-icon{width:62px;height:62px}
+.lesson-tile{background:linear-gradient(110deg,#fffbefef,var(--tile-color));border-color:#c7a567;box-shadow:0 4px 0 #c5ad7a,0 6px 12px #78613212;min-height:107px}
+.lesson-tile>.toy-icon{width:53px;height:53px}
+.lesson-number{color:#71522c}
+.lesson-label small{color:#58482f}
+.stage-bar{background:#fff6e6e6;border:1px solid #d8bd8d;border-radius:18px;padding:13px 10px;margin-top:18px}
+.stage-bar>span{color:#665135}
+.stage-bar small{font-size:.6rem}
+.story-scene{border-color:#caa767;box-shadow:0 5px 0 #c9b277,0 8px 22px #64643a25}
+.story-scene.forest{background-image:url('/backgrounds/forest.webp');background-position:center 68%}
+.story-scene.house{background-image:url('/backgrounds/house.webp');background-position:center 58%}
+.story-scene.urban{background-image:url('/backgrounds/urban.webp');background-position:center 72%}
+.bible-note{background:#fff5e1e8;border:1px solid #dcc591;border-radius:15px;padding:12px 14px;margin-inline:0;color:#655235}
+.adult-guide .bible-note{background:#fff2d7}
+.practice-finish{background:linear-gradient(#f5f5d8f7,#e1eec4f7);border-color:#aabd81}
+.settings-brand{background:#fffcf1eF}
+.friend-card{border-color:#cda668;box-shadow:0 4px 0 #bea16b}
+.explore-world{margin-top:28px}
+.section-heading{background:#fff8eaeF;border:1px solid #d6b779;border-radius:21px;padding:16px;margin-bottom:15px}
+.section-heading .eyebrow{display:block;font-size:.58rem;line-height:1.5}
+.section-heading h2{font-size:1rem}
+.world-grid{display:grid;grid-template-columns:1fr;gap:13px}
+.world-grid .activity-tile{display:grid;grid-template-columns:64px 1fr;grid-template-rows:auto auto;align-items:center;column-gap:14px;min-height:106px}
+.world-grid .activity-tile>.toy-icon{grid-row:1/3}
+.world-grid .activity-tile strong{align-self:end}
+.world-grid .activity-tile>span:last-child{align-self:start}
+.chapter-tabs{display:flex;gap:8px;overflow-x:auto;padding:4px 2px 16px;max-width:100%;margin-bottom:4px;scrollbar-width:thin;scrollbar-color:#c29f64 #ffedc8}
+.chapter-tabs button{white-space:nowrap;min-height:46px;flex:0 0 auto;border-radius:16px;background:#fff7e5;border:1px solid #cdb279;padding:8px 14px;font-size:.8rem;font-weight:800;color:#6a5030}
+.chapter-tabs button[aria-pressed=true]{background:#ffd681;border-color:#ba8e46;box-shadow:0 3px 0 #c7974f}
+.music-picker{padding:21px 16px}
+.music-picker>p{font-size:.8rem;margin-top:7px;color:#685136}
+.music-picker>div{display:grid;gap:10px;margin-top:17px}
+.music-picker button,.calm-options button{display:flex;align-items:center;gap:13px;width:100%;min-height:78px;background:#ffefd4;border:1px solid #d7b87d;border-radius:19px;padding:10px 13px;text-align:left;color:#513e29}
+.music-picker button>.toy-icon,.calm-options button>.toy-icon{width:49px;height:49px}
+.music-picker button>span,.calm-options button>span{font-size:.85rem;font-weight:800;line-height:1.4;min-width:0}
+.music-picker small,.calm-options small{display:block;font-size:.7rem;font-weight:500;margin-top:4px;line-height:1.45}
+.music-picker [aria-pressed=true],.calm-options [aria-pressed=true]{background:#ecf1ce;border:2px solid #96a76b;box-shadow:0 3px 0 #acbd80}
+.calm-options{display:grid;gap:12px;margin:18px 0}
+.calm-card,.kindness-card{background:linear-gradient(#fffcf0f5,#fff0cbf5);border:1px solid #c5ab70;border-radius:28px;padding:27px 20px;text-align:center;box-shadow:0 5px 0 #c3b27c,0 10px 24px #526b3523}
+.calm-orbit{display:grid;place-items:center;width:142px;height:142px;border-radius:50%;margin:0 auto 25px;background:radial-gradient(#fffdf8,#f2edbe 55%,#c8dfb4);border:2px solid #a9bc86;box-shadow:inset 0 0 24px #ffffffad,0 10px 24px #a6bc692b}
+.calm-orbit .toy-icon{width:87px;height:87px}
+.calm-card.running .calm-orbit{animation:calm-wave 10s ease-in-out infinite}
+@keyframes calm-wave{0%,100%{transform:scale(.94)}50%{transform:scale(1.04)}}
+.calm-card>p{margin-top:15px;min-height:77px;line-height:1.7;font-size:.93rem}
+.calm-card .quiet-note{min-height:0;font-size:.76rem}
+.calm-card h2,.kindness-card h2{font-size:1.27rem;line-height:1.5}
+.kindness-card>.toy-icon{display:flex;width:101px;height:101px;margin:0 auto 17px}
+.kindness-card>.pill{margin-bottom:18px}
+.kindness-card>p{font-size:.85rem;line-height:1.65;margin:18px 0}
+.kindness-saved{background:#e4efcc;border:1px solid #a1b97b;color:#496638;border-radius:18px;padding:13px 10px;font-weight:700}
+.gesture-picker{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;padding:20px 0 0}
+.gesture-picker button{position:relative;min-height:49px;background:#fff8e9;border:1px solid #c9ad75;border-radius:15px;box-shadow:0 3px 0 #c9b687;font-weight:800;font-size:.88rem}
+.gesture-picker button[aria-pressed=true]{background:#ffd57f;border-color:#b48a42}
+.gesture-picker button>span{position:absolute;right:5px;top:0;color:#506b3b;font-size:.65rem}
+.house-values{display:grid;grid-template-columns:1fr;gap:12px;margin-top:23px}
+.house-values>span{display:flex;align-items:center;gap:16px;background:#fff6e4ee;border:1px solid #d5b67a;border-radius:21px;padding:11px 15px;font-size:.86rem;font-weight:800}
+.house-values .toy-icon{width:49px;height:49px}
+.adult-catalog{margin-top:28px;border:2px solid #b79053;background:#fff3dceF;padding:23px 18px}
+.adult-catalog>.eyebrow{display:block;line-height:1.7;letter-spacing:.7px}
+.adult-catalog>.toy-icon{width:69px;height:69px;margin:12px 0}
+.adult-catalog>small{display:block;font-size:.72rem;line-height:1.6;color:#665034}
+.progress-list{max-height:345px;overflow:auto;padding-right:5px;scrollbar-width:thin}
+.adult-guide summary{min-height:44px;display:flex;align-items:center}
+.setting-row input{min-height:44px}
+.toggle-row input{height:44px}
+.dialog{border-color:#d0aa68;background:#fff8e9}
+.reduce-motion .emoji-eyes,.reduce-motion .calm-card.running .calm-orbit{animation:none}
+@media(prefers-reduced-motion:reduce){.emoji-eyes,.calm-card.running .calm-orbit{animation:none}}
+@media(min-width:500px){.world-grid .activity-tile{min-height:110px}.gesture-picker{grid-template-columns:repeat(6,1fr)}.story-scene.house{height:315px}}
+@media(max-width:350px){.page-heading{padding:16px 14px}.activity-tile>.toy-icon{width:59px;height:59px}.activity-tile strong{font-size:.81rem}.activity-tile>span:last-child{font-size:.69rem}.lesson-tile>.toy-icon{width:43px;height:43px}.stage-bar{padding-inline:7px}.stage-bar small{font-size:.51rem}.support-banner{gap:8px}.support-banner strong{font-size:.82rem}.gesture-picker{gap:8px}.calm-card,.kindness-card{padding:24px 17px}}

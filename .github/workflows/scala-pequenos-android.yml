@@ -14,7 +14,7 @@ concurrency:
 jobs:
   android:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
     defaults:
       run:
         working-directory: games/SCALA_Pequenos_Valientes
@@ -64,6 +64,23 @@ jobs:
           printf '%s\n' "Commit: $GITHUB_SHA" "Compilación: $GITHUB_RUN_ID" > entregables/COMPILACION.txt
       - name: Verificar interfaz, audio y guardado
         run: npx playwright install --with-deps chromium && npm run test:ui
+      - name: Preparar aceleración de Android
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+      - name: Comprobar instalación y entrada en Android 11
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 30
+          target: google_apis
+          arch: x86_64
+          profile: pixel_2
+          emulator-boot-timeout: 300
+          emulator-options: -no-window -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim -camera-back none
+          disable-animations: true
+          working-directory: games/SCALA_Pequenos_Valientes
+          script: node scripts/test_android_start.mjs
       - name: Preparar materiales de publicación
         run: npm run store:prepare && node scripts/prepare_delivery.mjs
       - name: Entregar APK y verificaciones

@@ -9,6 +9,7 @@ android/app/src/main/assets/
 android/capacitor-cordova-android-plugins/
 artwork/audio/
 artwork/*.png
+artwork/premium-masters/
 public/art/
 *.p12
 *.jks

@@ -2,16 +2,18 @@
 
 **Nombre:** Pequeños Valientes
 
-**Descripción breve:** Historias con Escalito para expresar emociones, poner límites y pedir ayuda.
+**Descripción breve:** 30 historias con Escalito para expresar emociones, cuidarnos y pedir ayuda.
 
 **Descripción:**
 
-Crece con Escalito y sus amigos en una aventura de fe, respeto y cuidado. Ana, Luz, Mateo, Roko y el tierno Lupi acompañan historias para conversar sobre lo que sentimos y cómo tratamos a los demás.
+Descubre un mundo de amistad, fe y cuidado con Escalito, Ana, Luz, Mateo, Roko y el tierno Lupi. Explora 30 historias narradas en español y 60 decisiones con explicaciones amables. Practica cómo expresar lo que te molesta, cuidar tus límites, buscar apoyo adulto y acompañar a tus amigos.
 
-Descubre seis historias narradas en español. Elige ideas, escucha explicaciones amables y practica frases para expresar lo que te molesta, buscar apoyo adulto y acompañar a tus amigos. Roko también aprende que una broma necesita detenerse cuando lastima y que reparar incluye cambiar lo que hacemos.
+Visita el rincón de calma con pausas opcionales, elige entre 30 pequeños gestos y descubre la casa SCALA, un lugar imaginario para aprender juntos. Las aventuras están abiertas y puedes repetirlas a tu ritmo.
 
-Una experiencia pensada para niños de 6 a 12 años y sus familias, con ilustraciones cálidas, música suave, botones grandes, controles separados de voz y sonido y opción de letras más grandes. Funciona sin conexión. El espacio familiar permite seguir las historias practicadas y ofrece ideas para conversar; tiene PIN y recuperación local.
+Paisajes llenos de vida, iconos en 3D, caras expresivas, música suave y controles independientes de voz, música y botones. Puedes elegir la melodía, ampliar las letras y reducir el movimiento.
 
-Sin anuncios, compras integradas, cuentas ni chat. Las emociones elegidas no se guardan. Es una aplicación educativa que invita al acompañamiento de personas adultas; no reemplaza su cuidado ni ofrece tratamiento o atención de emergencia.
+Pensada para niños de 6 a 12 años y sus familias. La zona infantil funciona sin conexión y no incluye anuncios de terceros, compras, cuentas ni chat. Las emociones elegidas no se guardan. El espacio familiar protegido por PIN ofrece guías y un enlace promocional opcional a los recursos de SCALA, que abre una página externa previa confirmación adulta.
 
-**Pendiente del propietario:** contacto real de soporte, URL pública de privacidad, precio, países, clasificación y aprobación de la tienda. Las capturas adjuntas corresponden a la interfaz real.
+Una experiencia educativa que invita al acompañamiento de adultos; no ofrece tratamiento ni atención de emergencia.
+
+**Pendiente del propietario:** contacto real de soporte, URL pública de privacidad, revisión del contenido y recursos, precio, países, clasificación y aprobación de tienda. Las capturas adjuntas corresponden a la interfaz real.

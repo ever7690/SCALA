@@ -1,6 +1,7 @@
+import { premiumLessons } from './stories-premium.ts';
 export type CharacterId = 'escalito' | 'lupi' | 'ana' | 'luz' | 'mateo' | 'roko';
 export type Mood = 'alegre' | 'tranquilo' | 'triste' | 'enojado' | 'preocupado';
-export type IconId = 'home' | 'heart' | 'story' | 'help' | 'path' | 'family' | 'gear' | 'voice' | 'leaf' | 'back' | 'play' | 'check' | 'lock' | 'sun';
+export type IconId = 'home' | 'heart' | 'story' | 'help' | 'path' | 'family' | 'gear' | 'voice' | 'leaf' | 'back' | 'play' | 'check' | 'lock' | 'sun' | 'mischief' | 'friends' | 'care' | 'gift' | 'feel';
 
 export interface Choice {
   text: string;
@@ -17,7 +18,7 @@ export interface Lesson {
   subtitle: string;
   icon: IconId;
   color: string;
-  scene: 'garden' | 'school';
+  scene: 'garden' | 'school' | 'forest' | 'house' | 'urban';
   actors: CharacterId[];
   paragraphs: string[];
   narration: string;
@@ -67,7 +68,7 @@ export const lessons: Lesson[] = [
     practice: 'Con un adulto, completa: «Hoy me siento… y me gustaría contarte…».', adult: 'Escuche sin exigir una emoción concreta. Agradezca que el niño hable y pregunte qué apoyo necesita.', bible: 'Marcos 10:13–16 · Jesús recibe a los niños y les da un lugar importante.',
   },
   {
-    id: 'mi-limite', title: 'Una broma que molesta', subtitle: 'Pongo un límite con palabras', icon: 'story', color: '#ffd576', scene: 'school', actors: ['escalito', 'ana', 'roko'],
+    id: 'mi-limite', title: 'Una broma que molesta', subtitle: 'Pongo un límite con palabras', icon: 'mischief', color: '#ffd576', scene: 'school', actors: ['escalito', 'ana', 'roko'],
     paragraphs: [
       'Roko quiere hacer reír al grupo y vuelve a bromear sobre el dibujo de Ana. Ella se siente incómoda.',
       'Escalito acompaña a Ana. Si se siente segura, Ana puede decir: «Esa broma me molesta. Por favor, para». También puede alejarse y pedir ayuda.',
@@ -127,7 +128,7 @@ export const lessons: Lesson[] = [
     practice: 'Elige un gesto amable para hoy: escuchar, incluir a alguien o acompañar a buscar ayuda.', adult: 'Practiquen cómo apoyar sin asumir responsabilidades de protección que corresponden a los adultos.', bible: 'Lucas 10:25–37 · Parábola del buen samaritano, contada con palabras propias.',
   },
   {
-    id: 'reparamos', title: 'Roko aprende a cuidar', subtitle: 'Escucho y reparo lo que hice', icon: 'leaf', color: '#ffa98f', scene: 'school', actors: ['roko', 'ana', 'escalito'],
+    id: 'reparamos', title: 'Roko aprende a cuidar', subtitle: 'Escucho y reparo lo que hice', icon: 'care', color: '#ffa98f', scene: 'school', actors: ['roko', 'ana', 'escalito'],
     paragraphs: [
       'Roko escucha a Ana y comprende que su broma le hizo daño. Escalito lo invita a pensar cómo puede cuidar mejor al grupo.',
       'Roko dice: «Siento haberme burlado. Voy a parar». Deja la burla y pregunta cómo puede reparar lo que hizo.',
@@ -166,6 +167,7 @@ export const lessons: Lesson[] = [
     ],
     practice: 'Comparte con tu familia una frase que te ayude a pedir apoyo cuando lo necesites.', adult: 'Refuerce la dignidad del niño sin prometer que la fe o una actividad evitarán todos los problemas.', bible: 'Marcos 10:13–16 · Relato original basado en Jesús y los niños.',
   },
+  ...premiumLessons,
 ];
 
 export function lessonById(id: string): Lesson | undefined {

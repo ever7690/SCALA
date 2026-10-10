@@ -23,6 +23,6 @@ export async function verifyPin(pin: string, record: PinRecord): Promise<boolean
   return /^\d{4}$/u.test(pin) && equal(await hash(pin, record.salt), record.hash);
 }
 export async function verifyRecovery(recovery: string, record: PinRecord): Promise<boolean> {
-  const secret = recovery.replaceAll(/[^a-f0-9]/giu, '').toUpperCase();
+  const secret = recovery.replace(/[^a-f0-9]/giu, '').toUpperCase();
   return secret.length === 16 && equal(await hash(secret, record.recoverySalt), record.recoveryHash);
 }

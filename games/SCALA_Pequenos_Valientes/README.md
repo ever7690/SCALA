@@ -1,8 +1,12 @@
 # SCALA Pequeños Valientes
 
-Aventura educativa cristiana original para niños de 6 a 12 años y sus familias. Escalito, Lupi, Ana, Luz, Mateo y Roko acompañan seis historias sobre sentimientos, límites, apoyo adulto, amistad, reparación y dignidad. Incluye doce decisiones con explicaciones amables, narración en español, música original, catorce sonidos suaves, ajustes accesibles, progreso local y acceso familiar con PIN y código de recuperación.
+Aventura educativa cristiana original para niños de 6 a 12 años y sus familias. Escalito, Lupi, Ana, Luz, Mateo y Roko acompañan **30 historias completas y 60 decisiones** sobre sentimientos, límites, apoyo adulto, amistad, reparación, fe y dignidad. Cada historia tiene narración en español, una práctica y orientación para la familia.
 
-La aplicación funciona sin conexión. No incluye publicidad, compras integradas, cuentas, analítica, chat ni captura de relatos personales. Las emociones elegidas no se guardan. El progreso no califica el estado de ánimo. El adulto conserva la responsabilidad de escuchar y proteger.
+La versión 1.1.0 añade tres rincones: pausas de calma opcionales de 40 segundos, 30 pequeños gestos y la casa SCALA, un lugar de encuentro imaginario. Incluye paisajes en todas las pantallas, bienvenida urbana con la marca estática, 16 iconos infantiles en 3D, expresiones con movimiento suave desactivable, dos melodías y 17 efectos originales. Las historias están abiertas: no se bloquean por fecha ni se exige una racha diaria.
+
+La zona infantil funciona sin conexión, sin anuncios de terceros, cobros, cuentas, analítica ni chat. El espacio familiar, protegido por PIN, contiene una promoción claramente identificada de los recursos de SCALA en **https://vitacala.online/**. Requiere confirmación antes de abrir el navegador externo. Ese sitio necesita internet y tiene sus propias prácticas de datos. La app no añade permiso de Internet para sus actividades locales.
+
+Las emociones elegidas no se guardan. Se conserva el progreso educativo, los gestos practicados, el punto de continuación, los ajustes y la protección familiar solo en este dispositivo. El adulto conserva la responsabilidad de escuchar y proteger.
 
 ## Comprobar y compilar
 
@@ -18,7 +22,7 @@ npm run test:ui
 bash scripts/build_android.sh
 ```
 
-Los recursos listos para compilar están en `public-runtime/`. No es necesario generar imágenes ni música de nuevo. `scripts/prepare_assets.mjs` es una herramienta de producción opcional que requiere los originales visuales y musicales; no forma parte de la compilación. El nombre Android es «Pequeños Valientes», el identificador comercial es `com.scala.pequenosvalientes` y la versión inicial es 1.0.0, código 1. La variante de pruebas usa `.debug` y no reemplaza la versión comercial.
+Los recursos de producción ya están en public-runtime/. No hace falta generar imágenes ni voz durante la compilación. El identificador comercial es com.scala.pequenosvalientes, versión 1.1.0, código 2. Usando la misma clave, la instalación conserva el progreso y el PIN de 1.0.0. La variante de pruebas usa .debug y no reemplaza la comercial.
 
 ## Firmar
 
@@ -26,10 +30,10 @@ Los recursos listos para compilar están en `public-runtime/`. No es necesario g
 bash scripts/sign_android.sh /ruta/a/tu-clave.p12 /ruta/a/archivo-de-contrasena.txt
 ```
 
-Conserva la misma clave para todas las actualizaciones de esta aplicación. Nunca publiques la clave ni su contraseña. El script produce un APK comercial y un AAB firmado en `entregables/`.
+Conserva la misma clave para las actualizaciones. Nunca publiques la clave ni su contraseña. El script produce el APK comercial y el AAB firmado en entregables/.
 
-## Antes de publicar para niños
+## Producción y publicación
 
-La compilación técnica y las pruebas automatizadas no equivalen a una evaluación pedagógica o clínica. La entrega incluye una lista de revisión familiar, una guía para revisión profesional, la política de privacidad y materiales para la ficha. Faltan la revisión especializada del contenido y la prueba con familias reales, la verificación de los derechos aplicables a los recursos y la configuración y aprobación de la tienda. No se ha realizado un estudio de eficacia ni se promete tratar o prevenir por completo el acoso.
+Las seis narraciones anteriores se conservan; las 24 nuevas usan una voz femenina cálida de catálogo Kokoro ef_dora. Son voces diferentes, con el mismo objetivo de lectura amable. Jardín tierno es una composición original; Mundo amable conserva la música anterior. Consulta docs/RECURSOS_Y_DERECHOS.md y los manifiestos de recursos. Los originales de imagen y WAV de producción no se publican en Git; los archivos finales sí.
 
-Los gráficos y guiones son originales del proyecto. El logotipo y los personajes aprobados se conservan. Consulta `docs/RECURSOS_Y_DERECHOS.md` y las licencias de las dependencias.
+Esta actualización se entrega para comprobar en el teléfono. Las pruebas técnicas no sustituyen la revisión del contenido infantil y la observación con familias. La documentación identifica los pasos de publicación pendientes: soporte y política pública, revisión del contenido y recursos y configuración y aprobación de la tienda. No se promete tratamiento, eficacia clínica ni facturación.

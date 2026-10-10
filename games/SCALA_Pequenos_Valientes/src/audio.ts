@@ -1,17 +1,18 @@
 import type { Settings } from './state.ts';
 
-export const cues = ['home', 'feel', 'story', 'help', 'path', 'family', 'settings', 'back', 'select', 'practice', 'complete', 'voice', 'lock', 'toggle'] as const;
+export const cues = ['home', 'feel', 'story', 'help', 'path', 'family', 'settings', 'back', 'select', 'practice', 'complete', 'voice', 'lock', 'toggle', 'calm', 'kindness', 'scala'] as const;
 export type Cue = typeof cues[number];
 export class AppAudio {
   private context: AudioContext | null = null;
   private buffers = new Map<Cue, AudioBuffer>();
   private loading: Promise<void> | null = null;
-  private music = new Audio('/audio/valientes-mundo-amable.ogg');
+  private music = new Audio('/audio/valientes-jardin-tierno.ogg');
   private voice = new Audio();
   private unlocked = false;
   private active = true;
   private settings: Settings;
   private currentVoice: string | null = null;
+  private musicTheme = 'tierno';
   onVoiceChange: (() => void) | null = null;
 
   constructor(settings: Settings) {
@@ -36,6 +37,11 @@ export class AppAudio {
   }
   update(settings: Settings): void {
     this.settings = settings;
+    if (settings.musicTheme !== this.musicTheme) {
+      this.musicTheme = settings.musicTheme;
+      this.music.src = settings.musicTheme === 'clasico' ? '/audio/valientes-mundo-amable.ogg' : '/audio/valientes-jardin-tierno.ogg';
+      this.music.load();
+    }
     this.music.volume = Math.max(0, Math.min(1, settings.music * (this.currentVoice ? 0.16 : 0.52)));
     this.voice.volume = settings.voice;
     if (this.active && this.unlocked && settings.music > 0) void this.music.play().catch(() => undefined);
