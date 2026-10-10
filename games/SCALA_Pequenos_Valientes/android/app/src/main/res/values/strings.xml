@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Pequeños Valientes</string>
+    <string name="title_activity_main">Pequeños Valientes</string>
+    <string name="package_name">com.scala.pequenosvalientes</string>
+    <string name="custom_url_scheme">com.scala.pequenosvalientes</string>
+</resources>

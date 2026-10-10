@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme.NoActionBarLaunch" parent="AppTheme.LaunchSurface">
+        <item name="android:windowSplashScreenBackground">@color/scala_launch_background</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/scala_launch_empty</item>
+        <item name="android:windowSplashScreenIconBackgroundColor">@color/scala_launch_background</item>
+    </style>
+</resources>

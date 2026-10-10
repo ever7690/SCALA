@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android"><background android:drawable="@drawable/scala_launcher_legacy"/><foreground android:drawable="@drawable/scala_launch_empty"/></adaptive-icon>

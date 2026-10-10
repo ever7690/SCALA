@@ -1,0 +1,345 @@
+{
+  "creditsUsed": 109,
+  "provider": "vidIQ",
+  "voice": "Sarah, stock voice",
+  "musicTargetLufs": -22,
+  "narrationTargetLufs": -18,
+  "files": [
+    {
+      "name": "valientes-back.wav",
+      "bytes": 45026,
+      "sha256": "e88317a31470fb1a2607cb755f29b29ec36dd1a00ae5ad10874ffe0f8fb9be01",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "pcm_s16le",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "0.510000"
+      }
+    },
+    {
+      "name": "valientes-complete.wav",
+      "bytes": 67518,
+      "sha256": "3b108e03abcc545c1b45265c6edde5156ecd4adafe6dd80fa1100fb38d04889e",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "pcm_s16le",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "0.765011"
+      }
+    },
+    {
+      "name": "valientes-family.wav",
+      "bytes": 45026,
+      "sha256": "854535f5247a56474a4a2e431bdd967652c17c0b5540fad420b8ee8a3f863aec",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "pcm_s16le",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "0.510000"
+      }
+    },
+    {
+      "name": "valientes-feel.wav",
+      "bytes": 45026,
+      "sha256": "6d571e869759826757167e55b61aac1c7f211b03b875a3d2a7f717012fb57bd1",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "pcm_s16le",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "0.510000"
+      }
+    },
+    {
+      "name": "valientes-help.wav",
+      "bytes": 52964,
+      "sha256": "05d9becbf622bfe0d76df5ef29d0f206b9801b3124a615bd90060d72e14e586a",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "pcm_s16le",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "0.600000"
+      }
+    },
+    {
+      "name": "valientes-home.wav",
+      "bytes": 52964,
+      "sha256": "6f87943743bf25a9356f5969bdec4e9cc8b0d40e88c9fd0366bb5189fede838a",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "pcm_s16le",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "0.600000"
+      }
+    },
+    {
+      "name": "valientes-lock.wav",
+      "bytes": 45026,
+      "sha256": "536151acd08c91c855670ba9e5bd9f316a1d40f13db3b768d5f3dc5946eb8c8c",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "pcm_s16le",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "0.510000"
+      }
+    },
+    {
+      "name": "valientes-mundo-amable.ogg",
+      "bytes": 1377700,
+      "sha256": "4bdf2856ed668ea93de39cf54eff8b9d6e72ff852808cbf0d7dca1f29e7460fc",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2
+        }
+      ],
+      "format": {
+        "duration": "85.900000"
+      }
+    },
+    {
+      "name": "valientes-path.wav",
+      "bytes": 52964,
+      "sha256": "b4aed1cd3eb49db44a79747de92395963474604dc3f25cda9a2e50857298c9ea",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "pcm_s16le",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "0.600000"
+      }
+    },
+    {
+      "name": "valientes-practice.wav",
+      "bytes": 45026,
+      "sha256": "022e46adb19c2e71bf08b797be67cc1e34dbb1b7821606cf7616ac9f63540df6",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "pcm_s16le",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "0.510000"
+      }
+    },
+    {
+      "name": "valientes-select.wav",
+      "bytes": 37088,
+      "sha256": "829ad9b70b10371cb8275e34d2f9cc706f282e8553d661bff078f8b2ed0b199e",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "pcm_s16le",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "0.420000"
+      }
+    },
+    {
+      "name": "valientes-settings.wav",
+      "bytes": 45026,
+      "sha256": "4867c39fd1a72a470416bdac7d3a13c7d60e035db4e86d1b769816ad7173457e",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "pcm_s16le",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "0.510000"
+      }
+    },
+    {
+      "name": "valientes-story.wav",
+      "bytes": 45026,
+      "sha256": "c7d5dc128160cff6e73291b51fb447720af51a506cde0e09f355b51e99d59d0f",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "pcm_s16le",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "0.510000"
+      }
+    },
+    {
+      "name": "valientes-toggle.wav",
+      "bytes": 37088,
+      "sha256": "db0d2fd20d57b00a7752e3e1aa1e5925db771588da99f4690add4f5d5e5963e3",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "pcm_s16le",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "0.420000"
+      }
+    },
+    {
+      "name": "valientes-voice.wav",
+      "bytes": 45026,
+      "sha256": "04df728c91e9ef4f28a6c26a69b8508f59ffc89bd8e50829ffea1990c77ac8e1",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "pcm_s16le",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "0.510000"
+      }
+    },
+    {
+      "name": "voz-acompanamos.mp3",
+      "bytes": 512879,
+      "sha256": "e0ba8c099099bf0469ad665085dad01ae9a64b34cd09f4284a946bb93170b8fe",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "32.026122"
+      }
+    },
+    {
+      "name": "voz-mi-limite.mp3",
+      "bytes": 512879,
+      "sha256": "480dd9b4b8709073c61244e750c0cefe5381350f9e46fad84d3cc408e58ec2f0",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "32.026122"
+      }
+    },
+    {
+      "name": "voz-mi-valor.mp3",
+      "bytes": 529598,
+      "sha256": "358dc57691c044cf62078a0aef2146a767cf97d03e0ca78e7396303ef44fe8a1",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "33.071020"
+      }
+    },
+    {
+      "name": "voz-mi-voz.mp3",
+      "bytes": 509118,
+      "sha256": "9b70610257e4e5944b5e401b24046381b2c1439c1a3ebc213ede2fa0b729b26f",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "31.791020"
+      }
+    },
+    {
+      "name": "voz-pido-ayuda.mp3",
+      "bytes": 529598,
+      "sha256": "400c544ba1abf7b84a76112bb6f7e1ac1d42bbfca7ce12c4c4505ced8227503a",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "33.071020"
+      }
+    },
+    {
+      "name": "voz-reparamos.mp3",
+      "bytes": 547570,
+      "sha256": "7e4af6f45acdca34bbcf2c4a55d0515a07777243a83a4c79d8ea17cf74f9591c",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "44100",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "34.194286"
+      }
+    }
+  ]
+}

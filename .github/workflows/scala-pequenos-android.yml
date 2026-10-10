@@ -1,0 +1,76 @@
+name: SCALA Pequeños Valientes Android
+on:
+  push:
+    branches: [scala/pequenos-valientes]
+    paths:
+      - games/SCALA_Pequenos_Valientes/**
+      - .github/workflows/scala-pequenos-android.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: scala-pequenos-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  android:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: games/SCALA_Pequenos_Valientes
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: games/SCALA_Pequenos_Valientes/package-lock.json
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - uses: android-actions/setup-android@v3
+        with:
+          packages: platform-tools
+          log-accepted-android-sdk-licenses: false
+      - name: Preparar SDK
+        run: sdkmanager 'platforms;android-36' 'build-tools;36.0.0'
+      - name: Dependencias
+        run: npm ci
+      - name: Comprobar código y aprendizaje
+        run: npm run check && npm test
+      - name: Auditar dependencias
+        run: mkdir -p entregables && npm audit --json > entregables/auditoria-npm.json
+      - name: Generar aplicación sin conexión
+        run: npm run build
+      - name: Compilar APK y AAB
+        run: |
+          npx cap sync android
+          chmod +x android/gradlew
+          cd android
+          ./gradlew --no-daemon --max-workers=2 :app:assembleDebug :app:assembleRelease :app:bundleRelease
+      - name: Preparar entrega
+        run: |
+          scala_version="$(node -p 'JSON.parse(require("fs").readFileSync("package.json", "utf8")).version')"
+          cp android/app/build/outputs/apk/debug/app-debug.apk "entregables/SCALA_Pequenos_Valientes_${scala_version}_pruebas.apk"
+          cp android/app/build/outputs/apk/release/app-release-unsigned.apk "entregables/SCALA_Pequenos_Valientes_${scala_version}_sin_firmar.apk"
+          cp android/app/build/outputs/bundle/release/app-release.aab "entregables/SCALA_Pequenos_Valientes_${scala_version}_sin_firmar.aab"
+          mkdir -p entregables/herramientas/lib64
+          cp "$ANDROID_HOME/build-tools/36.0.0/lib/apksigner.jar" entregables/herramientas/
+          cp "$ANDROID_HOME/build-tools/36.0.0/zipalign" entregables/herramientas/
+          cp "$ANDROID_HOME/build-tools/36.0.0/aapt2" entregables/herramientas/
+          cp "$ANDROID_HOME/build-tools/36.0.0/lib64/libc++.so" entregables/herramientas/lib64/
+          sha256sum entregables/*.apk entregables/*.aab > entregables/SHA256SUMS.txt
+          printf '%s\n' "Commit: $GITHUB_SHA" "Compilación: $GITHUB_RUN_ID" > entregables/COMPILACION.txt
+      - name: Verificar interfaz, audio y guardado
+        run: npx playwright install --with-deps chromium && npm run test:ui
+      - name: Preparar materiales de publicación
+        run: npm run store:prepare && node scripts/prepare_delivery.mjs
+      - name: Entregar APK y verificaciones
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: SCALA-Pequenos-Valientes
+          path: games/SCALA_Pequenos_Valientes/entregables/
+          retention-days: 30
+          if-no-files-found: error
