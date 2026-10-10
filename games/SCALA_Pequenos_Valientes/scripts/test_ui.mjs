@@ -91,6 +91,7 @@ try {
   assert.equal(await page.locator('[data-action=catalog]').evaluate(button => button === document.activeElement), true);
   await page.evaluate(() => { window.pvCatalogOpened = []; window.open = url => { window.pvCatalogOpened.push(url); return null; }; });
   await click('[data-action=catalog]'); await click('[data-action=open-catalog]');
+  await page.waitForFunction(() => window.pvCatalogOpened.length === 1);
   assert.deepEqual(await page.evaluate(() => window.pvCatalogOpened), ['https://vitacala.online/']);
   assert.equal(await page.locator('.adult-catalog').count(), 0);
   await click('.bottom-nav [data-nav=family]');
