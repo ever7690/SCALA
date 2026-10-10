@@ -1,6 +1,6 @@
 {
   "name": "scala-pequenos-valientes",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Aventura educativa cristiana infantil para expresar sentimientos, poner límites y pedir ayuda",
   "type": "module",
   "scripts": {

@@ -105,7 +105,7 @@ assert.match(nativeManifest, /allowBackup="false"/u);
 assert.match(nativeManifest, /android.permission.INTERNET" tools:node="remove"/u);
 assert.ok(!nativeManifest.includes('android.permission.VIBRATE'));
 assert.match(fs.readFileSync('android/app/build.gradle', 'utf8'), /com.scala.pequenosvalientes/u);
-assert.match(fs.readFileSync('android/app/build.gradle', 'utf8'), /versionCode 2/u);
+assert.match(fs.readFileSync('android/app/build.gradle', 'utf8'), /versionCode 3/u);
 for (const name of ['heart', 'story', 'mischief', 'help', 'friends', 'home', 'gear', 'sun', 'play', 'check', 'back', 'lock', 'voice', 'gift', 'feel', 'care']) assert.ok(fs.statSync(`public-runtime/icons/toys/${name}.webp`).size > 5000);
 for (const name of ['urban', 'forest', 'house']) assert.ok(fs.statSync(`public-runtime/backgrounds/${name}.webp`).size > 100000);
 checks.push('17 sonidos suaves distintos, dos melodías, treinta voces, marca original y privacidad nativa');

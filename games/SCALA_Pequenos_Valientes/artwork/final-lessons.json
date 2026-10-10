@@ -1,0 +1,1651 @@
+[
+  {
+    "id": "mi-voz",
+    "title": "Mi voz tiene valor",
+    "subtitle": "Reconozco cómo me siento",
+    "icon": "heart",
+    "color": "#ffbf94",
+    "scene": "school",
+    "actors": [
+      "ana",
+      "escalito",
+      "roko"
+    ],
+    "paragraphs": [
+      "Ana muestra su dibujo. Roko hace una broma sobre él y algunos se ríen. Ana deja de sonreír.",
+      "Escalito se acerca y pregunta: «¿Cómo te sientes?». Ana puede decir que está triste, enojada o preocupada. Cada sentimiento merece ser escuchado.",
+      "Lo que pasó no es culpa de Ana. Hablar con un adulto que la cuide puede ayudar. Tú también puedes contar cómo te sientes."
+    ],
+    "narration": "Ana muestra su dibujo. Roko hace una broma sobre él y algunos se ríen. Ana deja de sonreír. Escalito se acerca y pregunta: ¿Cómo te sientes? Ana puede decir que está triste, enojada o preocupada. Cada sentimiento merece ser escuchado. Lo que pasó no es culpa de Ana. Hablar con un adulto que la cuide puede ayudar. Tú también puedes contar cómo te sientes. En esta aventura practicamos cómo reconocer lo que sentimos. Elige las palabras que ayudarían a Ana.",
+    "challenges": [
+      {
+        "question": "¿Qué puede decir Ana sobre lo que siente?",
+        "choices": [
+          {
+            "text": "«Me siento triste y quiero hablar».",
+            "helpful": true,
+            "feedback": "Ponerle palabras a lo que sentimos ayuda a explicarlo."
+          },
+          {
+            "text": "«Tengo que fingir que estoy contenta».",
+            "helpful": false,
+            "feedback": "Ana puede expresar lo que siente. No tiene que fingir alegría."
+          },
+          {
+            "text": "«Puedo sentir enojo y decirlo con palabras».",
+            "helpful": true,
+            "feedback": "El enojo también se puede expresar cuidándonos y buscando apoyo."
+          }
+        ]
+      },
+      {
+        "question": "¿Quién puede escuchar y cuidar a Ana?",
+        "choices": [
+          {
+            "text": "Un adulto de confianza, como un familiar o docente.",
+            "helpful": true,
+            "feedback": "Un adulto que la cuide puede escuchar y ayudar a actuar."
+          },
+          {
+            "text": "Tiene que resolverlo todo ella sola.",
+            "helpful": false,
+            "feedback": "Pedir ayuda es una opción valiosa. Nadie tiene que resolver esto a solas."
+          }
+        ]
+      }
+    ],
+    "practice": "Con un adulto, completa: «Hoy me siento… y me gustaría contarte…».",
+    "adult": "Escuche sin exigir una emoción concreta. Agradezca que el niño hable y pregunte qué apoyo necesita.",
+    "bible": "Marcos 10:13–16 · Jesús recibe a los niños y les da un lugar importante."
+  },
+  {
+    "id": "mi-limite",
+    "title": "Una broma que molesta",
+    "subtitle": "Pongo un límite con palabras",
+    "icon": "mischief",
+    "color": "#ffd576",
+    "scene": "school",
+    "actors": [
+      "escalito",
+      "ana",
+      "roko"
+    ],
+    "paragraphs": [
+      "Roko quiere hacer reír al grupo y vuelve a bromear sobre el dibujo de Ana. Ella se siente incómoda.",
+      "Escalito acompaña a Ana. Si se siente segura, Ana puede decir: «Esa broma me molesta. Por favor, para». También puede alejarse y pedir ayuda.",
+      "Una broma divertida cuida a quienes participan. Cuando alguien dice que le duele, es momento de escuchar y detenerse."
+    ],
+    "narration": "Roko quiere hacer reír al grupo y vuelve a bromear sobre el dibujo de Ana. Ella se siente incómoda. Escalito acompaña a Ana. Si se siente segura, Ana puede decir: Esa broma me molesta. Por favor, para. También puede alejarse y pedir ayuda. Una broma divertida cuida a quienes participan. Cuando alguien dice que le duele, es momento de escuchar y detenerse. Practiquemos una frase que ponga un límite. Si hablar en ese momento te da miedo, puedes ir directamente con un adulto que te cuide.",
+    "challenges": [
+      {
+        "question": "¿Qué frase expresa un límite?",
+        "choices": [
+          {
+            "text": "«Esa broma me molesta. Por favor, para».",
+            "helpful": true,
+            "feedback": "Esta frase explica lo que molesta y pide que se detenga."
+          },
+          {
+            "text": "«Voy a hacerte lo mismo».",
+            "helpful": false,
+            "feedback": "Podemos pedir que pare, alejarnos y buscar ayuda sin devolver la burla."
+          }
+        ]
+      },
+      {
+        "question": "¿Y si Ana no se siente segura para hablar?",
+        "choices": [
+          {
+            "text": "Puede alejarse y buscar a un adulto que la cuide.",
+            "helpful": true,
+            "feedback": "Su seguridad importa. Puede pedir apoyo directamente."
+          },
+          {
+            "text": "Tiene que enfrentarse a Roko para demostrar valor.",
+            "helpful": false,
+            "feedback": "Ser valiente también es buscar apoyo. No tiene que enfrentarse a nadie."
+          }
+        ]
+      }
+    ],
+    "practice": "Ensaya con un adulto: «Eso me molesta. Necesito que pares». También practica ir a un lugar seguro.",
+    "adult": "No obligue al niño a confrontar a quien lo molesta. Acompañe y evalúe qué respuesta es segura en su situación.",
+    "bible": "Lucas 10:27 · Amar al prójimo incluye cuidar cómo lo tratamos."
+  },
+  {
+    "id": "pido-ayuda",
+    "title": "Puedo pedir ayuda",
+    "subtitle": "Busco a un adulto que me cuide",
+    "icon": "help",
+    "color": "#b8db98",
+    "scene": "garden",
+    "actors": [
+      "escalito",
+      "mateo",
+      "lupi"
+    ],
+    "paragraphs": [
+      "Las bromas se repiten y Mateo está preocupado. Escalito le recuerda que no tiene que guardárselo.",
+      "Mateo busca a su docente y dice: «Quiero contarte algo. Esto pasó, me siento así y necesito ayuda». Puede hablar también con su familia.",
+      "Si el primer adulto no lo escucha, puede acudir a otro que lo cuide. Si siente que alguien puede hacerle daño, busca apoyo de inmediato."
+    ],
+    "narration": "Las bromas se repiten y Mateo está preocupado. Escalito le recuerda que no tiene que guardárselo. Mateo busca a su docente y dice: Quiero contarte algo. Esto pasó, me siento así y necesito ayuda. Puede hablar también con su familia. Si el primer adulto no lo escucha, puede acudir a otro que lo cuide. Si siente que alguien puede hacerle daño, busca apoyo de inmediato. Pensemos en una persona adulta de confianza. Puedes pedir ayuda con pocas palabras y contar más cuando te sientas acompañado.",
+    "challenges": [
+      {
+        "question": "¿Cómo puede empezar a pedir ayuda Mateo?",
+        "choices": [
+          {
+            "text": "«Quiero contarte algo y necesito que me ayudes».",
+            "helpful": true,
+            "feedback": "Esta frase abre una conversación. No necesita explicarlo perfectamente."
+          },
+          {
+            "text": "Guardárselo para no preocupar a nadie.",
+            "helpful": false,
+            "feedback": "Las personas que lo cuidan necesitan saber qué pasa para poder ayudar."
+          }
+        ]
+      },
+      {
+        "question": "Si un adulto no escucha, ¿qué puede hacer?",
+        "choices": [
+          {
+            "text": "Buscar a otro adulto de confianza.",
+            "helpful": true,
+            "feedback": "Puede seguir buscando apoyo. Su voz merece atención."
+          },
+          {
+            "text": "Pensar que su problema no importa.",
+            "helpful": false,
+            "feedback": "Lo que siente importa. Puede acudir a otro adulto que lo cuide."
+          }
+        ]
+      }
+    ],
+    "practice": "Con tu familia, identifica a dos adultos a quienes puedas acudir. No necesitas escribir sus nombres aquí.",
+    "adult": "Acuerden adultos y lugares de apoyo reales. Si hay amenazas o peligro, priorice la protección y busque ayuda local.",
+    "bible": "Eclesiastés 4:9–10 · Acompañarnos y ayudarnos tiene valor."
+  },
+  {
+    "id": "acompanamos",
+    "title": "Somos buenos amigos",
+    "subtitle": "Acompaño sin ponerme en peligro",
+    "icon": "family",
+    "color": "#d8b9ec",
+    "scene": "garden",
+    "actors": [
+      "luz",
+      "ana",
+      "mateo"
+    ],
+    "paragraphs": [
+      "Luz ve que Ana está triste. Se acerca, escucha y le ofrece ir juntas con una persona adulta que las cuide.",
+      "Mateo evita reírse de las burlas. Puede decir: «Vamos a jugar de una manera que cuide a todos». Si hay peligro, busca ayuda adulta.",
+      "Jesús contó la historia del buen samaritano: una persona se detuvo para cuidar a alguien que necesitaba ayuda. También podemos acompañar con amabilidad."
+    ],
+    "narration": "Luz ve que Ana está triste. Se acerca, escucha y le ofrece ir juntas con una persona adulta que las cuide. Mateo evita reírse de las burlas. Puede decir: Vamos a jugar de una manera que cuide a todos. Si hay peligro, busca ayuda adulta. Jesús contó la historia del buen samaritano: una persona se detuvo para cuidar a alguien que necesitaba ayuda. También podemos acompañar con amabilidad. Un buen amigo escucha y ayuda a buscar apoyo. Acompañar no significa ponerse en peligro.",
+    "challenges": [
+      {
+        "question": "¿Qué puede hacer Luz para acompañar a Ana?",
+        "choices": [
+          {
+            "text": "Escucharla y ofrecer ir juntas con un adulto.",
+            "helpful": true,
+            "feedback": "Escuchar y acompañar a buscar ayuda son formas de cuidar."
+          },
+          {
+            "text": "Decirle que no sea tan sensible.",
+            "helpful": false,
+            "feedback": "Podemos tomar en serio sus sentimientos y escuchar sin juzgar."
+          }
+        ]
+      },
+      {
+        "question": "¿Qué puede hacer Mateo si ve una situación peligrosa?",
+        "choices": [
+          {
+            "text": "Ir por ayuda de un adulto que pueda protegerlos.",
+            "helpful": true,
+            "feedback": "La seguridad importa. Los adultos pueden intervenir y proteger."
+          },
+          {
+            "text": "Intervenir solo aunque pueda salir lastimado.",
+            "helpful": false,
+            "feedback": "No tiene que ponerse en peligro para ser un buen amigo."
+          }
+        ]
+      }
+    ],
+    "practice": "Elige un gesto amable para hoy: escuchar, incluir a alguien o acompañar a buscar ayuda.",
+    "adult": "Practiquen cómo apoyar sin asumir responsabilidades de protección que corresponden a los adultos.",
+    "bible": "Lucas 10:25–37 · Parábola del buen samaritano, contada con palabras propias."
+  },
+  {
+    "id": "reparamos",
+    "title": "Roko aprende a cuidar",
+    "subtitle": "Escucho y reparo lo que hice",
+    "icon": "care",
+    "color": "#ffa98f",
+    "scene": "school",
+    "actors": [
+      "roko",
+      "ana",
+      "escalito"
+    ],
+    "paragraphs": [
+      "Roko escucha a Ana y comprende que su broma le hizo daño. Escalito lo invita a pensar cómo puede cuidar mejor al grupo.",
+      "Roko dice: «Siento haberme burlado. Voy a parar». Deja la burla y pregunta cómo puede reparar lo que hizo.",
+      "Ana puede necesitar tiempo. Una disculpa no obliga a aceptar otra burla ni a volver a jugar enseguida. Todos pueden aprender a tratar mejor a los demás."
+    ],
+    "narration": "Roko escucha a Ana y comprende que su broma le hizo daño. Escalito lo invita a pensar cómo puede cuidar mejor al grupo. Roko dice: Siento haberme burlado. Voy a parar. Deja la burla y pregunta cómo puede reparar lo que hizo. Ana puede necesitar tiempo. Una disculpa no obliga a aceptar otra burla ni a volver a jugar enseguida. Todos pueden aprender a tratar mejor a los demás. Reparar empieza por escuchar, detener lo que lastima y cambiar nuestras acciones. Pensemos qué puede hacer Roko.",
+    "challenges": [
+      {
+        "question": "¿Qué muestra que Roko quiere reparar lo que hizo?",
+        "choices": [
+          {
+            "text": "Escuchar, disculparse y detener las burlas.",
+            "helpful": true,
+            "feedback": "Las acciones también cuentan: reparar incluye dejar de lastimar."
+          },
+          {
+            "text": "Decir «era una broma» y seguir haciéndolo.",
+            "helpful": false,
+            "feedback": "Si una broma lastima, necesita detenerse. Roko puede escuchar y cambiar."
+          }
+        ]
+      },
+      {
+        "question": "¿Qué puede decidir Ana después de la disculpa?",
+        "choices": [
+          {
+            "text": "Tomarse tiempo y mantener sus límites.",
+            "helpful": true,
+            "feedback": "Puede necesitar tiempo y apoyo. Sus límites siguen importando."
+          },
+          {
+            "text": "Aceptar cualquier nueva burla para ser buena amiga.",
+            "helpful": false,
+            "feedback": "La amistad cuida. Ana puede pedir respeto y mantener sus límites."
+          }
+        ]
+      }
+    ],
+    "practice": "Con un adulto, practica: «Siento haber hecho… Voy a cambiar… ¿Cómo puedo reparar?».",
+    "adult": "Trabaje con el niño que molesta sin etiquetarlo como malo. Ayúdelo a comprender el impacto, detener la conducta y reparar.",
+    "bible": "Efesios 4:32 · La bondad y el cuidado también se muestran con acciones."
+  },
+  {
+    "id": "mi-valor",
+    "title": "Un lugar para todos",
+    "subtitle": "Mi valor no depende de una burla",
+    "icon": "sun",
+    "color": "#ffdf7c",
+    "scene": "garden",
+    "actors": [
+      "escalito",
+      "luz",
+      "lupi"
+    ],
+    "paragraphs": [
+      "Escalito reúne a sus amigos. Cada uno tiene una manera distinta de aprender, jugar y expresar lo que siente.",
+      "En el Evangelio de Marcos, Jesús recibe a los niños con cariño. Esta historia nos invita a darles un lugar y escucharlos.",
+      "Una burla no decide cuánto vales. Mereces cuidado y respeto. Puedes disfrutar, poner límites y buscar a las personas adultas que te acompañan."
+    ],
+    "narration": "Escalito reúne a sus amigos. Cada uno tiene una manera distinta de aprender, jugar y expresar lo que siente. En el Evangelio de Marcos, Jesús recibe a los niños con cariño. Esta historia nos invita a darles un lugar y escucharlos. Una burla no decide cuánto vales. Mereces cuidado y respeto. Puedes disfrutar, poner límites y buscar a las personas adultas que te acompañan. Recuerda tres ideas: mi voz importa, puedo pedir ayuda y también puedo cuidar a mis amigos. Ahora practiquemos lo aprendido.",
+    "challenges": [
+      {
+        "question": "¿Qué puedes recordar si alguien se burla de ti?",
+        "choices": [
+          {
+            "text": "«Merezco respeto y puedo buscar apoyo».",
+            "helpful": true,
+            "feedback": "Tu valor no depende de una burla. Las personas que te cuidan pueden ayudar."
+          },
+          {
+            "text": "«La burla demuestra que no valgo».",
+            "helpful": false,
+            "feedback": "Una burla no define tu valor. Mereces ser escuchado y cuidado."
+          }
+        ]
+      },
+      {
+        "question": "¿Qué aprendimos con Escalito y sus amigos?",
+        "choices": [
+          {
+            "text": "Expresar lo que siento, cuidar mis límites y pedir ayuda.",
+            "helpful": true,
+            "feedback": "Estas son herramientas para practicar con personas que te cuidan."
+          },
+          {
+            "text": "Que ser valiente significa nunca tener miedo.",
+            "helpful": false,
+            "feedback": "Sentir miedo no te hace menos valiente. Pedir apoyo también es valioso."
+          }
+        ]
+      }
+    ],
+    "practice": "Comparte con tu familia una frase que te ayude a pedir apoyo cuando lo necesites.",
+    "adult": "Refuerce la dignidad del niño sin prometer que la fe o una actividad evitarán todos los problemas.",
+    "bible": "Marcos 10:13–16 · Relato original basado en Jesús y los niños."
+  },
+  {
+    "id": "casa-scala",
+    "title": "La casa de los buenos amigos",
+    "subtitle": "Un lugar para aprender juntos",
+    "icon": "home",
+    "color": "#ffd49b",
+    "scene": "house",
+    "actors": [
+      "escalito",
+      "ana",
+      "lupi"
+    ],
+    "paragraphs": [
+      "Una mañana, Escalito, Ana y Lupi llegan con sus familias a una casita del barrio. Tiene una puerta azul, flores de muchos colores y un jardín donde se escucha a los pájaros. Es la casa SCALA, un lugar de encuentro acompañado por adultos.",
+      "Dentro hay cuentos, materiales para dibujar y una mesa donde cabe todo el grupo. Ana pregunta si también puede entrar alguien que esté triste. «Claro», responde Escalito. «Aquí no hace falta traer una sonrisa para que te escuchen».",
+      "Los amigos acuerdan tres ideas: escuchar a quien habla, pedir permiso y buscar ayuda cuando algo lastima. Roko llega haciendo una broma y aprende que una casa acogedora también necesita límites que cuiden a sus visitantes.",
+      "Antes de volver con sus familias, cada uno elige un gesto amable para llevar a casa. No se trata de ser perfectos. Se trata de aprender, volver a intentarlo y acompañarnos con cariño. Una vida cuidada se construye con pequeños pasos."
+    ],
+    "challenges": [
+      {
+        "question": "¿Quién tiene un lugar en la casa SCALA?",
+        "choices": [
+          {
+            "text": "También quien esté triste o necesite apoyo.",
+            "helpful": true,
+            "feedback": "Todos merecemos un lugar y personas que nos escuchen."
+          },
+          {
+            "text": "Solo quien esté contento todo el tiempo.",
+            "helpful": false,
+            "feedback": "Podemos sentir tristeza y seguir siendo bienvenidos y valiosos."
+          }
+        ]
+      },
+      {
+        "question": "¿Qué acuerdo ayuda a cuidar al grupo?",
+        "choices": [
+          {
+            "text": "Escuchar, pedir permiso y buscar ayuda.",
+            "helpful": true,
+            "feedback": "Los acuerdos claros ayudan a cuidar los límites de cada persona."
+          },
+          {
+            "text": "Aceptar todas las bromas aunque lastimen.",
+            "helpful": false,
+            "feedback": "Si una broma duele, podemos pedir que pare y buscar apoyo."
+          }
+        ]
+      }
+    ],
+    "practice": "Con tu familia, elige un acuerdo amable para su lugar de encuentro.",
+    "adult": "Hablen de lugares y adultos reales de confianza. La casa de la historia es ficticia y no invita a visitar desconocidos.",
+    "bible": "Mateo 7:24–27 · Construir sobre una base firme nos invita a cuidar nuestras decisiones.",
+    "narration": "Una mañana, Escalito, Ana y Lupi llegan con sus familias a una casita del barrio. Tiene una puerta azul, flores de muchos colores y un jardín donde se escucha a los pájaros. Es la casa SCALA, un lugar de encuentro acompañado por adultos. Dentro hay cuentos, materiales para dibujar y una mesa donde cabe todo el grupo. Ana pregunta si también puede entrar alguien que esté triste. «Claro», responde Escalito. «Aquí no hace falta traer una sonrisa para que te escuchen». Los amigos acuerdan tres ideas: escuchar a quien habla, pedir permiso y buscar ayuda cuando algo lastima. Roko llega haciendo una broma y aprende que una casa acogedora también necesita límites que cuiden a sus visitantes. Antes de volver con sus familias, cada uno elige un gesto amable para llevar a casa. No se trata de ser perfectos. Se trata de aprender, volver a intentarlo y acompañarnos con cariño. Una vida cuidada se construye con pequeños pasos. Ahora podemos pensar juntos y elegir una idea que ayude."
+  },
+  {
+    "id": "colores-del-corazon",
+    "title": "Los colores de mi corazón",
+    "subtitle": "Puedo sentir más de una emoción",
+    "icon": "heart",
+    "color": "#ffc4be",
+    "scene": "forest",
+    "actors": [
+      "ana",
+      "luz",
+      "lupi"
+    ],
+    "paragraphs": [
+      "Ana pinta un jardín para la casa SCALA. Está alegre porque le gustan sus colores, pero también preocupada: mañana mostrará su dibujo al grupo. «¿Cómo puedo sentir las dos cosas?», pregunta.",
+      "Luz se sienta a su lado. Le cuenta que a veces siente alegría al conocer algo nuevo y miedo al mismo tiempo. Los sentimientos pueden mezclarse, como los colores, y no hace falta elegir uno para esconder el otro.",
+      "Ana respira a su ritmo y explica qué le preocupa. Luz escucha sin decirle cómo debería sentirse. Después buscan a una persona adulta que pueda acompañarla cuando muestre el dibujo.",
+      "Ana termina su jardín con dos colores nuevos. Sentir preocupación no le quita su alegría ni su valor. Ahora sabe que puede contar lo que siente y pedir el apoyo que necesita."
+    ],
+    "challenges": [
+      {
+        "question": "¿Puede Ana sentirse alegre y preocupada?",
+        "choices": [
+          {
+            "text": "Sí, puede sentir las dos cosas y contarlas.",
+            "helpful": true,
+            "feedback": "Las emociones pueden mezclarse y todas merecen ser escuchadas."
+          },
+          {
+            "text": "No, debe escoger la emoción más bonita.",
+            "helpful": false,
+            "feedback": "No hace falta esconder una emoción para que otra tenga lugar."
+          }
+        ]
+      },
+      {
+        "question": "¿Cómo puede acompañarla Luz?",
+        "choices": [
+          {
+            "text": "Escuchando y preguntando qué apoyo necesita.",
+            "helpful": true,
+            "feedback": "Escuchar con atención ayuda a que Ana explique lo que necesita."
+          },
+          {
+            "text": "Diciéndole que deje de preocuparse.",
+            "helpful": false,
+            "feedback": "Pedir que deje de sentir algo no reemplaza escuchar y acompañar."
+          }
+        ]
+      }
+    ],
+    "practice": "Nombra dos emociones que puedan aparecer juntas. No tienes que guardar ninguna aquí.",
+    "adult": "Use ejemplos cotidianos y acepte emociones mezcladas sin corregir ni interpretar automáticamente al niño.",
+    "bible": "Romanos 12:15 · Podemos acompañar a quienes se alegran y a quienes están tristes.",
+    "narration": "Ana pinta un jardín para la casa SCALA. Está alegre porque le gustan sus colores, pero también preocupada: mañana mostrará su dibujo al grupo. «¿Cómo puedo sentir las dos cosas?», pregunta. Luz se sienta a su lado. Le cuenta que a veces siente alegría al conocer algo nuevo y miedo al mismo tiempo. Los sentimientos pueden mezclarse, como los colores, y no hace falta elegir uno para esconder el otro. Ana respira a su ritmo y explica qué le preocupa. Luz escucha sin decirle cómo debería sentirse. Después buscan a una persona adulta que pueda acompañarla cuando muestre el dibujo. Ana termina su jardín con dos colores nuevos. Sentir preocupación no le quita su alegría ni su valor. Ahora sabe que puede contar lo que siente y pedir el apoyo que necesita. Ahora podemos pensar juntos y elegir una idea que ayude."
+  },
+  {
+    "id": "cuando-me-enojo",
+    "title": "Cuando mi enojo crece",
+    "subtitle": "Me doy espacio y busco palabras",
+    "icon": "feel",
+    "color": "#ffbc9c",
+    "scene": "garden",
+    "actors": [
+      "mateo",
+      "escalito",
+      "roko"
+    ],
+    "paragraphs": [
+      "Mateo construye una torre con bloques. Roko la mueve para hacer una broma y la torre cae. Mateo siente calor en las mejillas y aprieta las manos. Está enojado por lo que pasó.",
+      "Escalito le ofrece un poco de espacio. Mateo puede alejarse, apoyar los pies en el suelo y respirar cómodamente, si le ayuda. No tiene que arreglar todo mientras se siente tan alterado.",
+      "Cuando está preparado, dice: «Me enojé cuando moviste mi torre. No quiero que toques mis bloques sin permiso». Una persona adulta los acompaña para detener la broma y acordar cómo reparar lo que cayó.",
+      "Sentir enojo no convierte a Mateo en una mala persona. Puede cuidar su cuerpo, pedir apoyo y usar palabras sin golpear. Roko también tiene una responsabilidad: escuchar y cambiar lo que hizo."
+    ],
+    "challenges": [
+      {
+        "question": "¿Qué puede hacer Mateo al sentirse muy enojado?",
+        "choices": [
+          {
+            "text": "Tomar espacio y pedir apoyo para hablar.",
+            "helpful": true,
+            "feedback": "Una pausa y una persona que cuide pueden ayudar a hablar con seguridad."
+          },
+          {
+            "text": "Golpear a Roko para que entienda.",
+            "helpful": false,
+            "feedback": "El enojo merece atención, pero golpear puede lastimar y aumentar el problema."
+          }
+        ]
+      },
+      {
+        "question": "¿Qué puede decir cuando esté preparado?",
+        "choices": [
+          {
+            "text": "«No toques mis bloques sin permiso».",
+            "helpful": true,
+            "feedback": "Puede expresar un límite claro sin esconder lo que le pasó."
+          },
+          {
+            "text": "«Tengo que fingir que no me importa».",
+            "helpful": false,
+            "feedback": "Lo que siente importa y no tiene que fingir para que lo escuchen."
+          }
+        ]
+      }
+    ],
+    "practice": "Con un adulto, ensaya una frase: «Me enojé cuando… Necesito…».",
+    "adult": "Valide el enojo y ayude a frenar conductas que lastiman. No convierta la pausa en un castigo ni obligue a respirar.",
+    "bible": "Efesios 4:26 · Podemos reconocer el enojo y cuidar cómo actuamos.",
+    "narration": "Mateo construye una torre con bloques. Roko la mueve para hacer una broma y la torre cae. Mateo siente calor en las mejillas y aprieta las manos. Está enojado por lo que pasó. Escalito le ofrece un poco de espacio. Mateo puede alejarse, apoyar los pies en el suelo y respirar cómodamente, si le ayuda. No tiene que arreglar todo mientras se siente tan alterado. Cuando está preparado, dice: «Me enojé cuando moviste mi torre. No quiero que toques mis bloques sin permiso». Una persona adulta los acompaña para detener la broma y acordar cómo reparar lo que cayó. Sentir enojo no convierte a Mateo en una mala persona. Puede cuidar su cuerpo, pedir apoyo y usar palabras sin golpear. Roko también tiene una responsabilidad: escuchar y cambiar lo que hizo. Ahora podemos pensar juntos y elegir una idea que ayude."
+  },
+  {
+    "id": "lugar-en-ronda",
+    "title": "Un lugar en nuestra ronda",
+    "subtitle": "Invito sin obligar",
+    "icon": "friends",
+    "color": "#d6c4ed",
+    "scene": "garden",
+    "actors": [
+      "luz",
+      "mateo",
+      "ana"
+    ],
+    "paragraphs": [
+      "Luz prepara un juego de palmas. Mateo observa desde un banco y Ana nota que todavía no se acerca. El grupo podría seguir jugando, pero ella decide hacer espacio para escucharlo.",
+      "«¿Quieres venir con nosotros?», pregunta Ana. Mateo responde que primero quiere mirar porque no conoce el juego. Luz le muestra un movimiento sencillo y le dice que puede unirse cuando esté preparado.",
+      "Nadie lo tira del brazo ni se burla por tardar. Un rato después, Mateo elige participar. Se equivoca con una palma y todos repiten el movimiento con paciencia.",
+      "Incluir es ofrecer un lugar y respetar la respuesta. También hay espacio para mirar, descansar o elegir otra actividad. Un grupo acogedor no exige que todos disfruten de la misma manera."
+    ],
+    "challenges": [
+      {
+        "question": "¿Cómo puede invitar Ana a Mateo?",
+        "choices": [
+          {
+            "text": "Preguntando si quiere participar y escuchando.",
+            "helpful": true,
+            "feedback": "Una invitación amable también respeta la respuesta de la otra persona."
+          },
+          {
+            "text": "Llevándolo al juego aunque no quiera.",
+            "helpful": false,
+            "feedback": "Incluir no significa obligar ni tocar a alguien sin su permiso."
+          }
+        ]
+      },
+      {
+        "question": "¿Qué pasa si Mateo prefiere observar?",
+        "choices": [
+          {
+            "text": "Puede mirar y decidir después.",
+            "helpful": true,
+            "feedback": "Puede pertenecer al grupo sin participar en todas sus actividades."
+          },
+          {
+            "text": "Debe jugar para demostrar que es amigo.",
+            "helpful": false,
+            "feedback": "La amistad no exige hacer siempre lo que hacen los demás."
+          }
+        ]
+      }
+    ],
+    "practice": "Ofrece una invitación amable y acepta un «ahora no».",
+    "adult": "Diferencie invitar de presionar. Observe si hay exclusión repetida y acompañe a quien necesite protección.",
+    "bible": "Romanos 15:7 · Recibir a los demás con cariño incluye darles un lugar.",
+    "narration": "Luz prepara un juego de palmas. Mateo observa desde un banco y Ana nota que todavía no se acerca. El grupo podría seguir jugando, pero ella decide hacer espacio para escucharlo. «¿Quieres venir con nosotros?», pregunta Ana. Mateo responde que primero quiere mirar porque no conoce el juego. Luz le muestra un movimiento sencillo y le dice que puede unirse cuando esté preparado. Nadie lo tira del brazo ni se burla por tardar. Un rato después, Mateo elige participar. Se equivoca con una palma y todos repiten el movimiento con paciencia. Incluir es ofrecer un lugar y respetar la respuesta. También hay espacio para mirar, descansar o elegir otra actividad. Un grupo acogedor no exige que todos disfruten de la misma manera. Ahora podemos pensar juntos y elegir una idea que ayude."
+  },
+  {
+    "id": "dos-ideas",
+    "title": "Dos ideas para un mismo juego",
+    "subtitle": "Puedo pensar diferente",
+    "icon": "voice",
+    "color": "#bce1cf",
+    "scene": "house",
+    "actors": [
+      "ana",
+      "mateo",
+      "escalito"
+    ],
+    "paragraphs": [
+      "Ana quiere inventar un cuento de un jardín. Mateo prefiere una aventura por el barrio. Los dos hablan a la vez y empiezan a sentirse frustrados porque creen que solo puede ganar una idea.",
+      "Escalito propone escucharlos por turnos. Ana cuenta por qué le gustan las flores. Mateo explica que quiere dibujar calles y casas. Descubren que sus ideas no son enemigas.",
+      "El grupo decide crear una aventura que empiece en una plaza y termine en un jardín. Si no hubieran querido mezclarlas, también podrían haber hecho dos cuentos o pedido ayuda para acordar los turnos.",
+      "Pensar distinto no rompe una amistad. Podemos escuchar, explicar lo que queremos y buscar un acuerdo que cuide a todos. Tampoco hace falta aceptar una idea que nos haga daño."
+    ],
+    "challenges": [
+      {
+        "question": "¿Qué ayuda cuando hablan al mismo tiempo?",
+        "choices": [
+          {
+            "text": "Escucharse por turnos.",
+            "helpful": true,
+            "feedback": "Los turnos dan a cada persona espacio para explicar su idea."
+          },
+          {
+            "text": "Hablar más fuerte hasta que el otro se calle.",
+            "helpful": false,
+            "feedback": "Hablar más fuerte puede dificultar que todos sean escuchados."
+          }
+        ]
+      },
+      {
+        "question": "¿Tienen que pensar exactamente igual?",
+        "choices": [
+          {
+            "text": "No, pueden respetarse y buscar un acuerdo.",
+            "helpful": true,
+            "feedback": "Podemos ser amigos y tener gustos o ideas diferentes."
+          },
+          {
+            "text": "Sí, los amigos siempre deben querer lo mismo.",
+            "helpful": false,
+            "feedback": "La amistad permite diferencias; no exige pensar todo igual."
+          }
+        ]
+      }
+    ],
+    "practice": "Escucha una idea distinta y explica la tuya sin insultar.",
+    "adult": "Modele acuerdos flexibles sin obligar al niño a ceder siempre. Los límites de seguridad no se negocian.",
+    "bible": "Santiago 1:19 · Escuchar con atención puede ayudarnos a responder con cuidado.",
+    "narration": "Ana quiere inventar un cuento de un jardín. Mateo prefiere una aventura por el barrio. Los dos hablan a la vez y empiezan a sentirse frustrados porque creen que solo puede ganar una idea. Escalito propone escucharlos por turnos. Ana cuenta por qué le gustan las flores. Mateo explica que quiere dibujar calles y casas. Descubren que sus ideas no son enemigas. El grupo decide crear una aventura que empiece en una plaza y termine en un jardín. Si no hubieran querido mezclarlas, también podrían haber hecho dos cuentos o pedido ayuda para acordar los turnos. Pensar distinto no rompe una amistad. Podemos escuchar, explicar lo que queremos y buscar un acuerdo que cuide a todos. Tampoco hace falta aceptar una idea que nos haga daño. Ahora podemos pensar juntos y elegir una idea que ayude."
+  },
+  {
+    "id": "puedo-equivocarme",
+    "title": "Me equivoco y sigo aprendiendo",
+    "subtitle": "Un error no decide mi valor",
+    "icon": "story",
+    "color": "#ffe2a2",
+    "scene": "school",
+    "actors": [
+      "luz",
+      "roko",
+      "escalito"
+    ],
+    "paragraphs": [
+      "Luz está leyendo un cuento y se confunde con una palabra. Roko se ríe y ella deja el libro sobre la mesa. Ahora le cuesta intentarlo otra vez delante del grupo.",
+      "Escalito recuerda que todos están aprendiendo. Una persona adulta detiene la burla y ofrece leer la palabra junto a Luz, sin apurarla. Ella puede elegir descansar o continuar acompañada.",
+      "Roko comprende que un error no es una invitación a molestar. Dice que va a parar y escucha. Luz vuelve a mirar el cuento y descubre la palabra a su propio ritmo.",
+      "Aprender tiene intentos, preguntas y errores. Puedes pedir ayuda sin tener que demostrar que ya sabes todo. Tu valor sigue siendo el mismo cuando algo te sale y cuando necesitas practicar."
+    ],
+    "challenges": [
+      {
+        "question": "¿Qué puede hacer Luz si se confunde?",
+        "choices": [
+          {
+            "text": "Pedir ayuda y continuar a su ritmo.",
+            "helpful": true,
+            "feedback": "Equivocarse forma parte de aprender y puede pedir acompañamiento."
+          },
+          {
+            "text": "Pensar que el error demuestra que no vale.",
+            "helpful": false,
+            "feedback": "Una equivocación no define su valor ni lo que podrá aprender."
+          }
+        ]
+      },
+      {
+        "question": "¿Qué necesita cambiar Roko?",
+        "choices": [
+          {
+            "text": "Detener la burla y tratarla con respeto.",
+            "helpful": true,
+            "feedback": "Roko puede elegir dejar de molestar y apoyar su aprendizaje."
+          },
+          {
+            "text": "Reírse más para que ella se acostumbre.",
+            "helpful": false,
+            "feedback": "Acostumbrarse a una burla no es la solución; la burla debe detenerse."
+          }
+        ]
+      }
+    ],
+    "practice": "Cuenta algo que aprendiste después de varios intentos.",
+    "adult": "Proteja frente a las burlas y adapte la dificultad. No use esta actividad para exigir rendimiento o perseverancia forzada.",
+    "bible": "Proverbios 24:16 · Volver a levantarse nos recuerda que un tropiezo no es el final.",
+    "narration": "Luz está leyendo un cuento y se confunde con una palabra. Roko se ríe y ella deja el libro sobre la mesa. Ahora le cuesta intentarlo otra vez delante del grupo. Escalito recuerda que todos están aprendiendo. Una persona adulta detiene la burla y ofrece leer la palabra junto a Luz, sin apurarla. Ella puede elegir descansar o continuar acompañada. Roko comprende que un error no es una invitación a molestar. Dice que va a parar y escucha. Luz vuelve a mirar el cuento y descubre la palabra a su propio ritmo. Aprender tiene intentos, preguntas y errores. Puedes pedir ayuda sin tener que demostrar que ya sabes todo. Tu valor sigue siendo el mismo cuando algo te sale y cuando necesitas practicar. Ahora podemos pensar juntos y elegir una idea que ayude."
+  },
+  {
+    "id": "espero-mi-turno",
+    "title": "El puente de los turnos",
+    "subtitle": "Espero con apoyo y hago espacio",
+    "icon": "path",
+    "color": "#c6dfaf",
+    "scene": "forest",
+    "actors": [
+      "escalito",
+      "luz",
+      "mateo"
+    ],
+    "paragraphs": [
+      "En el jardín hay un puente pequeño de juego, bajito y acompañado por adultos. Los amigos quieren cruzarlo con sus figuras de papel. Mateo tiene muchas ganas y se adelanta al turno de Luz.",
+      "Luz explica que también estaba esperando. Escalito propone usar una señal para saber quién sigue. La persona adulta les ayuda a formar una fila corta y ofrece otra actividad mientras esperan.",
+      "Mateo descubre que esperar puede costar. Puede pedir que le expliquen cuánto falta o elegir descansar. Cuando llega su turno, cruza su figura y después deja lugar para Ana.",
+      "Los turnos no significan que alguien valga más que otro. Son una manera de compartir una actividad. Si un juego deja a alguien esperando siempre o resulta incómodo, el grupo puede cambiarlo con ayuda."
+    ],
+    "challenges": [
+      {
+        "question": "¿Qué ayuda a compartir el juego?",
+        "choices": [
+          {
+            "text": "Una señal clara de quién sigue.",
+            "helpful": true,
+            "feedback": "Los turnos claros ayudan a que cada persona tenga un lugar."
+          },
+          {
+            "text": "Que participe siempre quien grita más.",
+            "helpful": false,
+            "feedback": "Gritar más no da más derecho a participar que los demás."
+          }
+        ]
+      },
+      {
+        "question": "¿Qué puede hacer Mateo si le cuesta esperar?",
+        "choices": [
+          {
+            "text": "Pedir apoyo o elegir otra actividad un momento.",
+            "helpful": true,
+            "feedback": "Puede buscar una manera cómoda de esperar sin lastimar a nadie."
+          },
+          {
+            "text": "Empujar para llegar primero.",
+            "helpful": false,
+            "feedback": "Empujar puede hacer daño. Los adultos pueden ayudar a organizar el juego."
+          }
+        ]
+      }
+    ],
+    "practice": "Prueba turnos cortos en un juego acompañado por tu familia.",
+    "adult": "Use tiempos razonables y apoyos visuales. No confunda dificultad para esperar con mala intención.",
+    "bible": "Filipenses 2:4 · También podemos tener en cuenta las necesidades de otros.",
+    "narration": "En el jardín hay un puente pequeño de juego, bajito y acompañado por adultos. Los amigos quieren cruzarlo con sus figuras de papel. Mateo tiene muchas ganas y se adelanta al turno de Luz. Luz explica que también estaba esperando. Escalito propone usar una señal para saber quién sigue. La persona adulta les ayuda a formar una fila corta y ofrece otra actividad mientras esperan. Mateo descubre que esperar puede costar. Puede pedir que le expliquen cuánto falta o elegir descansar. Cuando llega su turno, cruza su figura y después deja lugar para Ana. Los turnos no significan que alguien valga más que otro. Son una manera de compartir una actividad. Si un juego deja a alguien esperando siempre o resulta incómodo, el grupo puede cambiarlo con ayuda. Ahora podemos pensar juntos y elegir una idea que ayude."
+  },
+  {
+    "id": "verdad-con-cuidado",
+    "title": "La maceta y la verdad",
+    "subtitle": "Contar lo que pasó ayuda a reparar",
+    "icon": "care",
+    "color": "#ffd1ae",
+    "scene": "house",
+    "actors": [
+      "roko",
+      "ana",
+      "escalito"
+    ],
+    "paragraphs": [
+      "Roko corre cerca de la mesa y mueve una maceta sin querer. La tierra cae y una parte de la maceta se rompe. Piensa en decir que fue Lupi para no tener que explicar lo ocurrido.",
+      "Se detiene y busca a la persona adulta que acompaña al grupo. «La moví yo. Necesito ayuda», dice. El adulto agradece que lo cuente y aparta los trozos para que ningún niño se lastime.",
+      "Ana trae otra maceta cuando el lugar ya está seguro. Roko ayuda con una tarea adecuada para él y pregunta dónde puede jugar sin chocar con las cosas.",
+      "Decir la verdad permite buscar soluciones sin culpar a otros. Un accidente necesita cuidado; no humillación. Roko aprende a contar lo que pasó y a cambiar su manera de jugar en ese espacio."
+    ],
+    "challenges": [
+      {
+        "question": "¿Qué puede contar Roko?",
+        "choices": [
+          {
+            "text": "«Yo moví la maceta y necesito ayuda».",
+            "helpful": true,
+            "feedback": "Contar lo ocurrido ayuda a buscar una solución justa y segura."
+          },
+          {
+            "text": "Decir que Lupi lo hizo para evitar hablar.",
+            "helpful": false,
+            "feedback": "Culpar a otro no repara la maceta y puede lastimar la confianza."
+          }
+        ]
+      },
+      {
+        "question": "¿Quién debe retirar los trozos rotos?",
+        "choices": [
+          {
+            "text": "La persona adulta que puede hacerlo con seguridad.",
+            "helpful": true,
+            "feedback": "Un adulto debe encargarse de los riesgos y dar tareas seguras."
+          },
+          {
+            "text": "Los niños solos, aunque haya partes que corten.",
+            "helpful": false,
+            "feedback": "No hace falta exponerse a un peligro para reparar un accidente."
+          }
+        ]
+      }
+    ],
+    "practice": "Practica: «Esto pasó. Necesito ayuda para arreglarlo».",
+    "adult": "Responda a la verdad sin amenazas ni humillación. Diferencie accidentes, conductas y tareas de reparación seguras.",
+    "bible": "Efesios 4:25 · Hablar con verdad ayuda a cuidar nuestra convivencia.",
+    "narration": "Roko corre cerca de la mesa y mueve una maceta sin querer. La tierra cae y una parte de la maceta se rompe. Piensa en decir que fue Lupi para no tener que explicar lo ocurrido. Se detiene y busca a la persona adulta que acompaña al grupo. «La moví yo. Necesito ayuda», dice. El adulto agradece que lo cuente y aparta los trozos para que ningún niño se lastime. Ana trae otra maceta cuando el lugar ya está seguro. Roko ayuda con una tarea adecuada para él y pregunta dónde puede jugar sin chocar con las cosas. Decir la verdad permite buscar soluciones sin culpar a otros. Un accidente necesita cuidado; no humillación. Roko aprende a contar lo que pasó y a cambiar su manera de jugar en ese espacio. Ahora podemos pensar juntos y elegir una idea que ayude."
+  },
+  {
+    "id": "promesa-pequena",
+    "title": "Una promesa pequeñita",
+    "subtitle": "Acuerdo algo que sí puedo cumplir",
+    "icon": "gift",
+    "color": "#edd0e6",
+    "scene": "garden",
+    "actors": [
+      "mateo",
+      "luz",
+      "lupi"
+    ],
+    "paragraphs": [
+      "Mateo promete preparar todos los dibujos para una tarde de cuentos. Quiere ayudar mucho, pero pronto descubre que son demasiados. Se preocupa y piensa que sus amigos estarán molestos si lo cuenta.",
+      "Luz escucha y propone hablar con el grupo. Mateo explica cuánto puede hacer y pide apoyo. Los adultos ayudan a repartir la tarea de una forma que deje tiempo para descansar.",
+      "Mateo elige dibujar una portada. Ana prepara otro dibujo y Luz organiza los colores. Nadie tiene que hacer todo para merecer un lugar en el grupo.",
+      "Una promesa puede ser pequeña, clara y posible. Si las cosas cambian, podemos contarlo y buscar un nuevo acuerdo. Cuidar a otros también incluye reconocer nuestros propios límites."
+    ],
+    "challenges": [
+      {
+        "question": "¿Qué puede hacer Mateo si la tarea es demasiado grande?",
+        "choices": [
+          {
+            "text": "Explicarlo y pedir un nuevo acuerdo.",
+            "helpful": true,
+            "feedback": "Hablar permite ajustar la tarea y repartirla con cuidado."
+          },
+          {
+            "text": "Guardárselo y dejar de descansar para cumplir.",
+            "helpful": false,
+            "feedback": "Descansar también importa; una promesa no exige hacerse daño."
+          }
+        ]
+      },
+      {
+        "question": "¿Qué promesa es más adecuada?",
+        "choices": [
+          {
+            "text": "Una tarea pequeña que pueda hacer con apoyo.",
+            "helpful": true,
+            "feedback": "Un acuerdo posible permite ayudar respetando sus límites."
+          },
+          {
+            "text": "Hacerlo todo para que los demás lo quieran.",
+            "helpful": false,
+            "feedback": "No necesita hacer todo para ser querido o parte del grupo."
+          }
+        ]
+      }
+    ],
+    "practice": "Acuerda una tarea pequeña con tu familia y pregunta si necesitas ayuda.",
+    "adult": "Ajuste las responsabilidades a la edad y capacidad. Permita revisar acuerdos sin culpar ni condicionar el cariño.",
+    "bible": "Mateo 5:37 · Las palabras claras nos ayudan a hacer acuerdos sinceros.",
+    "narration": "Mateo promete preparar todos los dibujos para una tarde de cuentos. Quiere ayudar mucho, pero pronto descubre que son demasiados. Se preocupa y piensa que sus amigos estarán molestos si lo cuenta. Luz escucha y propone hablar con el grupo. Mateo explica cuánto puede hacer y pide apoyo. Los adultos ayudan a repartir la tarea de una forma que deje tiempo para descansar. Mateo elige dibujar una portada. Ana prepara otro dibujo y Luz organiza los colores. Nadie tiene que hacer todo para merecer un lugar en el grupo. Una promesa puede ser pequeña, clara y posible. Si las cosas cambian, podemos contarlo y buscar un nuevo acuerdo. Cuidar a otros también incluye reconocer nuestros propios límites. Ahora podemos pensar juntos y elegir una idea que ayude."
+  },
+  {
+    "id": "permiso-primero",
+    "title": "Primero pido permiso",
+    "subtitle": "Cuido las cosas y decisiones de otros",
+    "icon": "lock",
+    "color": "#ffe09c",
+    "scene": "school",
+    "actors": [
+      "roko",
+      "ana",
+      "mateo"
+    ],
+    "paragraphs": [
+      "Ana guarda un lápiz especial para terminar su dibujo. Roko lo ve, lo toma sin preguntar y empieza a dibujar. Ana se siente incómoda porque todavía lo estaba usando.",
+      "Mateo recuerda una frase sencilla: «¿Puedo usarlo cuando termines?». Roko devuelve el lápiz y pregunta. Ana responde que hoy prefiere guardarlo, y una persona adulta ofrece otros materiales al grupo.",
+      "Roko aprende que pedir permiso también significa aceptar una respuesta distinta de la que quería. Compartir puede ser bonito, pero no debe convertirse en una obligación para demostrar amistad.",
+      "Después encuentra otro lápiz y hace una tarjeta para la casa SCALA. Hay maneras de jugar y crear sin pasar por encima de los límites de alguien. Preguntar es un pequeño gesto de respeto."
+    ],
+    "challenges": [
+      {
+        "question": "¿Qué necesita hacer Roko antes de tomar el lápiz?",
+        "choices": [
+          {
+            "text": "Preguntar y esperar la respuesta.",
+            "helpful": true,
+            "feedback": "El permiso debe pedirse antes de usar las cosas de otra persona."
+          },
+          {
+            "text": "Usarlo primero y preguntar después.",
+            "helpful": false,
+            "feedback": "Preguntar después no cambia que Ana tenía derecho a decidir antes."
+          }
+        ]
+      },
+      {
+        "question": "¿Y si Ana prefiere no prestarlo?",
+        "choices": [
+          {
+            "text": "Respetar su respuesta y buscar otro material.",
+            "helpful": true,
+            "feedback": "Puede respetar su límite y encontrar otra forma de dibujar."
+          },
+          {
+            "text": "Decir que no es buena amiga si no comparte.",
+            "helpful": false,
+            "feedback": "La amistad no obliga a prestar todas las cosas ni permite presionar."
+          }
+        ]
+      }
+    ],
+    "practice": "Ensaya una petición y una respuesta amable: «Hoy prefiero guardarlo».",
+    "adult": "Respete pertenencias y límites. Facilite alternativas sin obligar al niño a compartir algo significativo.",
+    "bible": "Mateo 7:12 · Tratar con cuidado a otros incluye respetar sus decisiones.",
+    "narration": "Ana guarda un lápiz especial para terminar su dibujo. Roko lo ve, lo toma sin preguntar y empieza a dibujar. Ana se siente incómoda porque todavía lo estaba usando. Mateo recuerda una frase sencilla: «¿Puedo usarlo cuando termines?». Roko devuelve el lápiz y pregunta. Ana responde que hoy prefiere guardarlo, y una persona adulta ofrece otros materiales al grupo. Roko aprende que pedir permiso también significa aceptar una respuesta distinta de la que quería. Compartir puede ser bonito, pero no debe convertirse en una obligación para demostrar amistad. Después encuentra otro lápiz y hace una tarjeta para la casa SCALA. Hay maneras de jugar y crear sin pasar por encima de los límites de alguien. Preguntar es un pequeño gesto de respeto. Ahora podemos pensar juntos y elegir una idea que ayude."
+  },
+  {
+    "id": "broma-para-todos",
+    "title": "Una broma que nos cuida",
+    "subtitle": "Reímos sin hacer daño",
+    "icon": "mischief",
+    "color": "#ffd28a",
+    "scene": "urban",
+    "actors": [
+      "roko",
+      "escalito",
+      "luz"
+    ],
+    "paragraphs": [
+      "Roko quiere contar un chiste en la plaza. Antes se reía de sus amigos, pero ahora prueba una broma sobre una nube que lleva paraguas. Luz sonríe y Escalito inventa una respuesta divertida.",
+      "Mateo no se ríe porque no entendió el juego de palabras. Roko puede explicarlo con paciencia. No hace falta burlarse de quien no se ríe ni decir que tiene que aguantar.",
+      "El grupo acuerda que si alguien se siente incómodo puede decirlo. Una broma puede detenerse y cambiarse. Hacer reír no da permiso para ridiculizar el cuerpo, el nombre o los sentimientos de alguien.",
+      "Roko descubre que puede ser gracioso y cuidar al mismo tiempo. Su creatividad tiene muchas posibilidades. Los amigos se van con un chiste nuevo y con la tranquilidad de poder poner límites."
+    ],
+    "challenges": [
+      {
+        "question": "¿Qué hace más cuidadosa una broma?",
+        "choices": [
+          {
+            "text": "Escuchar si alguien se siente incómodo y parar.",
+            "helpful": true,
+            "feedback": "La diversión también tiene límites y debe cuidar a quienes participan."
+          },
+          {
+            "text": "Seguir aunque alguien pida que se detenga.",
+            "helpful": false,
+            "feedback": "Cuando alguien pide que pare, es importante escuchar y detenerse."
+          }
+        ]
+      },
+      {
+        "question": "¿Qué puede hacer Roko si Mateo no se ríe?",
+        "choices": [
+          {
+            "text": "Explicar el chiste con paciencia, si quiere.",
+            "helpful": true,
+            "feedback": "No todos disfrutan el mismo humor y eso merece respeto."
+          },
+          {
+            "text": "Burlarse de él por no entender.",
+            "helpful": false,
+            "feedback": "No entender un chiste no es motivo para ridiculizar a nadie."
+          }
+        ]
+      }
+    ],
+    "practice": "Inventa un chiste de objetos o animales imaginarios que no ridiculice a personas.",
+    "adult": "Diferencie humor compartido de burlas. La intención divertida no elimina el impacto ni el derecho a poner límites.",
+    "bible": "Efesios 4:29 · Podemos elegir palabras que aporten cuidado a quienes escuchan.",
+    "narration": "Roko quiere contar un chiste en la plaza. Antes se reía de sus amigos, pero ahora prueba una broma sobre una nube que lleva paraguas. Luz sonríe y Escalito inventa una respuesta divertida. Mateo no se ríe porque no entendió el juego de palabras. Roko puede explicarlo con paciencia. No hace falta burlarse de quien no se ríe ni decir que tiene que aguantar. El grupo acuerda que si alguien se siente incómodo puede decirlo. Una broma puede detenerse y cambiarse. Hacer reír no da permiso para ridiculizar el cuerpo, el nombre o los sentimientos de alguien. Roko descubre que puede ser gracioso y cuidar al mismo tiempo. Su creatividad tiene muchas posibilidades. Los amigos se van con un chiste nuevo y con la tranquilidad de poder poner límites. Ahora podemos pensar juntos y elegir una idea que ayude."
+  },
+  {
+    "id": "nadie-fuera",
+    "title": "El círculo se hace más grande",
+    "subtitle": "Encontramos maneras de incluir",
+    "icon": "friends",
+    "color": "#d5c4ef",
+    "scene": "garden",
+    "actors": [
+      "luz",
+      "ana",
+      "mateo"
+    ],
+    "paragraphs": [
+      "Los amigos juegan a saltar sobre figuras dibujadas en el suelo. A Ana le cuesta uno de los saltos. Alguien propone dejarla mirando, pero Luz pregunta si pueden cambiar el juego.",
+      "Con una persona adulta, crean varias maneras de participar: caminar, señalar una figura o dar un paso pequeño. Ana elige la que le resulta cómoda. El juego sigue siendo divertido y hay lugar para más formas de moverse.",
+      "Mateo comprende que ser justo no siempre significa pedir exactamente lo mismo a todos. Cada persona puede necesitar un apoyo distinto para disfrutar y estar segura.",
+      "Nadie tiene que demostrar que puede hacer una tarea difícil para pertenecer. El grupo aprende a preguntar qué ayuda y a ofrecer opciones sin decidir por la otra persona."
+    ],
+    "challenges": [
+      {
+        "question": "¿Cómo pueden incluir a Ana?",
+        "choices": [
+          {
+            "text": "Ofreciendo formas diferentes y escuchando su elección.",
+            "helpful": true,
+            "feedback": "Las opciones permiten participar respetando necesidades diferentes."
+          },
+          {
+            "text": "Exigiendo el mismo salto para dejarla jugar.",
+            "helpful": false,
+            "feedback": "Pertenecer al grupo no depende de lograr un salto difícil."
+          }
+        ]
+      },
+      {
+        "question": "¿Quién puede decir qué apoyo le resulta cómodo?",
+        "choices": [
+          {
+            "text": "Ana, acompañada por los adultos que la cuidan.",
+            "helpful": true,
+            "feedback": "Su voz también importa cuando hablamos de lo que necesita."
+          },
+          {
+            "text": "El grupo, sin preguntarle a ella.",
+            "helpful": false,
+            "feedback": "Podemos ofrecer ayuda sin quitarle su oportunidad de elegir."
+          }
+        ]
+      }
+    ],
+    "practice": "Piensa cómo adaptar un juego para que más personas puedan participar.",
+    "adult": "Evite etiquetas sobre capacidades. Pregunte, ofrezca alternativas y supervise la seguridad de las actividades.",
+    "bible": "1 Corintios 12:21–22 · Las diferencias no hacen que alguien sea menos importante.",
+    "narration": "Los amigos juegan a saltar sobre figuras dibujadas en el suelo. A Ana le cuesta uno de los saltos. Alguien propone dejarla mirando, pero Luz pregunta si pueden cambiar el juego. Con una persona adulta, crean varias maneras de participar: caminar, señalar una figura o dar un paso pequeño. Ana elige la que le resulta cómoda. El juego sigue siendo divertido y hay lugar para más formas de moverse. Mateo comprende que ser justo no siempre significa pedir exactamente lo mismo a todos. Cada persona puede necesitar un apoyo distinto para disfrutar y estar segura. Nadie tiene que demostrar que puede hacer una tarea difícil para pertenecer. El grupo aprende a preguntar qué ayuda y a ofrecer opciones sin decidir por la otra persona. Ahora podemos pensar juntos y elegir una idea que ayude."
+  },
+  {
+    "id": "te-escucho",
+    "title": "Te escucho de verdad",
+    "subtitle": "Acompaño sin apurar",
+    "icon": "voice",
+    "color": "#ffcdc3",
+    "scene": "forest",
+    "actors": [
+      "escalito",
+      "mateo",
+      "lupi"
+    ],
+    "paragraphs": [
+      "Mateo está sentado junto al jardín. Hoy no quiere contar muchos detalles, pero dice que algo le preocupó en la escuela. Escalito guarda su juego y se acerca sin invadirlo.",
+      "«Puedo escucharte», le dice. No lo interrumpe con consejos ni le pide que deje de estar triste. Mateo puede hablar poco, hacer una pausa o pedir compañía para ir con su familia.",
+      "Escalito no promete guardar en secreto algo que pueda hacerle daño. Si necesita protección, buscarán apoyo adulto. Ser un buen amigo no significa resolver solo lo que le pasa al otro.",
+      "Lupi se acomoda a un lado y los dos vuelven con las personas que los cuidan. A veces acompañar empieza con pocas palabras, atención y respeto por el ritmo de quien habla."
+    ],
+    "challenges": [
+      {
+        "question": "¿Qué puede decir Escalito?",
+        "choices": [
+          {
+            "text": "«Puedo escucharte y acompañarte a buscar ayuda».",
+            "helpful": true,
+            "feedback": "La compañía puede ofrecerse sin exigir todos los detalles."
+          },
+          {
+            "text": "«Cuéntamelo todo ahora o no puedo ayudarte».",
+            "helpful": false,
+            "feedback": "Mateo puede hablar a su ritmo; presionarlo no ayuda a escucharlo."
+          }
+        ]
+      },
+      {
+        "question": "¿Qué ocurre si Mateo necesita protección?",
+        "choices": [
+          {
+            "text": "Buscan a un adulto que pueda cuidarlo.",
+            "helpful": true,
+            "feedback": "La protección corresponde a personas adultas de confianza."
+          },
+          {
+            "text": "Escalito promete resolverlo y guardarlo en secreto.",
+            "helpful": false,
+            "feedback": "No tiene que cargar solo con un problema ni guardar un secreto peligroso."
+          }
+        ]
+      }
+    ],
+    "practice": "Con tu familia, practica escuchar sin interrumpir ni pedir detalles incómodos.",
+    "adult": "Dé tiempo para hablar y explique con claridad cuándo buscará apoyo para proteger al niño.",
+    "bible": "Santiago 1:19 · Escuchar con atención también es una forma de cuidar.",
+    "narration": "Mateo está sentado junto al jardín. Hoy no quiere contar muchos detalles, pero dice que algo le preocupó en la escuela. Escalito guarda su juego y se acerca sin invadirlo. «Puedo escucharte», le dice. No lo interrumpe con consejos ni le pide que deje de estar triste. Mateo puede hablar poco, hacer una pausa o pedir compañía para ir con su familia. Escalito no promete guardar en secreto algo que pueda hacerle daño. Si necesita protección, buscarán apoyo adulto. Ser un buen amigo no significa resolver solo lo que le pasa al otro. Lupi se acomoda a un lado y los dos vuelven con las personas que los cuidan. A veces acompañar empieza con pocas palabras, atención y respeto por el ritmo de quien habla. Ahora podemos pensar juntos y elegir una idea que ayude."
+  },
+  {
+    "id": "disculpa-con-acciones",
+    "title": "Una disculpa con acciones",
+    "subtitle": "Cambiar también es reparar",
+    "icon": "care",
+    "color": "#bdddbe",
+    "scene": "house",
+    "actors": [
+      "roko",
+      "luz",
+      "escalito"
+    ],
+    "paragraphs": [
+      "Roko esconde una tarjeta de Luz para hacer una broma. Ella la busca preocupada porque era un regalo para su familia. Cuando aparece la tarjeta, Roko comprende que no fue divertido para ella.",
+      "Dice qué hizo sin culpar a Luz por sentirse mal. «La escondí y te preocupé. Voy a dejar de hacerlo». Devuelve la tarjeta y pregunta si hay algo que pueda ayudar a reparar.",
+      "Luz decide guardar sus cosas y tomarse un momento. Escalito y la persona adulta respetan su decisión. Una disculpa no le exige sonreír, dar un abrazo o volver a jugar enseguida.",
+      "Durante los días siguientes, Roko pide permiso y cuida las tarjetas del grupo. La confianza puede necesitar tiempo. Sus acciones cuentan más que repetir muchas veces una palabra bonita."
+    ],
+    "challenges": [
+      {
+        "question": "¿Qué muestra una disculpa cuidadosa?",
+        "choices": [
+          {
+            "text": "Reconocer lo que hice y detener la conducta.",
+            "helpful": true,
+            "feedback": "Reconocer el impacto y cambiar nuestras acciones ayuda a reparar."
+          },
+          {
+            "text": "Decir que la otra persona exagera.",
+            "helpful": false,
+            "feedback": "Culpar a quien se sintió mal no reconoce el daño ni lo detiene."
+          }
+        ]
+      },
+      {
+        "question": "¿Qué puede hacer Luz después?",
+        "choices": [
+          {
+            "text": "Tomarse tiempo y mantener sus límites.",
+            "helpful": true,
+            "feedback": "Una disculpa no obliga a aceptar contacto ni a recuperar confianza enseguida."
+          },
+          {
+            "text": "Dar un abrazo porque Roko ya se disculpó.",
+            "helpful": false,
+            "feedback": "El contacto y la cercanía necesitan su permiso, también después de una disculpa."
+          }
+        ]
+      }
+    ],
+    "practice": "Ensaya: «Hice… Entiendo que… Voy a cambiar…».",
+    "adult": "Acompañe una reparación concreta y segura. No fuerce abrazos, reconciliación inmediata ni promesas de confianza.",
+    "bible": "Lucas 19:1–10 · La historia de Zaqueo nos recuerda que cambiar incluye acciones.",
+    "narration": "Roko esconde una tarjeta de Luz para hacer una broma. Ella la busca preocupada porque era un regalo para su familia. Cuando aparece la tarjeta, Roko comprende que no fue divertido para ella. Dice qué hizo sin culpar a Luz por sentirse mal. «La escondí y te preocupé. Voy a dejar de hacerlo». Devuelve la tarjeta y pregunta si hay algo que pueda ayudar a reparar. Luz decide guardar sus cosas y tomarse un momento. Escalito y la persona adulta respetan su decisión. Una disculpa no le exige sonreír, dar un abrazo o volver a jugar enseguida. Durante los días siguientes, Roko pide permiso y cuida las tarjetas del grupo. La confianza puede necesitar tiempo. Sus acciones cuentan más que repetir muchas veces una palabra bonita. Ahora podemos pensar juntos y elegir una idea que ayude."
+  },
+  {
+    "id": "a-mi-ritmo",
+    "title": "La confianza necesita tiempo",
+    "subtitle": "Puedo cuidar mis límites",
+    "icon": "heart",
+    "color": "#eac3df",
+    "scene": "garden",
+    "actors": [
+      "ana",
+      "luz",
+      "roko"
+    ],
+    "paragraphs": [
+      "Roko ha dejado de hacer una broma que molestaba a Ana. Hoy la invita a jugar otra vez. Ana aprecia el cambio, pero todavía prefiere estar con Luz y necesita un poco más de tiempo.",
+      "La persona adulta explica que nadie tiene que volver a acercarse enseguida. Ana puede decir: «Hoy prefiero otro juego». Roko escucha sin presionarla para que acepte su invitación.",
+      "Hablan sobre el perdón y el cuidado. Aprender a perdonar no significa negar lo que pasó ni aceptar nuevas burlas. Los adultos siguen atentos a que las conductas que lastiman se detengan.",
+      "Cada amistad puede cambiar. Ana conserva su derecho a estar segura y Roko puede seguir aprendiendo aunque ella no quiera jugar hoy. El respeto se nota cuando escuchamos también una respuesta difícil."
+    ],
+    "challenges": [
+      {
+        "question": "¿Qué puede decidir Ana?",
+        "choices": [
+          {
+            "text": "Esperar y elegir otro juego si lo necesita.",
+            "helpful": true,
+            "feedback": "Puede tomarse tiempo; la confianza no se exige como una prueba."
+          },
+          {
+            "text": "Volver a jugar para demostrar que perdonó.",
+            "helpful": false,
+            "feedback": "El perdón no se demuestra aceptando cercanía que todavía incomoda."
+          }
+        ]
+      },
+      {
+        "question": "¿Qué necesita hacer Roko?",
+        "choices": [
+          {
+            "text": "Respetar su respuesta y continuar cuidando.",
+            "helpful": true,
+            "feedback": "Escuchar un límite también muestra que está cambiando sus acciones."
+          },
+          {
+            "text": "Insistir hasta que ella acepte.",
+            "helpful": false,
+            "feedback": "La insistencia puede convertirse en presión y no respeta su decisión."
+          }
+        ]
+      }
+    ],
+    "practice": "Habla con tu familia de una frase para pedir tiempo con respeto.",
+    "adult": "Explique el perdón sin culpar a la víctima. Mantenga la protección y no use la fe para exigir cercanía con quien lastima.",
+    "bible": "Efesios 4:32 · La bondad y el perdón pueden acompañarse de límites y cuidado.",
+    "narration": "Roko ha dejado de hacer una broma que molestaba a Ana. Hoy la invita a jugar otra vez. Ana aprecia el cambio, pero todavía prefiere estar con Luz y necesita un poco más de tiempo. La persona adulta explica que nadie tiene que volver a acercarse enseguida. Ana puede decir: «Hoy prefiero otro juego». Roko escucha sin presionarla para que acepte su invitación. Hablan sobre el perdón y el cuidado. Aprender a perdonar no significa negar lo que pasó ni aceptar nuevas burlas. Los adultos siguen atentos a que las conductas que lastiman se detengan. Cada amistad puede cambiar. Ana conserva su derecho a estar segura y Roko puede seguir aprendiendo aunque ella no quiera jugar hoy. El respeto se nota cuando escuchamos también una respuesta difícil. Ahora podemos pensar juntos y elegir una idea que ayude."
+  },
+  {
+    "id": "valiente-con-miedo",
+    "title": "Valiente, aunque tenga miedo",
+    "subtitle": "Puedo pedir compañía",
+    "icon": "help",
+    "color": "#ffdab4",
+    "scene": "urban",
+    "actors": [
+      "mateo",
+      "escalito",
+      "lupi"
+    ],
+    "paragraphs": [
+      "Mateo va a contar un cuento al grupo. Le gusta su historia, pero siente un nudo en el estómago al pensar en hablar delante de todos. Cree que ser valiente significa no sentir miedo.",
+      "Escalito le recuerda que puede sentir miedo y pedir compañía. Un adulto ofrece opciones: leer junto a él, mostrar un dibujo o dejar la actividad para otro momento. Mateo elige contar solo la primera parte.",
+      "El grupo escucha con respeto. Si se equivoca, puede hacer una pausa. La persona adulta no lo empuja ni promete que ya nunca tendrá miedo. Lo acompaña en lo que hoy resulta posible.",
+      "Al terminar, Mateo sabe que su valor no depende de hablar más que los demás. Ser valiente también puede ser decir «necesito ayuda» y elegir un pequeño paso con alguien que te cuide."
+    ],
+    "challenges": [
+      {
+        "question": "¿Qué puede pedir Mateo?",
+        "choices": [
+          {
+            "text": "Compañía y una opción que le resulte posible.",
+            "helpful": true,
+            "feedback": "El apoyo puede ayudar a elegir un paso adecuado para él."
+          },
+          {
+            "text": "Que lo dejen solo para demostrar valentía.",
+            "helpful": false,
+            "feedback": "Pedir compañía no disminuye su valor ni significa que haya fallado."
+          }
+        ]
+      },
+      {
+        "question": "¿Tiene que hacerlo todo hoy?",
+        "choices": [
+          {
+            "text": "No, puede parar o continuar acompañado.",
+            "helpful": true,
+            "feedback": "Puede cuidar su ritmo y decidir con ayuda cómo continuar."
+          },
+          {
+            "text": "Sí, debe terminar aunque se sienta sobrepasado.",
+            "helpful": false,
+            "feedback": "La valentía no exige soportar una situación que lo sobrepasa."
+          }
+        ]
+      }
+    ],
+    "practice": "Elige un pequeño paso y una persona que pueda acompañarte.",
+    "adult": "Ofrezca opciones y acompañamiento sin exposición forzada. Si el malestar persiste, busque orientación adecuada.",
+    "bible": "Salmo 56:3 · Podemos hablar del miedo y buscar compañía y confianza.",
+    "narration": "Mateo va a contar un cuento al grupo. Le gusta su historia, pero siente un nudo en el estómago al pensar en hablar delante de todos. Cree que ser valiente significa no sentir miedo. Escalito le recuerda que puede sentir miedo y pedir compañía. Un adulto ofrece opciones: leer junto a él, mostrar un dibujo o dejar la actividad para otro momento. Mateo elige contar solo la primera parte. El grupo escucha con respeto. Si se equivoca, puede hacer una pausa. La persona adulta no lo empuja ni promete que ya nunca tendrá miedo. Lo acompaña en lo que hoy resulta posible. Al terminar, Mateo sabe que su valor no depende de hablar más que los demás. Ser valiente también puede ser decir «necesito ayuda» y elegir un pequeño paso con alguien que te cuide. Ahora podemos pensar juntos y elegir una idea que ayude."
+  },
+  {
+    "id": "adultos-que-cuidan",
+    "title": "Personas que me cuidan",
+    "subtitle": "Busco apoyo y sigo contando",
+    "icon": "family",
+    "color": "#d2d6f0",
+    "scene": "school",
+    "actors": [
+      "escalito",
+      "ana",
+      "mateo"
+    ],
+    "paragraphs": [
+      "Ana quiere contar algo que ocurrió varias veces en el recreo. La primera persona adulta está ocupada y no alcanza a escucharla. Ana piensa que quizás lo que le pasa no importa.",
+      "Escalito le recuerda que su voz sigue teniendo valor. Puede decir que necesita hablar y buscar a otro adulto de confianza: un familiar, una docente u otra persona que la cuide de verdad.",
+      "Con Mateo, practica una frase corta: «Esto está pasando y necesito ayuda para estar segura». No hace falta explicar todo perfectamente ni tener pruebas para merecer atención y protección.",
+      "Después, su familia la escucha y acuerda qué hacer con la escuela. La responsabilidad de detener las burlas no queda en Ana ni en sus amigos. Los adultos necesitan acompañarla y actuar para cuidarla."
+    ],
+    "challenges": [
+      {
+        "question": "¿Qué puede hacer si un adulto no la escucha?",
+        "choices": [
+          {
+            "text": "Buscar a otra persona adulta de confianza.",
+            "helpful": true,
+            "feedback": "Puede seguir buscando apoyo; su voz y seguridad merecen atención."
+          },
+          {
+            "text": "Pensar que su problema no importa.",
+            "helpful": false,
+            "feedback": "Que una persona no escuche no hace menos importante lo que ocurre."
+          }
+        ]
+      },
+      {
+        "question": "¿Necesita explicarlo perfectamente?",
+        "choices": [
+          {
+            "text": "No, puede empezar con pocas palabras.",
+            "helpful": true,
+            "feedback": "Puede pedir ayuda aunque todavía le cueste ordenar lo que pasó."
+          },
+          {
+            "text": "Sí, sin una explicación perfecta no puede pedir ayuda.",
+            "helpful": false,
+            "feedback": "Nadie necesita una explicación perfecta para merecer cuidado."
+          }
+        ]
+      }
+    ],
+    "practice": "Identifica con tu familia dos adultos y un lugar donde puedas pedir ayuda.",
+    "adult": "Acuerde apoyos accesibles y actúe ante relatos de daño. No pida al niño que investigue ni enfrente a quien lo molesta.",
+    "bible": "Eclesiastés 4:9–10 · Acompañarnos puede ayudarnos cuando algo nos cuesta.",
+    "narration": "Ana quiere contar algo que ocurrió varias veces en el recreo. La primera persona adulta está ocupada y no alcanza a escucharla. Ana piensa que quizás lo que le pasa no importa. Escalito le recuerda que su voz sigue teniendo valor. Puede decir que necesita hablar y buscar a otro adulto de confianza: un familiar, una docente u otra persona que la cuide de verdad. Con Mateo, practica una frase corta: «Esto está pasando y necesito ayuda para estar segura». No hace falta explicar todo perfectamente ni tener pruebas para merecer atención y protección. Después, su familia la escucha y acuerda qué hacer con la escuela. La responsabilidad de detener las burlas no queda en Ana ni en sus amigos. Los adultos necesitan acompañarla y actuar para cuidarla. Ahora podemos pensar juntos y elegir una idea que ayude."
+  },
+  {
+    "id": "secreto-que-pesa",
+    "title": "Cuando un secreto pesa",
+    "subtitle": "Puedo hablar si necesito cuidado",
+    "icon": "lock",
+    "color": "#ffc8a7",
+    "scene": "house",
+    "actors": [
+      "mateo",
+      "luz",
+      "escalito"
+    ],
+    "paragraphs": [
+      "Mateo está preparando una tarjeta sorpresa para Luz. La sorpresa tiene una fecha y pronto podrá mostrarla. Después recuerda otra situación: alguien le pidió guardar algo que lo hizo sentir asustado.",
+      "Con una persona adulta, aprende que no tiene que guardar un secreto que lo preocupe o pueda hacerle daño. Puede hablar aunque alguien le haya pedido que no lo cuente.",
+      "Escalito lo acompaña a buscar apoyo. Mateo no está traicionando a nadie por necesitar protección. Puede empezar diciendo: «Hay algo que me preocupa y quiero contártelo».",
+      "Una sorpresa alegre y un secreto que pesa no son lo mismo. Si no sabe distinguirlos, puede preguntar a un adulto de confianza. Las personas que lo cuidan deben escuchar y ayudar, sin culparlo por hablar."
+    ],
+    "challenges": [
+      {
+        "question": "¿Puede contar algo que lo asusta aunque le pidan callar?",
+        "choices": [
+          {
+            "text": "Sí, puede buscar a un adulto que lo cuide.",
+            "helpful": true,
+            "feedback": "Pedir protección está bien aunque otra persona le haya pedido silencio."
+          },
+          {
+            "text": "No, debe guardar todos los secretos.",
+            "helpful": false,
+            "feedback": "Un secreto no debe impedir que busque ayuda si teme que haya daño."
+          }
+        ]
+      },
+      {
+        "question": "¿Qué puede hacer si no sabe si contar algo?",
+        "choices": [
+          {
+            "text": "Hablar con un adulto de confianza.",
+            "helpful": true,
+            "feedback": "Puede preguntar y recibir apoyo sin tener que decidirlo todo a solas."
+          },
+          {
+            "text": "Resolverlo solo para no molestar.",
+            "helpful": false,
+            "feedback": "Lo que le preocupa merece atención; pedir ayuda no es molestar."
+          }
+        ]
+      }
+    ],
+    "practice": "Ensaya una frase para empezar a contar algo que te preocupa, sin compartir detalles aquí.",
+    "adult": "Escuche sin interrogatorios ni promesas de secreto absoluto. Ante riesgo, priorice la protección y los apoyos adecuados.",
+    "bible": "Marcos 10:13–16 · Los niños merecen atención, cuidado y un lugar para ser escuchados.",
+    "narration": "Mateo está preparando una tarjeta sorpresa para Luz. La sorpresa tiene una fecha y pronto podrá mostrarla. Después recuerda otra situación: alguien le pidió guardar algo que lo hizo sentir asustado. Con una persona adulta, aprende que no tiene que guardar un secreto que lo preocupe o pueda hacerle daño. Puede hablar aunque alguien le haya pedido que no lo cuente. Escalito lo acompaña a buscar apoyo. Mateo no está traicionando a nadie por necesitar protección. Puede empezar diciendo: «Hay algo que me preocupa y quiero contártelo». Una sorpresa alegre y un secreto que pesa no son lo mismo. Si no sabe distinguirlos, puede preguntar a un adulto de confianza. Las personas que lo cuidan deben escuchar y ayudar, sin culparlo por hablar. Ahora podemos pensar juntos y elegir una idea que ayude."
+  },
+  {
+    "id": "pantallas-en-familia",
+    "title": "Pantallas con compañía",
+    "subtitle": "Pregunto antes de salir de mi aventura",
+    "icon": "story",
+    "color": "#c8dfe6",
+    "scene": "house",
+    "actors": [
+      "ana",
+      "escalito",
+      "lupi"
+    ],
+    "paragraphs": [
+      "Ana disfruta una historia con su familia. En otra pantalla aparece una invitación para abrir una página. No sabe quién la hizo ni qué encontrará al tocarla.",
+      "La persona adulta le explica que puede preguntar antes de abrir enlaces, descargar algo o compartir información. Su nombre, su ubicación y sus fotografías no son necesarios para demostrar amistad a alguien en una pantalla.",
+      "Escalito propone hacer una pausa y mirar el jardín. Después pueden volver juntos a una actividad adecuada para ellos. Si algo en internet incomoda a Ana, puede contarlo aunque ya haya tocado el enlace.",
+      "Pedir compañía también es útil cuando usamos tecnología. No se trata de sentir vergüenza por equivocarnos. Los adultos ayudan a elegir contenidos, cuidar los datos y encontrar un equilibrio con el juego y el descanso."
+    ],
+    "challenges": [
+      {
+        "question": "¿Qué puede hacer Ana ante un enlace que no conoce?",
+        "choices": [
+          {
+            "text": "Consultar con la persona adulta que la acompaña.",
+            "helpful": true,
+            "feedback": "Un adulto puede revisar el contenido antes de que ella continúe."
+          },
+          {
+            "text": "Abrirlo y compartir sus datos para entrar.",
+            "helpful": false,
+            "feedback": "No necesita compartir datos personales para merecer una actividad o amistad."
+          }
+        ]
+      },
+      {
+        "question": "¿Puede contar si algo en una pantalla la incomoda?",
+        "choices": [
+          {
+            "text": "Sí, incluso si ya lo abrió.",
+            "helpful": true,
+            "feedback": "Puede pedir apoyo después de un error y seguir mereciendo cuidado."
+          },
+          {
+            "text": "No, si tocó el enlace debe guardárselo.",
+            "helpful": false,
+            "feedback": "Tocar algo por error no le quita el derecho a buscar ayuda."
+          }
+        ]
+      }
+    ],
+    "practice": "Con tu familia, acuerda cuándo pedir ayuda al usar una pantalla.",
+    "adult": "Supervise contenidos y enlaces. Mantenga una respuesta sin castigos que impidan al niño contar algo incómodo.",
+    "bible": "Proverbios 4:23 · Cuidar lo que recibimos también invita a elegir con acompañamiento.",
+    "narration": "Ana disfruta una historia con su familia. En otra pantalla aparece una invitación para abrir una página. No sabe quién la hizo ni qué encontrará al tocarla. La persona adulta le explica que puede preguntar antes de abrir enlaces, descargar algo o compartir información. Su nombre, su ubicación y sus fotografías no son necesarios para demostrar amistad a alguien en una pantalla. Escalito propone hacer una pausa y mirar el jardín. Después pueden volver juntos a una actividad adecuada para ellos. Si algo en internet incomoda a Ana, puede contarlo aunque ya haya tocado el enlace. Pedir compañía también es útil cuando usamos tecnología. No se trata de sentir vergüenza por equivocarnos. Los adultos ayudan a elegir contenidos, cuidar los datos y encontrar un equilibrio con el juego y el descanso. Ahora podemos pensar juntos y elegir una idea que ayude."
+  },
+  {
+    "id": "mi-espacio",
+    "title": "Mi espacio también importa",
+    "subtitle": "El cariño necesita permiso",
+    "icon": "heart",
+    "color": "#ffcbc6",
+    "scene": "garden",
+    "actors": [
+      "luz",
+      "ana",
+      "mateo"
+    ],
+    "paragraphs": [
+      "Luz llega al jardín y Ana quiere saludarla con un abrazo. Hoy Luz prefiere un saludo con la mano. Ana se detiene y pregunta cómo le gustaría saludar.",
+      "Mateo propone inventar varias opciones: una sonrisa, mover la mano o decir «hola». El grupo descubre que el cariño no tiene una sola forma y no hace falta tocar a alguien para demostrar amistad.",
+      "Una persona adulta les recuerda que pueden pedir espacio cuando algo los incomoda. Si alguien no respeta su respuesta, pueden alejarse si es posible y buscar a una persona que los cuide.",
+      "Luz saluda con la mano y se sienta a conversar. Su límite no significa que quiera menos a sus amigos. Escuchar un «hoy no» es una manera concreta de tratar a alguien con respeto."
+    ],
+    "challenges": [
+      {
+        "question": "¿Qué puede hacer Ana antes de abrazar?",
+        "choices": [
+          {
+            "text": "Preguntar y respetar la respuesta de Luz.",
+            "helpful": true,
+            "feedback": "El cariño también se expresa respetando el permiso de otra persona."
+          },
+          {
+            "text": "Abrazarla porque las amigas siempre lo hacen.",
+            "helpful": false,
+            "feedback": "La amistad no obliga a aceptar contacto físico que no se desea."
+          }
+        ]
+      },
+      {
+        "question": "¿Qué puede hacer Luz si su límite no se respeta?",
+        "choices": [
+          {
+            "text": "Buscar espacio y ayuda de un adulto que la cuide.",
+            "helpful": true,
+            "feedback": "Su comodidad y seguridad importan; puede pedir apoyo directamente."
+          },
+          {
+            "text": "Aceptar para evitar que alguien se moleste.",
+            "helpful": false,
+            "feedback": "No necesita aceptar algo incómodo para cuidar el ánimo de otros."
+          }
+        ]
+      }
+    ],
+    "practice": "Elige con tu familia distintas formas de saludar y pedir espacio.",
+    "adult": "Respete el permiso para contacto cotidiano. No fuerce abrazos ni use el afecto como recompensa por obedecer.",
+    "bible": "Mateo 7:12 · Cuidar a otros también incluye respetar su espacio.",
+    "narration": "Luz llega al jardín y Ana quiere saludarla con un abrazo. Hoy Luz prefiere un saludo con la mano. Ana se detiene y pregunta cómo le gustaría saludar. Mateo propone inventar varias opciones: una sonrisa, mover la mano o decir «hola». El grupo descubre que el cariño no tiene una sola forma y no hace falta tocar a alguien para demostrar amistad. Una persona adulta les recuerda que pueden pedir espacio cuando algo los incomoda. Si alguien no respeta su respuesta, pueden alejarse si es posible y buscar a una persona que los cuide. Luz saluda con la mano y se sienta a conversar. Su límite no significa que quiera menos a sus amigos. Escuchar un «hoy no» es una manera concreta de tratar a alguien con respeto. Ahora podemos pensar juntos y elegir una idea que ayude."
+  },
+  {
+    "id": "gracias-pequenas",
+    "title": "Gracias por lo pequeñito",
+    "subtitle": "Reconozco el cuidado que recibo",
+    "icon": "gift",
+    "color": "#ffe0a3",
+    "scene": "forest",
+    "actors": [
+      "escalito",
+      "luz",
+      "lupi"
+    ],
+    "paragraphs": [
+      "Escalito observa el jardín con Luz. Recuerda que alguien le escuchó en un día difícil y que su familia preparó un lugar para descansar. Son gestos pequeños, pero significativos para él.",
+      "Luz agradece la compañía de una amiga. También cuenta que todavía está triste por algo de la escuela. Las dos cosas pueden existir juntas: agradecer no la obliga a decir que todo está bien.",
+      "Con los adultos del grupo, preparan tarjetas de agradecimiento. Nadie tiene que dar gracias por una burla, un daño o una situación injusta. El cuidado se reconoce cuando de verdad cuida.",
+      "Antes de irse, hacen una oración sencilla por quienes los acompañan. Cada uno puede expresar lo que necesita. La gratitud puede ser un gesto libre, sin competir ni esconder los sentimientos difíciles."
+    ],
+    "challenges": [
+      {
+        "question": "¿Puede Luz agradecer y seguir sintiéndose triste?",
+        "choices": [
+          {
+            "text": "Sí, las dos cosas pueden aparecer juntas.",
+            "helpful": true,
+            "feedback": "La gratitud no borra ni invalida los sentimientos difíciles."
+          },
+          {
+            "text": "No, agradecer significa estar contenta siempre.",
+            "helpful": false,
+            "feedback": "Puede reconocer el cuidado sin fingir que todo está bien."
+          }
+        ]
+      },
+      {
+        "question": "¿Qué gesto merece una tarjeta de agradecimiento?",
+        "choices": [
+          {
+            "text": "Alguien que escuchó y acompañó con respeto.",
+            "helpful": true,
+            "feedback": "Podemos reconocer las acciones que realmente nos cuidaron."
+          },
+          {
+            "text": "Una burla que la hizo sentir mal.",
+            "helpful": false,
+            "feedback": "No necesita agradecer un daño ni una situación que la lastime."
+          }
+        ]
+      }
+    ],
+    "practice": "Si quieres, agradece un gesto de cuidado y cuenta también lo que necesitas.",
+    "adult": "No use gratitud para silenciar quejas o tristeza. Permita que el agradecimiento sea libre y concreto.",
+    "bible": "1 Tesalonicenses 5:18 · Podemos cultivar gratitud sin negar lo que sentimos.",
+    "narration": "Escalito observa el jardín con Luz. Recuerda que alguien le escuchó en un día difícil y que su familia preparó un lugar para descansar. Son gestos pequeños, pero significativos para él. Luz agradece la compañía de una amiga. También cuenta que todavía está triste por algo de la escuela. Las dos cosas pueden existir juntas: agradecer no la obliga a decir que todo está bien. Con los adultos del grupo, preparan tarjetas de agradecimiento. Nadie tiene que dar gracias por una burla, un daño o una situación injusta. El cuidado se reconoce cuando de verdad cuida. Antes de irse, hacen una oración sencilla por quienes los acompañan. Cada uno puede expresar lo que necesita. La gratitud puede ser un gesto libre, sin competir ni esconder los sentimientos difíciles. Ahora podemos pensar juntos y elegir una idea que ayude."
+  },
+  {
+    "id": "jardin-compartido",
+    "title": "Nuestro jardín compartido",
+    "subtitle": "Cuido y colaboro con ayuda",
+    "icon": "sun",
+    "color": "#d0e7ad",
+    "scene": "garden",
+    "actors": [
+      "ana",
+      "mateo",
+      "roko"
+    ],
+    "paragraphs": [
+      "La casa SCALA prepara una tarde para cuidar el jardín. Ana quiere sembrar flores, Mateo prefiere regar y Roko inventa nombres divertidos para las plantas. Los adultos organizan tareas pequeñas y seguras.",
+      "Una planta necesita agua y otra necesita menos. Mateo pregunta antes de regar. Aprenden que cuidar no es hacer mucho sin mirar, sino conocer lo que cada ser vivo necesita.",
+      "Roko se distrae y pisa una maceta de papel. Escucha a Ana, detiene el juego y ayuda a reemplazarla. Nadie lo llama malo; sí le recuerdan que puede cambiar sus acciones para cuidar el espacio.",
+      "Al terminar, el grupo descansa a la sombra. El jardín no les exige ser perfectos. Les ofrece una oportunidad para cooperar, preguntar y reconocer que también necesitan pausas y acompañamiento."
+    ],
+    "challenges": [
+      {
+        "question": "¿Qué ayuda a cuidar las plantas?",
+        "choices": [
+          {
+            "text": "Preguntar qué necesita cada una.",
+            "helpful": true,
+            "feedback": "Cuidar incluye observar y pedir orientación cuando no sabemos."
+          },
+          {
+            "text": "Dar mucha agua a todas sin mirar.",
+            "helpful": false,
+            "feedback": "Hacer más no siempre ayuda; cada planta puede necesitar algo distinto."
+          }
+        ]
+      },
+      {
+        "question": "¿Qué puede hacer Roko si estropea algo?",
+        "choices": [
+          {
+            "text": "Detenerse, reconocerlo y reparar con ayuda.",
+            "helpful": true,
+            "feedback": "Puede aprender y colaborar en una reparación adecuada y segura."
+          },
+          {
+            "text": "Seguir jugando y culpar a los demás.",
+            "helpful": false,
+            "feedback": "Culpar a otros no cuida el jardín ni lo que sintieron sus amigos."
+          }
+        ]
+      }
+    ],
+    "practice": "Haz una tarea pequeña y segura para cuidar un espacio con tu familia.",
+    "adult": "Supervise herramientas, plantas y agua. Adapte las tareas y ofrezca descanso sin convertir la actividad en obligación.",
+    "bible": "Génesis 2:15 · El relato del jardín nos invita a cuidar lo que nos rodea.",
+    "narration": "La casa SCALA prepara una tarde para cuidar el jardín. Ana quiere sembrar flores, Mateo prefiere regar y Roko inventa nombres divertidos para las plantas. Los adultos organizan tareas pequeñas y seguras. Una planta necesita agua y otra necesita menos. Mateo pregunta antes de regar. Aprenden que cuidar no es hacer mucho sin mirar, sino conocer lo que cada ser vivo necesita. Roko se distrae y pisa una maceta de papel. Escucha a Ana, detiene el juego y ayuda a reemplazarla. Nadie lo llama malo; sí le recuerdan que puede cambiar sus acciones para cuidar el espacio. Al terminar, el grupo descansa a la sombra. El jardín no les exige ser perfectos. Les ofrece una oportunidad para cooperar, preguntar y reconocer que también necesitan pausas y acompañamiento. Ahora podemos pensar juntos y elegir una idea que ayude."
+  },
+  {
+    "id": "ayudo-con-cuidado",
+    "title": "Ayudar también es pedir ayuda",
+    "subtitle": "Cuido sin ponerme en peligro",
+    "icon": "help",
+    "color": "#ffd0ad",
+    "scene": "forest",
+    "actors": [
+      "escalito",
+      "mateo",
+      "lupi"
+    ],
+    "paragraphs": [
+      "Lupi deja su pelota junto a una cerca del jardín. Mateo quiere recuperarla, pero tendría que trepar y no sabe si el lugar es seguro. Escalito le propone buscar a un adulto antes de intentar hacerlo.",
+      "La persona adulta encuentra una forma segura de traer la pelota. Los niños esperan a un lado y acompañan a Lupi. No hace falta asumir un riesgo para demostrar que quieren ayudar.",
+      "Después conversan sobre lo que harían si un amigo estuviera en una situación peligrosa. Pueden llamar la atención de un adulto cercano y explicar qué está pasando. La protección no debe quedar en manos de un niño solo.",
+      "Mateo comprende que pedir apoyo también puede ayudar mucho. Su cariño por Lupi se nota en buscar una solución segura, no en hacer algo arriesgado. Los amigos continúan jugando acompañados."
+    ],
+    "challenges": [
+      {
+        "question": "¿Cómo puede ayudar Mateo con la pelota?",
+        "choices": [
+          {
+            "text": "Avisando a un adulto antes de trepar.",
+            "helpful": true,
+            "feedback": "Un adulto puede buscar una solución segura y acompañar a los niños."
+          },
+          {
+            "text": "Trepando solo para demostrar que puede.",
+            "helpful": false,
+            "feedback": "Ayudar no exige ponerse en una situación que puede lastimarlo."
+          }
+        ]
+      },
+      {
+        "question": "¿Qué puede hacer si ve un peligro para un amigo?",
+        "choices": [
+          {
+            "text": "Buscar de inmediato a un adulto cercano que pueda proteger.",
+            "helpful": true,
+            "feedback": "Buscar apoyo adulto es una acción valiosa para cuidar la seguridad."
+          },
+          {
+            "text": "Intentar resolverlo todo solo.",
+            "helpful": false,
+            "feedback": "La protección no tiene que depender de que un niño actúe solo."
+          }
+        ]
+      }
+    ],
+    "practice": "Habla con tu familia sobre cómo avisar a un adulto ante un peligro.",
+    "adult": "Use ejemplos cotidianos sin representar riesgos reales. Aclare quiénes pueden intervenir y cómo pedir apoyo.",
+    "bible": "Lucas 10:25–37 · Cuidar al prójimo puede incluir buscar ayuda para proteger.",
+    "narration": "Lupi deja su pelota junto a una cerca del jardín. Mateo quiere recuperarla, pero tendría que trepar y no sabe si el lugar es seguro. Escalito le propone buscar a un adulto antes de intentar hacerlo. La persona adulta encuentra una forma segura de traer la pelota. Los niños esperan a un lado y acompañan a Lupi. No hace falta asumir un riesgo para demostrar que quieren ayudar. Después conversan sobre lo que harían si un amigo estuviera en una situación peligrosa. Pueden llamar la atención de un adulto cercano y explicar qué está pasando. La protección no debe quedar en manos de un niño solo. Mateo comprende que pedir apoyo también puede ayudar mucho. Su cariño por Lupi se nota en buscar una solución segura, no en hacer algo arriesgado. Los amigos continúan jugando acompañados. Ahora podemos pensar juntos y elegir una idea que ayude."
+  },
+  {
+    "id": "celebramos-camino",
+    "title": "Lo que construimos juntos",
+    "subtitle": "Nuestro camino sigue abierto",
+    "icon": "home",
+    "color": "#ffe1a7",
+    "scene": "house",
+    "actors": [
+      "escalito",
+      "roko",
+      "luz"
+    ],
+    "paragraphs": [
+      "Los amigos vuelven a la casa SCALA con sus familias. Ana trae un dibujo, Mateo una idea y Luz un cuento. Roko cuenta una broma que cuida al grupo. Lupi los recibe moviendo la cola.",
+      "Recuerdan pequeños pasos: expresar lo que sienten, pedir permiso, buscar ayuda y cambiar una conducta que lastima. No todos aprendieron de la misma manera ni al mismo tiempo.",
+      "En una pared ponen sus ideas con apoyo de los adultos. Nadie recibe una medalla por estar siempre alegre. Celebran haber escuchado, practicado y acompañado, incluso en los días difíciles.",
+      "La casa sigue teniendo lugar para preguntas y nuevos intentos. Tu aventura también puede continuar: vuelve a una historia, conversa con tu familia o descansa. Tu voz, tus límites y tu valor merecen cuidado cada día."
+    ],
+    "challenges": [
+      {
+        "question": "¿Qué celebra el grupo?",
+        "choices": [
+          {
+            "text": "Los pasos de cuidado, escucha y aprendizaje.",
+            "helpful": true,
+            "feedback": "Aprender a cuidarnos no exige eliminar nuestros sentimientos."
+          },
+          {
+            "text": "Que todos hayan dejado de sentir tristeza o miedo.",
+            "helpful": false,
+            "feedback": "Podemos sentir tristeza o miedo y seguir aprendiendo y mereciendo cariño."
+          }
+        ]
+      },
+      {
+        "question": "¿Qué puedes hacer al terminar estas aventuras?",
+        "choices": [
+          {
+            "text": "Repetir, descansar o conversar con mi familia.",
+            "helpful": true,
+            "feedback": "Puedes elegir tu ritmo; el descanso y la compañía también tienen lugar."
+          },
+          {
+            "text": "Seguir sin parar para no decepcionar al grupo.",
+            "helpful": false,
+            "feedback": "No tienes que jugar sin parar para conservar tu lugar o tu valor."
+          }
+        ]
+      }
+    ],
+    "practice": "Comparte una idea que te haya servido y algo que quieras seguir aprendiendo.",
+    "adult": "Reconozca aprendizajes sin comparar niños ni usar el progreso como evaluación emocional o promesa de eficacia.",
+    "bible": "Colosenses 3:14 · El amor puede orientar cómo convivimos y nos acompañamos.",
+    "narration": "Los amigos vuelven a la casa SCALA con sus familias. Ana trae un dibujo, Mateo una idea y Luz un cuento. Roko cuenta una broma que cuida al grupo. Lupi los recibe moviendo la cola. Recuerdan pequeños pasos: expresar lo que sienten, pedir permiso, buscar ayuda y cambiar una conducta que lastima. No todos aprendieron de la misma manera ni al mismo tiempo. En una pared ponen sus ideas con apoyo de los adultos. Nadie recibe una medalla por estar siempre alegre. Celebran haber escuchado, practicado y acompañado, incluso en los días difíciles. La casa sigue teniendo lugar para preguntas y nuevos intentos. Tu aventura también puede continuar: vuelve a una historia, conversa con tu familia o descansa. Tu voz, tus límites y tu valor merecen cuidado cada día. Ahora podemos pensar juntos y elegir una idea que ayude."
+  }
+]

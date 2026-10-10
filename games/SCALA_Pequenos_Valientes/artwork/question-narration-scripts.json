@@ -1,0 +1,362 @@
+[
+  {
+    "lessonId": "mi-voz",
+    "step": 1,
+    "file": "voz-pregunta-mi-voz-1.mp3",
+    "text": "¿Qué puede decir Ana sobre lo que siente? Inciso A. «Me siento triste y quiero hablar». Inciso B. «Tengo que fingir que estoy contenta». Inciso C. «Puedo sentir enojo y decirlo con palabras». ¿Cuál elegirás tú?"
+  },
+  {
+    "lessonId": "mi-voz",
+    "step": 2,
+    "file": "voz-pregunta-mi-voz-2.mp3",
+    "text": "¿Quién puede escuchar y cuidar a Ana? Inciso A. Un adulto de confianza, como un familiar o docente. Inciso B. Tiene que resolverlo todo ella sola. ¿Cuál elegirás tú?"
+  },
+  {
+    "lessonId": "mi-limite",
+    "step": 1,
+    "file": "voz-pregunta-mi-limite-1.mp3",
+    "text": "¿Qué frase expresa un límite? Inciso A. «Esa broma me molesta. Por favor, para». Inciso B. «Voy a hacerte lo mismo». ¿Cuál elegirás tú?"
+  },
+  {
+    "lessonId": "mi-limite",
+    "step": 2,
+    "file": "voz-pregunta-mi-limite-2.mp3",
+    "text": "¿Y si Ana no se siente segura para hablar? Inciso A. Puede alejarse y buscar a un adulto que la cuide. Inciso B. Tiene que enfrentarse a Roko para demostrar valor. ¿Cuál elegirás tú?"
+  },
+  {
+    "lessonId": "pido-ayuda",
+    "step": 1,
+    "file": "voz-pregunta-pido-ayuda-1.mp3",
+    "text": "¿Cómo puede empezar a pedir ayuda Mateo? Inciso A. «Quiero contarte algo y necesito que me ayudes». Inciso B. Guardárselo para no preocupar a nadie. ¿Cuál elegirás tú?"
+  },
+  {
+    "lessonId": "pido-ayuda",
+    "step": 2,
+    "file": "voz-pregunta-pido-ayuda-2.mp3",
+    "text": "Si un adulto no escucha, ¿qué puede hacer? Inciso A. Buscar a otro adulto de confianza. Inciso B. Pensar que su problema no importa. ¿Cuál elegirás tú?"
+  },
+  {
+    "lessonId": "acompanamos",
+    "step": 1,
+    "file": "voz-pregunta-acompanamos-1.mp3",
+    "text": "¿Qué puede hacer Luz para acompañar a Ana? Inciso A. Escucharla y ofrecer ir juntas con un adulto. Inciso B. Decirle que no sea tan sensible. ¿Cuál elegirás tú?"
+  },
+  {
+    "lessonId": "acompanamos",
+    "step": 2,
+    "file": "voz-pregunta-acompanamos-2.mp3",
+    "text": "¿Qué puede hacer Mateo si ve una situación peligrosa? Inciso A. Ir por ayuda de un adulto que pueda protegerlos. Inciso B. Intervenir solo aunque pueda salir lastimado. ¿Cuál elegirás tú?"
+  },
+  {
+    "lessonId": "reparamos",
+    "step": 1,
+    "file": "voz-pregunta-reparamos-1.mp3",
+    "text": "¿Qué muestra que Roko quiere reparar lo que hizo? Inciso A. Escuchar, disculparse y detener las burlas. Inciso B. Decir «era una broma» y seguir haciéndolo. ¿Cuál elegirás tú?"
+  },
+  {
+    "lessonId": "reparamos",
+    "step": 2,
+    "file": "voz-pregunta-reparamos-2.mp3",
+    "text": "¿Qué puede decidir Ana después de la disculpa? Inciso A. Tomarse tiempo y mantener sus límites. Inciso B. Aceptar cualquier nueva burla para ser buena amiga. ¿Cuál elegirás tú?"
+  },
+  {
+    "lessonId": "mi-valor",
+    "step": 1,
+    "file": "voz-pregunta-mi-valor-1.mp3",
+    "text": "¿Qué puedes recordar si alguien se burla de ti? Inciso A. «Merezco respeto y puedo buscar apoyo». Inciso B. «La burla demuestra que no valgo». ¿Cuál elegirás tú?"
+  },
+  {
+    "lessonId": "mi-valor",
+    "step": 2,
+    "file": "voz-pregunta-mi-valor-2.mp3",
+    "text": "¿Qué aprendimos con Escalito y sus amigos? Inciso A. Expresar lo que siento, cuidar mis límites y pedir ayuda. Inciso B. Que ser valiente significa nunca tener miedo. ¿Cuál elegirás tú?"
+  },
+  {
+    "lessonId": "casa-scala",
+    "step": 1,
+    "file": "voz-pregunta-casa-scala-1.mp3",
+    "text": "¿Quién tiene un lugar en la casa SCALA? Inciso A. También quien esté triste o necesite apoyo. Inciso B. Solo quien esté contento todo el tiempo. ¿Cuál elegirás tú?"
+  },
+  {
+    "lessonId": "casa-scala",
+    "step": 2,
+    "file": "voz-pregunta-casa-scala-2.mp3",
+    "text": "¿Qué acuerdo ayuda a cuidar al grupo? Inciso A. Escuchar, pedir permiso y buscar ayuda. Inciso B. Aceptar todas las bromas aunque lastimen. ¿Cuál elegirás tú?"
+  },
+  {
+    "lessonId": "colores-del-corazon",
+    "step": 1,
+    "file": "voz-pregunta-colores-del-corazon-1.mp3",
+    "text": "¿Puede Ana sentirse alegre y preocupada? Inciso A. Sí, puede sentir las dos cosas y contarlas. Inciso B. No, debe escoger la emoción más bonita. ¿Cuál elegirás tú?"
+  },
+  {
+    "lessonId": "colores-del-corazon",
+    "step": 2,
+    "file": "voz-pregunta-colores-del-corazon-2.mp3",
+    "text": "¿Cómo puede acompañarla Luz? Inciso A. Escuchando y preguntando qué apoyo necesita. Inciso B. Diciéndole que deje de preocuparse. ¿Cuál elegirás tú?"
+  },
+  {
+    "lessonId": "cuando-me-enojo",
+    "step": 1,
+    "file": "voz-pregunta-cuando-me-enojo-1.mp3",
+    "text": "¿Qué puede hacer Mateo al sentirse muy enojado? Inciso A. Tomar espacio y pedir apoyo para hablar. Inciso B. Golpear a Roko para que entienda. ¿Cuál elegirás tú?"
+  },
+  {
+    "lessonId": "cuando-me-enojo",
+    "step": 2,
+    "file": "voz-pregunta-cuando-me-enojo-2.mp3",
+    "text": "¿Qué puede decir cuando esté preparado? Inciso A. «No toques mis bloques sin permiso». Inciso B. «Tengo que fingir que no me importa». ¿Cuál elegirás tú?"
+  },
+  {
+    "lessonId": "lugar-en-ronda",
+    "step": 1,
+    "file": "voz-pregunta-lugar-en-ronda-1.mp3",
+    "text": "¿Cómo puede invitar Ana a Mateo? Inciso A. Preguntando si quiere participar y escuchando. Inciso B. Llevándolo al juego aunque no quiera. ¿Cuál elegirás tú?"
+  },
+  {
+    "lessonId": "lugar-en-ronda",
+    "step": 2,
+    "file": "voz-pregunta-lugar-en-ronda-2.mp3",
+    "text": "¿Qué pasa si Mateo prefiere observar? Inciso A. Puede mirar y decidir después. Inciso B. Debe jugar para demostrar que es amigo. ¿Cuál elegirás tú?"
+  },
+  {
+    "lessonId": "dos-ideas",
+    "step": 1,
+    "file": "voz-pregunta-dos-ideas-1.mp3",
+    "text": "¿Qué ayuda cuando hablan al mismo tiempo? Inciso A. Escucharse por turnos. Inciso B. Hablar más fuerte hasta que el otro se calle. ¿Cuál elegirás tú?"
+  },
+  {
+    "lessonId": "dos-ideas",
+    "step": 2,
+    "file": "voz-pregunta-dos-ideas-2.mp3",
+    "text": "¿Tienen que pensar exactamente igual? Inciso A. No, pueden respetarse y buscar un acuerdo. Inciso B. Sí, los amigos siempre deben querer lo mismo. ¿Cuál elegirás tú?"
+  },
+  {
+    "lessonId": "puedo-equivocarme",
+    "step": 1,
+    "file": "voz-pregunta-puedo-equivocarme-1.mp3",
+    "text": "¿Qué puede hacer Luz si se confunde? Inciso A. Pedir ayuda y continuar a su ritmo. Inciso B. Pensar que el error demuestra que no vale. ¿Cuál elegirás tú?"
+  },
+  {
+    "lessonId": "puedo-equivocarme",
+    "step": 2,
+    "file": "voz-pregunta-puedo-equivocarme-2.mp3",
+    "text": "¿Qué necesita cambiar Roko? Inciso A. Detener la burla y tratarla con respeto. Inciso B. Reírse más para que ella se acostumbre. ¿Cuál elegirás tú?"
+  },
+  {
+    "lessonId": "espero-mi-turno",
+    "step": 1,
+    "file": "voz-pregunta-espero-mi-turno-1.mp3",
+    "text": "¿Qué ayuda a compartir el juego? Inciso A. Una señal clara de quién sigue. Inciso B. Que participe siempre quien grita más. ¿Cuál elegirás tú?"
+  },
+  {
+    "lessonId": "espero-mi-turno",
+    "step": 2,
+    "file": "voz-pregunta-espero-mi-turno-2.mp3",
+    "text": "¿Qué puede hacer Mateo si le cuesta esperar? Inciso A. Pedir apoyo o elegir otra actividad un momento. Inciso B. Empujar para llegar primero. ¿Cuál elegirás tú?"
+  },
+  {
+    "lessonId": "verdad-con-cuidado",
+    "step": 1,
+    "file": "voz-pregunta-verdad-con-cuidado-1.mp3",
+    "text": "¿Qué puede contar Roko? Inciso A. «Yo moví la maceta y necesito ayuda». Inciso B. Decir que Lupi lo hizo para evitar hablar. ¿Cuál elegirás tú?"
+  },
+  {
+    "lessonId": "verdad-con-cuidado",
+    "step": 2,
+    "file": "voz-pregunta-verdad-con-cuidado-2.mp3",
+    "text": "¿Quién debe retirar los trozos rotos? Inciso A. La persona adulta que puede hacerlo con seguridad. Inciso B. Los niños solos, aunque haya partes que corten. ¿Cuál elegirás tú?"
+  },
+  {
+    "lessonId": "promesa-pequena",
+    "step": 1,
+    "file": "voz-pregunta-promesa-pequena-1.mp3",
+    "text": "¿Qué puede hacer Mateo si la tarea es demasiado grande? Inciso A. Explicarlo y pedir un nuevo acuerdo. Inciso B. Guardárselo y dejar de descansar para cumplir. ¿Cuál elegirás tú?"
+  },
+  {
+    "lessonId": "promesa-pequena",
+    "step": 2,
+    "file": "voz-pregunta-promesa-pequena-2.mp3",
+    "text": "¿Qué promesa es más adecuada? Inciso A. Una tarea pequeña que pueda hacer con apoyo. Inciso B. Hacerlo todo para que los demás lo quieran. ¿Cuál elegirás tú?"
+  },
+  {
+    "lessonId": "permiso-primero",
+    "step": 1,
+    "file": "voz-pregunta-permiso-primero-1.mp3",
+    "text": "¿Qué necesita hacer Roko antes de tomar el lápiz? Inciso A. Preguntar y esperar la respuesta. Inciso B. Usarlo primero y preguntar después. ¿Cuál elegirás tú?"
+  },
+  {
+    "lessonId": "permiso-primero",
+    "step": 2,
+    "file": "voz-pregunta-permiso-primero-2.mp3",
+    "text": "¿Y si Ana prefiere no prestarlo? Inciso A. Respetar su respuesta y buscar otro material. Inciso B. Decir que no es buena amiga si no comparte. ¿Cuál elegirás tú?"
+  },
+  {
+    "lessonId": "broma-para-todos",
+    "step": 1,
+    "file": "voz-pregunta-broma-para-todos-1.mp3",
+    "text": "¿Qué hace más cuidadosa una broma? Inciso A. Escuchar si alguien se siente incómodo y parar. Inciso B. Seguir aunque alguien pida que se detenga. ¿Cuál elegirás tú?"
+  },
+  {
+    "lessonId": "broma-para-todos",
+    "step": 2,
+    "file": "voz-pregunta-broma-para-todos-2.mp3",
+    "text": "¿Qué puede hacer Roko si Mateo no se ríe? Inciso A. Explicar el chiste con paciencia, si quiere. Inciso B. Burlarse de él por no entender. ¿Cuál elegirás tú?"
+  },
+  {
+    "lessonId": "nadie-fuera",
+    "step": 1,
+    "file": "voz-pregunta-nadie-fuera-1.mp3",
+    "text": "¿Cómo pueden incluir a Ana? Inciso A. Ofreciendo formas diferentes y escuchando su elección. Inciso B. Exigiendo el mismo salto para dejarla jugar. ¿Cuál elegirás tú?"
+  },
+  {
+    "lessonId": "nadie-fuera",
+    "step": 2,
+    "file": "voz-pregunta-nadie-fuera-2.mp3",
+    "text": "¿Quién puede decir qué apoyo le resulta cómodo? Inciso A. Ana, acompañada por los adultos que la cuidan. Inciso B. El grupo, sin preguntarle a ella. ¿Cuál elegirás tú?"
+  },
+  {
+    "lessonId": "te-escucho",
+    "step": 1,
+    "file": "voz-pregunta-te-escucho-1.mp3",
+    "text": "¿Qué puede decir Escalito? Inciso A. «Puedo escucharte y acompañarte a buscar ayuda». Inciso B. «Cuéntamelo todo ahora o no puedo ayudarte». ¿Cuál elegirás tú?"
+  },
+  {
+    "lessonId": "te-escucho",
+    "step": 2,
+    "file": "voz-pregunta-te-escucho-2.mp3",
+    "text": "¿Qué ocurre si Mateo necesita protección? Inciso A. Buscan a un adulto que pueda cuidarlo. Inciso B. Escalito promete resolverlo y guardarlo en secreto. ¿Cuál elegirás tú?"
+  },
+  {
+    "lessonId": "disculpa-con-acciones",
+    "step": 1,
+    "file": "voz-pregunta-disculpa-con-acciones-1.mp3",
+    "text": "¿Qué muestra una disculpa cuidadosa? Inciso A. Reconocer lo que hice y detener la conducta. Inciso B. Decir que la otra persona exagera. ¿Cuál elegirás tú?"
+  },
+  {
+    "lessonId": "disculpa-con-acciones",
+    "step": 2,
+    "file": "voz-pregunta-disculpa-con-acciones-2.mp3",
+    "text": "¿Qué puede hacer Luz después? Inciso A. Tomarse tiempo y mantener sus límites. Inciso B. Dar un abrazo porque Roko ya se disculpó. ¿Cuál elegirás tú?"
+  },
+  {
+    "lessonId": "a-mi-ritmo",
+    "step": 1,
+    "file": "voz-pregunta-a-mi-ritmo-1.mp3",
+    "text": "¿Qué puede decidir Ana? Inciso A. Esperar y elegir otro juego si lo necesita. Inciso B. Volver a jugar para demostrar que perdonó. ¿Cuál elegirás tú?"
+  },
+  {
+    "lessonId": "a-mi-ritmo",
+    "step": 2,
+    "file": "voz-pregunta-a-mi-ritmo-2.mp3",
+    "text": "¿Qué necesita hacer Roko? Inciso A. Respetar su respuesta y continuar cuidando. Inciso B. Insistir hasta que ella acepte. ¿Cuál elegirás tú?"
+  },
+  {
+    "lessonId": "valiente-con-miedo",
+    "step": 1,
+    "file": "voz-pregunta-valiente-con-miedo-1.mp3",
+    "text": "¿Qué puede pedir Mateo? Inciso A. Compañía y una opción que le resulte posible. Inciso B. Que lo dejen solo para demostrar valentía. ¿Cuál elegirás tú?"
+  },
+  {
+    "lessonId": "valiente-con-miedo",
+    "step": 2,
+    "file": "voz-pregunta-valiente-con-miedo-2.mp3",
+    "text": "¿Tiene que hacerlo todo hoy? Inciso A. No, puede parar o continuar acompañado. Inciso B. Sí, debe terminar aunque se sienta sobrepasado. ¿Cuál elegirás tú?"
+  },
+  {
+    "lessonId": "adultos-que-cuidan",
+    "step": 1,
+    "file": "voz-pregunta-adultos-que-cuidan-1.mp3",
+    "text": "¿Qué puede hacer si un adulto no la escucha? Inciso A. Buscar a otra persona adulta de confianza. Inciso B. Pensar que su problema no importa. ¿Cuál elegirás tú?"
+  },
+  {
+    "lessonId": "adultos-que-cuidan",
+    "step": 2,
+    "file": "voz-pregunta-adultos-que-cuidan-2.mp3",
+    "text": "¿Necesita explicarlo perfectamente? Inciso A. No, puede empezar con pocas palabras. Inciso B. Sí, sin una explicación perfecta no puede pedir ayuda. ¿Cuál elegirás tú?"
+  },
+  {
+    "lessonId": "secreto-que-pesa",
+    "step": 1,
+    "file": "voz-pregunta-secreto-que-pesa-1.mp3",
+    "text": "¿Puede contar algo que lo asusta aunque le pidan callar? Inciso A. Sí, puede buscar a un adulto que lo cuide. Inciso B. No, debe guardar todos los secretos. ¿Cuál elegirás tú?"
+  },
+  {
+    "lessonId": "secreto-que-pesa",
+    "step": 2,
+    "file": "voz-pregunta-secreto-que-pesa-2.mp3",
+    "text": "¿Qué puede hacer si no sabe si contar algo? Inciso A. Hablar con un adulto de confianza. Inciso B. Resolverlo solo para no molestar. ¿Cuál elegirás tú?"
+  },
+  {
+    "lessonId": "pantallas-en-familia",
+    "step": 1,
+    "file": "voz-pregunta-pantallas-en-familia-1.mp3",
+    "text": "¿Qué puede hacer Ana ante un enlace que no conoce? Inciso A. Consultar con la persona adulta que la acompaña. Inciso B. Abrirlo y compartir sus datos para entrar. ¿Cuál elegirás tú?"
+  },
+  {
+    "lessonId": "pantallas-en-familia",
+    "step": 2,
+    "file": "voz-pregunta-pantallas-en-familia-2.mp3",
+    "text": "¿Puede contar si algo en una pantalla la incomoda? Inciso A. Sí, incluso si ya lo abrió. Inciso B. No, si tocó el enlace debe guardárselo. ¿Cuál elegirás tú?"
+  },
+  {
+    "lessonId": "mi-espacio",
+    "step": 1,
+    "file": "voz-pregunta-mi-espacio-1.mp3",
+    "text": "¿Qué puede hacer Ana antes de abrazar? Inciso A. Preguntar y respetar la respuesta de Luz. Inciso B. Abrazarla porque las amigas siempre lo hacen. ¿Cuál elegirás tú?"
+  },
+  {
+    "lessonId": "mi-espacio",
+    "step": 2,
+    "file": "voz-pregunta-mi-espacio-2.mp3",
+    "text": "¿Qué puede hacer Luz si su límite no se respeta? Inciso A. Buscar espacio y ayuda de un adulto que la cuide. Inciso B. Aceptar para evitar que alguien se moleste. ¿Cuál elegirás tú?"
+  },
+  {
+    "lessonId": "gracias-pequenas",
+    "step": 1,
+    "file": "voz-pregunta-gracias-pequenas-1.mp3",
+    "text": "¿Puede Luz agradecer y seguir sintiéndose triste? Inciso A. Sí, las dos cosas pueden aparecer juntas. Inciso B. No, agradecer significa estar contenta siempre. ¿Cuál elegirás tú?"
+  },
+  {
+    "lessonId": "gracias-pequenas",
+    "step": 2,
+    "file": "voz-pregunta-gracias-pequenas-2.mp3",
+    "text": "¿Qué gesto merece una tarjeta de agradecimiento? Inciso A. Alguien que escuchó y acompañó con respeto. Inciso B. Una burla que la hizo sentir mal. ¿Cuál elegirás tú?"
+  },
+  {
+    "lessonId": "jardin-compartido",
+    "step": 1,
+    "file": "voz-pregunta-jardin-compartido-1.mp3",
+    "text": "¿Qué ayuda a cuidar las plantas? Inciso A. Preguntar qué necesita cada una. Inciso B. Dar mucha agua a todas sin mirar. ¿Cuál elegirás tú?"
+  },
+  {
+    "lessonId": "jardin-compartido",
+    "step": 2,
+    "file": "voz-pregunta-jardin-compartido-2.mp3",
+    "text": "¿Qué puede hacer Roko si estropea algo? Inciso A. Detenerse, reconocerlo y reparar con ayuda. Inciso B. Seguir jugando y culpar a los demás. ¿Cuál elegirás tú?"
+  },
+  {
+    "lessonId": "ayudo-con-cuidado",
+    "step": 1,
+    "file": "voz-pregunta-ayudo-con-cuidado-1.mp3",
+    "text": "¿Cómo puede ayudar Mateo con la pelota? Inciso A. Avisando a un adulto antes de trepar. Inciso B. Trepando solo para demostrar que puede. ¿Cuál elegirás tú?"
+  },
+  {
+    "lessonId": "ayudo-con-cuidado",
+    "step": 2,
+    "file": "voz-pregunta-ayudo-con-cuidado-2.mp3",
+    "text": "¿Qué puede hacer si ve un peligro para un amigo? Inciso A. Buscar de inmediato a un adulto cercano que pueda proteger. Inciso B. Intentar resolverlo todo solo. ¿Cuál elegirás tú?"
+  },
+  {
+    "lessonId": "celebramos-camino",
+    "step": 1,
+    "file": "voz-pregunta-celebramos-camino-1.mp3",
+    "text": "¿Qué celebra el grupo? Inciso A. Los pasos de cuidado, escucha y aprendizaje. Inciso B. Que todos hayan dejado de sentir tristeza o miedo. ¿Cuál elegirás tú?"
+  },
+  {
+    "lessonId": "celebramos-camino",
+    "step": 2,
+    "file": "voz-pregunta-celebramos-camino-2.mp3",
+    "text": "¿Qué puedes hacer al terminar estas aventuras? Inciso A. Repetir, descansar o conversar con mi familia. Inciso B. Seguir sin parar para no decepcionar al grupo. ¿Cuál elegirás tú?"
+  }
+]

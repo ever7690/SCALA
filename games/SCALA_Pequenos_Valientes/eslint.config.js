@@ -5,7 +5,7 @@ import css from '@eslint/css';
 import { defineConfig, globalIgnores } from 'eslint/config';
 
 export default defineConfig([
-  globalIgnores(['dist/**', 'android/**', 'entregables/**', '.tests/**']),
+  globalIgnores(['dist/**', 'android/**', 'entregables/**', '.tests/**', 'artwork/audio/**']),
   { ...js.configs.recommended, files: ['**/*.{js,mjs,ts}'] },
   { files: ['**/*.{js,mjs,ts}'], languageOptions: { globals: globals.browser } },
   { files: ['scripts/**/*.mjs', 'vite.config.ts'], languageOptions: { globals: globals.node } },

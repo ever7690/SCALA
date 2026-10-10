@@ -1,5 +1,5 @@
 import type { IconId, Mood } from './content.ts';
-const images: Record<IconId, string> = { home: 'home', heart: 'heart', story: 'story', help: 'help', path: 'friends', family: 'friends', gear: 'gear', voice: 'voice', leaf: 'gift', back: 'back', play: 'play', check: 'check', lock: 'lock', sun: 'sun', mischief: 'mischief', friends: 'friends', care: 'care', gift: 'gift', feel: 'feel' };
+const images: Record<IconId, string> = { home: 'home', heart: 'heart', story: 'story', help: 'help', path: 'adventure', family: 'friends', gear: 'gear', voice: 'voice', leaf: 'gift', back: 'back', play: 'play', check: 'check', lock: 'lock', sun: 'sun', mischief: 'mischief', friends: 'friends', care: 'care', gift: 'gift', feel: 'feel' };
 export function icon(id: IconId, cls = ''): string {
   return `<span class="toy-icon ${cls}" aria-hidden="true"><img src="/icons/toys/${images[id]}.webp" alt="" width="128" height="128" decoding="async"></span>`;
 }

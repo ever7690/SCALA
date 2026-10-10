@@ -1,0 +1,550 @@
+{
+  "engine": "Kokoro 0.9.4 / PyTorch CPU",
+  "voice": "ef_dora",
+  "speed": 0.96,
+  "modelSHA256": "496dba118d1a58f5f3db2efc88dbdc216e0483fc89fe6e47ee1f2c53f18ad1e4",
+  "networkDisabled": true,
+  "externalCredits": 0,
+  "files": [
+    {
+      "file": "voz-pregunta-mi-voz-1.mp3",
+      "lessonId": "mi-voz",
+      "step": 1,
+      "textSHA256": "bf2dc92684b8067bbed8a91b843c37cec6837444379b818720e6f2067a4cf1ac",
+      "sha256": "9fce0c9a44edbd12aef90ee48d43164c4c202b5abe2262ad05c0f8b3ae04b97e",
+      "bytes": 293869,
+      "duration": 18.337959
+    },
+    {
+      "file": "voz-pregunta-mi-voz-2.mp3",
+      "lessonId": "mi-voz",
+      "step": 2,
+      "textSHA256": "1017ccb3d9478dd980d0880ec0dffaf009d1182f2b180fe44ece0c7656ac0119",
+      "sha256": "2e00219746946b12d7880de33b4787875224b25822ad42119be9628dc7cf66e4",
+      "bytes": 228249,
+      "duration": 14.236735
+    },
+    {
+      "file": "voz-pregunta-mi-limite-1.mp3",
+      "lessonId": "mi-limite",
+      "step": 1,
+      "textSHA256": "840bda964adfdda98f23a121cf0bcc1d459dee0fb171dd618300ba40a60e6be4",
+      "sha256": "253637b751a15583eda2fb3272c56992c0c5eb9f8fb2e7148403bd9b308f237f",
+      "bytes": 214875,
+      "duration": 13.400816
+    },
+    {
+      "file": "voz-pregunta-mi-limite-2.mp3",
+      "lessonId": "mi-limite",
+      "step": 2,
+      "textSHA256": "ccaafe075af0c2c3b6e121ba54727c9dbfedb028b98d42f8d28ac3a4d84715d2",
+      "sha256": "8124ab33cc785e238e32722ac3955d47585428f31ab74ef1edb75f46a87f2ee7",
+      "bytes": 238280,
+      "duration": 14.863673
+    },
+    {
+      "file": "voz-pregunta-pido-ayuda-1.mp3",
+      "lessonId": "pido-ayuda",
+      "step": 1,
+      "textSHA256": "338a70d0781daa13ae2548c615c0b6298f185871ed0a485a2943ba1898454153",
+      "sha256": "16c304598d2350964ad2af4c7869f3ece64b4ee30786ac43db9ba91df7e1f5f4",
+      "bytes": 232429,
+      "duration": 14.497959
+    },
+    {
+      "file": "voz-pregunta-pido-ayuda-2.mp3",
+      "lessonId": "pido-ayuda",
+      "step": 2,
+      "textSHA256": "d26d8841452122586f3a9125a574cadacf202847d0eced53e085a6e57969c3cd",
+      "sha256": "b07577de2fbf8b036a470a284c04bfa3fcecfb2227ab37fe83253012f5da21a9",
+      "bytes": 213621,
+      "duration": 13.322449
+    },
+    {
+      "file": "voz-pregunta-acompanamos-1.mp3",
+      "lessonId": "acompanamos",
+      "step": 1,
+      "textSHA256": "9d376e777417a8716be107d4ba3ddce25db997ef489241734454451c3e956410",
+      "sha256": "0c3c009422e6f6511ccb6e5e5361966169aa0fb1d7a55b0b9b53ef73126cd13e",
+      "bytes": 226995,
+      "duration": 14.158367
+    },
+    {
+      "file": "voz-pregunta-acompanamos-2.mp3",
+      "lessonId": "acompanamos",
+      "step": 2,
+      "textSHA256": "32c388f1953851d339857fbd76553185a418e60c782f0a2bc7220241d0285780",
+      "sha256": "5f7ba3bc6d51430218b04fd811978c748e1b3f3dbfb46eefa64664663040edbf",
+      "bytes": 249147,
+      "duration": 15.542857
+    },
+    {
+      "file": "voz-pregunta-reparamos-1.mp3",
+      "lessonId": "reparamos",
+      "step": 1,
+      "textSHA256": "04bf44c878a403fe3a5c10c8307ed09a59f6d5b2d6fa8a9c9676d3a3597e9ccd",
+      "sha256": "c8f1901d77318aeb3616b6bc57e4806d2ff8eb0866a495e05702421f0212c83b",
+      "bytes": 236608,
+      "duration": 14.759184
+    },
+    {
+      "file": "voz-pregunta-reparamos-2.mp3",
+      "lessonId": "reparamos",
+      "step": 2,
+      "textSHA256": "d5c706c50c4bda4823522364393949ed04d96915fbd7818283a127cc68d97d87",
+      "sha256": "fca703e77bc160970c108cc15874153c8e69d1df861a6155afcb844892d49f40",
+      "bytes": 241206,
+      "duration": 15.046531
+    },
+    {
+      "file": "voz-pregunta-mi-valor-1.mp3",
+      "lessonId": "mi-valor",
+      "step": 1,
+      "textSHA256": "240b3f980a77640d739a5f73e535d06514a9578df8dc331c4a5bb47300c7bf79",
+      "sha256": "55ba7ed1d3073004140b18078ef9523b7818a77f7223ee7384ec752a0a31b7f4",
+      "bytes": 224070,
+      "duration": 13.97551
+    },
+    {
+      "file": "voz-pregunta-mi-valor-2.mp3",
+      "lessonId": "mi-valor",
+      "step": 2,
+      "textSHA256": "efffe7802ed27e9afaa45228c10bc73aeef45f9988b97f3c21488ebedb6f9586",
+      "sha256": "de9b06d201652ffef1ae2114f11cc7292c5efeb9f34cd83aab18715db6cee018",
+      "bytes": 248729,
+      "duration": 15.516735
+    },
+    {
+      "file": "voz-pregunta-casa-scala-1.mp3",
+      "lessonId": "casa-scala",
+      "step": 1,
+      "textSHA256": "11da1108c7e6b87a768296085540fa07edd8b9868a6648d86484a2473e40525a",
+      "sha256": "8c86ca68bb4b8c5fe23aff88c660f1edcfa35da10310e8507fc1edd717c78e33",
+      "bytes": 227413,
+      "duration": 14.18449
+    },
+    {
+      "file": "voz-pregunta-casa-scala-2.mp3",
+      "lessonId": "casa-scala",
+      "step": 2,
+      "textSHA256": "965604e59508d7bea084363425d284ac763948be5732a726d087dc4a9c6fd086",
+      "sha256": "180251743cb560f978a55b865a3238386e09290b1903c7a934961744f2678b31",
+      "bytes": 226159,
+      "duration": 14.106122
+    },
+    {
+      "file": "voz-pregunta-colores-del-corazon-1.mp3",
+      "lessonId": "colores-del-corazon",
+      "step": 1,
+      "textSHA256": "5ea602f0abd57dd5287121e99c2b994e47054ab98beaa6aa1a4e67335f794aad",
+      "sha256": "f1f8df30da0d8f12cc018260d49fbcee256c75c2212ecf1c1c6f8d60072cd9a0",
+      "bytes": 230757,
+      "duration": 14.393469
+    },
+    {
+      "file": "voz-pregunta-colores-del-corazon-2.mp3",
+      "lessonId": "colores-del-corazon",
+      "step": 2,
+      "textSHA256": "b2afe0c19c8623bef82ad8a729de4906b87dae51e8034e25c4b61f0a7e60124a",
+      "sha256": "adc08a13f263ce33da567965165cf320e30646d2aa0155f6e61cac6567551b45",
+      "bytes": 217382,
+      "duration": 13.557551
+    },
+    {
+      "file": "voz-pregunta-cuando-me-enojo-1.mp3",
+      "lessonId": "cuando-me-enojo",
+      "step": 1,
+      "textSHA256": "a01326f0894d4936fb61ab3e2524c50f28d0304780c99c64e0d40103df3bc6e9",
+      "sha256": "125fa1dbf9c0a53e729695e1a3a8374057028a55a858af78f334891373ddba41",
+      "bytes": 226159,
+      "duration": 14.106122
+    },
+    {
+      "file": "voz-pregunta-cuando-me-enojo-2.mp3",
+      "lessonId": "cuando-me-enojo",
+      "step": 2,
+      "textSHA256": "1789e231ff621f0a53c19504bf93c64b32cd4d8686d48a7ea52be67dc4149a40",
+      "sha256": "e61311fc03b6658c28dec34b7ab66d92a5c668c35f37e26f12be4922e55ec99f",
+      "bytes": 214039,
+      "duration": 13.348571
+    },
+    {
+      "file": "voz-pregunta-lugar-en-ronda-1.mp3",
+      "lessonId": "lugar-en-ronda",
+      "step": 1,
+      "textSHA256": "f6b0442f67a3e978caea74352ec70de02079c8e1507ce028c2be8767f570b2db",
+      "sha256": "4dc30927d00f153415bbb9511695b9726379727ecf74e7745485110dabc8dc36",
+      "bytes": 222398,
+      "duration": 13.87102
+    },
+    {
+      "file": "voz-pregunta-lugar-en-ronda-2.mp3",
+      "lessonId": "lugar-en-ronda",
+      "step": 2,
+      "textSHA256": "c7e882333debdb40269f3020f02d3d5a362847f2ed109930a8986e8ae52c3661",
+      "sha256": "abc098c1c3190b77d732a31237083f352db4614273a83c00569553e4c6907b1e",
+      "bytes": 214875,
+      "duration": 13.400816
+    },
+    {
+      "file": "voz-pregunta-dos-ideas-1.mp3",
+      "lessonId": "dos-ideas",
+      "step": 1,
+      "textSHA256": "9ece8cbad71d3482e6884175fba2830b7b066c33789674932a7f2fef3e3536e0",
+      "sha256": "ccf6e2b1f2297ea8ddbd2e11a97d6f76b6487c26e9d6a45dc71673ef47451b9c",
+      "bytes": 211949,
+      "duration": 13.217959
+    },
+    {
+      "file": "voz-pregunta-dos-ideas-2.mp3",
+      "lessonId": "dos-ideas",
+      "step": 2,
+      "textSHA256": "681bfba5ec750a0edd4f3c2dfa140965ce859c053e12b3c656bd0c89621f44d1",
+      "sha256": "0e804920f571c5d02553dbafc33e7d34a4fb78235013cc7f35d34279f870856a",
+      "bytes": 226995,
+      "duration": 14.158367
+    },
+    {
+      "file": "voz-pregunta-puedo-equivocarme-1.mp3",
+      "lessonId": "puedo-equivocarme",
+      "step": 1,
+      "textSHA256": "a9ac9c29a35c4c73027a9139c3ca76ff127448ed6e48bc8fadca406cf6e52a75",
+      "sha256": "39ba302d59a1b74d50cc66fd2cff41bcc5befb1599b7b712a47cf5f2ce9b0bb4",
+      "bytes": 221144,
+      "duration": 13.792653
+    },
+    {
+      "file": "voz-pregunta-puedo-equivocarme-2.mp3",
+      "lessonId": "puedo-equivocarme",
+      "step": 2,
+      "textSHA256": "a2b4fc50cb161f418746be1410fd373b1004b6c518d60285203af0f95bcbf762",
+      "sha256": "0c5546f9effd087cb42245fd98284925201576a1bc4308b75f0869bffe5c36e3",
+      "bytes": 217800,
+      "duration": 13.583673
+    },
+    {
+      "file": "voz-pregunta-espero-mi-turno-1.mp3",
+      "lessonId": "espero-mi-turno",
+      "step": 1,
+      "textSHA256": "34b83d90bb44ceb70d8057f5132380300410b98459fae9123c3e8e826e85d2e9",
+      "sha256": "cf79d78f824e9a622dc675e51fce4ccd3c4691ecc3fbb03cf39083cf83dbc8e7",
+      "bytes": 206097,
+      "duration": 12.852245
+    },
+    {
+      "file": "voz-pregunta-espero-mi-turno-2.mp3",
+      "lessonId": "espero-mi-turno",
+      "step": 2,
+      "textSHA256": "02fd024a6ec0f0a254cdfea9957f68323a118b1260d48c6dc626f7406d410a4a",
+      "sha256": "956dbe4b3dbc9ab54f1581e91fe8abd384c7fb2b59e9347d57531754aeb37b53",
+      "bytes": 226159,
+      "duration": 14.106122
+    },
+    {
+      "file": "voz-pregunta-verdad-con-cuidado-1.mp3",
+      "lessonId": "verdad-con-cuidado",
+      "step": 1,
+      "textSHA256": "5c75ed3cd86c912e05cb92650a3a650c0003c2bd68e9b4f7e693df014597ae70",
+      "sha256": "26df0f07c1eac2e67813a5d612c7078fe16cb9bd2536b53d5093b6dc0b69d552",
+      "bytes": 212367,
+      "duration": 13.244082
+    },
+    {
+      "file": "voz-pregunta-verdad-con-cuidado-2.mp3",
+      "lessonId": "verdad-con-cuidado",
+      "step": 2,
+      "textSHA256": "3ad75c7f92b7111b58f3ac43a5363365a2545d03bfb97ce08245c4efe9139e17",
+      "sha256": "e6388c0b36d53c17b4eeaafae2ba2ed5e64e553de55f5769faddc6dd67d9ed2c",
+      "bytes": 237444,
+      "duration": 14.811429
+    },
+    {
+      "file": "voz-pregunta-promesa-pequena-1.mp3",
+      "lessonId": "promesa-pequena",
+      "step": 1,
+      "textSHA256": "3120caede87cc3084f42f2db15492b6d016a9f02cf4f69d564553339e20ffaac",
+      "sha256": "40952c6a6efc33406408512cba402e9a085168fa85b777d3d646e7be5f2d0144",
+      "bytes": 242042,
+      "duration": 15.098776
+    },
+    {
+      "file": "voz-pregunta-promesa-pequena-2.mp3",
+      "lessonId": "promesa-pequena",
+      "step": 2,
+      "textSHA256": "e0d7049ea3bbe8ecb319ec596279de9acae38dbeca5e6486b96261f74e1105d5",
+      "sha256": "d5d4c146d90beae85fe300a4ae33722899daaf07fd57d1f49aa1a031a12137b5",
+      "bytes": 221562,
+      "duration": 13.818776
+    },
+    {
+      "file": "voz-pregunta-permiso-primero-1.mp3",
+      "lessonId": "permiso-primero",
+      "step": 1,
+      "textSHA256": "7e5d048597c984041f6ffa3476fc842171f9c55aa39441a9cf11edf065617314",
+      "sha256": "7c130761b52be8b111db1d59461cc9256c2cb532977dc78f2b3ec59a29b68cdc",
+      "bytes": 229085,
+      "duration": 14.28898
+    },
+    {
+      "file": "voz-pregunta-permiso-primero-2.mp3",
+      "lessonId": "permiso-primero",
+      "step": 2,
+      "textSHA256": "95d8d77d30b50cf03b571f5c17b3611514c52d2134024b3f42713b6196887bd0",
+      "sha256": "62fd5fd9d9d25b418b0df131951d88f9d9b852cc5085bf1d8a3097632101cef7",
+      "bytes": 229085,
+      "duration": 14.28898
+    },
+    {
+      "file": "voz-pregunta-broma-para-todos-1.mp3",
+      "lessonId": "broma-para-todos",
+      "step": 1,
+      "textSHA256": "e48a4a175b3bf18f75a4ca8c9221a412417d82134a9c8e699995069189819cf2",
+      "sha256": "5eec55f4cd4a1c565cdc97b596d62d23a2516b630bde06f6c2c65d99547b27ff",
+      "bytes": 224488,
+      "duration": 14.001633
+    },
+    {
+      "file": "voz-pregunta-broma-para-todos-2.mp3",
+      "lessonId": "broma-para-todos",
+      "step": 2,
+      "textSHA256": "e3c0eed81dfcd22ebf130a52c041aafaa6b04117a1b07f511995c6c8f1eebe8f",
+      "sha256": "655d6adc9f076fd13628f32abe14bd0eee00d6b8ddc802c95c6b9c6945ccd81a",
+      "bytes": 219890,
+      "duration": 13.714286
+    },
+    {
+      "file": "voz-pregunta-nadie-fuera-1.mp3",
+      "lessonId": "nadie-fuera",
+      "step": 1,
+      "textSHA256": "075c6682115afce1a350c367c1244b6cb733a42fcfdd400e6e8e3ac08a5d448d",
+      "sha256": "b8439a550533a4500f1a7b9e556d1195abb424615ae83fa05c6ed5682a2099ca",
+      "bytes": 232429,
+      "duration": 14.497959
+    },
+    {
+      "file": "voz-pregunta-nadie-fuera-2.mp3",
+      "lessonId": "nadie-fuera",
+      "step": 2,
+      "textSHA256": "842b30121bc9ab1a93fb45d5d548b912404e3b79fbd0d0cc3d126c14587cc041",
+      "sha256": "1a7d34dd07b21fb7126dd3603ada1ce77bd9755f8dd2d2a4c0cfc8b9f0ea97b2",
+      "bytes": 231175,
+      "duration": 14.419592
+    },
+    {
+      "file": "voz-pregunta-te-escucho-1.mp3",
+      "lessonId": "te-escucho",
+      "step": 1,
+      "textSHA256": "81dab616d566cd151c43ae7f1f87f5ce474b4f119b1893d1c615cca3f60b3356",
+      "sha256": "0fae545288748853c5f451001c692d22ce0c792d15485c44d9386611d3e520c7",
+      "bytes": 226995,
+      "duration": 14.158367
+    },
+    {
+      "file": "voz-pregunta-te-escucho-2.mp3",
+      "lessonId": "te-escucho",
+      "step": 2,
+      "textSHA256": "2761349cd39ff2ca8f296cb6ac63fcfd49039b0d5e4393de8a79f60ebd202167",
+      "sha256": "755daecb563c4153dd744e46e2ba14f1dfa03f76cfbd9b8761c6ac165f54d904",
+      "bytes": 238280,
+      "duration": 14.863673
+    },
+    {
+      "file": "voz-pregunta-disculpa-con-acciones-1.mp3",
+      "lessonId": "disculpa-con-acciones",
+      "step": 1,
+      "textSHA256": "ce82da7dc99b90c7741e459cb1736299d53fc3466aa53cde13dfb6ca98466cdd",
+      "sha256": "bad990dad034986fe46254385d994d3cc3dbe758b9f661787d3f9272de9a72ef",
+      "bytes": 224906,
+      "duration": 14.027755
+    },
+    {
+      "file": "voz-pregunta-disculpa-con-acciones-2.mp3",
+      "lessonId": "disculpa-con-acciones",
+      "step": 2,
+      "textSHA256": "3793d2c36dd3de112a3f94baada2bce0eaf1b098cf870850c2c35bb62dd9c724",
+      "sha256": "b07dc9cace3665c0bcec63597d4a9cd47d06254fd87ef15457ebb4ce984a372f",
+      "bytes": 219890,
+      "duration": 13.714286
+    },
+    {
+      "file": "voz-pregunta-a-mi-ritmo-1.mp3",
+      "lessonId": "a-mi-ritmo",
+      "step": 1,
+      "textSHA256": "a30be6746a38330c5fc70b15c0c19ecdf6d1d40a468d69835a4f284d09b42f5d",
+      "sha256": "5f6878ab834fc74d183d07e182734722be34a8c41b7ed9ff05d6fb7112df8801",
+      "bytes": 216546,
+      "duration": 13.505306
+    },
+    {
+      "file": "voz-pregunta-a-mi-ritmo-2.mp3",
+      "lessonId": "a-mi-ritmo",
+      "step": 2,
+      "textSHA256": "780f56b7e9c3a1be5512a26f10ad758f33a9c9b237e831b735d1d8bb0d869915",
+      "sha256": "fe61c823112a0a5dd073eb9a84002a34f4c108f8878fcbc3cb388c90119a873b",
+      "bytes": 213203,
+      "duration": 13.296327
+    },
+    {
+      "file": "voz-pregunta-valiente-con-miedo-1.mp3",
+      "lessonId": "valiente-con-miedo",
+      "step": 1,
+      "textSHA256": "5372d8e419272ac960ebfe8e00cb9c1d9161ea6712a6a504a7cf22ee15f6d68a",
+      "sha256": "56462bec2d3f2809b63d2e68bea0fcf5a26aecd5fbb64b8ebb083d716a9ff539",
+      "bytes": 221144,
+      "duration": 13.792653
+    },
+    {
+      "file": "voz-pregunta-valiente-con-miedo-2.mp3",
+      "lessonId": "valiente-con-miedo",
+      "step": 2,
+      "textSHA256": "0a603811a703dc99bf496e2fdbf1aca5b284fc0d801160c075cf4e7cafff5c39",
+      "sha256": "7b0c63f340a03fe96f7ae90b8b1d0bce933457fdcfc4673a5d5743f2e677d643",
+      "bytes": 222816,
+      "duration": 13.897143
+    },
+    {
+      "file": "voz-pregunta-adultos-que-cuidan-1.mp3",
+      "lessonId": "adultos-que-cuidan",
+      "step": 1,
+      "textSHA256": "296587bb310392e391cab536a2077f1a91417a6117aafa67538af1216d2868aa",
+      "sha256": "2e1f8008823635816386a68d64f6e77b0326e7b1715eee5db99404ceb3481515",
+      "bytes": 223234,
+      "duration": 13.923265
+    },
+    {
+      "file": "voz-pregunta-adultos-que-cuidan-2.mp3",
+      "lessonId": "adultos-que-cuidan",
+      "step": 2,
+      "textSHA256": "62267508026b48c7326f50e2f88640756e4934cb455c6ef61d4ad32f34739771",
+      "sha256": "92cde1ce604e254091a65f3acf00a3ebf2d121bf1774485057ced2adabcd9370",
+      "bytes": 232847,
+      "duration": 14.524082
+    },
+    {
+      "file": "voz-pregunta-secreto-que-pesa-1.mp3",
+      "lessonId": "secreto-que-pesa",
+      "step": 1,
+      "textSHA256": "4ee89bc008345095aec0272ddbd50e73d17416089bdf6755bc1ee2b6b20bbaad",
+      "sha256": "4b991d85047b8aef5dd62e7f16515082a16b1e41404afbe0ab85a8e35a631da5",
+      "bytes": 232011,
+      "duration": 14.471837
+    },
+    {
+      "file": "voz-pregunta-secreto-que-pesa-2.mp3",
+      "lessonId": "secreto-que-pesa",
+      "step": 2,
+      "textSHA256": "e7a0211a33e769ceca34f69407ba1fc6ba80653bc8c791f08424951a3bdf9dd8",
+      "sha256": "ea10d1f618c79e866ba770dd42efc4afded88ddd6ab8a3d11d5267c82d35bb69",
+      "bytes": 215293,
+      "duration": 13.426939
+    },
+    {
+      "file": "voz-pregunta-pantallas-en-familia-1.mp3",
+      "lessonId": "pantallas-en-familia",
+      "step": 1,
+      "textSHA256": "ae5906c3e686b83c941ba3d5866203b0adf258b1751f820a3ae017f5715efce0",
+      "sha256": "c21f2f419bf193f3aedeb8168e78770b9e4b392581c860382d9973922f2c58cd",
+      "bytes": 240788,
+      "duration": 15.020408
+    },
+    {
+      "file": "voz-pregunta-pantallas-en-familia-2.mp3",
+      "lessonId": "pantallas-en-familia",
+      "step": 2,
+      "textSHA256": "93fd9168cab1b768c3f2895b110077782dcb80bb60f8b1c7744d177012483305",
+      "sha256": "7cd977fd6508e18e7c18fb898b105880d8ac1e7f8eb2049f8e15e840ff86fd8c",
+      "bytes": 221562,
+      "duration": 13.818776
+    },
+    {
+      "file": "voz-pregunta-mi-espacio-1.mp3",
+      "lessonId": "mi-espacio",
+      "step": 1,
+      "textSHA256": "97550086103bff6793cc7efbc1c08fb0eca6534ebfa0ed51ca15060f1f08e449",
+      "sha256": "76394e22d0be33d30cfa1b230104f0c821bad30da827474704922a7f8965c38c",
+      "bytes": 228667,
+      "duration": 14.262857
+    },
+    {
+      "file": "voz-pregunta-mi-espacio-2.mp3",
+      "lessonId": "mi-espacio",
+      "step": 2,
+      "textSHA256": "a18b0fcb0ca40d350f47e10075a7ffc927201353aa4ac0bb837a34850284d9ad",
+      "sha256": "084e670e46c347c2d7043e656561272de5ea385a5619550b7262c9b2025b635b",
+      "bytes": 242042,
+      "duration": 15.098776
+    },
+    {
+      "file": "voz-pregunta-gracias-pequenas-1.mp3",
+      "lessonId": "gracias-pequenas",
+      "step": 1,
+      "textSHA256": "f247dc9edbe2165c1df7077832f8f8ae6bdb6752847b02676220f7969f3c26eb",
+      "sha256": "91cc35104d621bf1fa94bd8cbf49948c4547621f2e4cae665d119973b888c6c1",
+      "bytes": 246639,
+      "duration": 15.386122
+    },
+    {
+      "file": "voz-pregunta-gracias-pequenas-2.mp3",
+      "lessonId": "gracias-pequenas",
+      "step": 2,
+      "textSHA256": "8eebba6dc09e11c8d4b232cb387e68299e7b7ef2aaaf2a011c478b396f26a273",
+      "sha256": "ecaf211ee6d386939c713ecb5e9aee486f0d2b73872723736cbb5601d35d7f24",
+      "bytes": 233265,
+      "duration": 14.550204
+    },
+    {
+      "file": "voz-pregunta-jardin-compartido-1.mp3",
+      "lessonId": "jardin-compartido",
+      "step": 1,
+      "textSHA256": "26f39d1e51b6b74322ddf2597e1cb250748ac9d07d9e641219ac7095bc392d7a",
+      "sha256": "813a7ae20230393ec586bb66402fe8bebea5ee2b843db6baceebcac7adef0af4",
+      "bytes": 204844,
+      "duration": 12.773878
+    },
+    {
+      "file": "voz-pregunta-jardin-compartido-2.mp3",
+      "lessonId": "jardin-compartido",
+      "step": 2,
+      "textSHA256": "878eedcdaff8e3809108c311ca765bd4c0c9b659e5ee3218cac2816cd8936281",
+      "sha256": "202193763d6b12c9629daf9d19484b8f91afa0f262225ee1d713525391a85e67",
+      "bytes": 230339,
+      "duration": 14.367347
+    },
+    {
+      "file": "voz-pregunta-ayudo-con-cuidado-1.mp3",
+      "lessonId": "ayudo-con-cuidado",
+      "step": 1,
+      "textSHA256": "6e5ac5f817d3e24cbadcce3f7d519aca226adfb7532b51360cef0057efa8ab6d",
+      "sha256": "a70a69b4a4391c4bb702811209ea3ea3cc16f65adedfab81e77e6715035cd869",
+      "bytes": 221144,
+      "duration": 13.792653
+    },
+    {
+      "file": "voz-pregunta-ayudo-con-cuidado-2.mp3",
+      "lessonId": "ayudo-con-cuidado",
+      "step": 2,
+      "textSHA256": "7cb33ec374602cbd24141709d18feb52da39aa93653de424ae0a9ffd4950a2be",
+      "sha256": "ab1a27e0859ed1ab1d66212bf008cbc09d53f304f960e6c9b40d39bf2cdeba77",
+      "bytes": 237862,
+      "duration": 14.837551
+    },
+    {
+      "file": "voz-pregunta-celebramos-camino-1.mp3",
+      "lessonId": "celebramos-camino",
+      "step": 1,
+      "textSHA256": "5fff1aade663c3344b0e3457e932179acc0e6fe42a718e9244e4552874f32161",
+      "sha256": "79cc92967406f42322224fdf5376a2e4ba771a14789a972c63543e4597f952ce",
+      "bytes": 226159,
+      "duration": 14.106122
+    },
+    {
+      "file": "voz-pregunta-celebramos-camino-2.mp3",
+      "lessonId": "celebramos-camino",
+      "step": 2,
+      "textSHA256": "7176527a7c9989f6de6baf0effb9db30a3e229b5186e964d922c8ce69d42bcfa",
+      "sha256": "6d63b13d3a076d9783475a671f31c04ee9f4364dc2f6de666615154cc631ca30",
+      "bytes": 244968,
+      "duration": 15.281633
+    }
+  ]
+}
