@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
 
 fs.mkdirSync('entregables/android', { recursive: true });
-const adb = (...args) => execFileSync('adb', args, { timeout: 20000, encoding: 'utf8' });
+const adb = (...args) => execFileSync('adb', args, { timeout: 20000, encoding: 'utf8', maxBuffer: 16 * 1024 * 1024 });
 const wait = () => new Promise(resolve => setTimeout(resolve, 1000));
 const packageName = 'com.scala.pequenosvalientes.debug';
 const port = 9343;
@@ -25,7 +25,7 @@ async function evaluate(expression) {
   return result.result.value;
 }
 function capture(name) {
-  fs.writeFileSync('entregables/android/' + name + '.png', execFileSync('adb', ['exec-out', 'screencap', '-p'], { timeout: 15000 }));
+  fs.writeFileSync('entregables/android/' + name + '.png', execFileSync('adb', ['exec-out', 'screencap', '-p'], { timeout: 15000, maxBuffer: 16 * 1024 * 1024 }));
 }
 try {
   adb('logcat', '-c');

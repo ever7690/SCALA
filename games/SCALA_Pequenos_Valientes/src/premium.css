@@ -1,7 +1,7 @@
 body{background:#e3edcf url('/backgrounds/forest.webp') center/cover fixed}
 .app-shell{position:relative;isolation:isolate;background:transparent;--world-background:url('/backgrounds/garden.webp');border-color:#d9bd83;min-height:100vh;min-height:100dvh}
 .app-shell[inert]{pointer-events:none;user-select:none}
-.app-shell::before{content:"";position:fixed;inset:0 auto 0 50%;transform:translateX(-50%);width:min(580px,100%);z-index:-1;background:linear-gradient(#fff3dc63,#fff2d44a 40%,#f4ecc47a),var(--world-background) center/cover;pointer-events:none}
+.app-shell::before{content:"";position:fixed;top:0;bottom:0;left:50%;inset:0 auto 0 50%;transform:translateX(-50%);width:min(580px,100%);z-index:-1;background:linear-gradient(#fff3dc63,#fff2d44a 40%,#f4ecc47a),var(--world-background) center/cover;pointer-events:none}
 .app-shell[data-landscape=forest]{--world-background:url('/backgrounds/forest.webp')}
 .app-shell[data-landscape=house]{--world-background:url('/backgrounds/house.webp')}
 .app-shell[data-landscape=urban]{--world-background:url('/backgrounds/urban.webp')}
@@ -118,3 +118,6 @@ body{background:#e3edcf url('/backgrounds/forest.webp') center/cover fixed}
 @media(prefers-reduced-motion:reduce){.emoji-eyes,.calm-card.running .calm-orbit{animation:none}}
 @media(min-width:500px){.world-grid .activity-tile{min-height:110px}.gesture-picker{grid-template-columns:repeat(6,1fr)}.story-scene.house{height:315px}}
 @media(max-width:350px){.page-heading{padding:16px 14px}.activity-tile>.toy-icon{width:59px;height:59px}.activity-tile strong{font-size:.81rem}.activity-tile>span:last-child{font-size:.69rem}.lesson-tile>.toy-icon{width:43px;height:43px}.stage-bar{padding-inline:7px}.stage-bar small{font-size:.51rem}.support-banner{gap:8px}.support-banner strong{font-size:.82rem}.gesture-picker{gap:8px}.calm-card,.kindness-card{padding:24px 17px}}
+
+.modal-shade{top:0;right:0;bottom:0;left:0}
+.dialog{max-height:calc(100vh - 40px);max-height:calc(100dvh - 40px)}
