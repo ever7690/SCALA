@@ -43,7 +43,7 @@ try {
       const pages = await response.json();
       target = pages.find(page => page.type === 'page' && page.webSocketDebuggerUrl);
       if (target) break;
-    } catch {}
+    } catch { target = null; }
   }
   assert.ok(target, 'El WebView de la aplicación debe estar disponible.');
   socket = new WebSocket(target.webSocketDebuggerUrl.replace('localhost', '127.0.0.1'));
@@ -93,8 +93,8 @@ try {
   fs.writeFileSync('entregables/VERIFICACION_ANDROID.json', JSON.stringify({ passed: true, api: 30, package: packageName, versionCode: 2, userAgent: await evaluate('navigator.userAgent'), checks: ['APK instalado', 'bienvenida cargada en WebView nativo', 'marca y pie de página presentes', 'inicio infantil tras pulsar entrada', 'sin excepciones JavaScript ni fallo nativo'] }, null, 2) + '\n');
   console.log('Instalación y entrada en Android 11 comprobadas.');
 } finally {
-  try { capture('estado-final'); fs.writeFileSync('entregables/android/logcat.txt', adb('logcat', '-d', '-v', 'brief')); } catch {}
+  try { capture('estado-final'); fs.writeFileSync('entregables/android/logcat.txt', adb('logcat', '-d', '-v', 'brief')); } catch (error) { console.log('Diagnóstico incompleto:', error.message); }
   for (const request of pending.values()) clearTimeout(request.timeout);
   socket?.close();
-  try { adb('forward', '--remove', 'tcp:' + port); adb('shell', 'am', 'force-stop', packageName); } catch {}
+  try { adb('forward', '--remove', 'tcp:' + port); adb('shell', 'am', 'force-stop', packageName); } catch (error) { console.log('Limpieza Android:', error.message); }
 }
